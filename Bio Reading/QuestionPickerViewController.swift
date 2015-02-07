@@ -8,11 +8,15 @@
 
 import UIKit
 
-class QuestionPickerViewController: UIViewController {
+class QuestionPickerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         self.navigationItem.title = "Einstein"
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
         super.viewDidLoad()
     }
     
@@ -26,20 +30,14 @@ class QuestionPickerViewController: UIViewController {
     func collectionView(colorCollectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellID", forIndexPath: indexPath) as UICollectionViewCell
         
-        
-        cell.layer.backgroundColor = UIColor.whiteColor().CGColor
-        
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 2
-        
         return cell
     }
     
     func collectionView(colorCollectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
         
-        let width: CGFloat = (view.frame.size.width - 10)/3
-        let height: CGFloat = (view.frame.size.height - 10)/4
-        
+        let width: CGFloat = (collectionView.frame.size.width - 44)/3
+        let height: CGFloat = (collectionView.frame.size.height - 66)/4
+                
         return CGSize(width: width, height: height)
     }
     
