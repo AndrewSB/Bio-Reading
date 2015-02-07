@@ -28,7 +28,9 @@ class QuestionPickerViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(colorCollectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellID", forIndexPath: indexPath) as UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellID", forIndexPath: indexPath) as PromptCollectionViewCell
+        
+        cell.promptLabel.text = 
         
         return cell
     }
@@ -37,7 +39,7 @@ class QuestionPickerViewController: UIViewController, UICollectionViewDelegate, 
         
         let width: CGFloat = (collectionView.frame.size.width - 44)/3
         let height: CGFloat = (collectionView.frame.size.height - 66)/4
-                
+        
         return CGSize(width: width, height: height)
     }
     
