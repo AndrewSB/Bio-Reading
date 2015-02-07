@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4602A8011A85C7A900C5363E /* QuestionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4602A8001A85C7A900C5363E /* QuestionPickerViewController.swift */; };
 		466A6FDC1A82D756006A2A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDB1A82D756006A2A21 /* AppDelegate.swift */; };
 		466A6FDE1A82D756006A2A21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDD1A82D756006A2A21 /* ViewController.swift */; };
 		466A6FE11A82D756006A2A21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466A6FDF1A82D756006A2A21 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4602A8001A85C7A900C5363E /* QuestionPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionPickerViewController.swift; sourceTree = "<group>"; };
 		466A6FD61A82D756006A2A21 /* Bio Reading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bio Reading.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		466A6FDA1A82D756006A2A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		466A6FDB1A82D756006A2A21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				466A6FDB1A82D756006A2A21 /* AppDelegate.swift */,
 				466A6FDD1A82D756006A2A21 /* ViewController.swift */,
 				466A6FDF1A82D756006A2A21 /* Main.storyboard */,
+				4602A8001A85C7A900C5363E /* QuestionPickerViewController.swift */,
 				466A6FE21A82D756006A2A21 /* Images.xcassets */,
 				466A6FE41A82D756006A2A21 /* LaunchScreen.xib */,
 				466A6FD91A82D756006A2A21 /* Supporting Files */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4602A8011A85C7A900C5363E /* QuestionPickerViewController.swift in Sources */,
 				466A6FDE1A82D756006A2A21 /* ViewController.swift in Sources */,
 				466A6FDC1A82D756006A2A21 /* AppDelegate.swift in Sources */,
 			);
@@ -407,6 +411,7 @@
 				466A6FF71A82D756006A2A21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		466A6FF81A82D756006A2A21 /* Build configuration list for PBXNativeTarget "Bio ReadingTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				466A6FFA1A82D756006A2A21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
