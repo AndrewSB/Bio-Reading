@@ -9,7 +9,7 @@
 import Foundation
 
 func getPrompt(file: String, index: Int) -> String {
-    if let plist = NSBundle.mainBundle().pathForResource("\(file).plist", ofType: "plist") {
+    if let plist = NSBundle.mainBundle().pathForResource("\(file)", ofType: "plist") {
         let rootDict = NSArray(contentsOfFile: plist)!
         
         return rootDict[0][index] as String

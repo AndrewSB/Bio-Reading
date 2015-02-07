@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionPickerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class QuestionPickerViewController: UIViewController, UICollectionViewDelegate, 
     func collectionView(colorCollectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellID", forIndexPath: indexPath) as PromptCollectionViewCell
         
-        cell.promptLabel.text = 
+        cell.promptLabel.text = getPrompt(self.navigationItem.title!, indexPath.row)
         
         return cell
     }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4602A8011A85C7A900C5363E /* QuestionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4602A8001A85C7A900C5363E /* QuestionPickerViewController.swift */; };
+		4602A8011A85C7A900C5363E /* PromptPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */; };
 		4602A8031A85C98200C5363E /* Einstein.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4602A8021A85C98200C5363E /* Einstein.plist */; };
 		466A6FDC1A82D756006A2A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDB1A82D756006A2A21 /* AppDelegate.swift */; };
 		466A6FDE1A82D756006A2A21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDD1A82D756006A2A21 /* ViewController.swift */; };
@@ -17,6 +17,7 @@
 		466A6FF21A82D756006A2A21 /* Bio_ReadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FF11A82D756006A2A21 /* Bio_ReadingTests.swift */; };
 		4670D4081A85CD2800318375 /* PromptCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670D4071A85CD2800318375 /* PromptCollectionViewCell.swift */; };
 		4670D40A1A85CDB300318375 /* IOHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670D4091A85CDB300318375 /* IOHelper.swift */; };
+		4670D40C1A85D44B00318375 /* PromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670D40B1A85D44B00318375 /* PromptViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4602A8001A85C7A900C5363E /* QuestionPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionPickerViewController.swift; sourceTree = "<group>"; };
+		4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptPickerViewController.swift; sourceTree = "<group>"; };
 		4602A8021A85C98200C5363E /* Einstein.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Einstein.plist; sourceTree = "<group>"; };
 		466A6FD61A82D756006A2A21 /* Bio Reading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bio Reading.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		466A6FDA1A82D756006A2A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		466A6FF11A82D756006A2A21 /* Bio_ReadingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bio_ReadingTests.swift; sourceTree = "<group>"; };
 		4670D4071A85CD2800318375 /* PromptCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptCollectionViewCell.swift; sourceTree = "<group>"; };
 		4670D4091A85CDB300318375 /* IOHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOHelper.swift; sourceTree = "<group>"; };
+		4670D40B1A85D44B00318375 /* PromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +90,9 @@
 				466A6FDB1A82D756006A2A21 /* AppDelegate.swift */,
 				466A6FDD1A82D756006A2A21 /* ViewController.swift */,
 				466A6FDF1A82D756006A2A21 /* Main.storyboard */,
-				4602A8001A85C7A900C5363E /* QuestionPickerViewController.swift */,
+				4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */,
 				4670D4071A85CD2800318375 /* PromptCollectionViewCell.swift */,
+				4670D40B1A85D44B00318375 /* PromptViewController.swift */,
 				4670D4091A85CDB300318375 /* IOHelper.swift */,
 				4602A8021A85C98200C5363E /* Einstein.plist */,
 				466A6FE21A82D756006A2A21 /* Images.xcassets */,
@@ -225,8 +228,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4670D40C1A85D44B00318375 /* PromptViewController.swift in Sources */,
 				4670D40A1A85CDB300318375 /* IOHelper.swift in Sources */,
-				4602A8011A85C7A900C5363E /* QuestionPickerViewController.swift in Sources */,
+				4602A8011A85C7A900C5363E /* PromptPickerViewController.swift in Sources */,
 				466A6FDE1A82D756006A2A21 /* ViewController.swift in Sources */,
 				4670D4081A85CD2800318375 /* PromptCollectionViewCell.swift in Sources */,
 				466A6FDC1A82D756006A2A21 /* AppDelegate.swift in Sources */,
