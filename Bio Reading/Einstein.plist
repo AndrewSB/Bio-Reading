@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key></key>
+	<array>
+		<string>Accomplishments</string>
+		<string>Research Methodology</string>
+		<string>Early childhood</string>
+		<string>Sexual Orientation</string>
+		<string>Political Tendencies</string>
+		<string>Habits</string>
+		<string>Sleeping Preferences</string>
+		<string>Liquor Preferences</string>
+		<string>Death</string>
+		<string>Conspiracies surronding life</string>
+		<string>Research Assistants</string>
+		<string>Gamma ray alpha</string>
+	</array>
+</dict>
+</plist>

@@ -51,8 +51,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uG6-0m-Sd0">
-                                <rect key="frame" x="0.0" y="140" width="600" height="460"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uG6-0m-Sd0">
+                                <rect key="frame" x="0.0" y="152" width="600" height="448"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UHs-L5-t2m">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -71,12 +71,21 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey _____, you're in selection mode. So go ahead and pick a prompt to continue" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0A-54-yIo">
+                                <rect key="frame" x="16" y="86" width="568" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="uG6-0m-Sd0" secondAttribute="trailing" constant="-16" id="Mp8-tu-i4w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="E0A-54-yIo" secondAttribute="trailing" id="OWf-jK-6Jv"/>
                             <constraint firstItem="uG6-0m-Sd0" firstAttribute="top" secondItem="IQj-8A-hzN" secondAttribute="bottom" constant="88" id="Sma-9u-UeD"/>
+                            <constraint firstItem="E0A-54-yIo" firstAttribute="leading" secondItem="AmA-yz-uqk" secondAttribute="leadingMargin" id="TcD-Kh-0Rx"/>
                             <constraint firstItem="uG6-0m-Sd0" firstAttribute="leading" secondItem="AmA-yz-uqk" secondAttribute="leadingMargin" constant="-16" id="Vsq-Xh-kyR"/>
+                            <constraint firstItem="E0A-54-yIo" firstAttribute="top" secondItem="IQj-8A-hzN" secondAttribute="bottom" constant="22" id="lqf-Bz-D9Z"/>
                             <constraint firstItem="mnl-3U-i76" firstAttribute="top" secondItem="uG6-0m-Sd0" secondAttribute="bottom" id="rpG-cb-xqs"/>
                         </constraints>
                     </view>

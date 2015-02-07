@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4602A8011A85C7A900C5363E /* QuestionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4602A8001A85C7A900C5363E /* QuestionPickerViewController.swift */; };
+		4602A8031A85C98200C5363E /* Einstein.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4602A8021A85C98200C5363E /* Einstein.plist */; };
 		466A6FDC1A82D756006A2A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDB1A82D756006A2A21 /* AppDelegate.swift */; };
 		466A6FDE1A82D756006A2A21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDD1A82D756006A2A21 /* ViewController.swift */; };
 		466A6FE11A82D756006A2A21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466A6FDF1A82D756006A2A21 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		4602A8001A85C7A900C5363E /* QuestionPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionPickerViewController.swift; sourceTree = "<group>"; };
+		4602A8021A85C98200C5363E /* Einstein.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Einstein.plist; sourceTree = "<group>"; };
 		466A6FD61A82D756006A2A21 /* Bio Reading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bio Reading.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		466A6FDA1A82D756006A2A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		466A6FDB1A82D756006A2A21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				466A6FDD1A82D756006A2A21 /* ViewController.swift */,
 				466A6FDF1A82D756006A2A21 /* Main.storyboard */,
 				4602A8001A85C7A900C5363E /* QuestionPickerViewController.swift */,
+				4602A8021A85C98200C5363E /* Einstein.plist */,
 				466A6FE21A82D756006A2A21 /* Images.xcassets */,
 				466A6FE41A82D756006A2A21 /* LaunchScreen.xib */,
 				466A6FD91A82D756006A2A21 /* Supporting Files */,
@@ -198,6 +201,7 @@
 				466A6FE11A82D756006A2A21 /* Main.storyboard in Resources */,
 				466A6FE61A82D756006A2A21 /* LaunchScreen.xib in Resources */,
 				466A6FE31A82D756006A2A21 /* Images.xcassets in Resources */,
+				4602A8031A85C98200C5363E /* Einstein.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
