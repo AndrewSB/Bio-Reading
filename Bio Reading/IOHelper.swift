@@ -18,15 +18,3 @@ func getPrompt(file: String, index: Int) -> String {
         return "error in getting prompt"
     }
 }
-
-func setupTimer(button: UIButton) {
-    let timer = NSTimer(timeInterval: NSTimeInterval(1), target: button, selector: "secondPassed:", userInfo: nil, repeats: true)
-    
-    button.userInteractionEnabled = false
-    button.titleLabel?.textColor = UIColor.blackColor()
-    
-}
-
-func secondPassed(id: AnyObject) {
-    println("BOOM")
-}
