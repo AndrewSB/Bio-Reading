@@ -22,7 +22,10 @@ class PromptViewController: UIViewController {
         navigationItem.title = navTitle
         
         if isTimed {
-            
+            setupTimer(continueButton)
         }
+    }
+    @IBAction func contineButtonWasHit(sender: AnyObject) {
+        println("continue")
     }
 }

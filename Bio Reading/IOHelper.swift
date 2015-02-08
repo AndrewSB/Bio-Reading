@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 func getPrompt(file: String, index: Int) -> String {
     if let plist = NSBundle.mainBundle().pathForResource("\(file)", ofType: "plist") {
@@ -18,3 +19,14 @@ func getPrompt(file: String, index: Int) -> String {
     }
 }
 
+func setupTimer(button: UIButton) {
+    let timer = NSTimer(timeInterval: NSTimeInterval(1), target: button, selector: "secondPassed:", userInfo: nil, repeats: true)
+    
+    button.userInteractionEnabled = false
+    button.titleLabel?.textColor = UIColor.blackColor()
+    
+}
+
+func secondPassed(id: AnyObject) {
+    println("BOOM")
+}
