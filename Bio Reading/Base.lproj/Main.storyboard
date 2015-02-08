@@ -116,10 +116,10 @@
             </objects>
             <point key="canvasLocation" x="1796" y="337"/>
         </scene>
-        <!--View Controller-->
+        <!--Prompt View Controller-->
         <scene sceneID="iNy-E2-KJr">
             <objects>
-                <viewController id="YZS-so-Szy" sceneMemberID="viewController">
+                <viewController id="YZS-so-Szy" customClass="PromptViewController" customModule="Bio_Reading" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VBm-R3-rwb"/>
                         <viewControllerLayoutGuide type="bottom" id="hxI-qp-8BE"/>
@@ -127,8 +127,32 @@
                     <view key="view" contentMode="scaleToFill" id="Sbo-6U-eZi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Thing to read" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bF0-mV-FIa">
+                                <rect key="frame" x="38" y="289" width="524" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZM-rS-8Ic">
+                                <rect key="frame" x="277" y="550" width="62" height="30"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bF0-mV-FIa" firstAttribute="leading" secondItem="Sbo-6U-eZi" secondAttribute="leadingMargin" constant="22" id="4Ix-FB-Njg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bF0-mV-FIa" secondAttribute="trailing" constant="22" id="Vf3-hf-H3G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bF0-mV-FIa" secondAttribute="trailing" constant="22" id="leZ-d0-q7E"/>
+                            <constraint firstAttribute="centerY" secondItem="bF0-mV-FIa" secondAttribute="centerY" constant="0.5" id="yWs-JZ-EFK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="continueButton" destination="DZM-rS-8Ic" id="mmC-TT-WRk"/>
+                        <outlet property="promptLabel" destination="bF0-mV-FIa" id="5Kk-pk-Bxy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bi-X4-7e7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

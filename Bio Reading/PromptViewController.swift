@@ -9,5 +9,20 @@
 import UIKit
 
 class PromptViewController: UIViewController {
+    var navTitle = "Prompt"
+    var isTimed = NSUserDefaults.standardUserDefaults().objectForKey("timed") as Bool
     
+    @IBOutlet weak var promptLabel: UILabel!
+    @IBOutlet weak var continueButton: UIButton!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.title = navTitle
+        
+        if isTimed {
+            
+        }
+    }
 }
