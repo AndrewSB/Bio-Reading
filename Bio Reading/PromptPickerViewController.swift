@@ -11,13 +11,15 @@ import UIKit
 class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var foraging = false
+    
     override func viewDidLoad() {
         self.navigationItem.title = "Einstein"
         
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        NSUserDefaults.standardUserDefaults().setObject("true", forKey: "timed")
+        NSUserDefaults.standardUserDefaults().setObject(true, forKey: "timed")
         
         super.viewDidLoad()
     }
@@ -47,6 +49,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         println("lol at \(indexPath.row)")
+        performSegueWithIdentifier("segueToPromptVC", sender: (collectionView.cellForItemAtIndexPath(indexPath) as PromptCollectionViewCell).promptLabel.text)
     }
     
     
@@ -54,7 +57,11 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        println("did segue")
+        super.prepareForSegue(segue, sender: sender)
+        
+        if let s = segue.destinationViewController as? PromptViewController {
+            s.navTitle = sender as String
+        }
     }
     
 }
