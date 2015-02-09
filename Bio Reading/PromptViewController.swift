@@ -56,4 +56,6 @@ class PromptViewController: UIViewController {
 
         let timeTaken = NSDate().timeIntervalSinceDate(startTime)
     }
+    
+    @IBAction func unwindToPromptViewController(segue: UIStoryboardSegue) {}
 }

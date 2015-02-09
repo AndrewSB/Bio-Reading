@@ -13,6 +13,8 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     var foraging = false
     
+    let colors = []
+    
     override func viewDidLoad() {
         self.navigationItem.title = "Einstein"
         
@@ -64,4 +66,6 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }
     
+    @IBAction func unwindToPromptPickerViewController(segue: UIStoryboardSegue) {}
+
 }

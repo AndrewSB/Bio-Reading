@@ -22,5 +22,7 @@ class InitialViewController: UIViewController {
             s.foraging = true
         }
     }
+    
+    @IBAction func unwindToWelcomeViewController(segue: UIStoryboardSegue) {}
 }
 
