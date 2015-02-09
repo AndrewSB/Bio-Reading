@@ -12,7 +12,7 @@ class PromptViewController: UIViewController {
     var navTitle = "Prompt"
     var isTimed = NSUserDefaults.standardUserDefaults().objectForKey("timed") as Bool
     
-    let curTime = NSDate()
+    let startTime = NSDate()
     
     @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
@@ -28,7 +28,7 @@ class PromptViewController: UIViewController {
         }
     }
     @IBAction func contineButtonWasHit(sender: AnyObject) {
-        println("continue")
+        performSegueWithIdentifier("segueToRecall", sender: self)
     }
     
     func setupTimer(button: UIButton) {
@@ -53,7 +53,7 @@ class PromptViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
-        
-        if let 
+
+        let timeTaken = NSDate().timeIntervalSinceDate(startTime)
     }
 }

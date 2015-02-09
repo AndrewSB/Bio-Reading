@@ -51,8 +51,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uG6-0m-Sd0">
-                                <rect key="frame" x="0.0" y="152" width="600" height="448"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uG6-0m-Sd0">
+                                <rect key="frame" x="0.0" y="108" width="600" height="482"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UHs-L5-t2m">
                                     <size key="itemSize" width="180" height="144"/>
@@ -100,11 +100,11 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="uG6-0m-Sd0" secondAttribute="trailing" constant="-16" id="Mp8-tu-i4w"/>
                             <constraint firstAttribute="trailingMargin" secondItem="E0A-54-yIo" secondAttribute="trailing" id="OWf-jK-6Jv"/>
-                            <constraint firstItem="uG6-0m-Sd0" firstAttribute="top" secondItem="IQj-8A-hzN" secondAttribute="bottom" constant="88" id="Sma-9u-UeD"/>
+                            <constraint firstItem="uG6-0m-Sd0" firstAttribute="top" secondItem="IQj-8A-hzN" secondAttribute="bottom" constant="44" id="Sma-9u-UeD"/>
                             <constraint firstItem="E0A-54-yIo" firstAttribute="leading" secondItem="AmA-yz-uqk" secondAttribute="leadingMargin" id="TcD-Kh-0Rx"/>
                             <constraint firstItem="uG6-0m-Sd0" firstAttribute="leading" secondItem="AmA-yz-uqk" secondAttribute="leadingMargin" constant="-16" id="Vsq-Xh-kyR"/>
                             <constraint firstItem="E0A-54-yIo" firstAttribute="top" secondItem="IQj-8A-hzN" secondAttribute="bottom" constant="22" id="lqf-Bz-D9Z"/>
-                            <constraint firstItem="mnl-3U-i76" firstAttribute="top" secondItem="uG6-0m-Sd0" secondAttribute="bottom" id="rpG-cb-xqs"/>
+                            <constraint firstItem="mnl-3U-i76" firstAttribute="top" secondItem="uG6-0m-Sd0" secondAttribute="bottom" constant="10" id="rpG-cb-xqs"/>
                         </constraints>
                     </view>
                     <connections>
@@ -158,11 +158,48 @@
                     <connections>
                         <outlet property="continueButton" destination="DZM-rS-8Ic" id="mmC-TT-WRk"/>
                         <outlet property="promptLabel" destination="bF0-mV-FIa" id="5Kk-pk-Bxy"/>
+                        <segue destination="Eck-8Z-XhH" kind="presentation" identifier="segueToRecall" id="vxr-if-Dwk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bi-X4-7e7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2484" y="337"/>
+        </scene>
+        <!--Recall View Controller-->
+        <scene sceneID="Niv-CE-Nng">
+            <objects>
+                <viewController id="Eck-8Z-XhH" customClass="RecallViewController" customModule="Bio_Reading" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="056-sq-rGX"/>
+                        <viewControllerLayoutGuide type="bottom" id="8il-yR-mbu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xqa-sH-i9b">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIv-aK-gTC">
+                                <rect key="frame" x="277" y="285" width="50" height="30"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordButtonWasHit:" destination="Eck-8Z-XhH" eventType="touchUpInside" id="0MA-U3-TgF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="xIv-aK-gTC" secondAttribute="centerY" id="hPO-0j-vfW"/>
+                            <constraint firstAttribute="centerX" secondItem="xIv-aK-gTC" secondAttribute="centerX" constant="-2" id="w5N-rr-Fx2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="recordButton" destination="xIv-aK-gTC" id="akU-7f-2Nx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tfm-lC-KNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3192" y="337"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zyg-Na-JtE">
