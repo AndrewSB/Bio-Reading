@@ -13,7 +13,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     var foraging = false
     
-    let colors = []
+    let colors = [0x00F900, 0x00AC76, ]
     
     override func viewDidLoad() {
         self.navigationItem.title = "Einstein"
