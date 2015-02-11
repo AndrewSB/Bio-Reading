@@ -13,4 +13,3 @@ extension UIColor {
     //initWithHex(hex: Int) {
     
     }
-}
