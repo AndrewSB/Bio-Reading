@@ -74,13 +74,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3w-0G-eYF">
                                                     <rect key="frame" x="19" y="61.5" width="142" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.21176470588235294" green="0.63529411764705879" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="centerY" secondItem="Z3w-0G-eYF" secondAttribute="centerY" constant="0.5" id="QgG-el-ta4"/>
                                             <constraint firstItem="Z3w-0G-eYF" firstAttribute="leading" secondItem="dZ9-Qd-jKx" secondAttribute="leadingMargin" constant="11" id="Vbj-Cz-m9T"/>
