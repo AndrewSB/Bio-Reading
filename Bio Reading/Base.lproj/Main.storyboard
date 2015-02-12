@@ -52,7 +52,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uG6-0m-Sd0">
-                                <rect key="frame" x="0.0" y="108" width="600" height="482"/>
+                                <rect key="frame" x="20" y="86" width="560" height="482"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UHs-L5-t2m">
                                     <size key="itemSize" width="180" height="144"/>
@@ -68,9 +68,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="144"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3w-0G-eYF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3w-0G-eYF">
                                                     <rect key="frame" x="19" y="61.5" width="142" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -89,22 +89,13 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey _____, you're in selection mode. So go ahead and pick a prompt to continue" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0A-54-yIo">
-                                <rect key="frame" x="16" y="86" width="568" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="uG6-0m-Sd0" secondAttribute="trailing" constant="-16" id="Mp8-tu-i4w"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="E0A-54-yIo" secondAttribute="trailing" id="OWf-jK-6Jv"/>
-                            <constraint firstItem="uG6-0m-Sd0" firstAttribute="top" secondItem="IQj-8A-hzN" secondAttribute="bottom" constant="44" id="Sma-9u-UeD"/>
-                            <constraint firstItem="E0A-54-yIo" firstAttribute="leading" secondItem="AmA-yz-uqk" secondAttribute="leadingMargin" id="TcD-Kh-0Rx"/>
-                            <constraint firstItem="uG6-0m-Sd0" firstAttribute="leading" secondItem="AmA-yz-uqk" secondAttribute="leadingMargin" constant="-16" id="Vsq-Xh-kyR"/>
-                            <constraint firstItem="E0A-54-yIo" firstAttribute="top" secondItem="IQj-8A-hzN" secondAttribute="bottom" constant="22" id="lqf-Bz-D9Z"/>
-                            <constraint firstItem="mnl-3U-i76" firstAttribute="top" secondItem="uG6-0m-Sd0" secondAttribute="bottom" constant="10" id="rpG-cb-xqs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uG6-0m-Sd0" secondAttribute="trailing" constant="4" id="Mp8-tu-i4w"/>
+                            <constraint firstItem="uG6-0m-Sd0" firstAttribute="top" secondItem="IQj-8A-hzN" secondAttribute="bottom" constant="22" id="Sma-9u-UeD"/>
+                            <constraint firstItem="uG6-0m-Sd0" firstAttribute="leading" secondItem="AmA-yz-uqk" secondAttribute="leadingMargin" constant="4" id="Vsq-Xh-kyR"/>
+                            <constraint firstItem="mnl-3U-i76" firstAttribute="top" secondItem="uG6-0m-Sd0" secondAttribute="bottom" constant="32" id="rpG-cb-xqs"/>
                         </constraints>
                     </view>
                     <connections>

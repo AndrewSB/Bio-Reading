@@ -21,7 +21,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        NSUserDefaults.standardUserDefaults().setObject(true, forKey: "timed")
+        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "timed")
         
         super.viewDidLoad()
     }
