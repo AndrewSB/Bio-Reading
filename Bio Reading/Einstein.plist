@@ -3,7 +3,14 @@
 <plist version="1.0">
 <array>
 	<array>
-		<string>Accomplishments</string>
+		<dict>
+			<key>Cue</key>
+			<string>Accomplishments</string>
+			<key>Sentance</key>
+			<string>What were his accomplishments in 1968</string>
+			<key>Proposition</key>
+			<integer>12</integer>
+		</dict>
 		<string>Research Methodology</string>
 		<string>Early childhood</string>
 		<string>Sexual Orientation</string>
