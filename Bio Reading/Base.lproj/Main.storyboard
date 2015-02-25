@@ -26,11 +26,28 @@
                                     <segue destination="80P-xb-Rdw" kind="show" id="vjl-P0-t3g"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Adult Learning Lab UIUC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ype-vy-51S">
+                                <rect key="frame" x="108" y="195" width="384" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio Reading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbQ-pH-1Ge">
+                                <rect key="frame" x="220" y="158" width="160" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ype-vy-51S" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nbQ-pH-1Ge" secondAttribute="bottom" constant="1" id="8jI-6J-SQt"/>
+                            <constraint firstItem="xKK-Dw-q1x" firstAttribute="top" secondItem="Ype-vy-51S" secondAttribute="bottom" priority="900" constant="54" id="EHC-TT-xy9"/>
                             <constraint firstAttribute="centerX" secondItem="xKK-Dw-q1x" secondAttribute="centerX" constant="-0.5" id="RMp-j4-u0U"/>
+                            <constraint firstAttribute="centerX" secondItem="nbQ-pH-1Ge" secondAttribute="centerX" id="YLh-oe-3b0"/>
+                            <constraint firstAttribute="centerX" secondItem="Ype-vy-51S" secondAttribute="centerX" id="bOH-x7-7tU"/>
                             <constraint firstAttribute="centerY" secondItem="xKK-Dw-q1x" secondAttribute="centerY" id="vri-ov-mm5"/>
+                            <constraint firstItem="nbQ-pH-1Ge" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="94" id="ydo-83-wgJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KPj-1Q-34b"/>
@@ -72,7 +89,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3w-0G-eYF">
-                                                    <rect key="frame" x="19" y="61.5" width="142" height="20.5"/>
+                                                    <rect key="frame" x="19" y="62" width="142" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -123,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thing to read" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bF0-mV-FIa">
-                                <rect key="frame" x="38" y="288.5" width="524" height="21.5"/>
+                                <rect key="frame" x="38" y="289" width="524" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
