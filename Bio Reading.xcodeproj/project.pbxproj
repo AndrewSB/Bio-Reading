@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4602A8011A85C7A900C5363E /* PromptPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */; };
 		4602A8031A85C98200C5363E /* Einstein.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4602A8021A85C98200C5363E /* Einstein.plist */; };
+		464F4C5D1A9E9661002803BA /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F4C5C1A9E9661002803BA /* InstructionViewController.swift */; };
 		466A6FDC1A82D756006A2A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDB1A82D756006A2A21 /* AppDelegate.swift */; };
 		466A6FDE1A82D756006A2A21 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDD1A82D756006A2A21 /* InitialViewController.swift */; };
 		466A6FE11A82D756006A2A21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466A6FDF1A82D756006A2A21 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptPickerViewController.swift; sourceTree = "<group>"; };
 		4602A8021A85C98200C5363E /* Einstein.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Einstein.plist; sourceTree = "<group>"; };
+		464F4C5C1A9E9661002803BA /* InstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		466A6FD61A82D756006A2A21 /* Bio Reading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bio Reading.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		466A6FDA1A82D756006A2A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		466A6FDB1A82D756006A2A21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				466A6FDD1A82D756006A2A21 /* InitialViewController.swift */,
+				464F4C5C1A9E9661002803BA /* InstructionViewController.swift */,
 				4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */,
 				4670D40B1A85D44B00318375 /* PromptViewController.swift */,
 				46BA67E31A8805B30072E437 /* RecallViewController.swift */,
@@ -296,6 +299,7 @@
 				4670D40C1A85D44B00318375 /* PromptViewController.swift in Sources */,
 				4670D40A1A85CDB300318375 /* IOHelper.swift in Sources */,
 				4602A8011A85C7A900C5363E /* PromptPickerViewController.swift in Sources */,
+				464F4C5D1A9E9661002803BA /* InstructionViewController.swift in Sources */,
 				46EDB01B1A886118009C6D2C /* UIColorExtension.swift in Sources */,
 				466A6FDE1A82D756006A2A21 /* InitialViewController.swift in Sources */,
 				4670D4081A85CD2800318375 /* PromptCollectionViewCell.swift in Sources */,
