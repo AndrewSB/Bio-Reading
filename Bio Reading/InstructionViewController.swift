@@ -9,5 +9,17 @@
 import UIKit
 
 class InstructionViewController: UIViewController {
-
+    var foraging = Bool()
+    var practice = Bool()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: self)
+        
+        (segue.destinationViewController as PromptPickerViewController).foraging = foraging
+        (segue.destinationViewController as PromptPickerViewController).practice = practice
+    }
 }

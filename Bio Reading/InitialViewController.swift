@@ -18,9 +18,8 @@ class InitialViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         
-        if let s = segue.destinationViewController as? PromptPickerViewController {
-            s.foraging = true
-        }
+        (segue.destinationViewController as InstructionViewController).foraging = true
+        (segue.destinationViewController as InstructionViewController).practice = true
     }
     
     @IBAction func unwindToWelcomeViewController(segue: UIStoryboardSegue) {}

@@ -11,7 +11,9 @@ import UIKit
 class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var foraging = false
+    var foraging = Bool()
+    var practice = Bool()
+    
     
     let colors = [0x00F900, 0x00AC76, ]
     
@@ -30,6 +32,9 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     // COLLECTION VIEW METHODS
     // ======================================
     func collectionView(colorCollectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if practice {
+            return 3
+        }
         return 12
     }
     
