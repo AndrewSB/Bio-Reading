@@ -19,6 +19,7 @@
 		4670D4081A85CD2800318375 /* PromptCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670D4071A85CD2800318375 /* PromptCollectionViewCell.swift */; };
 		4670D40A1A85CDB300318375 /* IOHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670D4091A85CDB300318375 /* IOHelper.swift */; };
 		4670D40C1A85D44B00318375 /* PromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670D40B1A85D44B00318375 /* PromptViewController.swift */; };
+		4671F41D1AA7250A00F626BA /* CuriosityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4671F41C1AA7250A00F626BA /* CuriosityViewController.swift */; };
 		46B2EB7A1A8C229200C9E570 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B2EB781A8C229200C9E570 /* Crashlytics.framework */; };
 		46B2EB7B1A8C229200C9E570 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B2EB791A8C229200C9E570 /* Fabric.framework */; };
 		46BA67E41A8805B30072E437 /* RecallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BA67E31A8805B30072E437 /* RecallViewController.swift */; };
@@ -52,6 +53,7 @@
 		4670D4071A85CD2800318375 /* PromptCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptCollectionViewCell.swift; sourceTree = "<group>"; };
 		4670D4091A85CDB300318375 /* IOHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOHelper.swift; sourceTree = "<group>"; };
 		4670D40B1A85D44B00318375 /* PromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptViewController.swift; sourceTree = "<group>"; };
+		4671F41C1AA7250A00F626BA /* CuriosityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuriosityViewController.swift; sourceTree = "<group>"; };
 		46B2EB781A8C229200C9E570 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		46B2EB791A8C229200C9E570 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		46BA67E31A8805B30072E437 /* RecallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecallViewController.swift; sourceTree = "<group>"; };
@@ -169,8 +171,9 @@
 			children = (
 				466A6FDD1A82D756006A2A21 /* InitialViewController.swift */,
 				464F4C5C1A9E9661002803BA /* InstructionViewController.swift */,
-				4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */,
 				4670D40B1A85D44B00318375 /* PromptViewController.swift */,
+				4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */,
+				4671F41C1AA7250A00F626BA /* CuriosityViewController.swift */,
 				46BA67E31A8805B30072E437 /* RecallViewController.swift */,
 			);
 			name = "View Controllers";
@@ -298,6 +301,7 @@
 			files = (
 				4670D40C1A85D44B00318375 /* PromptViewController.swift in Sources */,
 				4670D40A1A85CDB300318375 /* IOHelper.swift in Sources */,
+				4671F41D1AA7250A00F626BA /* CuriosityViewController.swift in Sources */,
 				4602A8011A85C7A900C5363E /* PromptPickerViewController.swift in Sources */,
 				464F4C5D1A9E9661002803BA /* InstructionViewController.swift in Sources */,
 				46EDB01B1A886118009C6D2C /* UIColorExtension.swift in Sources */,

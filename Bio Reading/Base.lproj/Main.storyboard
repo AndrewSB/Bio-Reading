@@ -303,10 +303,10 @@
             </objects>
             <point key="canvasLocation" x="3877" y="232"/>
         </scene>
-        <!--View Controller-->
+        <!--Curiosity View Controller-->
         <scene sceneID="Qax-jn-aDj">
             <objects>
-                <viewController id="Am2-M7-Uw2" sceneMemberID="viewController">
+                <viewController id="Am2-M7-Uw2" customClass="CuriosityViewController" customModule="Bio_Reading" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dt9-XQ-l1U"/>
                         <viewControllerLayoutGuide type="bottom" id="KtO-wS-oma"/>
@@ -321,8 +321,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minValue="1" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="7GY-Xb-AXX">
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3.5" minValue="0.0" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="7GY-Xb-AXX">
                                 <rect key="frame" x="176" y="440" width="249" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="Am2-M7-Uw2" eventType="valueChanged" id="efc-ld-jHC"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEN-PQ-094">
                                 <rect key="frame" x="269" y="497" width="62" height="48"/>
@@ -334,18 +337,46 @@
                                     <segue destination="YZS-so-Szy" kind="show" identifier="" id="3G5-BI-WmP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cft-GN-HtB">
+                                <rect key="frame" x="160" y="444" width="10" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eg5-WP-2zW">
+                                <rect key="frame" x="295" y="411" width="10" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCg-08-b6s">
+                                <rect key="frame" x="431" y="444" width="10" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wEN-PQ-094" firstAttribute="top" secondItem="7GY-Xb-AXX" secondAttribute="bottom" constant="27" id="07n-rN-cCw"/>
+                            <constraint firstItem="JCg-08-b6s" firstAttribute="leading" secondItem="7GY-Xb-AXX" secondAttribute="trailing" constant="8" id="1bZ-um-vqJ"/>
+                            <constraint firstAttribute="centerX" secondItem="Eg5-WP-2zW" secondAttribute="centerX" id="9VN-5G-0Tg"/>
                             <constraint firstAttribute="centerX" secondItem="wEN-PQ-094" secondAttribute="centerX" id="CDC-sg-aQZ"/>
+                            <constraint firstItem="7GY-Xb-AXX" firstAttribute="leading" secondItem="cft-GN-HtB" secondAttribute="trailing" constant="8" id="Ht1-f9-IUB"/>
+                            <constraint firstItem="7GY-Xb-AXX" firstAttribute="top" secondItem="Eg5-WP-2zW" secondAttribute="bottom" constant="8" id="WtQ-e4-LTM"/>
                             <constraint firstItem="KtO-wS-oma" firstAttribute="top" secondItem="wEN-PQ-094" secondAttribute="bottom" constant="55" id="X2j-DC-CIu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7GY-Xb-AXX" secondAttribute="trailing" constant="161" id="ZMC-c9-wVF"/>
                             <constraint firstItem="uP9-ot-Q6r" firstAttribute="top" secondItem="Dt9-XQ-l1U" secondAttribute="bottom" constant="139" id="gts-dy-Dpa"/>
+                            <constraint firstItem="JCg-08-b6s" firstAttribute="centerY" secondItem="7GY-Xb-AXX" secondAttribute="centerY" constant="-0.5" id="put-gc-hWo"/>
                             <constraint firstItem="7GY-Xb-AXX" firstAttribute="leading" secondItem="TRK-5C-u83" secondAttribute="leadingMargin" constant="162" id="sLi-av-ntF"/>
                             <constraint firstAttribute="centerX" secondItem="uP9-ot-Q6r" secondAttribute="centerX" constant="-6" id="tQq-go-v1I"/>
+                            <constraint firstItem="cft-GN-HtB" firstAttribute="centerY" secondItem="7GY-Xb-AXX" secondAttribute="centerY" constant="-0.5" id="yJ4-Mw-L7Q"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="curiosityLabel" destination="Eg5-WP-2zW" id="sbN-tg-X5p"/>
+                        <outlet property="howCuriousLabel" destination="uP9-ot-Q6r" id="xPX-Wl-Qxw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8I-Rl-H2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

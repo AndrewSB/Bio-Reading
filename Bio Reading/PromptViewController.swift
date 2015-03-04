@@ -9,7 +9,6 @@
 import UIKit
 
 class PromptViewController: UIViewController {
-    var navTitle = "Prompt"
     var isTimed = NSUserDefaults.standardUserDefaults().objectForKey("timed") as Bool
     
     let startTime = NSDate()
@@ -21,7 +20,7 @@ class PromptViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = navTitle
+        navigationItem.title = title
         
         if isTimed {
             setupTimer(continueButton)

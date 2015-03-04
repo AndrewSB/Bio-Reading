@@ -74,12 +74,13 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         
-        if let s = segue.destinationViewController as? PromptViewController {
-            s.navTitle = sender as String
+        (segue.destinationViewController as UIViewController).title = sender as? String
+        
+        if let s = segue.destinationViewController as? CuriosityViewController {
+            s.person = self.navigationItem.title!
         }
     }
     
