@@ -15,10 +15,8 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     var practice = Bool()
     
     var selected = [Bool]()
-    
-    
-    let colors = [0x00F900, 0x00AC76, ]
-    
+    var selectedIndex = Int()
+        
     override func viewDidLoad() {
         self.navigationItem.title = "Einstein"
         
@@ -66,8 +64,11 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         println("lol at \(indexPath.row)")
         if !selected[indexPath.row] {
             collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.grayColor()
-            performSegueWithIdentifier("segueToPromptVC", sender: (collectionView.cellForItemAtIndexPath(indexPath) as PromptCollectionViewCell).promptLabel.text)
             selected[indexPath.row] = true
+            selectedIndex = indexPath.row
+            
+            performSegueWithIdentifier("segueToPromptVC", sender: (collectionView.cellForItemAtIndexPath(indexPath) as PromptCollectionViewCell).promptLabel.text)
+            
         }
     }
     
@@ -81,6 +82,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         
         if let s = segue.destinationViewController as? CuriosityViewController {
             s.person = self.navigationItem.title!
+            s.index = selectedIndex
         }
     }
     
