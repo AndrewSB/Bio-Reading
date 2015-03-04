@@ -9,7 +9,7 @@
 
 @implementation SISinusWaveView
 
-- (id)initWithFrame:(NSRect)frame
+- (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -33,13 +33,11 @@
 }
 
 #pragma mark - EZMicrophoneDelegate
-#warning Thread Safety
 
 -(void)microphone:(EZMicrophone *)microphone
  hasAudioReceived:(float **)buffer
    withBufferSize:(UInt32)bufferSize
 withNumberOfChannels:(UInt32)numberOfChannels {
-	
 	dispatch_async(dispatch_get_main_queue(),^{
 		
 		int requiredTickes = 1; // Alter this to draw more or less often
@@ -56,8 +54,10 @@ withNumberOfChannels:(UInt32)numberOfChannels {
 		
 		_phase += _phaseShift;
 		_amplitude = fmax( fmin(_dampingAmplitude*20, 1.0), _idleAmplitude);
-
-		[self setNeedsDisplay:tick==0];
+        
+        if (tick == 0) {
+            [self setNeedsDisplay];
+        }
 	});
 }
 
@@ -69,24 +69,21 @@ withNumberOfChannels:(UInt32)numberOfChannels {
 		[_microphone stopFetchingAudio];
 		_amplitude = 0;
 	}
-	[self setNeedsDisplay:YES];
+	[self setNeedsDisplay];
 }
 #pragma mark - Drawing
 
-- (void)drawRect:(NSRect)dirtyRect {
-	
+-(void)drawRect:(CGRect)rect {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextClearRect(context, rect);
 	// We draw multiple sinus waves, with equal phases but altered amplitudes, multiplied by a parable function.
 	for(int i=0;i<_waves+1;i++) {
 		
-		[[NSGraphicsContext currentContext] saveGraphicsState];
-		NSGraphicsContext * nsGraphicsContext = [NSGraphicsContext currentContext];
-		CGContextRef context = (CGContextRef) [nsGraphicsContext graphicsPort];
-		
 		// The first wave is drawn with a 2px stroke width, all others a with 1px stroke width.
-		CGContextSetLineWidth(context, (i==0)? 2:1 );
+		CGContextSetLineWidth(context, (i==0) ? 2 : 1);
 		
-		float halfHeight = NSHeight(self.bounds)/2;
-		float width = NSWidth(self.bounds);
+		float halfHeight = self.bounds.size.height / 2;
+		float width = self.bounds.size.width;
 		float mid = width /2.0;
 		
 		const float maxAmplitude = halfHeight-4; // 4 corresponds to twice the stroke width
@@ -96,13 +93,13 @@ withNumberOfChannels:(UInt32)numberOfChannels {
 		float normedAmplitude = (1.5*progress-0.5)*_amplitude;
 		
 		// Choose the color based on the progress (that is, based on the wave idx)
-		[[NSColor colorWithCalibratedWhite:_whiteValue alpha:progress/3.0*2+1.0/3.0] set];
+        CGContextSetStrokeColorWithColor(context, [UIColor colorWithWhite:_whiteValue alpha:progress/3.0*2+1.0/3.0].CGColor);
 		
 		for(float x = 0; x<width+_density; x+=_density) {
 			
 			// We use a parable to scale the sinus wave, that has its peak in the middle of the view.
 			float scaling = -pow(1/mid*(x-mid),2)+1;
-						
+            
 			float y = scaling *maxAmplitude *normedAmplitude *sinf(2 *M_PI *(x / width) *_frequency +_phase) + halfHeight;
 			
 			if (x==0) CGContextMoveToPoint(context, x, y);
