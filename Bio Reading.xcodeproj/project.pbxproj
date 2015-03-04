@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4602A8011A85C7A900C5363E /* PromptPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */; };
 		4602A8031A85C98200C5363E /* Einstein.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4602A8021A85C98200C5363E /* Einstein.plist */; };
+		462CE03F1AA7330B00EC96BE /* SISinusWaveView-iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 462CE03C1AA7330B00EC96BE /* SISinusWaveView-iOS.m */; };
+		462CE0401AA7330B00EC96BE /* SISinusWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 462CE03E1AA7330B00EC96BE /* SISinusWaveView.m */; };
 		464F4C5D1A9E9661002803BA /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F4C5C1A9E9661002803BA /* InstructionViewController.swift */; };
 		466A6FDC1A82D756006A2A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDB1A82D756006A2A21 /* AppDelegate.swift */; };
 		466A6FDE1A82D756006A2A21 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDD1A82D756006A2A21 /* InitialViewController.swift */; };
@@ -39,6 +41,11 @@
 /* Begin PBXFileReference section */
 		4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptPickerViewController.swift; sourceTree = "<group>"; };
 		4602A8021A85C98200C5363E /* Einstein.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Einstein.plist; sourceTree = "<group>"; };
+		462CE02A1AA7304C00EC96BE /* Bio Reading-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bio Reading-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		462CE03B1AA7330B00EC96BE /* SISinusWaveView-iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SISinusWaveView-iOS.h"; sourceTree = "<group>"; };
+		462CE03C1AA7330B00EC96BE /* SISinusWaveView-iOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SISinusWaveView-iOS.m"; sourceTree = "<group>"; };
+		462CE03D1AA7330B00EC96BE /* SISinusWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISinusWaveView.h; sourceTree = "<group>"; };
+		462CE03E1AA7330B00EC96BE /* SISinusWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISinusWaveView.m; sourceTree = "<group>"; };
 		464F4C5C1A9E9661002803BA /* InstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		466A6FD61A82D756006A2A21 /* Bio Reading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bio Reading.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		466A6FDA1A82D756006A2A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +90,10 @@
 		466A6FCD1A82D756006A2A21 = {
 			isa = PBXGroup;
 			children = (
+				462CE03B1AA7330B00EC96BE /* SISinusWaveView-iOS.h */,
+				462CE03C1AA7330B00EC96BE /* SISinusWaveView-iOS.m */,
+				462CE03D1AA7330B00EC96BE /* SISinusWaveView.h */,
+				462CE03E1AA7330B00EC96BE /* SISinusWaveView.m */,
 				46B2EB781A8C229200C9E570 /* Crashlytics.framework */,
 				46B2EB791A8C229200C9E570 /* Fabric.framework */,
 				466A6FD81A82D756006A2A21 /* Bio Reading */,
@@ -119,6 +130,7 @@
 		466A6FD91A82D756006A2A21 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				462CE02A1AA7304C00EC96BE /* Bio Reading-Bridging-Header.h */,
 				466A6FDA1A82D756006A2A21 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -299,9 +311,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462CE03F1AA7330B00EC96BE /* SISinusWaveView-iOS.m in Sources */,
 				4670D40C1A85D44B00318375 /* PromptViewController.swift in Sources */,
 				4670D40A1A85CDB300318375 /* IOHelper.swift in Sources */,
 				4671F41D1AA7250A00F626BA /* CuriosityViewController.swift in Sources */,
+				462CE0401AA7330B00EC96BE /* SISinusWaveView.m in Sources */,
 				4602A8011A85C7A900C5363E /* PromptPickerViewController.swift in Sources */,
 				464F4C5D1A9E9661002803BA /* InstructionViewController.swift in Sources */,
 				46EDB01B1A886118009C6D2C /* UIColorExtension.swift in Sources */,
@@ -433,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -443,6 +458,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bio Reading-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -450,6 +467,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -460,6 +478,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bio Reading-Bridging-Header.h";
 			};
 			name = Release;
 		};
