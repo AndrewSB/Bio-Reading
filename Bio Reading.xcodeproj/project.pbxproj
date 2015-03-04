@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		4602A8011A85C7A900C5363E /* PromptPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */; };
 		4602A8031A85C98200C5363E /* Einstein.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4602A8021A85C98200C5363E /* Einstein.plist */; };
-		462CE0261AA72CFA00EC96BE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462CE0241AA72CFA00EC96BE /* AudioToolbox.framework */; };
-		462CE0271AA72CFA00EC96BE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462CE0251AA72CFA00EC96BE /* AVFoundation.framework */; };
-		462CE0291AA72D0000EC96BE /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462CE0281AA72D0000EC96BE /* GLKit.framework */; };
 		464F4C5D1A9E9661002803BA /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F4C5C1A9E9661002803BA /* InstructionViewController.swift */; };
 		466A6FDC1A82D756006A2A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDB1A82D756006A2A21 /* AppDelegate.swift */; };
 		466A6FDE1A82D756006A2A21 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDD1A82D756006A2A21 /* InitialViewController.swift */; };
@@ -27,7 +24,6 @@
 		46B2EB7B1A8C229200C9E570 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B2EB791A8C229200C9E570 /* Fabric.framework */; };
 		46BA67E41A8805B30072E437 /* RecallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BA67E31A8805B30072E437 /* RecallViewController.swift */; };
 		46EDB01B1A886118009C6D2C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EDB01A1A886118009C6D2C /* UIColorExtension.swift */; };
-		A3F3C3D62C2493A1F28C3320 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD75C724A96A21391E164570 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,13 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		35653C35770D8E9CB734727C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptPickerViewController.swift; sourceTree = "<group>"; };
 		4602A8021A85C98200C5363E /* Einstein.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Einstein.plist; sourceTree = "<group>"; };
-		462CE0201AA72C8E00EC96BE /* Bio Reading-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bio Reading-Bridging-Header.h"; sourceTree = "<group>"; };
-		462CE0241AA72CFA00EC96BE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		462CE0251AA72CFA00EC96BE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		462CE0281AA72D0000EC96BE /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		464F4C5C1A9E9661002803BA /* InstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		466A6FD61A82D756006A2A21 /* Bio Reading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bio Reading.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		466A6FDA1A82D756006A2A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,8 +58,6 @@
 		46B2EB791A8C229200C9E570 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		46BA67E31A8805B30072E437 /* RecallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecallViewController.swift; sourceTree = "<group>"; };
 		46EDB01A1A886118009C6D2C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		695FC8A527586132C78922B4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		DD75C724A96A21391E164570 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,12 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				462CE0291AA72D0000EC96BE /* GLKit.framework in Frameworks */,
-				462CE0261AA72CFA00EC96BE /* AudioToolbox.framework in Frameworks */,
-				462CE0271AA72CFA00EC96BE /* AVFoundation.framework in Frameworks */,
 				46B2EB7A1A8C229200C9E570 /* Crashlytics.framework in Frameworks */,
 				46B2EB7B1A8C229200C9E570 /* Fabric.framework in Frameworks */,
-				A3F3C3D62C2493A1F28C3320 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,8 +88,6 @@
 				466A6FD81A82D756006A2A21 /* Bio Reading */,
 				466A6FEE1A82D756006A2A21 /* Bio ReadingTests */,
 				466A6FD71A82D756006A2A21 /* Products */,
-				D20211F9E00A950A3FBD62B6 /* Pods */,
-				7098D49EDD45E49F2ADA788B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +110,7 @@
 				46BA67E01A88002D0072E437 /* Helpers */,
 				46BA67E11A8800360072E437 /* Resources */,
 				466A6FE21A82D756006A2A21 /* Images.xcassets */,
+				466A6FE41A82D756006A2A21 /* LaunchScreen.xib */,
 				466A6FD91A82D756006A2A21 /* Supporting Files */,
 			);
 			path = "Bio Reading";
@@ -135,9 +119,7 @@
 		466A6FD91A82D756006A2A21 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				466A6FE41A82D756006A2A21 /* LaunchScreen.xib */,
 				466A6FDA1A82D756006A2A21 /* Info.plist */,
-				462CE0201AA72C8E00EC96BE /* Bio Reading-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -197,26 +179,6 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		7098D49EDD45E49F2ADA788B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				462CE0281AA72D0000EC96BE /* GLKit.framework */,
-				462CE0241AA72CFA00EC96BE /* AudioToolbox.framework */,
-				462CE0251AA72CFA00EC96BE /* AVFoundation.framework */,
-				DD75C724A96A21391E164570 /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D20211F9E00A950A3FBD62B6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				695FC8A527586132C78922B4 /* Pods.debug.xcconfig */,
-				35653C35770D8E9CB734727C /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,12 +186,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 466A6FF51A82D756006A2A21 /* Build configuration list for PBXNativeTarget "Bio Reading" */;
 			buildPhases = (
-				B4A19E49EF61C4C8758DFAD9 /* Check Pods Manifest.lock */,
 				466A6FD21A82D756006A2A21 /* Sources */,
 				466A6FD31A82D756006A2A21 /* Frameworks */,
 				466A6FD41A82D756006A2A21 /* Resources */,
 				46B2EB771A8C222F00C9E570 /* Run Fabric */,
-				0FC780B7CF0024CC32B621A4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,21 +278,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0FC780B7CF0024CC32B621A4 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		46B2EB771A8C222F00C9E570 /* Run Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -346,21 +291,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run cf31bd871fb35d3e3e94b3732cd654bbde1f5b0c 33804315ff66b7966281403539d1d005fcf98139ee03282942a67832a10b0f8e";
-		};
-		B4A19E49EF61C4C8758DFAD9 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -501,10 +431,8 @@
 		};
 		466A6FF61A82D756006A2A21 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 695FC8A527586132C78922B4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -515,17 +443,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Bio Reading/Bio Reading-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		466A6FF71A82D756006A2A21 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35653C35770D8E9CB734727C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -536,7 +460,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Bio Reading/Bio Reading-Bridging-Header.h";
 			};
 			name = Release;
 		};
