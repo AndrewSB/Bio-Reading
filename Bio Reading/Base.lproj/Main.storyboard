@@ -204,7 +204,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uG6-0m-Sd0">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uG6-0m-Sd0">
                                 <rect key="frame" x="20" y="86" width="560" height="438"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UHs-L5-t2m">
@@ -410,22 +410,33 @@
                                     <segue destination="mXU-bL-Gtc" kind="show" id="Rnm-s6-YgV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Recall the sentance aloud" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fw-9c-opN">
-                                <rect key="frame" x="132" y="195" width="338" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recall the sentance aloud" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fw-9c-opN">
+                                <rect key="frame" x="132" y="151" width="338" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcd-HY-DVX" customClass="EZAudioPlotGL">
+                                <rect key="frame" x="163" y="215" width="275" height="201"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="U0V-so-1ZK" firstAttribute="top" secondItem="mcd-HY-DVX" secondAttribute="bottom" constant="54" id="51f-lM-Xqa"/>
                             <constraint firstAttribute="centerX" secondItem="1fw-9c-opN" secondAttribute="centerX" constant="-0.5" id="Ndb-OJ-66D"/>
                             <constraint firstItem="8il-yR-mbu" firstAttribute="top" secondItem="U0V-so-1ZK" secondAttribute="bottom" constant="82" id="Pzm-79-YU6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mcd-HY-DVX" secondAttribute="trailing" constant="146" id="RTQ-8S-xdf"/>
                             <constraint firstItem="1fw-9c-opN" firstAttribute="top" secondItem="056-sq-rGX" secondAttribute="bottom" constant="131" id="Rvv-lC-klN"/>
+                            <constraint firstItem="mcd-HY-DVX" firstAttribute="leading" secondItem="Xqa-sH-i9b" secondAttribute="leadingMargin" constant="147" id="cdB-G0-EMn"/>
+                            <constraint firstItem="mcd-HY-DVX" firstAttribute="top" secondItem="1fw-9c-opN" secondAttribute="bottom" constant="28" id="rM7-bU-M7I"/>
                             <constraint firstAttribute="centerX" secondItem="U0V-so-1ZK" secondAttribute="centerX" constant="-0.5" id="yG0-rb-ufX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fYd-SF-p47"/>
+                    <connections>
+                        <outlet property="waveView" destination="mcd-HY-DVX" id="wgM-Ab-Sid"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tfm-lC-KNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -434,7 +445,7 @@
         <!--Navigation Controller-->
         <scene sceneID="zyg-Na-JtE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="duy-H3-9Tf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="duy-H3-9Tf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kYt-cz-ApB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

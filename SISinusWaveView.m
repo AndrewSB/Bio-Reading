@@ -89,7 +89,8 @@ withNumberOfChannels:(UInt32)numberOfChannels {
 		const float maxAmplitude = halfHeight-4; // 4 corresponds to twice the stroke width
 		
 		// Progress is a value between 1.0 and -0.5, determined by the current wave idx, which is used to alter the wave's amplitude.
-		float progress = 1.0-(float)i/_waves;
+        float progress = 1.0 - (float)i/_waves;
+        
 		float normedAmplitude = (1.5*progress-0.5)*_amplitude;
 		
 		// Choose the color based on the progress (that is, based on the wave idx)
