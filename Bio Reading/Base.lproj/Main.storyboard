@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="duy-H3-9Tf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="duy-H3-9Tf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -302,7 +302,7 @@
                     <connections>
                         <outlet property="continueButton" destination="DZM-rS-8Ic" id="mmC-TT-WRk"/>
                         <outlet property="promptLabel" destination="bF0-mV-FIa" id="5Kk-pk-Bxy"/>
-                        <segue destination="0ua-Lr-c4d" kind="presentation" identifier="segueToRecall" id="vxr-if-Dwk"/>
+                        <segue destination="Eck-8Z-XhH" kind="presentation" identifier="segueToRecall" id="WJ7-bx-r7d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bi-X4-7e7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -400,12 +400,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wave" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7A-Zy-DGJ">
-                                <rect key="frame" x="279" y="349" width="43" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0V-so-1ZK">
                                 <rect key="frame" x="266" y="470" width="70" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -416,7 +410,7 @@
                                     <segue destination="mXU-bL-Gtc" kind="show" id="Rnm-s6-YgV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recall the sentance aloud" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fw-9c-opN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Recall the sentance aloud" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fw-9c-opN">
                                 <rect key="frame" x="132" y="195" width="338" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -425,11 +419,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="A7A-Zy-DGJ" secondAttribute="centerX" constant="-0.5" id="13A-7l-CPm"/>
                             <constraint firstAttribute="centerX" secondItem="1fw-9c-opN" secondAttribute="centerX" constant="-0.5" id="Ndb-OJ-66D"/>
                             <constraint firstItem="8il-yR-mbu" firstAttribute="top" secondItem="U0V-so-1ZK" secondAttribute="bottom" constant="82" id="Pzm-79-YU6"/>
                             <constraint firstItem="1fw-9c-opN" firstAttribute="top" secondItem="056-sq-rGX" secondAttribute="bottom" constant="131" id="Rvv-lC-klN"/>
-                            <constraint firstItem="A7A-Zy-DGJ" firstAttribute="top" secondItem="1fw-9c-opN" secondAttribute="bottom" constant="118" id="UBp-z4-XJF"/>
                             <constraint firstAttribute="centerX" secondItem="U0V-so-1ZK" secondAttribute="centerX" constant="-0.5" id="yG0-rb-ufX"/>
                         </constraints>
                     </view>
@@ -437,7 +429,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tfm-lC-KNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5468" y="289"/>
+            <point key="canvasLocation" x="4720" y="259"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zyg-Na-JtE">
@@ -456,24 +448,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ix-fJ-lVJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-59" y="952"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="P98-YS-CqA">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0ua-Lr-c4d" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mr7-1g-wbO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Eck-8Z-XhH" kind="relationship" relationship="rootViewController" id="kFt-cH-ywq"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cN7-6T-v2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4516" y="257"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uDp-ZY-XOe">
@@ -522,7 +496,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2v7-qW-KgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="1ud-eh-SzI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6158" y="289"/>
+            <point key="canvasLocation" x="5574" y="241"/>
         </scene>
     </scenes>
 </document>
