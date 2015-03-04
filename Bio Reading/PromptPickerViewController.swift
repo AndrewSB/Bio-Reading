@@ -14,6 +14,8 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     var foraging = Bool()
     var practice = Bool()
     
+    var selected = [Bool]()
+    
     
     let colors = [0x00F900, 0x00AC76, ]
     
@@ -26,6 +28,11 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         NSUserDefaults.standardUserDefaults().setObject(false, forKey: "timed")
         
         super.viewDidLoad()
+        
+        
+        for (var i = 0; i < (practice ? 3 : 12); i++) {
+            selected.append(false)
+        }
     }
     
     // ======================================
@@ -42,6 +49,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellID", forIndexPath: indexPath) as PromptCollectionViewCell
         
         cell.promptLabel.text = getPrompt(self.navigationItem.title!, indexPath.row)
+        cell.backgroundColor = selected[indexPath.row] ? UIColor.grayColor() : UIColor(red: 0.251, green: 0.69, blue: 0.692, alpha: 1)
         
         return cell
     }
@@ -56,7 +64,11 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         println("lol at \(indexPath.row)")
-        performSegueWithIdentifier("segueToPromptVC", sender: (collectionView.cellForItemAtIndexPath(indexPath) as PromptCollectionViewCell).promptLabel.text)
+        if !selected[indexPath.row] {
+            collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.grayColor()
+            performSegueWithIdentifier("segueToPromptVC", sender: (collectionView.cellForItemAtIndexPath(indexPath) as PromptCollectionViewCell).promptLabel.text)
+            selected[indexPath.row] = true
+        }
     }
     
     
