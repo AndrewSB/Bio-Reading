@@ -18,7 +18,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     var selectedIndex = Int()
         
     override func viewDidLoad() {
-        self.navigationItem.title = "Einstein"
+        self.navigationItem.title = "Marie Curie"
         
         collectionView.delegate = self
         collectionView.dataSource = self

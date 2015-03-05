@@ -35,7 +35,6 @@ class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophon
         mic.startFetchingAudio()
         
         recorder = EZRecorder(destinationURL: soundFileURL!, sourceFormat: mic.audioStreamBasicDescription(), destinationFileType: EZRecorderFileType.WAV)
-//        println("written to \()")
     }
     
     func microphone(microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
@@ -48,20 +47,7 @@ class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophon
         
     }
     
-    func startRecording() {
-        recordButton.setTitle("Stop recording", forState: .Normal)
-    }
-    
-    func endRecording() {
-        recordButton.setTitle("Record again", forState: .Normal)
-    }
-    
-    
-    @IBAction func recordButtonWasHit(sender: AnyObject) {
-        if isRecording {
-            endRecording()
-        } else {
-            startRecording()
-        }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        mic.stopFetchingAudio()
     }
 }

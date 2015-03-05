@@ -25,6 +25,8 @@
 		46B2EB7B1A8C229200C9E570 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B2EB791A8C229200C9E570 /* Fabric.framework */; };
 		46BA67E41A8805B30072E437 /* RecallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BA67E31A8805B30072E437 /* RecallViewController.swift */; };
 		46EDB01B1A886118009C6D2C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EDB01A1A886118009C6D2C /* UIColorExtension.swift */; };
+		46FD068E1AA7BBCE008E175B /* FamiliarityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FD068D1AA7BBCE008E175B /* FamiliarityViewController.swift */; };
+		46FD06921AA7D439008E175B /* Marie Curie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46FD06911AA7D439008E175B /* Marie Curie.plist */; };
 		8656BB474A2FF6F6CCF548A2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC07F56476296E30EB238E32 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		46B2EB791A8C229200C9E570 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		46BA67E31A8805B30072E437 /* RecallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecallViewController.swift; sourceTree = "<group>"; };
 		46EDB01A1A886118009C6D2C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		46FD068D1AA7BBCE008E175B /* FamiliarityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamiliarityViewController.swift; sourceTree = "<group>"; };
+		46FD06911AA7D439008E175B /* Marie Curie.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Marie Curie.plist"; sourceTree = "<group>"; };
 		6D0C1CE6163405EEFC7A8399 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D8A547CEAC87AEAA79986374 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FC07F56476296E30EB238E32 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				4602A8021A85C98200C5363E /* Einstein.plist */,
+				46FD06911AA7D439008E175B /* Marie Curie.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */,
 				4671F41C1AA7250A00F626BA /* CuriosityViewController.swift */,
 				46BA67E31A8805B30072E437 /* RecallViewController.swift */,
+				46FD068D1AA7BBCE008E175B /* FamiliarityViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -262,10 +268,11 @@
 				TargetAttributes = {
 					466A6FD51A82D756006A2A21 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = JQUR3MJ3GB;
+						DevelopmentTeam = 2Z475Y2H59;
 					};
 					466A6FEA1A82D756006A2A21 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 2Z475Y2H59;
 						TestTargetID = 466A6FD51A82D756006A2A21;
 					};
 				};
@@ -295,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				466A6FE11A82D756006A2A21 /* Main.storyboard in Resources */,
+				46FD06921AA7D439008E175B /* Marie Curie.plist in Resources */,
 				466A6FE61A82D756006A2A21 /* LaunchScreen.xib in Resources */,
 				466A6FE31A82D756006A2A21 /* Images.xcassets in Resources */,
 				4602A8031A85C98200C5363E /* Einstein.plist in Resources */,
@@ -366,6 +374,7 @@
 				4670D40C1A85D44B00318375 /* PromptViewController.swift in Sources */,
 				4670D40A1A85CDB300318375 /* IOHelper.swift in Sources */,
 				4671F41D1AA7250A00F626BA /* CuriosityViewController.swift in Sources */,
+				46FD068E1AA7BBCE008E175B /* FamiliarityViewController.swift in Sources */,
 				4602A8011A85C7A900C5363E /* PromptPickerViewController.swift in Sources */,
 				464F4C5D1A9E9661002803BA /* InstructionViewController.swift in Sources */,
 				46EDB01B1A886118009C6D2C /* UIColorExtension.swift in Sources */,
