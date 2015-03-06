@@ -13,7 +13,6 @@
 		464F4C5D1A9E9661002803BA /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F4C5C1A9E9661002803BA /* InstructionViewController.swift */; };
 		466A6FDC1A82D756006A2A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDB1A82D756006A2A21 /* AppDelegate.swift */; };
 		466A6FDE1A82D756006A2A21 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDD1A82D756006A2A21 /* InitialViewController.swift */; };
-		466A6FE11A82D756006A2A21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466A6FDF1A82D756006A2A21 /* Main.storyboard */; };
 		466A6FE31A82D756006A2A21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466A6FE21A82D756006A2A21 /* Images.xcassets */; };
 		466A6FE61A82D756006A2A21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 466A6FE41A82D756006A2A21 /* LaunchScreen.xib */; };
 		466A6FF21A82D756006A2A21 /* Bio_ReadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FF11A82D756006A2A21 /* Bio_ReadingTests.swift */; };
@@ -24,6 +23,7 @@
 		46B2EB7A1A8C229200C9E570 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B2EB781A8C229200C9E570 /* Crashlytics.framework */; };
 		46B2EB7B1A8C229200C9E570 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B2EB791A8C229200C9E570 /* Fabric.framework */; };
 		46BA67E41A8805B30072E437 /* RecallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BA67E31A8805B30072E437 /* RecallViewController.swift */; };
+		46BA9C691AA7D8AC00CCF9EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466A6FDF1A82D756006A2A21 /* Main.storyboard */; };
 		46EDB01B1A886118009C6D2C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EDB01A1A886118009C6D2C /* UIColorExtension.swift */; };
 		46FD068E1AA7BBCE008E175B /* FamiliarityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FD068D1AA7BBCE008E175B /* FamiliarityViewController.swift */; };
 		46FD06921AA7D439008E175B /* Marie Curie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46FD06911AA7D439008E175B /* Marie Curie.plist */; };
@@ -301,8 +301,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				466A6FE11A82D756006A2A21 /* Main.storyboard in Resources */,
 				46FD06921AA7D439008E175B /* Marie Curie.plist in Resources */,
+				46BA9C691AA7D8AC00CCF9EE /* Main.storyboard in Resources */,
 				466A6FE61A82D756006A2A21 /* LaunchScreen.xib in Resources */,
 				466A6FE31A82D756006A2A21 /* Images.xcassets in Resources */,
 				4602A8031A85C98200C5363E /* Einstein.plist in Resources */,
