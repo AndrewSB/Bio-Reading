@@ -15,7 +15,6 @@
 		466A6FDE1A82D756006A2A21 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDD1A82D756006A2A21 /* InitialViewController.swift */; };
 		466A6FE31A82D756006A2A21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466A6FE21A82D756006A2A21 /* Images.xcassets */; };
 		466A6FE61A82D756006A2A21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 466A6FE41A82D756006A2A21 /* LaunchScreen.xib */; };
-		466A6FF21A82D756006A2A21 /* Bio_ReadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FF11A82D756006A2A21 /* Bio_ReadingTests.swift */; };
 		4670D4081A85CD2800318375 /* PromptCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670D4071A85CD2800318375 /* PromptCollectionViewCell.swift */; };
 		4670D40A1A85CDB300318375 /* IOHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670D4091A85CDB300318375 /* IOHelper.swift */; };
 		4670D40C1A85D44B00318375 /* PromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670D40B1A85D44B00318375 /* PromptViewController.swift */; };
@@ -29,16 +28,6 @@
 		46FD06921AA7D439008E175B /* Marie Curie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46FD06911AA7D439008E175B /* Marie Curie.plist */; };
 		8656BB474A2FF6F6CCF548A2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC07F56476296E30EB238E32 /* libPods.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		466A6FEC1A82D756006A2A21 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 466A6FCE1A82D756006A2A21 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 466A6FD51A82D756006A2A21;
-			remoteInfo = "Bio Reading";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptPickerViewController.swift; sourceTree = "<group>"; };
@@ -54,9 +43,6 @@
 		466A6FE01A82D756006A2A21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		466A6FE21A82D756006A2A21 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		466A6FE51A82D756006A2A21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		466A6FEB1A82D756006A2A21 /* Bio ReadingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bio ReadingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		466A6FF01A82D756006A2A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		466A6FF11A82D756006A2A21 /* Bio_ReadingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bio_ReadingTests.swift; sourceTree = "<group>"; };
 		4670D4071A85CD2800318375 /* PromptCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptCollectionViewCell.swift; sourceTree = "<group>"; };
 		4670D4091A85CDB300318375 /* IOHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOHelper.swift; sourceTree = "<group>"; };
 		4670D40B1A85D44B00318375 /* PromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptViewController.swift; sourceTree = "<group>"; };
@@ -83,25 +69,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		466A6FE81A82D756006A2A21 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		466A6FCD1A82D756006A2A21 = {
+		46111F601ACDD68100C14878 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
 				462CE0411AA733D400EC96BE /* SISinusWaveView.h */,
 				462CE0421AA733D400EC96BE /* SISinusWaveView.m */,
 				46B2EB781A8C229200C9E570 /* Crashlytics.framework */,
 				46B2EB791A8C229200C9E570 /* Fabric.framework */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		466A6FCD1A82D756006A2A21 = {
+			isa = PBXGroup;
+			children = (
 				466A6FD81A82D756006A2A21 /* Bio Reading */,
-				466A6FEE1A82D756006A2A21 /* Bio ReadingTests */,
 				466A6FD71A82D756006A2A21 /* Products */,
 				79AB43E3C01ECC54E3E4FDF0 /* Pods */,
 				94183358954FE9F969DFB8F1 /* Frameworks */,
@@ -112,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				466A6FD61A82D756006A2A21 /* Bio Reading.app */,
-				466A6FEB1A82D756006A2A21 /* Bio ReadingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,23 +122,6 @@
 			children = (
 				462CE02A1AA7304C00EC96BE /* Bio Reading-Bridging-Header.h */,
 				466A6FDA1A82D756006A2A21 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		466A6FEE1A82D756006A2A21 /* Bio ReadingTests */ = {
-			isa = PBXGroup;
-			children = (
-				466A6FF11A82D756006A2A21 /* Bio_ReadingTests.swift */,
-				466A6FEF1A82D756006A2A21 /* Supporting Files */,
-			);
-			path = "Bio ReadingTests";
-			sourceTree = "<group>";
-		};
-		466A6FEF1A82D756006A2A21 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				466A6FF01A82D756006A2A21 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -211,6 +178,7 @@
 		94183358954FE9F969DFB8F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				46111F601ACDD68100C14878 /* Libs */,
 				FC07F56476296E30EB238E32 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -239,24 +207,6 @@
 			productReference = 466A6FD61A82D756006A2A21 /* Bio Reading.app */;
 			productType = "com.apple.product-type.application";
 		};
-		466A6FEA1A82D756006A2A21 /* Bio ReadingTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 466A6FF81A82D756006A2A21 /* Build configuration list for PBXNativeTarget "Bio ReadingTests" */;
-			buildPhases = (
-				466A6FE71A82D756006A2A21 /* Sources */,
-				466A6FE81A82D756006A2A21 /* Frameworks */,
-				466A6FE91A82D756006A2A21 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				466A6FED1A82D756006A2A21 /* PBXTargetDependency */,
-			);
-			name = "Bio ReadingTests";
-			productName = "Bio ReadingTests";
-			productReference = 466A6FEB1A82D756006A2A21 /* Bio ReadingTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -269,11 +219,6 @@
 					466A6FD51A82D756006A2A21 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 2Z475Y2H59;
-					};
-					466A6FEA1A82D756006A2A21 = {
-						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 2Z475Y2H59;
-						TestTargetID = 466A6FD51A82D756006A2A21;
 					};
 				};
 			};
@@ -291,7 +236,6 @@
 			projectRoot = "";
 			targets = (
 				466A6FD51A82D756006A2A21 /* Bio Reading */,
-				466A6FEA1A82D756006A2A21 /* Bio ReadingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -306,13 +250,6 @@
 				466A6FE61A82D756006A2A21 /* LaunchScreen.xib in Resources */,
 				466A6FE31A82D756006A2A21 /* Images.xcassets in Resources */,
 				4602A8031A85C98200C5363E /* Einstein.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		466A6FE91A82D756006A2A21 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,23 +322,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		466A6FE71A82D756006A2A21 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				466A6FF21A82D756006A2A21 /* Bio_ReadingTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		466A6FED1A82D756006A2A21 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 466A6FD51A82D756006A2A21 /* Bio Reading */;
-			targetProxy = 466A6FEC1A82D756006A2A21 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		466A6FDF1A82D756006A2A21 /* Main.storyboard */ = {
@@ -543,40 +464,6 @@
 			};
 			name = Release;
 		};
-		466A6FF91A82D756006A2A21 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Bio ReadingTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bio Reading.app/Bio Reading";
-			};
-			name = Debug;
-		};
-		466A6FFA1A82D756006A2A21 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Bio ReadingTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bio Reading.app/Bio Reading";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -594,15 +481,6 @@
 			buildConfigurations = (
 				466A6FF61A82D756006A2A21 /* Debug */,
 				466A6FF71A82D756006A2A21 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		466A6FF81A82D756006A2A21 /* Build configuration list for PBXNativeTarget "Bio ReadingTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				466A6FF91A82D756006A2A21 /* Debug */,
-				466A6FFA1A82D756006A2A21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
