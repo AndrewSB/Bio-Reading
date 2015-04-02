@@ -10,33 +10,58 @@ import UIKit
 
 class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     var foraging = Bool()
     var practice = Bool()
     
     var selected = [Bool]()
     var selectedIndex = Int()
-        
-    override func viewDidLoad() {
-        self.navigationItem.title = "Marie Curie"
+    
+    var curIndex = 0
+    
+    let demPeeps = [("Einstien", true), ("Marie Curie", false), ("Einstien", true)]
+    var currentPeep: (String, Bool) = (String(), Bool())
+
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         collectionView.delegate = self
         collectionView.dataSource = self
         
         NSUserDefaults.standardUserDefaults().setObject(false, forKey: "timed")
         
-        super.viewDidLoad()
-        
-        
-        for (var i = 0; i < (practice ? 3 : 12); i++) {
-            selected.append(false)
+        if selected.count == 0 {
+            for (var i = 0; i < (practice ? 3 : 12); i++) {
+                selected.append(false)
+            }
         }
+        
+        doneLogic()
+        
+        if practice {
+            currentPeep = ("Marie Curie", false)
+            curIndex = -1
+        }
+        
+        
+        self.navigationItem.title = currentPeep.0
+        foraging = currentPeep.1
+        
+        
+        println(self.navigationItem.title!)
+    
+        nameLabel.text = self.navigationItem.title!
+        
+        foragingLogic()
     }
     
     // ======================================
     // COLLECTION VIEW METHODS
     // ======================================
     func collectionView(colorCollectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         if practice {
             return 3
         }
@@ -65,10 +90,64 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         if !selected[indexPath.row] {
             collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.grayColor()
             selected[indexPath.row] = true
+            
             selectedIndex = indexPath.row
             
             performSegueWithIdentifier("segueToPromptVC", sender: (collectionView.cellForItemAtIndexPath(indexPath) as PromptCollectionViewCell).promptLabel.text)
             
+        }
+    }
+    
+    // MARK: - Helper
+    func foragingLogic() {
+        if foraging {
+            view.userInteractionEnabled = false
+            
+            let time: Int64 = Int64(NSEC_PER_SEC)
+            let popTime = dispatch_time(DISPATCH_TIME_NOW, time);
+            dispatch_after(popTime, dispatch_get_main_queue(), {
+                
+                var segueToCell = UICollectionViewCell()
+                for (index, element) in enumerate(self.collectionView.visibleCells()) {
+                    if self.selected[index] == false {
+                        segueToCell = element as UICollectionViewCell
+                    }
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.collectionView.selectItemAtIndexPath(self.collectionView.indexPathForCell(segueToCell), animated: true, scrollPosition: .None)
+                })
+            });
+
+        } else {
+            
+        }
+        
+    }
+    
+    func doneLogic() {
+        var stay = false
+        
+        for f in selected {
+            
+            if f == false {
+                
+                stay = true
+            }
+        }
+        
+        if !stay {
+            
+            curIndex++
+            currentPeep = demPeeps[curIndex]
+            practice = false
+            
+            selected = [Bool]()
+            for i in 0...11 {
+                selected.append(false)
+            }
+            
+            self.collectionView.reloadData()
         }
     }
     

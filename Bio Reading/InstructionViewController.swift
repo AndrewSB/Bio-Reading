@@ -9,8 +9,11 @@
 import UIKit
 
 class InstructionViewController: UIViewController {
+    @IBOutlet weak var continueButton: UIButton!
+    
     var foraging = Bool()
     var practice = Bool()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,7 +22,10 @@ class InstructionViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: self)
         
-        (segue.destinationViewController as PromptPickerViewController).foraging = foraging
-        (segue.destinationViewController as PromptPickerViewController).practice = practice
+        if let des = segue.destinationViewController as? PromptPickerViewController {
+            
+            des.practice = continueButton.titleLabel?.text == "Practice"
+            des.foraging = foraging
+        }
     }
 }

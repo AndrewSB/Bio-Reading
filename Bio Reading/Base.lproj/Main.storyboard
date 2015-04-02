@@ -149,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="794" y="961"/>
         </scene>
-        <!--View Controller-->
+        <!--Instruction View Controller-->
         <scene sceneID="0Rm-DQ-gGy">
             <objects>
-                <viewController id="WLy-o6-GCI" sceneMemberID="viewController">
+                <viewController id="WLy-o6-GCI" customClass="InstructionViewController" customModule="Bio_Reading" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="84u-Zf-2Xi"/>
                         <viewControllerLayoutGuide type="bottom" id="q12-1b-FuA"/>
@@ -187,6 +187,9 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="continueButton" destination="cd4-Jc-wf9" id="I84-G9-e6h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GES-uy-v0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -242,23 +245,56 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmp-Fe-szN">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="uG6-0m-Sd0" secondAttribute="trailing" constant="4" id="Mp8-tu-i4w"/>
-                            <constraint firstItem="uG6-0m-Sd0" firstAttribute="top" secondItem="IQj-8A-hzN" secondAttribute="bottom" constant="22" id="Sma-9u-UeD"/>
+                            <constraint firstItem="uG6-0m-Sd0" firstAttribute="top" secondItem="lmp-Fe-szN" secondAttribute="bottom" constant="20" id="Tk7-xE-jzG">
+                                <variation key="heightClass=regular" constant="22"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="lmp-Fe-szN" secondAttribute="centerX" id="UdW-hn-fhV"/>
                             <constraint firstItem="uG6-0m-Sd0" firstAttribute="leading" secondItem="AmA-yz-uqk" secondAttribute="leadingMargin" constant="4" id="Vsq-Xh-kyR"/>
+                            <constraint firstItem="lmp-Fe-szN" firstAttribute="top" secondItem="IQj-8A-hzN" secondAttribute="bottom" constant="8" id="Xor-Zk-7zf">
+                                <variation key="heightClass=regular" constant="11"/>
+                            </constraint>
                             <constraint firstItem="mnl-3U-i76" firstAttribute="top" secondItem="uG6-0m-Sd0" secondAttribute="bottom" constant="32" id="rpG-cb-xqs"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="lmp-Fe-szN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Tk7-xE-jzG"/>
+                                <exclude reference="UdW-hn-fhV"/>
+                                <exclude reference="Xor-Zk-7zf"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="lmp-Fe-szN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Tk7-xE-jzG"/>
+                                <include reference="UdW-hn-fhV"/>
+                                <include reference="Xor-Zk-7zf"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="uG6-0m-Sd0" id="GxC-Lo-r5Y"/>
+                        <outlet property="nameLabel" destination="lmp-Fe-szN" id="WKg-Cg-Dg4"/>
                         <segue destination="Am2-M7-Uw2" kind="show" identifier="segueToPromptVC" id="QK0-Kv-dXY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSk-Sh-Adu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2530" y="241"/>
+            <point key="canvasLocation" x="2530" y="240.75"/>
         </scene>
         <!--Prompt View Controller-->
         <scene sceneID="iNy-E2-KJr">
@@ -541,13 +577,13 @@
                                 <exclude reference="TGR-43-CcV"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Wpv-VI-YbV"/>
                                 <exclude reference="9Sp-WU-Mfw"/>
                                 <exclude reference="Xat-8X-STS"/>
                                 <exclude reference="eQL-st-1bM"/>
                                 <exclude reference="tf3-wu-7wY"/>
                                 <exclude reference="xYF-Ye-IF1"/>
                                 <exclude reference="g2B-Ye-XVT"/>
-                                <exclude reference="Wpv-VI-YbV"/>
                                 <exclude reference="MiP-4V-SWr"/>
                                 <exclude reference="gnd-Kj-w2T"/>
                             </mask>
@@ -560,13 +596,13 @@
                                 <include reference="TGR-43-CcV"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Wpv-VI-YbV"/>
                                 <include reference="9Sp-WU-Mfw"/>
                                 <include reference="Xat-8X-STS"/>
                                 <include reference="eQL-st-1bM"/>
                                 <include reference="tf3-wu-7wY"/>
                                 <include reference="xYF-Ye-IF1"/>
                                 <include reference="g2B-Ye-XVT"/>
-                                <include reference="Wpv-VI-YbV"/>
                                 <include reference="MiP-4V-SWr"/>
                                 <include reference="gnd-Kj-w2T"/>
                             </mask>
