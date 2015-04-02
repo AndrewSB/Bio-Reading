@@ -22,7 +22,7 @@ class PromptViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        promptLabel.text = getPrompt(person, index)
+        promptLabel.text = getSentance(person, index)
         
         navigationItem.title = title
         

@@ -49,5 +49,9 @@ class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophon
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         mic.stopFetchingAudio()
+        
+        if let des = segue.destinationViewController as? FamiliarityViewController {
+            des.person = NSUserDefaults.standardUserDefaults().objectForKey("currentPerson") as String
+        }
     }
 }

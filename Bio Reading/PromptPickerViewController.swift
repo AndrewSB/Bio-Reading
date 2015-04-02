@@ -80,6 +80,9 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         
         (segue.destinationViewController as UIViewController).title = sender as? String
         
+        NSUserDefaults.standardUserDefaults().setObject(sender as? String, forKey: "currentTitle")
+        NSUserDefaults.standardUserDefaults().setObject(self.navigationItem.title!, forKey: "currentPerson")
+        
         if let s = segue.destinationViewController as? CuriosityViewController {
             s.person = self.navigationItem.title!
             s.index = selectedIndex

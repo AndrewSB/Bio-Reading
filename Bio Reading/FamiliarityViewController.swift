@@ -9,21 +9,29 @@
 import UIKit
 
 class FamiliarityViewController: UIViewController {
-
+    @IBOutlet weak var howCuriousLabel: UILabel!
+    @IBOutlet weak var curiosityLabel: UILabel!
+    
+    var person = String()
+    var index = Int()
+    
     override func viewDidLoad() {
+        let cT = "currentTitle"
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        howCuriousLabel.text = "How Familar are you with \(person)'s \(NSUserDefaults.standardUserDefaults().objectForKey(cT)!)"
+        curiosityLabel.text = "3"
+        
+        println(" lol \(navigationItem.title)")
+        
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    @IBAction func sliderValueChanged(sender: AnyObject) {
+        curiosityLabel.text = "\(Int((sender as UISlider).value))"
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        (segue.destinationViewController as? PromptViewController)?.title = navigationItem.title
+        (segue.destinationViewController as? PromptViewController)?.index = index
+        (segue.destinationViewController as? PromptViewController)?.person = person
     }
-    */
-
 }
