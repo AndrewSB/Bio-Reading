@@ -13,11 +13,10 @@ func getPrompt(file: String, index: Int) -> String {
     if let plist = NSBundle.mainBundle().pathForResource("\(file)", ofType: "plist") {
         let rootDict = NSDictionary(contentsOfFile: plist)!
         
-        println("\(rootDict[index])")
+//        let keyValuePair = rootDict[rootDict.allKeys[index] as String] as NSDictionary
         
-        let lessrootDict = (rootDict[index]).objectForKey("Spouse" as AnyObject?)?.value as String
-        
-        return lessrootDict//[NSString(string: String("sentance"))] as String
+        return rootDict.allKeys[index] as String//keyValuePair.valueForKey("Sentance") as String
+    
     } else {
         return "error in getting prompt"
     }
