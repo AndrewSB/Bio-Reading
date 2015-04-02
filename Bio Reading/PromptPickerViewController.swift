@@ -20,7 +20,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     var curIndex = 0
     
-    let demPeeps = [("Einstien", true), ("Marie Curie", false), ("Einstien", true)]
+    let demPeeps = [("Marie Curie", true), ("Marie Curie", false), ("Einstien", true)]
     var currentPeep: (String, Bool) = (String(), Bool())
 
     
@@ -41,7 +41,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         doneLogic()
         
         if practice {
-            currentPeep = ("Marie Curie", false)
+            currentPeep = ("Einstein", false)
             curIndex = -1
         }
         
@@ -114,9 +114,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
                     }
                 }
                 
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.collectionView.selectItemAtIndexPath(self.collectionView.indexPathForCell(segueToCell), animated: true, scrollPosition: .None)
-                })
+                self.collectionView.selectItemAtIndexPath(self.collectionView.indexPathForCell(segueToCell), animated: true, scrollPosition: .None)
             });
 
         } else {
@@ -148,6 +146,12 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             }
             
             self.collectionView.reloadData()
+            
+            let startingAlert = UIAlertController(title: "You is starting", message: "Be careful", preferredStyle: .Alert)
+            let startAction = UIAlertAction(title: "Start", style: .Cancel, handler: nil)
+            startingAlert.addAction(startAction)
+            
+            self.presentViewController(startingAlert, animated: true, completion: nil)
         }
     }
     
