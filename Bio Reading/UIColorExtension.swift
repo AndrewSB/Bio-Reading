@@ -12,4 +12,4 @@ import UIKit
 extension UIColor {
     //initWithHex(hex: Int) {
     
-    }
+}

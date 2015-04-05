@@ -18,10 +18,12 @@ class InitialViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         
-        (segue.destinationViewController as InstructionViewController).foraging = true
-        (segue.destinationViewController as InstructionViewController).practice = true
+        if let des = segue.destinationViewController as? InstructionViewController {
+            des.foraging = true
+            des.practice = true
+        }
     }
     
-    @IBAction func unwindToWelcomeViewController(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToInitialViewController(segue: UIStoryboardSegue){}
 }
 

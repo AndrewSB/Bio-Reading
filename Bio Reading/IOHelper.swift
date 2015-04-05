@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+let people = ["Marie Curie"]
+
 func getPrompt(file: String, index: Int) -> String? {
     if let plist = NSBundle.mainBundle().pathForResource("\(file)", ofType: "plist") {
         let rootDict = NSDictionary(contentsOfFile: plist)!

@@ -8,18 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		4602A8011A85C7A900C5363E /* PromptPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */; };
-		4602A8031A85C98200C5363E /* Einstein.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4602A8021A85C98200C5363E /* Einstein.plist */; };
+		4602A8031A85C98200C5363E /* Example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4602A8021A85C98200C5363E /* Example.plist */; };
 		46111F631ACE049500C14878 /* AdminPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46111F621ACE049500C14878 /* AdminPanelViewController.swift */; };
 		462CE0431AA733D400EC96BE /* SISinusWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 462CE0421AA733D400EC96BE /* SISinusWaveView.m */; };
 		464F4C5D1A9E9661002803BA /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F4C5C1A9E9661002803BA /* InstructionViewController.swift */; };
 		466A6FDC1A82D756006A2A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDB1A82D756006A2A21 /* AppDelegate.swift */; };
-		466A6FDE1A82D756006A2A21 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDD1A82D756006A2A21 /* InitialViewController.swift */; };
 		466A6FE31A82D756006A2A21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466A6FE21A82D756006A2A21 /* Images.xcassets */; };
 		466A6FE61A82D756006A2A21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 466A6FE41A82D756006A2A21 /* LaunchScreen.xib */; };
 		4670D4081A85CD2800318375 /* PromptCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670D4071A85CD2800318375 /* PromptCollectionViewCell.swift */; };
 		4670D40A1A85CDB300318375 /* IOHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670D4091A85CDB300318375 /* IOHelper.swift */; };
 		4670D40C1A85D44B00318375 /* PromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670D40B1A85D44B00318375 /* PromptViewController.swift */; };
 		4671F41D1AA7250A00F626BA /* CuriosityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4671F41C1AA7250A00F626BA /* CuriosityViewController.swift */; };
+		468CA1651AD1D88E00612C60 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDD1A82D756006A2A21 /* InitialViewController.swift */; };
+		468CA1671AD1DA8B00612C60 /* NSUserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468CA1661AD1DA8B00612C60 /* NSUserDefaultHelper.swift */; };
+		468CA1691AD1E3F700612C60 /* GenericWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468CA1681AD1E3F700612C60 /* GenericWrapper.swift */; };
+		468CA16B1AD1EA8B00612C60 /* William Shakespeare.plist in Resources */ = {isa = PBXBuildFile; fileRef = 468CA16A1AD1EA8B00612C60 /* William Shakespeare.plist */; };
+		468CA16D1AD1EA9B00612C60 /* Issac Newton.plist in Resources */ = {isa = PBXBuildFile; fileRef = 468CA16C1AD1EA9B00612C60 /* Issac Newton.plist */; };
+		468CA16F1AD1EAA600612C60 /* Mother Teresa.plist in Resources */ = {isa = PBXBuildFile; fileRef = 468CA16E1AD1EAA600612C60 /* Mother Teresa.plist */; };
+		468CA1711AD1EAB100612C60 /* Emily Dickinson.plist in Resources */ = {isa = PBXBuildFile; fileRef = 468CA1701AD1EAB100612C60 /* Emily Dickinson.plist */; };
+		468CA1731AD1EABC00612C60 /* Mahatma Gandhi.plist in Resources */ = {isa = PBXBuildFile; fileRef = 468CA1721AD1EABC00612C60 /* Mahatma Gandhi.plist */; };
 		46B2EB7A1A8C229200C9E570 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B2EB781A8C229200C9E570 /* Crashlytics.framework */; };
 		46B2EB7B1A8C229200C9E570 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B2EB791A8C229200C9E570 /* Fabric.framework */; };
 		46BA67E41A8805B30072E437 /* RecallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BA67E31A8805B30072E437 /* RecallViewController.swift */; };
@@ -32,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptPickerViewController.swift; sourceTree = "<group>"; };
-		4602A8021A85C98200C5363E /* Einstein.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Einstein.plist; sourceTree = "<group>"; };
+		4602A8021A85C98200C5363E /* Example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Example.plist; sourceTree = "<group>"; };
 		46111F621ACE049500C14878 /* AdminPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPanelViewController.swift; sourceTree = "<group>"; };
 		462CE02A1AA7304C00EC96BE /* Bio Reading-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bio Reading-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		462CE0411AA733D400EC96BE /* SISinusWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISinusWaveView.h; sourceTree = "<group>"; };
@@ -49,6 +56,13 @@
 		4670D4091A85CDB300318375 /* IOHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOHelper.swift; sourceTree = "<group>"; };
 		4670D40B1A85D44B00318375 /* PromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptViewController.swift; sourceTree = "<group>"; };
 		4671F41C1AA7250A00F626BA /* CuriosityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuriosityViewController.swift; sourceTree = "<group>"; };
+		468CA1661AD1DA8B00612C60 /* NSUserDefaultHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultHelper.swift; sourceTree = "<group>"; };
+		468CA1681AD1E3F700612C60 /* GenericWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericWrapper.swift; sourceTree = "<group>"; };
+		468CA16A1AD1EA8B00612C60 /* William Shakespeare.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "William Shakespeare.plist"; sourceTree = "<group>"; };
+		468CA16C1AD1EA9B00612C60 /* Issac Newton.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Issac Newton.plist"; sourceTree = "<group>"; };
+		468CA16E1AD1EAA600612C60 /* Mother Teresa.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Mother Teresa.plist"; sourceTree = "<group>"; };
+		468CA1701AD1EAB100612C60 /* Emily Dickinson.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Emily Dickinson.plist"; sourceTree = "<group>"; };
+		468CA1721AD1EABC00612C60 /* Mahatma Gandhi.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Mahatma Gandhi.plist"; sourceTree = "<group>"; };
 		46B2EB781A8C229200C9E570 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		46B2EB791A8C229200C9E570 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		46BA67E31A8805B30072E437 /* RecallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecallViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +164,9 @@
 			isa = PBXGroup;
 			children = (
 				4670D4091A85CDB300318375 /* IOHelper.swift */,
+				468CA1681AD1E3F700612C60 /* GenericWrapper.swift */,
 				46EDB01A1A886118009C6D2C /* UIColorExtension.swift */,
+				468CA1661AD1DA8B00612C60 /* NSUserDefaultHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -158,8 +174,13 @@
 		46BA67E11A8800360072E437 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4602A8021A85C98200C5363E /* Einstein.plist */,
+				4602A8021A85C98200C5363E /* Example.plist */,
 				46FD06911AA7D439008E175B /* Marie Curie.plist */,
+				468CA16A1AD1EA8B00612C60 /* William Shakespeare.plist */,
+				468CA16C1AD1EA9B00612C60 /* Issac Newton.plist */,
+				468CA16E1AD1EAA600612C60 /* Mother Teresa.plist */,
+				468CA1701AD1EAB100612C60 /* Emily Dickinson.plist */,
+				468CA1721AD1EABC00612C60 /* Mahatma Gandhi.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -256,11 +277,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468CA1711AD1EAB100612C60 /* Emily Dickinson.plist in Resources */,
+				468CA16F1AD1EAA600612C60 /* Mother Teresa.plist in Resources */,
+				468CA1731AD1EABC00612C60 /* Mahatma Gandhi.plist in Resources */,
 				46FD06921AA7D439008E175B /* Marie Curie.plist in Resources */,
 				46BA9C691AA7D8AC00CCF9EE /* Main.storyboard in Resources */,
 				466A6FE61A82D756006A2A21 /* LaunchScreen.xib in Resources */,
+				468CA16D1AD1EA9B00612C60 /* Issac Newton.plist in Resources */,
 				466A6FE31A82D756006A2A21 /* Images.xcassets in Resources */,
-				4602A8031A85C98200C5363E /* Einstein.plist in Resources */,
+				468CA16B1AD1EA8B00612C60 /* William Shakespeare.plist in Resources */,
+				4602A8031A85C98200C5363E /* Example.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +345,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				46111F631ACE049500C14878 /* AdminPanelViewController.swift in Sources */,
+				468CA1671AD1DA8B00612C60 /* NSUserDefaultHelper.swift in Sources */,
+				468CA1651AD1D88E00612C60 /* InitialViewController.swift in Sources */,
 				462CE0431AA733D400EC96BE /* SISinusWaveView.m in Sources */,
 				4670D40C1A85D44B00318375 /* PromptViewController.swift in Sources */,
 				4670D40A1A85CDB300318375 /* IOHelper.swift in Sources */,
@@ -327,7 +355,7 @@
 				4602A8011A85C7A900C5363E /* PromptPickerViewController.swift in Sources */,
 				464F4C5D1A9E9661002803BA /* InstructionViewController.swift in Sources */,
 				46EDB01B1A886118009C6D2C /* UIColorExtension.swift in Sources */,
-				466A6FDE1A82D756006A2A21 /* InitialViewController.swift in Sources */,
+				468CA1691AD1E3F700612C60 /* GenericWrapper.swift in Sources */,
 				4670D4081A85CD2800318375 /* PromptCollectionViewCell.swift in Sources */,
 				46BA67E41A8805B30072E437 /* RecallViewController.swift in Sources */,
 				466A6FDC1A82D756006A2A21 /* AppDelegate.swift in Sources */,

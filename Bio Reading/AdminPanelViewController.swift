@@ -32,4 +32,10 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
         
         return cell
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        
+        println("prepped")
+    }
 }
