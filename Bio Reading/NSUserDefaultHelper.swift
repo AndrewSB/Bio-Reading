@@ -44,6 +44,8 @@ class UserStore {
     }
     
     class func generateRandomBios() -> [(String, Bool)] {
+        var randBios = [(String, Bool)]()
         
+        return randBios
     }
 }
