@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4602A8011A85C7A900C5363E /* PromptPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */; };
 		4602A8031A85C98200C5363E /* Einstein.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4602A8021A85C98200C5363E /* Einstein.plist */; };
+		46111F631ACE049500C14878 /* AdminPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46111F621ACE049500C14878 /* AdminPanelViewController.swift */; };
 		462CE0431AA733D400EC96BE /* SISinusWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 462CE0421AA733D400EC96BE /* SISinusWaveView.m */; };
 		464F4C5D1A9E9661002803BA /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464F4C5C1A9E9661002803BA /* InstructionViewController.swift */; };
 		466A6FDC1A82D756006A2A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A6FDB1A82D756006A2A21 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptPickerViewController.swift; sourceTree = "<group>"; };
 		4602A8021A85C98200C5363E /* Einstein.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Einstein.plist; sourceTree = "<group>"; };
+		46111F621ACE049500C14878 /* AdminPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPanelViewController.swift; sourceTree = "<group>"; };
 		462CE02A1AA7304C00EC96BE /* Bio Reading-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bio Reading-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		462CE0411AA733D400EC96BE /* SISinusWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISinusWaveView.h; sourceTree = "<group>"; };
 		462CE0421AA733D400EC96BE /* SISinusWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISinusWaveView.m; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				466A6FDD1A82D756006A2A21 /* InitialViewController.swift */,
 				464F4C5C1A9E9661002803BA /* InstructionViewController.swift */,
+				46111F621ACE049500C14878 /* AdminPanelViewController.swift */,
 			);
 			name = Pre;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46111F631ACE049500C14878 /* AdminPanelViewController.swift in Sources */,
 				462CE0431AA733D400EC96BE /* SISinusWaveView.m in Sources */,
 				4670D40C1A85D44B00318375 /* PromptViewController.swift in Sources */,
 				4670D40A1A85CDB300318375 /* IOHelper.swift in Sources */,

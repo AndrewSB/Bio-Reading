@@ -33,7 +33,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         NSUserDefaults.standardUserDefaults().setObject(false, forKey: "timed")
         
         if selected.count == 0 {
-            for (var i = 0; i < (practice ? 3 : 12); i++) {
+            for (var i = 0; i < (practice ? 1 : 12); i++) {
                 selected.append(false)
             }
         }
@@ -63,7 +63,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     func collectionView(colorCollectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if practice {
-            return 3
+            return 1
         }
         return 12
     }
@@ -87,6 +87,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         println("lol at \(indexPath.row)")
+        
         if !selected[indexPath.row] {
             collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.grayColor()
             selected[indexPath.row] = true
@@ -103,24 +104,39 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         if foraging {
             view.userInteractionEnabled = false
             
-            let time: Int64 = Int64(NSEC_PER_SEC)
-            let popTime = dispatch_time(DISPATCH_TIME_NOW, time);
-            dispatch_after(popTime, dispatch_get_main_queue(), {
-                
-                var segueToCell = UICollectionViewCell()
-                for (index, element) in enumerate(self.collectionView.visibleCells()) {
-                    if self.selected[index] == false {
-                        segueToCell = element as UICollectionViewCell
-                    }
+            var segueToCell = UICollectionViewCell()
+            for (index, element) in enumerate(self.collectionView.visibleCells()) {
+                if self.selected[index] == false {
+                    segueToCell = element as UICollectionViewCell
                 }
-                
-                self.collectionView.selectItemAtIndexPath(self.collectionView.indexPathForCell(segueToCell), animated: true, scrollPosition: .None)
-            });
+            }
+            
+            let iPath = self.collectionView.indexPathForCell(segueToCell)
+            println("")
+            
+            segueToCell.selected = true
+            
+            
+//            let time: Int64 = Int64(NSEC_PER_SEC)
+//            let popTime = dispatch_time(DISPATCH_TIME_NOW, time);
+//            dispatch_after(popTime, dispatch_get_main_queue(), {
+//                
+//                var segueToCell = UICollectionViewCell()
+//                for (index, element) in enumerate(self.collectionView.visibleCells()) {
+//                    if self.selected[index] == false {
+//                        segueToCell = element as UICollectionViewCell
+//                    }
+//                }
+            
+//                let iPath = self.collectionView.indexPathForCell(segueToCell)
+//                
+//                self.collectionView.selectItemAtIndexPath(iPath, animated: true, scrollPosition: .None)
+//            });
 
         } else {
             
         }
-        
+        view.userInteractionEnabled = true
     }
     
     func doneLogic() {
