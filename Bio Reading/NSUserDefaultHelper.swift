@@ -38,7 +38,6 @@ class UserStore {
             var arr = [(String, Bool)]()
             for p in w {
                 arr.append((p.person, p.foraging))
-        
             }
             return arr
         }

@@ -11,7 +11,13 @@ import UIKit
 class AdminPanelViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var personTableView: UITableView!
-    var randBios: [(String, Bool)] = UserStore.bios
+    var randBios: [(String, Bool)] = UserStore.bios {
+        didSet {
+            if personTableView != nil {
+                personTableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +29,14 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return randBios.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as UITableViewCell
         
-        cell.showsReorderControl = true
-        
-        cell.textLabel?.text = "sex"
-        cell.detailTextLabel?.text = "Foraging"
+        cell.textLabel?.text = randBios[indexPath.row].0
+        cell.detailTextLabel?.text = randBios[indexPath.row].1 ? "Foraging" : "Control"
         
         return cell
     }
@@ -40,12 +44,9 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        if tableView.cellForRowAtIndexPath(indexPath)!.detailTextLabel?.text == "Foraging" {
-            tableView.cellForRowAtIndexPath(indexPath)!.detailTextLabel?.text = "Control"
-        }
-        else {
-            tableView.cellForRowAtIndexPath(indexPath)!.detailTextLabel?.text = "Foraging"
-        }
+        randBios[indexPath.row].1 = !randBios[indexPath.row].1
+        
+        tableView.reloadData()
     }
     
     func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
@@ -57,11 +58,18 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+
+        let temp = randBios[sourceIndexPath.row]
+        randBios.removeAtIndex(sourceIndexPath.row)
+        randBios.insert(temp, atIndex: destinationIndexPath.row)
         
+        tableView.reloadData()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
+        
+        UserStore.bios = randBios
         
         println("prepped")
     }
