@@ -33,6 +33,8 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }
     
+    var curPersonControlTimes = [0.5,1,2,1,1,1,1,1,1,1,1,1]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,15 +45,16 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewWillAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        assert(self.selected.count < 13, "over 13")
-        
         doneLogic()
         
         self.navigationItem.title = curPerson!.0
         nameLabel.text = self.navigationItem.title!
         
+        set(!curPerson!.1, forKey: "timed")
+        
         foragingLogic()
     }
+
     
     // ======================================
     // COLLECTION VIEW METHODS
@@ -78,7 +81,10 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        println("lol at \(indexPath.row)")
+        selectCell(indexPath)
+    }
+    
+    func selectCell(indexPath: NSIndexPath) {
         
         if !selected[indexPath.row] {
             collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.grayColor()
@@ -86,20 +92,38 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             
             selectedIndex = indexPath.row
             
-            performSegueWithIdentifier("segueToPromptVC", sender: (collectionView.cellForItemAtIndexPath(indexPath) as PromptCollectionViewCell).promptLabel.text)
-            
+            let prompt = IO.getPrompt(curPerson!.0, index: indexPath.row)
+            self.performSegueWithIdentifier("segueToPromptVC", sender: prompt)
         }
     }
     
     // MARK: - Helper
     func foragingLogic() {
+        println(curPerson!.1)
+        if curPerson!.1 { //foraging
+            view.userInteractionEnabled = true
+        } else { //control
+            var toSegueTo: NSIndexPath?
+            for (index, element) in enumerate(selected) {
+                if toSegueTo == nil {
+                    if !element {
+                        toSegueTo = NSIndexPath(forRow: index, inSection: 0)
+                    }
+                }
+            }
+            view.userInteractionEnabled = false
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW,
+                Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                    self.view.userInteractionEnabled = true
+                    self.selectCell(toSegueTo!)
+            })
+        }
     }
     
     func doneLogic() {
         var stay = false
         
         for f in selected {
-            
             if f == false {
                 stay = true
             }
@@ -108,11 +132,10 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         if !stay {
             curPersonIndex++
                         
-            let startingAlert = UIAlertController(title: "You is starting", message: "Be careful", preferredStyle: .Alert)
-            let startAction = UIAlertAction(title: "Start", style: .Cancel, handler: nil)
-            startingAlert.addAction(startAction)
-            
-            self.presentViewController(startingAlert, animated: true, completion: nil)
+//            let startingAlert = UIAlertController(title: "About to change", message: "\(curPerson!.0) - foraging:\(curPerson!.1)", preferredStyle: .Alert)
+//            startingAlert.addAction(UIAlertAction(title: "Start", style: .Cancel, handler: nil))
+//            
+//            self.presentViewController(startingAlert, animated: true, completion: nil)
         }
     }
     
@@ -124,8 +147,9 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         
         (segue.destinationViewController as UIViewController).title = sender as? String
         
-        NSUserDefaults.standardUserDefaults().setObject(sender as? String, forKey: "currentTitle")
-        NSUserDefaults.standardUserDefaults().setObject(self.navigationItem.title!, forKey: "currentPerson")
+        set(sender as? String, forKey: "currentTitle")
+        set(self.navigationItem.title!, forKey: "currentPerson")
+        set(curPersonControlTimes[curPersonIndex], forKey: "currentTime")
         
         if let s = segue.destinationViewController as? CuriosityViewController {
             s.person = self.navigationItem.title!

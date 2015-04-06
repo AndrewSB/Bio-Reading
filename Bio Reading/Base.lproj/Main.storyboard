@@ -247,7 +247,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="80P-xb-Rdw" kind="show" id="Goa-4T-SdC"/>
+                                    <segue destination="80P-xb-Rdw" kind="showDetail" id="Goa-4T-SdC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -318,6 +318,9 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="20" y="74" width="560" height="650"/>
+                                </variation>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmp-Fe-szN">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>

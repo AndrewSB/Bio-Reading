@@ -14,6 +14,7 @@ class PromptViewController: UIViewController {
     var isTimed = NSUserDefaults.standardUserDefaults().objectForKey("timed") as Bool
     
     let startTime = NSDate()
+    var timer: NSTimer?
     
     @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
@@ -35,8 +36,8 @@ class PromptViewController: UIViewController {
     }
     
     func setupTimer(button: UIButton) {
-        let timer = NSTimer(timeInterval: NSTimeInterval(1), target: self, selector: "secondPassed:", userInfo: nil, repeats: true)
-        NSRunLoop.mainRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+        timer = NSTimer(timeInterval: NSTimeInterval(1), target: self, selector: "secondPassed:", userInfo: nil, repeats: true)
+        NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
         println("continue button is a timer")
         
         continueButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
@@ -49,6 +50,7 @@ class PromptViewController: UIViewController {
             continueButton.setTitle("\(t - 1)", forState: .Normal)
             
             if t <= 0 {
+                timer?.invalidate()
                 self.performSegueWithIdentifier("segueToRecall", sender: self)
             }
         }
