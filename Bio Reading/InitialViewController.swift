@@ -12,16 +12,6 @@ class InitialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        super.prepareForSegue(segue, sender: sender)
-        
-        if let des = segue.destinationViewController as? InstructionViewController {
-            des.foraging = true
-            des.practice = true
-        }
     }
     
     @IBAction func unwindToInitialViewController(segue: UIStoryboardSegue){}

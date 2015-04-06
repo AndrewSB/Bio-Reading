@@ -19,12 +19,9 @@ class UserStore {
         case bios = "bios"
     }
     
-    class var currentBio: Int {
+    class var currentBio: Int? {
         get {
-            if get(storeKeys.currentBio.rawValue) == nil {
-                set(0, forKey: storeKeys.currentBio.rawValue)
-            }
-            return get(storeKeys.currentBio.rawValue) as Int
+            return get(storeKeys.currentBio.rawValue) as Int?
         }
         set {
             set(newValue, forKey: storeKeys.currentBio.rawValue)

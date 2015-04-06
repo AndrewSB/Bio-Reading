@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics()])
         
         UserStore.bios = UserStore.generateRandomBios()
+        UserStore.bios.insert(("Example", false), atIndex: 0)
+        UserStore.bios.insert(("Example", true), atIndex: 0)
         
         return true
     }

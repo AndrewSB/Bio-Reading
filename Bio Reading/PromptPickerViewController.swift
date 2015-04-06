@@ -12,46 +12,42 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nameLabel: UILabel!
     
-    var foraging = Bool()
-    var practice = Bool()
-    
     var selected = [Bool]()
     var selectedIndex = Int()
     
-    var curIndex = 0
+    let people = UserStore.bios
+    var curPerson: (String, Bool)? {
+        didSet {
+            selected.removeAll(keepCapacity: false)
+            
+            for i in 0...(IO.getNumSentances(curPerson!.0)! - 1) {
+                selected.append(false)
+            }
+            
+            collectionView.reloadData()
+        }
+    }
+    var curPersonIndex: Int = 0 {
+        didSet {
+            curPerson = people[curPersonIndex]
+        }
+    }
     
-    let demPeeps = [("Marie Curie", true), ("Marie Curie", false), ("Einstien", true)]
-    var currentPeep: (String, Bool) = (String(), Bool())
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        curPerson = people[curPersonIndex]
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "timed")
-        
-        if selected.count == 0 {
-            for (var i = 0; i < (practice ? 1 : 12); i++) {
-                selected.append(false)
-            }
-        }
+        assert(self.selected.count < 13, "over 13")
         
         doneLogic()
         
-        if practice {
-            currentPeep = ("Einstein", false)
-            curIndex = -1
-        }
-        
-        
-        self.navigationItem.title = currentPeep.0
-        foraging = currentPeep.1
-        
-        
-        println(self.navigationItem.title!)
-    
+        self.navigationItem.title = curPerson!.0
         nameLabel.text = self.navigationItem.title!
         
         foragingLogic()
@@ -61,11 +57,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     // COLLECTION VIEW METHODS
     // ======================================
     func collectionView(colorCollectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        if practice {
-            return 1
-        }
-        return 12
+        return selected.count
     }
     
     func collectionView(colorCollectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -101,42 +93,6 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     // MARK: - Helper
     func foragingLogic() {
-        if foraging {
-            view.userInteractionEnabled = false
-            
-            var segueToCell = UICollectionViewCell()
-            for (index, element) in enumerate(self.collectionView.visibleCells()) {
-                if self.selected[index] == false {
-                    segueToCell = element as UICollectionViewCell
-                }
-            }
-            
-            let iPath = self.collectionView.indexPathForCell(segueToCell)
-            println("")
-            
-            segueToCell.selected = true
-            
-            
-//            let time: Int64 = Int64(NSEC_PER_SEC)
-//            let popTime = dispatch_time(DISPATCH_TIME_NOW, time);
-//            dispatch_after(popTime, dispatch_get_main_queue(), {
-//                
-//                var segueToCell = UICollectionViewCell()
-//                for (index, element) in enumerate(self.collectionView.visibleCells()) {
-//                    if self.selected[index] == false {
-//                        segueToCell = element as UICollectionViewCell
-//                    }
-//                }
-            
-//                let iPath = self.collectionView.indexPathForCell(segueToCell)
-//                
-//                self.collectionView.selectItemAtIndexPath(iPath, animated: true, scrollPosition: .None)
-//            });
-
-        } else {
-            
-        }
-        view.userInteractionEnabled = true
     }
     
     func doneLogic() {
@@ -145,24 +101,13 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         for f in selected {
             
             if f == false {
-                
                 stay = true
             }
         }
         
         if !stay {
-            
-            curIndex++
-            currentPeep = demPeeps[curIndex]
-            practice = false
-            
-            selected = [Bool]()
-            for i in 0...11 {
-                selected.append(false)
-            }
-            
-            self.collectionView.reloadData()
-            
+            curPersonIndex++
+                        
             let startingAlert = UIAlertController(title: "You is starting", message: "Be careful", preferredStyle: .Alert)
             let startAction = UIAlertAction(title: "Start", style: .Cancel, handler: nil)
             startingAlert.addAction(startAction)

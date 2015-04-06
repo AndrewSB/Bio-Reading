@@ -33,4 +33,14 @@ class IO {
         }
         return nil
     }
+    
+    class func getNumSentances(file: String) -> Int? {
+        if let plist = NSBundle.mainBundle().pathForResource("\(file)", ofType: "plist") {
+            let rootDict = NSDictionary(contentsOfFile: plist)!
+            
+            return rootDict.count
+        }
+        return nil
+
+    }
 }
