@@ -17,7 +17,7 @@ class CuriosityViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        howCuriousLabel.text = "How Curious are you about \(person)'s \(title!)"
+        howCuriousLabel.text = "How Curious are you about \(person)'s \(title!)?"
         curiosityLabel.text = "3"
         
         println(" lol \(navigationItem.title)")

@@ -18,7 +18,7 @@ class FamiliarityViewController: UIViewController {
     override func viewDidLoad() {
         let cT = "currentTitle"
         super.viewDidLoad()
-        howCuriousLabel.text = "How Familar are you with \(person)'s \(NSUserDefaults.standardUserDefaults().objectForKey(cT)!)"
+        howCuriousLabel.text = "How Familar were you with \(person)'s \(NSUserDefaults.standardUserDefaults().objectForKey(cT)!)?"
         curiosityLabel.text = "3"
         
         println(" lol \(navigationItem.title)")

@@ -11,6 +11,8 @@ import Foundation
 let set = NSUserDefaults.standardUserDefaults().setObject
 let get = NSUserDefaults.standardUserDefaults().objectForKey
 
+
+
 class UserStore {
     enum storeKeys: String {
         case currentBio = "currentBio"
@@ -31,20 +33,45 @@ class UserStore {
     
     class var bios: [(String, Bool)] {
         get {
-            if get(storeKeys.bios.rawValue) == nil {
-                self.bios = generateRandomBios()
+            let w = NSKeyedUnarchiver.unarchiveObjectWithData(get(storeKeys.bios.rawValue) as NSData) as [GenericBio]
+        
+            var arr = [(String, Bool)]()
+            for p in w {
+                arr.append((p.person, p.foraging))
+        
             }
-            let wrappedBios = NSKeyedUnarchiver.unarchiveObjectWithData(get(storeKeys.bios.rawValue) as NSData) as GenericWrapper<[(String, Bool)]>
-            return wrappedBios.element
+            return arr
         }
         set {
-            let wrappedBios = GenericWrapper(element: generateRandomBios())
-            set(NSKeyedArchiver.archivedDataWithRootObject(wrappedBios), forKey: storeKeys.currentBio.rawValue)
+            var arr = [GenericBio]()
+            for p in newValue {
+                arr.append(GenericBio(person: p.0, foraging: p.1))
+            }
+            let wData = NSKeyedArchiver.archivedDataWithRootObject(arr)
+            set(wData, forKey: storeKeys.bios.rawValue)
+            
         }
     }
     
     class func generateRandomBios() -> [(String, Bool)] {
         var randBios = [(String, Bool)]()
+        var allBios = IO.people
+        
+        for i in 0...2 {
+            let index = Int(arc4random_uniform(UInt32(allBios.count)))
+            let d = allBios[index]
+            
+            let tF = arc4random_uniform(1) == 0 ? true : false
+            
+            randBios.append((d, tF))
+            
+            allBios.removeAtIndex(index)
+            
+            let otherIndex = Int(arc4random_uniform(UInt32(allBios.count)))
+            randBios.append((allBios[otherIndex], !tF))
+            
+            allBios.removeAtIndex(otherIndex)
+        }
         
         return randBios
     }

@@ -9,8 +9,31 @@
 import Foundation
 
 class GenericWrapper<T> {
-    let element : T
-    init(element : T) {
+    let element: T
+    
+    init(element: T) {
         self.element = element
+    }
+    
+}
+
+class GenericBio: NSObject, NSCoding {
+    var person: String
+    var foraging: Bool
+    
+    init(person: String, foraging: Bool) {
+        self.person = person
+        self.foraging = foraging
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(person, forKey: "person")
+        aCoder.encodeObject(foraging, forKey: "foraging")
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        person = aDecoder.decodeObjectForKey("person") as String
+        foraging = aDecoder.decodeObjectForKey("foraging") as Bool
+        super.init()
     }
 }
