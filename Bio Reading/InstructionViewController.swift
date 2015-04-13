@@ -21,4 +21,9 @@ class InstructionViewController: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func tapGestureTapped(sender: AnyObject) {
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 }
