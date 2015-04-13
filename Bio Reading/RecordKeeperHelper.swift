@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import MessageUI
 
 var globalRecordStore: RecordStore?
 
@@ -41,6 +42,55 @@ class RecordStore {
         
         globalRecordStore = nil
     }
+    
+    func getSubjectNumbers() -> [Int]? {
+        var readString = UserStore.recordString
+        if let rString = readString {
+            var returner = [Int]()
+            let arr = split(rString) {$0 == "\n"}
+            for a in arr {
+                let comps = split(a) {$0 == ","}
+                if let i = comps[0].toInt() {
+                    returner.append(i)
+                }
+            }
+            return returner.count == 0 ? nil : returner
+        }
+        return nil
+    }
+    
+    func emailSubjectString(subjectNumber: Int, vc: UIViewController) -> MFMailComposeViewController {
+        var relevantString: String = ""
+        let email = MFMailComposeViewController(rootViewController: vc)
+        
+        var readString = UserStore.recordString
+        if let rString = readString {
+            var returner = [Int]()
+            let arr = split(rString) {$0 == "\n"}
+            for a in arr {
+                let comps = split(a) {$0 == ","}
+                if let i = comps[0].toInt() {
+                    if i == subjectNumber {
+                        relevantString = a
+                    }
+                }
+            }
+        }
+        
+        email.title = "Subject \(subjectNumber), Adult Learning Lab"
+        
+        email.addAttachmentData((relevantString as NSString).dataUsingEncoding(NSUTF8StringEncoding), mimeType: "text/csv", fileName: "subject.csv")
+        
+        if let rString = relevantString {
+            let comps = split(rString) {$0 == ","}
+            if NSFileManager.defaultManager().fileExistsAtPath(comps[comps.count - 1]) {
+                email.addAttachmentData(NSFileManager.defaultManager().contentsAtPath(comps[comps.count - 1]), mimeType: "audio/wav", fileName: "audio.wav")
+            }
+        }
+
+        return email
+    }
+        
 }
 
 enum Condtion: Int {
