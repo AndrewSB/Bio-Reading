@@ -10,8 +10,12 @@ import UIKit
 
 class InitialViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func tapRecognizerTapped(sender: AnyObject) {
+        performSegueWithIdentifier("segueToAdmin", sender: self)
+    }
+
+    @IBAction func startButtonTapped(sender: AnyObject) {
+        performSegueWithIdentifier("segueToInstructions", sender: self)
     }
     
     @IBAction func unwindToInitialViewController(segue: UIStoryboardSegue){}

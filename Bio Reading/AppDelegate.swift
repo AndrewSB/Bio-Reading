@@ -10,12 +10,10 @@ import UIKit
 import Fabric
 import Crashlytics
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics()])
@@ -23,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserStore.bios = UserStore.generateRandomBios()
         UserStore.bios.insert(("Example", false), atIndex: 0)
         UserStore.bios.insert(("Example", true), atIndex: 0)
+        
+        UserStore.subjectNumber = nil
         
         return true
     }

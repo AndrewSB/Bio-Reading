@@ -6,17 +6,23 @@
 //  Copyright (c) 2015 Andrew Breckenridge. All rights reserved.
 //
 
-import Foundation
-
 let set = NSUserDefaults.standardUserDefaults().setObject
 let get = NSUserDefaults.standardUserDefaults().objectForKey
-
-
 
 class UserStore {
     enum storeKeys: String {
         case currentBio = "currentBio"
         case bios = "bios"
+        case subjectNumber = "subjectNumber"
+    }
+    
+    class var subjectNumber: Int? {
+        get {
+            return get(storeKeys.subjectNumber.rawValue) as? Int
+        }
+        set {
+            set(newValue, forKey: storeKeys.subjectNumber.rawValue)
+        }
     }
     
     class var currentBio: Int? {

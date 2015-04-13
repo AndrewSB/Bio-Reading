@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="duy-H3-9Tf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="duy-H3-9Tf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -25,7 +25,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="WLy-o6-GCI" kind="show" id="IXT-d8-FkK"/>
+                                    <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="79W-vj-I3f"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bio Reading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbQ-pH-1Ge">
@@ -34,26 +34,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Adult Learning Lab UIUC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ype-vy-51S">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Adult Learning Lab UIUC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ype-vy-51S">
                                 <rect key="frame" x="108" y="221" width="384" height="36"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYm-dx-8eh">
-                                <rect key="frame" x="257" y="532" width="86" height="30"/>
-                                <state key="normal" title="Admin panel">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                                 <connections>
-                                    <segue destination="mxA-uY-pwh" kind="presentation" id="j9T-ag-qeX"/>
+                                    <outletCollection property="gestureRecognizers" destination="Tu8-kP-BYE" appends="YES" id="MnP-Fs-Wut"/>
                                 </connections>
-                            </button>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PYm-dx-8eh" secondAttribute="bottom" constant="38" id="4LE-19-Kbl"/>
-                            <constraint firstAttribute="centerX" secondItem="PYm-dx-8eh" secondAttribute="centerX" id="6hC-zJ-2Sd"/>
                             <constraint firstItem="Ype-vy-51S" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nbQ-pH-1Ge" secondAttribute="bottom" constant="1" id="8jI-6J-SQt"/>
                             <constraint firstItem="xKK-Dw-q1x" firstAttribute="top" secondItem="Ype-vy-51S" secondAttribute="bottom" priority="900" constant="1" id="EHC-TT-xy9"/>
                             <constraint firstItem="xKK-Dw-q1x" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ype-vy-51S" secondAttribute="bottom" constant="20" id="Pgy-BJ-DQz"/>
@@ -70,8 +63,17 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="KPj-1Q-34b"/>
+                    <connections>
+                        <segue destination="mxA-uY-pwh" kind="presentation" identifier="segueToAdmin" id="DnI-hK-4RP"/>
+                        <segue destination="WLy-o6-GCI" kind="show" identifier="segueToInstructions" id="U6X-mN-hNN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="5" id="Tu8-kP-BYE">
+                    <connections>
+                        <action selector="tapRecognizerTapped:" destination="BYZ-38-t0r" id="0eX-Bt-Vkr"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="794" y="227"/>
         </scene>
@@ -183,16 +185,16 @@
                                 <exclude reference="Mav-Kn-G7E"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="jw3-4H-f4u"/>
-                                <exclude reference="sIZ-Vk-ccq"/>
+                                <exclude reference="wEb-WF-MMz"/>
                                 <exclude reference="gMK-lV-fZ7"/>
                                 <exclude reference="p4d-j5-BSM"/>
                                 <exclude reference="x4q-Qd-09S"/>
+                                <exclude reference="jw3-4H-f4u"/>
+                                <exclude reference="sIZ-Vk-ccq"/>
                                 <exclude reference="A8G-Wb-a4O"/>
                                 <exclude reference="d1k-OB-Vhc"/>
                                 <exclude reference="P4j-nY-Yks"/>
                                 <exclude reference="kRP-oR-7W9"/>
-                                <exclude reference="wEb-WF-MMz"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -201,21 +203,22 @@
                                 <include reference="Mav-Kn-G7E"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="jw3-4H-f4u"/>
-                                <include reference="sIZ-Vk-ccq"/>
+                                <include reference="wEb-WF-MMz"/>
                                 <include reference="gMK-lV-fZ7"/>
                                 <include reference="p4d-j5-BSM"/>
                                 <include reference="x4q-Qd-09S"/>
+                                <include reference="jw3-4H-f4u"/>
+                                <include reference="sIZ-Vk-ccq"/>
                                 <include reference="A8G-Wb-a4O"/>
                                 <include reference="d1k-OB-Vhc"/>
                                 <include reference="P4j-nY-Yks"/>
                                 <include reference="kRP-oR-7W9"/>
-                                <include reference="wEb-WF-MMz"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="personTableView" destination="Mav-Kn-G7E" id="ZqD-Lt-F2J"/>
+                        <outlet property="subjectNumberTextField" destination="Cvj-ff-UzM" id="HOz-xa-ske"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kY2-zM-r8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -391,7 +394,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZM-rS-8Ic">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZM-rS-8Ic">
                                 <rect key="frame" x="260" y="500" width="80" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Continue">
@@ -434,19 +437,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="How curious?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uP9-ot-Q6r">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="How curious?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uP9-ot-Q6r">
                                 <rect key="frame" x="216" y="203" width="181" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3.5" minValue="0.0" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="7GY-Xb-AXX">
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3.5" minValue="0.0" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="7GY-Xb-AXX">
                                 <rect key="frame" x="176" y="396" width="249" height="31"/>
                                 <connections>
                                     <action selector="sliderValueChanged:" destination="Am2-M7-Uw2" eventType="valueChanged" id="efc-ld-jHC"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEN-PQ-094">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEN-PQ-094">
                                 <rect key="frame" x="269" y="453" width="62" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Next">
@@ -456,19 +459,19 @@
                                     <segue destination="YZS-so-Szy" kind="show" identifier="" id="3G5-BI-WmP"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cft-GN-HtB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cft-GN-HtB">
                                 <rect key="frame" x="159" y="399" width="11" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eg5-WP-2zW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eg5-WP-2zW">
                                 <rect key="frame" x="295" y="364" width="11" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCg-08-b6s">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCg-08-b6s">
                                 <rect key="frame" x="431" y="399" width="11" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -536,7 +539,7 @@
                                     <segue destination="mXU-bL-Gtc" kind="show" id="Rnm-s6-YgV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recall the sentance aloud" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fw-9c-opN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Recall the sentance aloud" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fw-9c-opN">
                                 <rect key="frame" x="132" y="151" width="338" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -615,7 +618,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="How familiar?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcF-dC-vTq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="How familiar?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcF-dC-vTq">
                                 <rect key="frame" x="217" y="203" width="179" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -692,15 +695,15 @@
                                 <exclude reference="TGR-43-CcV"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Wpv-VI-YbV"/>
+                                <exclude reference="9Sp-WU-Mfw"/>
                                 <exclude reference="A8o-Ev-xca"/>
                                 <exclude reference="dE2-dh-dQi"/>
-                                <exclude reference="9Sp-WU-Mfw"/>
                                 <exclude reference="Xat-8X-STS"/>
                                 <exclude reference="eQL-st-1bM"/>
                                 <exclude reference="tf3-wu-7wY"/>
                                 <exclude reference="xYF-Ye-IF1"/>
                                 <exclude reference="g2B-Ye-XVT"/>
-                                <exclude reference="Wpv-VI-YbV"/>
                                 <exclude reference="MiP-4V-SWr"/>
                                 <exclude reference="gnd-Kj-w2T"/>
                             </mask>
@@ -713,15 +716,15 @@
                                 <include reference="TGR-43-CcV"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Wpv-VI-YbV"/>
+                                <include reference="9Sp-WU-Mfw"/>
                                 <include reference="A8o-Ev-xca"/>
                                 <include reference="dE2-dh-dQi"/>
-                                <include reference="9Sp-WU-Mfw"/>
                                 <include reference="Xat-8X-STS"/>
                                 <include reference="eQL-st-1bM"/>
                                 <include reference="tf3-wu-7wY"/>
                                 <include reference="xYF-Ye-IF1"/>
                                 <include reference="g2B-Ye-XVT"/>
-                                <include reference="Wpv-VI-YbV"/>
                                 <include reference="MiP-4V-SWr"/>
                                 <include reference="gnd-Kj-w2T"/>
                             </mask>

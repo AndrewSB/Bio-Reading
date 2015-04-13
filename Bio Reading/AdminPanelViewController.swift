@@ -10,6 +10,7 @@ import UIKit
 
 class AdminPanelViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var subjectNumberTextField: UITextField!
     @IBOutlet weak var personTableView: UITableView!
     var randBios: [(String, Bool)] = UserStore.bios {
         didSet {
@@ -21,6 +22,9 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let num = NSUserDefaults.standardUserDefaults().objectForKey("subjectNumber") as? Int {
+            subjectNumberTextField.text = "\(num)"
+        }
         
         personTableView.delegate = self
         personTableView.dataSource = self
@@ -70,7 +74,6 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
         super.prepareForSegue(segue, sender: sender)
         
         UserStore.bios = randBios
-        
-        println("prepped")
+        UserStore.subjectNumber = subjectNumberTextField.text.toInt()
     }
 }
