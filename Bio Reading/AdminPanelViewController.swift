@@ -70,6 +70,10 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
         tableView.reloadData()
     }
     
+    @IBAction func emailLogsButtonWasHit(sender: AnyObject) {
+        
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         

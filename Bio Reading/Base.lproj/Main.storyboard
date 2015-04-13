@@ -64,7 +64,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="KPj-1Q-34b"/>
                     <connections>
-                        <segue destination="mxA-uY-pwh" kind="presentation" identifier="segueToAdmin" id="DnI-hK-4RP"/>
+                        <segue destination="7qO-KU-crh" kind="presentation" identifier="segueToAdmin" id="DnI-hK-4RP"/>
                         <segue destination="WLy-o6-GCI" kind="show" identifier="segueToInstructions" id="U6X-mN-hNN"/>
                     </connections>
                 </viewController>
@@ -94,6 +94,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="153" y="64" width="125" height="21"/>
+                                </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cvj-ff-UzM">
                                 <rect key="frame" x="362" y="31" width="88" height="30"/>
@@ -102,6 +105,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="322" y="60" width="88" height="30"/>
+                                </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n95-d6-jZu">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -159,11 +165,22 @@
                                     </mask>
                                 </variation>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgn-cJ-8GH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Email logs">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Flk-IB-xaE" kind="show" id="22W-DW-QJA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Cvj-ff-UzM" firstAttribute="leading" secondItem="sq2-SA-skE" secondAttribute="centerXWithinMargins" constant="22" id="A8G-Wb-a4O"/>
+                            <constraint firstItem="Mav-Kn-G7E" firstAttribute="trailing" secondItem="zgn-cJ-8GH" secondAttribute="trailing" id="OR6-fb-Cb3"/>
                             <constraint firstItem="SRl-ge-ica" firstAttribute="top" secondItem="Mav-Kn-G7E" secondAttribute="bottom" constant="66" id="P4j-nY-Yks"/>
+                            <constraint firstItem="Mav-Kn-G7E" firstAttribute="top" secondItem="zgn-cJ-8GH" secondAttribute="bottom" constant="11" id="byd-g1-JGk"/>
                             <constraint firstItem="Cvj-ff-UzM" firstAttribute="centerY" secondItem="xm4-nu-eUJ" secondAttribute="centerY" constant="-28.5" id="d1k-OB-Vhc">
                                 <variation key="heightClass=regular" constant="0.0"/>
                             </constraint>
@@ -183,9 +200,11 @@
                             <mask key="subviews">
                                 <exclude reference="n95-d6-jZu"/>
                                 <exclude reference="Mav-Kn-G7E"/>
+                                <exclude reference="zgn-cJ-8GH"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="wEb-WF-MMz"/>
+                                <exclude reference="OR6-fb-Cb3"/>
+                                <exclude reference="byd-g1-JGk"/>
                                 <exclude reference="gMK-lV-fZ7"/>
                                 <exclude reference="p4d-j5-BSM"/>
                                 <exclude reference="x4q-Qd-09S"/>
@@ -195,15 +214,18 @@
                                 <exclude reference="d1k-OB-Vhc"/>
                                 <exclude reference="P4j-nY-Yks"/>
                                 <exclude reference="kRP-oR-7W9"/>
+                                <exclude reference="wEb-WF-MMz"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="n95-d6-jZu"/>
                                 <include reference="Mav-Kn-G7E"/>
+                                <include reference="zgn-cJ-8GH"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="wEb-WF-MMz"/>
+                                <include reference="OR6-fb-Cb3"/>
+                                <include reference="byd-g1-JGk"/>
                                 <include reference="gMK-lV-fZ7"/>
                                 <include reference="p4d-j5-BSM"/>
                                 <include reference="x4q-Qd-09S"/>
@@ -213,9 +235,11 @@
                                 <include reference="d1k-OB-Vhc"/>
                                 <include reference="P4j-nY-Yks"/>
                                 <include reference="kRP-oR-7W9"/>
+                                <include reference="wEb-WF-MMz"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="Ud8-g5-mvT"/>
                     <connections>
                         <outlet property="personTableView" destination="Mav-Kn-G7E" id="ZqD-Lt-F2J"/>
                         <outlet property="subjectNumberTextField" destination="Cvj-ff-UzM" id="HOz-xa-ske"/>
@@ -224,7 +248,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kY2-zM-r8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="fZF-xn-Tqt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="794" y="960.75"/>
+            <point key="canvasLocation" x="1606" y="960.75"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="blT-cn-o4f">
+            <objects>
+                <tableViewController id="Flk-IB-xaE" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="an2-ii-dVH">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FRj-cs-p4Z">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FRj-cs-p4Z" id="F0D-C6-vUK">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Flk-IB-xaE" id="pV0-hR-Czy"/>
+                            <outlet property="delegate" destination="Flk-IB-xaE" id="k6d-AZ-0vA"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZS2-v5-QMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2323" y="955.5"/>
         </scene>
         <!--Instruction View Controller-->
         <scene sceneID="0Rm-DQ-gGy">
@@ -742,6 +791,24 @@
                 <exit id="1ud-eh-SzI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5454" y="226.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lLu-Af-w7f">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7qO-KU-crh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VgC-Ew-jta">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mxA-uY-pwh" kind="relationship" relationship="rootViewController" id="R6a-Ga-oiz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jAv-go-Arn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="794" y="960.75"/>
         </scene>
     </scenes>
 </document>

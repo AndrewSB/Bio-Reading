@@ -43,7 +43,7 @@ class RecordStore {
         globalRecordStore = nil
     }
     
-    func getSubjectNumbers() -> [Int]? {
+    class func getSubjectNumbers() -> [Int]? {
         var readString = UserStore.recordString
         if let rString = readString {
             var returner = [Int]()
@@ -59,7 +59,7 @@ class RecordStore {
         return nil
     }
     
-    func emailSubjectString(subjectNumber: Int, vc: UIViewController) -> MFMailComposeViewController {
+    class func emailSubjectString(subjectNumber: Int, vc: UIViewController) -> MFMailComposeViewController {
         var relevantString: String = ""
         let email = MFMailComposeViewController(rootViewController: vc)
         
@@ -78,11 +78,12 @@ class RecordStore {
         }
         
         email.title = "Subject \(subjectNumber), Adult Learning Lab"
+        email.setToRecipients(["a@ndrew.me"])
         
         email.addAttachmentData((relevantString as NSString).dataUsingEncoding(NSUTF8StringEncoding), mimeType: "text/csv", fileName: "subject.csv")
         
-        if let rString = relevantString {
-            let comps = split(rString) {$0 == ","}
+        if count(relevantString) > 0 {
+            let comps = split(relevantString) {$0 == ","}
             if NSFileManager.defaultManager().fileExistsAtPath(comps[comps.count - 1]) {
                 email.addAttachmentData(NSFileManager.defaultManager().contentsAtPath(comps[comps.count - 1]), mimeType: "audio/wav", fileName: "audio.wav")
             }
