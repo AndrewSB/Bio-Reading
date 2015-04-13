@@ -132,7 +132,6 @@
 			children = (
 				466A6FDB1A82D756006A2A21 /* AppDelegate.swift */,
 				46BA67E21A8800940072E437 /* View Controllers */,
-				466A6FDF1A82D756006A2A21 /* Main.storyboard */,
 				46BA67DF1A8800270072E437 /* UI Elements */,
 				46BA67E01A88002D0072E437 /* Helpers */,
 				46BA67E11A8800360072E437 /* Resources */,
@@ -188,6 +187,7 @@
 		46BA67E21A8800940072E437 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				466A6FDF1A82D756006A2A21 /* Main.storyboard */,
 				46111F611ACDD72B00C14878 /* Pre */,
 				4602A8001A85C7A900C5363E /* PromptPickerViewController.swift */,
 				4671F41C1AA7250A00F626BA /* CuriosityViewController.swift */,

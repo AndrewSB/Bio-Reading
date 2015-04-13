@@ -330,9 +330,6 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="20" y="74" width="560" height="650"/>
-                                </variation>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmp-Fe-szN">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -639,9 +636,6 @@
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="266" y="697" width="70" height="48"/>
-                                </variation>
                                 <connections>
                                     <segue destination="1ud-eh-SzI" kind="unwind" unwindAction="unwindToPromptPickerViewController:" id="o3o-xK-fjG"/>
                                 </connections>
