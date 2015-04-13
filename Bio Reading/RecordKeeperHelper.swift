@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Andrew Breckenridge. All rights reserved.
 //
 
+import AVFoundation
+
 var globalRecordStore: RecordStore?
 
 class RecordStore {
@@ -27,10 +29,17 @@ class RecordStore {
     }
     
     func writeToDisk() {
-        var writeString = ""
+        var writeString: String = UserStore.recordString == nil ? "" : UserStore.recordString!
         for record in records {
-            
+            writeString += "\(record.subjectNumber),\(record.dateTime),\(record.bioPerson!.hashValue),\(record.condition!.hashValue),\(record.cue!),\(record.order!),\(record.curiosity!),\(record.familiarity!),\(record.readingTime!)"
+            if let aFile = record.audioFile {
+                writeString += ",\(aFile.absoluteString)"
+            }
+            writeString += "\n"
         }
+        UserStore.recordString = writeString
+        
+        globalRecordStore = nil
     }
 }
 

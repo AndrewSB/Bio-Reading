@@ -14,6 +14,7 @@ class UserStore {
         case currentBio = "currentBio"
         case bios = "bios"
         case subjectNumber = "subjectNumber"
+        case recordString = "recordString"
     }
     
     class var subjectNumber: Int? {
@@ -77,4 +78,14 @@ class UserStore {
         
         return randBios
     }
+    
+    class var recordString: String? {
+        get {
+        return get(storeKeys.recordString.rawValue) as? String
+        }
+        set {
+            set(newValue, forKey: storeKeys.recordString.rawValue)
+        }
+    }
+
 }
