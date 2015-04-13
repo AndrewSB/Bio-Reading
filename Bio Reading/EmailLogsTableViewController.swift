@@ -15,14 +15,14 @@ class EmailLogsTableViewController: UITableViewController, MFMailComposeViewCont
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
         let alert = UIAlertController(title: "Uh oh!", message: "The email didn't send \(error.localizedDescription)", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: nil))
-        switch result {
-        case .Cancelled:
-            presentViewController(alert, animated: true, completion: nil)
-        case .Failed:
-            presentViewController(alert, animated: true, completion: nil)
-        default:
-            println("lol")
-        }
+//        switch result {
+//        case .Cancelled:
+//            presentViewController(alert, animated: true, completion: nil)
+//        case .Failed:
+//            presentViewController(alert, animated: true, completion: nil)
+//        default:
+//            println("lol")
+//        }
         dismissViewControllerAnimated(true, completion: nil)
     }
     

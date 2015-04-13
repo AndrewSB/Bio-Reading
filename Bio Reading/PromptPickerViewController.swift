@@ -124,7 +124,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             }
             view.userInteractionEnabled = false
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW,
-                Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                Int64(4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
                     self.view.userInteractionEnabled = true
                     self.selectCell(toSegueTo!)
             })
@@ -148,14 +148,13 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     func recordStoreLogic() {
         let rS = RecordStore.defaultStore()
         
-        if curPerson!.0 != "Example" {
             if rS.curRecord != nil {
                 rS.records.append(rS.curRecord!)
             }
             rS.curRecord = RecordEntry()
             rS.curRecord!.bioPerson = BioPersons.fromRaw(self.navigationItem.title!)
             rS.curRecord!.condition = curPerson!.1 ? .Foraging : .Control
-        }
+            
 
     }
     
