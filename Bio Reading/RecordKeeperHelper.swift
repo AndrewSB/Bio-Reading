@@ -32,10 +32,6 @@ class RecordStore {
             
         }
     }
-    
-    private func getRecordFile() {
-
-    }
 }
 
 enum Condtion: Int {

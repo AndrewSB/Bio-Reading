@@ -11,7 +11,15 @@ import AVFoundation
 
 class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophoneDelegate {
 
-    var isRecording = false
+    var isRecording: Bool = false {
+        didSet {
+            if isRecording {
+                mic.startFetchingAudio()
+            } else {
+                mic.stopFetchingAudio()
+            }
+        }
+    }
     @IBOutlet weak var recordButton: UIButton!
     
     var mic = EZMicrophone()
@@ -32,9 +40,10 @@ class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophon
         let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
         RecordStore.defaultStore().curRecord!.audioFile = soundFileURL
         
-        mic.startFetchingAudio()
+        isRecording = true
         
-        recorder = EZRecorder(destinationURL: soundFileURL!, sourceFormat: mic.audioStreamBasicDescription(), destinationFileType: EZRecorderFileType.WAV)
+        
+        recorder = EZRecorder(destinationURL: soundFileURL, sourceFormat: mic.audioStreamBasicDescription(), destinationFileType: .WAV)
     }
     
     
@@ -46,11 +55,15 @@ class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophon
     }
     
     func microphone(microphone: EZMicrophone!, hasBufferList bufferList: UnsafeMutablePointer<AudioBufferList>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
+        if self.isRecording {
+            
+            self.recorder.appendDataFromBufferList(bufferList, withBufferSize: bufferSize)
+        }
         
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        mic.stopFetchingAudio()
+        isRecording = false
         
         if let des = segue.destinationViewController as? FamiliarityViewController {
             des.person = NSUserDefaults.standardUserDefaults().objectForKey("currentPerson") as! String
