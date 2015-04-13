@@ -57,20 +57,8 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         set(!curPerson!.1, forKey: "timed")
         
         foragingLogic()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        let rS = RecordStore.defaultStore()
         
-        if curPerson!.0 != "Example" {
-            if rS.curRecord != nil {
-                rS.records.append(rS.curRecord!)
-            }
-            rS.curRecord = RecordEntry()
-            rS.curRecord!.subjectNumber = UserStore.subjectNumber
-            rS.curRecord!.bioPerson = BioPersons.
-        }
+        recordStoreLogic()
     }
 
     
@@ -105,10 +93,15 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     func selectCell(indexPath: NSIndexPath) {
         
         if !selected[indexPath.row] {
+            
+            
             collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.grayColor()
             selected[indexPath.row] = true
             
             selectedIndex = indexPath.row
+            
+            RecordStore.defaultStore().curRecord!.cue = indexPath.row
+            RecordStore.defaultStore().curRecord!.order = selected.filter({!$0}).count
             
             let prompt = IO.getPrompt(curPerson!.0, index: indexPath.row)
             self.performSegueWithIdentifier("segueToPromptVC", sender: prompt)
@@ -149,12 +142,21 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         
         if !stay {
             curPersonIndex++
-                        
-//            let startingAlert = UIAlertController(title: "About to change", message: "\(curPerson!.0) - foraging:\(curPerson!.1)", preferredStyle: .Alert)
-//            startingAlert.addAction(UIAlertAction(title: "Start", style: .Cancel, handler: nil))
-//            
-//            self.presentViewController(startingAlert, animated: true, completion: nil)
         }
+    }
+    
+    func recordStoreLogic() {
+        let rS = RecordStore.defaultStore()
+        
+        if curPerson!.0 != "Example" {
+            if rS.curRecord != nil {
+                rS.records.append(rS.curRecord!)
+            }
+            rS.curRecord = RecordEntry()
+            rS.curRecord!.bioPerson = BioPersons.fromRaw(self.navigationItem.title!)
+            rS.curRecord!.condition = curPerson!.1 ? .Foraging : .Control
+        }
+
     }
     
     

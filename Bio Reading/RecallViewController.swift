@@ -30,7 +30,7 @@ class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophon
         (NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
             .UserDomainMask, true)[0] as! String).stringByAppendingPathComponent("\(UserStore.subjectNumber!):\(NSUUID().UUIDString)sound.wav")
         let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
-
+        RecordStore.defaultStore().curRecord!.audioFile = soundFileURL
         
         mic.startFetchingAudio()
         
@@ -51,7 +51,6 @@ class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophon
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         mic.stopFetchingAudio()
-        RecordStore.defaultStore().curRecord!
         
         if let des = segue.destinationViewController as? FamiliarityViewController {
             des.person = NSUserDefaults.standardUserDefaults().objectForKey("currentPerson") as! String

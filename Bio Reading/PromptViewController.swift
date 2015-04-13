@@ -59,7 +59,7 @@ class PromptViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
 
-        let timeTaken = NSDate().timeIntervalSinceDate(startTime)
+        RecordStore.defaultStore().curRecord!.readingTime = NSDate().timeIntervalSinceDate(startTime)
     }
     
     @IBAction func unwindToPromptViewController(segue: UIStoryboardSegue) {}

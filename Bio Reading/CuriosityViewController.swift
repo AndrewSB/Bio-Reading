@@ -29,6 +29,7 @@ class CuriosityViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        RecordStore.defaultStore().curRecord!.curiosity = curiosityLabel.text?.toInt()
         (segue.destinationViewController as? PromptViewController)?.title = navigationItem.title
         (segue.destinationViewController as? PromptViewController)?.index = index
         (segue.destinationViewController as? PromptViewController)?.person = person

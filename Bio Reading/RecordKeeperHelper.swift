@@ -50,8 +50,8 @@ enum RTCond: Int {
 
 
 class RecordEntry: NSObject {
-    var subjectNumber: Int?
-    var dateTime: NSDate?
+    var subjectNumber = UserStore.subjectNumber!
+    var dateTime = NSDate()
     
     var bioPerson: BioPersons?
     var condition: Condtion?
