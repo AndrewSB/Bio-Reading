@@ -32,8 +32,8 @@ class GenericBio: NSObject, NSCoding {
     }
     
     required init(coder aDecoder: NSCoder) {
-        person = aDecoder.decodeObjectForKey("person") as String
-        foraging = aDecoder.decodeObjectForKey("foraging") as Bool
+        person = aDecoder.decodeObjectForKey("person") as! String
+        foraging = aDecoder.decodeObjectForKey("foraging") as! Bool
         super.init()
     }
 }

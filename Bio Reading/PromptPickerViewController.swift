@@ -64,7 +64,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(colorCollectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellID", forIndexPath: indexPath) as PromptCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellID", forIndexPath: indexPath) as! PromptCollectionViewCell
         
         cell.promptLabel.text = IO.getPrompt(self.navigationItem.title!, index: indexPath.row)
         cell.backgroundColor = selected[indexPath.row] ? UIColor.grayColor() : UIColor(red: 0.251, green: 0.69, blue: 0.692, alpha: 1)
@@ -145,7 +145,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         
-        (segue.destinationViewController as UIViewController).title = sender as? String
+        (segue.destinationViewController as! UIViewController).title = sender as? String
         
         set(sender as? String, forKey: "currentTitle")
         set(self.navigationItem.title!, forKey: "currentPerson")

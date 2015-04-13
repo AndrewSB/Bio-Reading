@@ -11,7 +11,7 @@ import UIKit
 class PromptViewController: UIViewController {
     var index = Int()
     var person = String()
-    var isTimed = NSUserDefaults.standardUserDefaults().objectForKey("timed") as Bool
+    var isTimed = NSUserDefaults.standardUserDefaults().objectForKey("timed") as! Bool
     
     let startTime = NSDate()
     var timer: NSTimer?

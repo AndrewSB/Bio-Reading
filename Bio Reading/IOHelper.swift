@@ -29,7 +29,7 @@ class IO {
         if let plist = NSBundle.mainBundle().pathForResource("\(file)", ofType: "plist") {
             let rootDict = NSDictionary(contentsOfFile: plist)!
             
-            return rootDict[rootDict.allKeys[index] as String]!["Sentance"] as? String
+            return rootDict[rootDict.allKeys[index] as! String]!["Sentance"] as? String
         }
         return nil
     }

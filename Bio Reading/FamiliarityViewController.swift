@@ -26,7 +26,7 @@ class FamiliarityViewController: UIViewController {
     }
     
     @IBAction func sliderValueChanged(sender: AnyObject) {
-        curiosityLabel.text = "\(Int((sender as UISlider).value))"
+        curiosityLabel.text = "\(Int((sender as! UISlider).value))"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

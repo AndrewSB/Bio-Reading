@@ -21,7 +21,7 @@ class UserStore {
     
     class var currentBio: Int? {
         get {
-            return get(storeKeys.currentBio.rawValue) as Int?
+            return get(storeKeys.currentBio.rawValue) as? Int
         }
         set {
             set(newValue, forKey: storeKeys.currentBio.rawValue)
@@ -30,7 +30,7 @@ class UserStore {
     
     class var bios: [(String, Bool)] {
         get {
-            let w = NSKeyedUnarchiver.unarchiveObjectWithData(get(storeKeys.bios.rawValue) as NSData) as [GenericBio]
+            let w = NSKeyedUnarchiver.unarchiveObjectWithData(get(storeKeys.bios.rawValue) as! NSData) as! [GenericBio]
         
             var arr = [(String, Bool)]()
             for p in w {

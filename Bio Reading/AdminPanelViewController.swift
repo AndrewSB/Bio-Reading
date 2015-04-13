@@ -33,7 +33,7 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! UITableViewCell
         
         cell.textLabel?.text = randBios[indexPath.row].0
         cell.detailTextLabel?.text = randBios[indexPath.row].1 ? "Foraging" : "Control"
