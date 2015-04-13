@@ -17,19 +17,13 @@ class RecordStore {
         self.curRecord = nil
     }
     
-    func getGlobalInstance() -> RecordStore {
+    class func defaultStore() -> RecordStore {
         if let gRS = globalRecordStore {
             return gRS
         } else {
             globalRecordStore = RecordStore()
             return globalRecordStore!
         }
-    }
-    
-    func createNewEntry(subjectNumber: Int) -> RecordEntry {
-        curRecord = RecordEntry()
-        curRecord!.subjectNumber = subjectNumber
-        return curRecord!
     }
     
     func writeToDisk() {
@@ -44,26 +38,18 @@ class RecordStore {
     }
 }
 
+enum Condtion: Int {
+    case Foraging = 1
+    case Control = 2
+}
+
+enum RTCond: Int {
+    case Increasing = 1
+    case Decreasing = 2
+}
+
+
 class RecordEntry: NSObject {
-    enum BioPersons: Int {
-        case Curie = 1
-        case Shakespeare = 2
-        case Newton = 3
-        case Teresa = 4
-        case Dickinson = 5
-        case Gandhi = 6
-    }
-    
-    enum Condtion: Int {
-        case Foraging = 1
-        case Control = 2
-    }
-    
-    enum RTCond: Int {
-        case Increasing = 1
-        case Decreasing = 2
-    }
-    
     var subjectNumber: Int?
     var dateTime: NSDate?
     

@@ -41,6 +41,10 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         curPerson = people[curPersonIndex]
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        if UserStore.subjectNumber == nil {
+            UserStore.subjectNumber = 123456789
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -53,6 +57,20 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         set(!curPerson!.1, forKey: "timed")
         
         foragingLogic()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        let rS = RecordStore.defaultStore()
+        
+        if curPerson!.0 != "Example" {
+            if rS.curRecord != nil {
+                rS.records.append(rS.curRecord!)
+            }
+            rS.curRecord = RecordEntry()
+            rS.curRecord!.subjectNumber = UserStore.subjectNumber
+            rS.curRecord!.bioPerson = BioPersons.
+        }
     }
 
     

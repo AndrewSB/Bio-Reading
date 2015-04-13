@@ -9,10 +9,41 @@
 import Foundation
 import UIKit
 
+
+typealias stringIntTuple = (String, Int)
+
+enum BioPersons: String, Printable {
+    case Curie = "Marie Curie"
+    case Shakespeare = "William Shakespeare"
+    case Newton = "Issac Newton"
+    case Teresa = "Mother Teresa"
+    case Dickinson = "Emily Dickinson"
+    case Gandhi = "Mahatma Gandhi"
+    
+    static func fromRaw(person: String) -> BioPersons? {
+        for bPerson in allValues {
+            if person == bPerson.rawValue || person == bPerson.description {
+                return bPerson
+            }
+        }
+        return nil
+    }
+    
+    var description: String {
+        get {
+            self.rawValue
+            return self.rawValue.substringFromIndex(self.rawValue.rangeOfString(" ")!.endIndex)
+        }
+    }
+    
+    static let allValues = [Curie, Shakespeare, Newton, Teresa, Dickinson, Gandhi]
+}
+
+
 class IO {
     class var people: [String] {
         get {
-            return ["Marie Curie", "William Shakespeare", "Issac Newton", "Mother Teresa", "Emily Dickinson", "Mahatma Gandhi"]
+            return BioPersons.allValues.map({$0.rawValue})
         }
     }
     

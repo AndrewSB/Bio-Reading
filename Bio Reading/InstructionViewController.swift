@@ -23,7 +23,6 @@ class InstructionViewController: UIViewController {
     }
     
     @IBAction func tapGestureTapped(sender: AnyObject) {
-        
         self.navigationController?.popViewControllerAnimated(true)
     }
 }
