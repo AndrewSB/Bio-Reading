@@ -25,6 +25,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             }
             
             collectionView.reloadData()
+            self.viewWillAppear(false)
         }
     }
     var curPersonIndex: Int = 0 {
@@ -49,16 +50,15 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewWillAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        doneLogic()
         
         self.navigationItem.title = curPerson!.0
         nameLabel.text = self.navigationItem.title!
         
-        set(!curPerson!.1, forKey: "timed")
-        
-        foragingLogic()
-        
         recordStoreLogic()
+        doneLogic()
+        
+        set(!curPerson!.1, forKey: "timed")
+        foragingLogic()
     }
 
     
@@ -126,9 +126,12 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW,
                 Int64(4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
                     self.view.userInteractionEnabled = true
-                    self.selectCell(toSegueTo!)
+                    if let toSegueTo = toSegueTo {
+                        self.selectCell(toSegueTo)
+                    }
             })
         }
+        
     }
     
     func doneLogic() {
@@ -141,19 +144,27 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         }
         
         if !stay {
-            curPersonIndex++
+            let changingPersonAlert = UIAlertController(title: "Changing Bios!", message: "You're about to switch to a new bio!", preferredStyle: .Alert)
+            changingPersonAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: { Void in
+                self.curPersonIndex++
+            }))
+            
+            self.presentViewController(changingPersonAlert, animated: true, completion: {println("presented")})
         }
     }
     
     func recordStoreLogic() {
         let rS = RecordStore.defaultStore()
         
-            if rS.curRecord != nil {
-                rS.records.append(rS.curRecord!)
-            }
-            rS.curRecord = RecordEntry()
-            rS.curRecord!.bioPerson = BioPersons.fromRaw(self.navigationItem.title!)
-            rS.curRecord!.condition = curPerson!.1 ? .Foraging : .Control
+        //store the old record if it exists
+        if rS.curRecord != nil {
+            rS.records.append(rS.curRecord!)
+        }
+        
+        //invalidate the old record and create a new one, that will be filled out when the subject goes through the other views
+        rS.curRecord = RecordEntry()
+        rS.curRecord!.bioPerson = BioPersons.fromRaw(self.navigationItem.title!)
+        rS.curRecord!.condition = curPerson!.1 ? .Foraging : .Control
             
 
     }
