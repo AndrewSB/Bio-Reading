@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserStore.bios.insert(("Example", false), atIndex: 0)
         UserStore.bios.insert(("Example", true), atIndex: 0)
         
+        
+        
         UserStore.subjectNumber = nil
         
         return true

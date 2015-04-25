@@ -12,6 +12,10 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
 
     @IBOutlet weak var subjectNumberTextField: UITextField!
     @IBOutlet weak var personTableView: UITableView!
+    
+    @IBOutlet weak var fontLabel: UILabel!
+    @IBOutlet weak var fontStepper: UIStepper!
+    
     var randBios: [(String, Bool)] = UserStore.bios {
         didSet {
             if personTableView != nil {
@@ -25,6 +29,8 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
         if let num = NSUserDefaults.standardUserDefaults().objectForKey("subjectNumber") as? Int {
             subjectNumberTextField.text = "\(num)"
         }
+        
+        fontStepper.value = Double(fontLabel.font.pointSize)
         
         personTableView.delegate = self
         personTableView.dataSource = self
@@ -74,9 +80,15 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
         
     }
     
+    @IBAction func stepperValue(sender: AnyObject) {
+        fontLabel.font = UIFont(name: "HelveticaNeue", size: CGFloat(fontStepper.value))
+        fontLabel.text = "\(fontStepper.value)"
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         
+        set(CGFloat(fontStepper.value), forKey: "fontSize")
         UserStore.bios = randBios
         UserStore.subjectNumber = subjectNumberTextField.text.toInt()
     }

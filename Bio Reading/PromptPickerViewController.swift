@@ -15,6 +15,8 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     var selected = [Bool]()
     var selectedIndex = Int()
     
+    var isFirstView = true
+    
     let people = UserStore.bios
     var curPerson: (String, Bool)? {
         didSet {
@@ -59,6 +61,11 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         
         set(!curPerson!.1, forKey: "timed")
         foragingLogic()
+        
+        if isFirstView {
+            isFirstView = false
+            
+        }
     }
 
     
@@ -144,6 +151,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         }
         
         if !stay {
+            RecordStore.defaultStore().writeToDisk()
             let changingPersonAlert = UIAlertController(title: "Changing Bios!", message: "You're about to switch to a new bio!", preferredStyle: .Alert)
             changingPersonAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: { Void in
                 self.curPersonIndex++

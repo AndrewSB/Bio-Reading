@@ -9,11 +9,30 @@
 import UIKit
 
 class InitialViewController: UIViewController {
-
-    @IBAction func tapRecognizerTapped(sender: AnyObject) {
-        performSegueWithIdentifier("segueToAdmin", sender: self)
+    var swiped = false
+    var pinched = false {
+        didSet {
+            if swiped && pinched {
+                self.performSegueWithIdentifier("segueToAdmin", sender: self)
+            }
+        }
     }
-
+    
+    @IBAction func didSwipe(sender: AnyObject) {
+        swiped = true
+    }
+    @IBAction func didPinch(sender: AnyObject) {
+        pinched = true
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        swiped = false
+        pinched = false
+    }
+    
+    
     @IBAction func startButtonTapped(sender: AnyObject) {
         performSegueWithIdentifier("segueToInstructions", sender: self)
     }

@@ -20,6 +20,8 @@ class InstructionViewController: UIViewController {
             
             self.presentViewController(alert, animated: true, completion: nil)
         }
+        
+        let d = UIFont(name: "HelveticaNeue", size: get("fontSize") as! CGFloat)
     }
     
     @IBAction func tapGestureTapped(sender: AnyObject) {

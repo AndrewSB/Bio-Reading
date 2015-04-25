@@ -12,6 +12,7 @@ import MessageUI
 var globalRecordStore: RecordStore?
 
 class RecordStore {
+    var firstSubjectNumber: Int?
     var records: [RecordEntry]
     var curRecord: RecordEntry?
     
@@ -32,15 +33,13 @@ class RecordStore {
     func writeToDisk() {
         var writeString: String = UserStore.recordString == nil ? "" : UserStore.recordString!
         for record in records {
-            writeString += "\(record.subjectNumber),\(record.dateTime),\(record.bioPerson!.hashValue),\(record.condition!.hashValue),\(record.cue!),\(record.order!),\(record.curiosity!),\(record.familiarity!),\(record.readingTime!)"
+            writeString += "\(record.subjectNumber),\(record.dateTime),\(record.bioPerson?.hashValue),\(record.condition?.hashValue),\(record.cue),\(record.order),\(record.curiosity),\(record.familiarity),\(record.readingTime)"
             if let aFile = record.audioFile {
                 writeString += ",\(aFile.absoluteString)"
             }
             writeString += "\n"
         }
         UserStore.recordString = writeString
-        
-        globalRecordStore = nil
     }
     
     class func getSubjectNumbers() -> [Int]? {

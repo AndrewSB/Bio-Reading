@@ -29,6 +29,9 @@ class PromptViewController: UIViewController {
         
         if isTimed {
             setupTimer(continueButton)
+            continueButton.hidden = true
+        } else {
+            continueButton.hidden = false
         }
     }
     @IBAction func contineButtonWasHit(sender: AnyObject) {
