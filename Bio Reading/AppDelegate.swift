@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UserStore.subjectNumber = nil
         
-        set(18, forKey: "fontSize")
+        set(32, forKey: "fontSize")
         
         return true
     }

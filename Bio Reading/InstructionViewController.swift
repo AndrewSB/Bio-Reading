@@ -10,6 +10,13 @@ import UIKit
 
 class InstructionViewController: UIViewController {
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var instructionLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        instructionLabel.font = UIFont(name: "HelveticaNeue", size: get("fontSize") as! CGFloat)
+    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -21,8 +28,6 @@ class InstructionViewController: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
             UserStore.subjectNumber = 9999999
         }
-        
-        let d = UIFont(name: "HelveticaNeue", size: get("fontSize") as! CGFloat)
     }
     
     @IBAction func tapGestureTapped(sender: AnyObject) {

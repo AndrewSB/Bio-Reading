@@ -87,6 +87,7 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
+        println("set font size as \(CGFloat(fontStepper.value))")
         
         set(CGFloat(fontStepper.value), forKey: "fontSize")
         UserStore.bios = randBios

@@ -23,6 +23,8 @@ class PromptViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        promptLabel.font = UIFont(name: "HelveticaNeue", size: get("fontSize") as! CGFloat)
+        
         promptLabel.text = IO.getSentance(person, index: index)
         
         navigationItem.title = title

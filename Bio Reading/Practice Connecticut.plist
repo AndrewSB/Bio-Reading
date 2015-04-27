@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>New Haven - 2</key>
+	<dict>
+		<key>Sentance</key>
+		<string>Wadsworth Atheneum is the oldest public art museum.</string>
+		<key>CPIDR</key>
+		<integer>4</integer>
+	</dict>
+	<key>New Haven</key>
+	<dict>
+		<key>Sentance</key>
+		<string>New Haven was designed as a planned city in the colonies.</string>
+		<key>CPIDR</key>
+		<integer>4</integer>
+	</dict>
+	<key>1635</key>
+	<dict>
+		<key>Sentance</key>
+		<string>The English established a settlement at Hartford in 1635.</string>
+		<key>CPIDR</key>
+		<integer>3</integer>
+	</dict>
+	<key>Gunsmith</key>
+	<dict>
+		<key>Sentance</key>
+		<string>Samuel Colt was a gunsmith from Connecticut.</string>
+		<key>CPIDR</key>
+		<integer>2</integer>
+	</dict>
+	<key>Goodyear</key>
+	<dict>
+		<key>Sentance</key>
+		<string>Native son Charles Goodyear invented vulcanized rubber.</string>
+		<key>CPIDR</key>
+		<integer>3</integer>
+	</dict>
+	<key>Statehood</key>
+	<dict>
+		<key>Sentance</key>
+		<string>Connecticut was made a state in 1788.</string>
+		<key>CPIDR</key>
+		<integer>2</integer>
+	</dict>
+</dict>
+</plist>

@@ -131,6 +131,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
                 var cellIndexSelectionPool = [UICollectionViewCell]()
                 
                 for (index, element) in enumerate(collectionView.visibleCells()) {
+                    
                     if !selected[index] {
                         cellIndexSelectionPool.append(element as! UICollectionViewCell)
                     }
