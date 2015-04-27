@@ -59,7 +59,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         recordStoreLogic()
         doneLogic()
         
-        set(!curPerson!.1, forKey: "timed")
+        UserStore.isTimed = !curPerson!.1
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
             self.foragingLogic()
@@ -201,9 +201,9 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         
         (segue.destinationViewController as! UIViewController).title = sender as? String
         
-        set(sender as? String, forKey: "currentTitle")
-        set(self.navigationItem.title!, forKey: "currentPerson")
-        set(curPersonControlTimes[curPersonIndex], forKey: "currentTime")
+        UserStore.currentTitle = sender as? String
+        UserStore.currentPerson = self.navigationItem.title!
+        UserStore.currentTime = curPersonControlTimes[curPersonIndex]
         
         if let s = segue.destinationViewController as? CuriosityViewController {
             s.person = self.navigationItem.title!

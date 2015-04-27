@@ -30,6 +30,8 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
             subjectNumberTextField.text = "\(num)"
         }
         
+        fontLabel.font = UIFont(name: "HelveticaNeue", size: get("fontSize") as! CGFloat)
+        
         fontStepper.value = Double(fontLabel.font.pointSize)
         
         personTableView.delegate = self
@@ -89,7 +91,7 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
         super.prepareForSegue(segue, sender: sender)
         println("set font size as \(CGFloat(fontStepper.value))")
         
-        set(CGFloat(fontStepper.value), forKey: "fontSize")
+        UserStore.fontSize = CGFloat(fontStepper.value)
         UserStore.bios = randBios
         UserStore.subjectNumber = subjectNumberTextField.text.toInt()
     }

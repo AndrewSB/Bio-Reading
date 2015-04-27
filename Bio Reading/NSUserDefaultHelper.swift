@@ -11,10 +11,18 @@ let get = NSUserDefaults.standardUserDefaults().objectForKey
 
 class UserStore {
     enum storeKeys: String {
+        case currentPerson = "currentPerson"
         case currentBio = "currentBio"
+        case currentTitle = "currentTitle"
+        case currentTime = "currentTime"
+        
+        
         case bios = "bios"
         case subjectNumber = "subjectNumber"
         case recordString = "recordString"
+        case fontSize = "fontSize"
+        
+        case isTimed = "timed"
     }
     
     class var subjectNumber: Int? {
@@ -26,6 +34,15 @@ class UserStore {
         }
     }
     
+    class var currentPerson: String? {
+        get {
+            return get(storeKeys.currentPerson.rawValue) as? String
+        }
+        set {
+            set(newValue, forKey: storeKeys.currentPerson.rawValue)
+        }
+    }
+    
     class var currentBio: Int? {
         get {
             return get(storeKeys.currentBio.rawValue) as? Int
@@ -34,6 +51,26 @@ class UserStore {
             set(newValue, forKey: storeKeys.currentBio.rawValue)
         }
     }
+    
+    class var currentTitle: String? {
+        get {
+            return get(storeKeys.currentTitle.rawValue) as? String
+        }
+        set {
+            set(newValue, forKey: storeKeys.currentTitle.rawValue)
+        }
+    }
+    
+    
+    class var currentTime: Int? {
+        get {
+        return get(storeKeys.currentTime.rawValue) as? Int
+        }
+        set {
+            set(newValue, forKey: storeKeys.currentTime.rawValue)
+        }
+    }
+    
     
     class var bios: [(String, Bool)] {
         get {
@@ -87,5 +124,22 @@ class UserStore {
             set(newValue, forKey: storeKeys.recordString.rawValue)
         }
     }
-
+    
+    class var fontSize: CGFloat? {
+        get {
+            return get(storeKeys.fontSize.rawValue) as? CGFloat
+        }
+        set {
+            set(newValue, forKey: storeKeys.fontSize.rawValue)
+        }
+    }
+    
+    class var isTimed: Bool? {
+        get {
+            return get(storeKeys.isTimed.rawValue) as? Bool
+        }
+        set {
+            set(newValue, forKey: storeKeys.isTimed.rawValue)
+        }
+    }
 }
