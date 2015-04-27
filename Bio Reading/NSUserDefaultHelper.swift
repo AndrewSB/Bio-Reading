@@ -62,9 +62,9 @@ class UserStore {
     }
     
     
-    class var currentTime: Int? {
+    class var currentTime: Double? {
         get {
-        return get(storeKeys.currentTime.rawValue) as? Int
+        return get(storeKeys.currentTime.rawValue) as? Double
         }
         set {
             set(newValue, forKey: storeKeys.currentTime.rawValue)
