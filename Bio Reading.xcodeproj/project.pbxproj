@@ -34,6 +34,7 @@
 		46E644A51ADC2D320081B73D /* RecordKeeperHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E644A41ADC2D320081B73D /* RecordKeeperHelper.swift */; };
 		46E644AC1ADC6CBF0081B73D /* EmailLogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E644AB1ADC6CBF0081B73D /* EmailLogsTableViewController.swift */; };
 		46EDB01B1A886118009C6D2C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EDB01A1A886118009C6D2C /* UIColorExtension.swift */; };
+		46FAC9A71AEEE21600BAFE99 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9A61AEEE21600BAFE99 /* ArrayExtension.swift */; };
 		46FD068E1AA7BBCE008E175B /* FamiliarityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FD068D1AA7BBCE008E175B /* FamiliarityViewController.swift */; };
 		46FD06921AA7D439008E175B /* Marie Curie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46FD06911AA7D439008E175B /* Marie Curie.plist */; };
 		8656BB474A2FF6F6CCF548A2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC07F56476296E30EB238E32 /* libPods.a */; };
@@ -71,6 +72,7 @@
 		46E644A41ADC2D320081B73D /* RecordKeeperHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordKeeperHelper.swift; sourceTree = "<group>"; };
 		46E644AB1ADC6CBF0081B73D /* EmailLogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLogsTableViewController.swift; sourceTree = "<group>"; };
 		46EDB01A1A886118009C6D2C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		46FAC9A61AEEE21600BAFE99 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		46FD068D1AA7BBCE008E175B /* FamiliarityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamiliarityViewController.swift; sourceTree = "<group>"; };
 		46FD06911AA7D439008E175B /* Marie Curie.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Marie Curie.plist"; sourceTree = "<group>"; };
 		6D0C1CE6163405EEFC7A8399 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				4670D4091A85CDB300318375 /* IOHelper.swift */,
 				468CA1681AD1E3F700612C60 /* GenericWrapper.swift */,
 				46EDB01A1A886118009C6D2C /* UIColorExtension.swift */,
+				46FAC9A61AEEE21600BAFE99 /* ArrayExtension.swift */,
 				468CA1661AD1DA8B00612C60 /* NSUserDefaultHelper.swift */,
 				46E644A41ADC2D320081B73D /* RecordKeeperHelper.swift */,
 			);
@@ -353,6 +356,7 @@
 				46111F631ACE049500C14878 /* AdminPanelViewController.swift in Sources */,
 				468CA1671AD1DA8B00612C60 /* NSUserDefaultHelper.swift in Sources */,
 				468CA1651AD1D88E00612C60 /* InitialViewController.swift in Sources */,
+				46FAC9A71AEEE21600BAFE99 /* ArrayExtension.swift in Sources */,
 				462CE0431AA733D400EC96BE /* SISinusWaveView.m in Sources */,
 				46E644AC1ADC6CBF0081B73D /* EmailLogsTableViewController.swift in Sources */,
 				4670D40C1A85D44B00318375 /* PromptViewController.swift in Sources */,

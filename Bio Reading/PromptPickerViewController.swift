@@ -60,7 +60,10 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         doneLogic()
         
         set(!curPerson!.1, forKey: "timed")
-        foragingLogic()
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+            self.foragingLogic()
+        })
         
         if isFirstView {
             isFirstView = false
@@ -98,6 +101,9 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func selectCell(indexPath: NSIndexPath) {
+        for cell in collectionView.visibleCells() {
+            cell.layer.borderWidth = 0
+        }
         
         if !selected[indexPath.row] {
             
@@ -118,30 +124,37 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     // MARK: - Helper
     func foragingLogic() {
         println(curPerson!.1)
-        if curPerson!.1 { //foraging
-            view.userInteractionEnabled = true
-        } else { //control
-            var toSegueTo: NSIndexPath?
-            for (index, element) in enumerate(selected) {
-                if toSegueTo == nil {
-                    if !element {
-                        toSegueTo = NSIndexPath(forRow: index, inSection: 0)
+        if !doneLogic() {
+            if curPerson!.1 { //foraging
+                view.userInteractionEnabled = true
+            } else { //control
+                var cellIndexSelectionPool = [UICollectionViewCell]()
+                
+                for (index, element) in enumerate(collectionView.visibleCells()) {
+                    if !selected[index] {
+                        cellIndexSelectionPool.append(element as! UICollectionViewCell)
                     }
                 }
-            }
-            view.userInteractionEnabled = false
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW,
-                Int64(4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                
+                let toSegueTo = cellIndexSelectionPool.getRandomElement()
+                view.userInteractionEnabled = false
+                
+                toSegueTo.layer.borderColor = UIColor.yellowColor().CGColor
+                toSegueTo.layer.borderWidth = 5
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
                     self.view.userInteractionEnabled = true
-                    if let toSegueTo = toSegueTo {
-                        self.selectCell(toSegueTo)
-                    }
-            })
+                    self.selectCell(self.collectionView.indexPathForCell(toSegueTo as UICollectionViewCell)!
+                    )
+                })
+            }
+            
         }
+        
         
     }
     
-    func doneLogic() {
+    func doneLogic() -> Bool {
         var stay = false
         
         for f in selected {
@@ -158,7 +171,9 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             }))
             
             self.presentViewController(changingPersonAlert, animated: true, completion: {println("presented")})
+            return true
         }
+        return false
     }
     
     func recordStoreLogic() {
