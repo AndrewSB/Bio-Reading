@@ -794,7 +794,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mXU-bL-Gtc" kind="show" id="Rnm-s6-YgV"/>
+                                    <segue destination="aBc-4W-cs8" kind="unwind" unwindAction="unwindToPromptPickerViewController:" id="Zjh-SH-IhJ"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mcd-HY-DVX" customClass="EZAudioPlotGL">
@@ -867,6 +867,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tfm-lC-KNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aBc-4W-cs8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4648" y="226.5"/>
         </scene>
@@ -887,122 +888,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ix-fJ-lVJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="57" y="226.5"/>
-        </scene>
-        <!--Familiarity View Controller-->
-        <scene sceneID="uDp-ZY-XOe">
-            <objects>
-                <viewController id="mXU-bL-Gtc" customClass="FamiliarityViewController" customModule="Bio_Reading" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hz0-0N-t5e"/>
-                        <viewControllerLayoutGuide type="bottom" id="LV1-jW-52m"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZG5-GW-sUe">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="How familiar?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcF-dC-vTq">
-                                <rect key="frame" x="217" y="203" width="179" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gU-QX-l41">
-                                <rect key="frame" x="223" y="497" width="155" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="266" y="697" width="70" height="48"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="1ud-eh-SzI" kind="unwind" unwindAction="unwindToPromptPickerViewController:" id="o3o-xK-fjG"/>
-                                </connections>
-                            </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="v6S-NB-XVy">
-                                <rect key="frame" x="176" y="396" width="249" height="31"/>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbm-aM-WhE">
-                                <rect key="frame" x="159" y="399" width="11" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGR-43-CcV">
-                                <rect key="frame" x="431" y="399" width="11" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="sbm-aM-WhE" firstAttribute="centerY" secondItem="v6S-NB-XVy" secondAttribute="centerY" constant="-0.5" id="9Sp-WU-Mfw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zcF-dC-vTq" secondAttribute="trailing" constant="188" id="A8o-Ev-xca">
-                                <variation key="heightClass=regular" constant="44"/>
-                            </constraint>
-                            <constraint firstItem="LV1-jW-52m" firstAttribute="top" secondItem="7gU-QX-l41" secondAttribute="bottom" constant="55" id="AXR-hU-hk6"/>
-                            <constraint firstItem="zcF-dC-vTq" firstAttribute="top" secondItem="hz0-0N-t5e" secondAttribute="bottom" constant="139" id="Abx-e1-iiY"/>
-                            <constraint firstItem="TGR-43-CcV" firstAttribute="leading" secondItem="v6S-NB-XVy" secondAttribute="trailing" constant="8" id="MiP-4V-SWr"/>
-                            <constraint firstItem="7gU-QX-l41" firstAttribute="top" secondItem="v6S-NB-XVy" secondAttribute="bottom" constant="41" id="Wpv-VI-YbV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="v6S-NB-XVy" secondAttribute="trailing" constant="167" id="Xat-8X-STS">
-                                <variation key="heightClass=regular" constant="162"/>
-                            </constraint>
-                            <constraint firstItem="zcF-dC-vTq" firstAttribute="leading" secondItem="ZG5-GW-sUe" secondAttribute="leadingMargin" constant="201" id="dE2-dh-dQi">
-                                <variation key="heightClass=regular" constant="44"/>
-                            </constraint>
-                            <constraint firstItem="v6S-NB-XVy" firstAttribute="leading" secondItem="sbm-aM-WhE" secondAttribute="trailing" constant="8" id="eQL-st-1bM"/>
-                            <constraint firstItem="TGR-43-CcV" firstAttribute="centerY" secondItem="v6S-NB-XVy" secondAttribute="centerY" constant="-0.5" id="gnd-Kj-w2T"/>
-                            <constraint firstAttribute="centerX" secondItem="7gU-QX-l41" secondAttribute="centerX" id="r9j-qm-DR7"/>
-                            <constraint firstItem="v6S-NB-XVy" firstAttribute="leading" secondItem="ZG5-GW-sUe" secondAttribute="leadingMargin" constant="156" id="tf3-wu-7wY">
-                                <variation key="heightClass=regular" constant="162"/>
-                            </constraint>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="v6S-NB-XVy"/>
-                                <exclude reference="sbm-aM-WhE"/>
-                                <exclude reference="TGR-43-CcV"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="Wpv-VI-YbV"/>
-                                <exclude reference="9Sp-WU-Mfw"/>
-                                <exclude reference="A8o-Ev-xca"/>
-                                <exclude reference="dE2-dh-dQi"/>
-                                <exclude reference="Xat-8X-STS"/>
-                                <exclude reference="eQL-st-1bM"/>
-                                <exclude reference="tf3-wu-7wY"/>
-                                <exclude reference="MiP-4V-SWr"/>
-                                <exclude reference="gnd-Kj-w2T"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular">
-                            <mask key="subviews">
-                                <include reference="v6S-NB-XVy"/>
-                                <include reference="sbm-aM-WhE"/>
-                                <include reference="TGR-43-CcV"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="Wpv-VI-YbV"/>
-                                <include reference="9Sp-WU-Mfw"/>
-                                <include reference="A8o-Ev-xca"/>
-                                <include reference="dE2-dh-dQi"/>
-                                <include reference="Xat-8X-STS"/>
-                                <include reference="eQL-st-1bM"/>
-                                <include reference="tf3-wu-7wY"/>
-                                <include reference="MiP-4V-SWr"/>
-                                <include reference="gnd-Kj-w2T"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <connections>
-                        <outlet property="howCuriousLabel" destination="zcF-dC-vTq" id="lkd-bB-CiT"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2v7-qW-KgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="1ud-eh-SzI" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="5454" y="226.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lLu-Af-w7f">
