@@ -102,12 +102,12 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     func selectCell(indexPath: NSIndexPath) {
         for cell in collectionView.visibleCells() {
-            (cell as! UICollectionViewCell).backgroundColor = UIColor.niceGreenColor()
+            if (cell as! UICollectionViewCell).backgroundColor == UIColor.redColor() {
+                (cell as! UICollectionViewCell).backgroundColor = UIColor.grayColor()
+            }
         }
         
         if !selected[indexPath.row] {
-            
-            
             collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.grayColor()
             selected[indexPath.row] = true
             
