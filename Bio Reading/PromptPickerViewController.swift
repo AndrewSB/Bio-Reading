@@ -102,7 +102,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     func selectCell(indexPath: NSIndexPath) {
         for cell in collectionView.visibleCells() {
-            cell.layer.borderWidth = 0
+            (cell as! UICollectionViewCell).backgroundColor = UIColor.niceGreenColor()
         }
         
         if !selected[indexPath.row] {
@@ -140,8 +140,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
                 let toSegueTo = cellIndexSelectionPool.getRandomElement()
                 view.userInteractionEnabled = false
                 
-                toSegueTo.layer.borderColor = UIColor.yellowColor().CGColor
-                toSegueTo.layer.borderWidth = 5
+                toSegueTo.backgroundColor = UIColor.redColor()
                 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
                     self.view.userInteractionEnabled = true
