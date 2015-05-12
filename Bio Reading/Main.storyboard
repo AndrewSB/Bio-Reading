@@ -276,10 +276,10 @@
             </objects>
             <point key="canvasLocation" x="1606" y="960.75"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Email Logs Table View Controller-->
         <scene sceneID="blT-cn-o4f">
             <objects>
-                <tableViewController id="Flk-IB-xaE" sceneMemberID="viewController">
+                <tableViewController id="Flk-IB-xaE" customClass="EmailLogsTableViewController" customModule="Bio_Reading" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="an2-ii-dVH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

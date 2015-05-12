@@ -11,7 +11,19 @@ import MessageUI
 import CoreData
 
 class EmailLogsTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
-    let subjectRecords = appDel.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Record"), error: nil) as? [Record]
+    var subjectRecords: [Record]?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        subjectRecords = appDel.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Record"), error: nil) as? [Record]
+        
+        for s in subjectRecords! {
+            println(s)
+        }
+        
+        tableView.reloadData()
+    }
     
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
         let alert = UIAlertController(title: "Uh oh!", message: "The email didn't send \(error.localizedDescription)", preferredStyle: .Alert)
@@ -44,6 +56,7 @@ class EmailLogsTableViewController: UITableViewController, MFMailComposeViewCont
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let email = createEmail(subjectRecords![indexPath.row].subjectNumber as! Int)
+        println(email)
         
         presentViewController(email, animated: true, completion: nil)
     }

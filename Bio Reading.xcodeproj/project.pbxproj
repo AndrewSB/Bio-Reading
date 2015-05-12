@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		462BFA121B01E3FB00028FB6 /* GenericWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */; };
-		462BFA1A1B01E5B200028FB6 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BFA191B01E5B200028FB6 /* Record.swift */; };
 		46AD0CB21B01ED2F00010E9C /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AD0CB11B01ED2F00010E9C /* CoreDataHelper.swift */; };
+		46F8AA6C1B02882500946033 /* Practice Rhode Island.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */; };
+		46F8AA6E1B028C9E00946033 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8AA6D1B028C9E00946033 /* Record.swift */; };
 		46FAC9BC1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9BA1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodeld */; };
 		46FAC9DD1AEEF57A00BAFE99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9DC1AEEF57A00BAFE99 /* AppDelegate.swift */; };
 		46FAC9E31AEEF5AE00BAFE99 /* CuriosityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9DE1AEEF5AE00BAFE99 /* CuriosityViewController.swift */; };
@@ -45,8 +46,9 @@
 
 /* Begin PBXFileReference section */
 		462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericWrapper.swift; sourceTree = "<group>"; };
-		462BFA191B01E5B200028FB6 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		46AD0CB11B01ED2F00010E9C /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Practice Rhode Island.plist"; sourceTree = "<group>"; };
+		46F8AA6D1B028C9E00946033 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Record.swift; path = ../Record.swift; sourceTree = "<group>"; };
 		46FAC9B31AEEF4F600BAFE99 /* Bio Reading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bio Reading.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FAC9BB1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bio_Reading.xcdatamodel; sourceTree = "<group>"; };
 		46FAC9DB1AEEF57A00BAFE99 /* Bio Reading-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bio Reading-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				46FACA081AEEF61500BAFE99 /* Marie Curie.plist */,
 				46FACA091AEEF61500BAFE99 /* Mother Teresa.plist */,
 				46FACA0A1AEEF61500BAFE99 /* Practice Connecticut.plist */,
+				46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */,
 				46FACA0B1AEEF61500BAFE99 /* William Shakespeare.plist */,
 			);
 			name = Bios;
@@ -225,7 +228,7 @@
 			children = (
 				462BF9DC1B01E00100028FB6 /* Bios */,
 				46FAC9BA1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodeld */,
-				462BFA191B01E5B200028FB6 /* Record.swift */,
+				46F8AA6D1B028C9E00946033 /* Record.swift */,
 				46FACA151AEEF62600BAFE99 /* Images.xcassets */,
 			);
 			name = Resources;
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46FAC9F31AEEF5D600BAFE99 /* Main.storyboard in Resources */,
+				46F8AA6C1B02882500946033 /* Practice Rhode Island.plist in Resources */,
 				46FACA161AEEF62600BAFE99 /* Images.xcassets in Resources */,
 				46FACA0C1AEEF61500BAFE99 /* Emily Dickinson.plist in Resources */,
 				46FACA0F1AEEF61500BAFE99 /* Mahatma Gandhi.plist in Resources */,
@@ -389,6 +393,7 @@
 			files = (
 				46FAC9E61AEEF5AE00BAFE99 /* PromptViewController.swift in Sources */,
 				46FAC9EE1AEEF5C300BAFE99 /* EmailLogsTableViewController.swift in Sources */,
+				46F8AA6E1B028C9E00946033 /* Record.swift in Sources */,
 				46FAC9ED1AEEF5C300BAFE99 /* AdminPanelViewController.swift in Sources */,
 				46FAC9E41AEEF5AE00BAFE99 /* FamiliarityViewController.swift in Sources */,
 				46FAC9DD1AEEF57A00BAFE99 /* AppDelegate.swift in Sources */,
@@ -399,7 +404,6 @@
 				46FAC9E51AEEF5AE00BAFE99 /* PromptPickerViewController.swift in Sources */,
 				46AD0CB21B01ED2F00010E9C /* CoreDataHelper.swift in Sources */,
 				46FAC9F01AEEF5C300BAFE99 /* InstructionViewController.swift in Sources */,
-				462BFA1A1B01E5B200028FB6 /* Record.swift in Sources */,
 				46FACA011AEEF60300BAFE99 /* NSUserDefaultHelper.swift in Sources */,
 				46FAC9E31AEEF5AE00BAFE99 /* CuriosityViewController.swift in Sources */,
 				46FACA001AEEF60300BAFE99 /* IOHelper.swift in Sources */,

@@ -2,47 +2,47 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>New Haven - 2</key>
+	<key>Oyster</key>
 	<dict>
 		<key>Sentance</key>
-		<string>Wadsworth Atheneum is the oldest public art museum.</string>
+		<string>The Eastern oyster, which is a bivalve mollusk, thrives naturally in Connecticut’s rivers and embayments.</string>
 		<key>CPIDR</key>
-		<integer>4</integer>
+		<integer>7</integer>
 	</dict>
-	<key>New Haven</key>
+	<key>Nickname</key>
 	<dict>
 		<key>Sentance</key>
-		<string>New Haven was designed as a planned city in the colonies.</string>
+		<string>Connecticut is unofficially known as the “Nutmeg State,” because sailors returned here from voyages with that spice.</string>
 		<key>CPIDR</key>
-		<integer>4</integer>
+		<integer>9</integer>
 	</dict>
-	<key>1635</key>
+	<key>Telephone</key>
 	<dict>
 		<key>Sentance</key>
-		<string>The English established a settlement at Hartford in 1635.</string>
+		<string>It was in New Haven in 1878 that Alexander Graham Bell set up the first telephone conversation.</string>
 		<key>CPIDR</key>
-		<integer>3</integer>
+		<integer>7</integer>
 	</dict>
-	<key>Gunsmith</key>
+	<key>Flower</key>
 	<dict>
 		<key>Sentance</key>
-		<string>Samuel Colt was a gunsmith from Connecticut.</string>
+		<string>The Mountain Laurel is a popular flower that swathes the hills in pink and white, mostly in the spring.</string>
 		<key>CPIDR</key>
-		<integer>2</integer>
+		<integer>9</integer>
 	</dict>
-	<key>Goodyear</key>
+	<key>Cathedral</key>
 	<dict>
 		<key>Sentance</key>
-		<string>Native son Charles Goodyear invented vulcanized rubber.</string>
+		<string>The cathedral of St. Joseph in Hartford is noted for its spectacular stained-glass windows that line the nave.</string>
 		<key>CPIDR</key>
-		<integer>3</integer>
+		<integer>8</integer>
 	</dict>
-	<key>Statehood</key>
+	<key>Morey</key>
 	<dict>
 		<key>Sentance</key>
-		<string>Connecticut was made a state in 1788.</string>
+		<string>Samuel Morey invented the internal combustion engine in 1792, which helped the invention of the automobile.</string>
 		<key>CPIDR</key>
-		<integer>2</integer>
+		<integer>7</integer>
 	</dict>
 </dict>
 </plist>
