@@ -9,10 +9,9 @@
 import UIKit
 
 class InitialViewController: UIViewController {
-    var swiped = false
-    var pinched = false {
+    var swiped = false {
         didSet {
-            if swiped && pinched {
+            if swiped {
                 self.performSegueWithIdentifier("segueToAdmin", sender: self)
             }
         }
@@ -21,15 +20,11 @@ class InitialViewController: UIViewController {
     @IBAction func didSwipe(sender: AnyObject) {
         swiped = true
     }
-    @IBAction func didPinch(sender: AnyObject) {
-        pinched = true
-    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         swiped = false
-        pinched = false
     }
     
     
