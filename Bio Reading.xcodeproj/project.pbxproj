@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		462BFA121B01E3FB00028FB6 /* GenericWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */; };
+		462BFA1A1B01E5B200028FB6 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BFA191B01E5B200028FB6 /* Record.swift */; };
 		46FAC9BC1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9BA1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodeld */; };
 		46FAC9DD1AEEF57A00BAFE99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9DC1AEEF57A00BAFE99 /* AppDelegate.swift */; };
 		46FAC9E31AEEF5AE00BAFE99 /* CuriosityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9DE1AEEF5AE00BAFE99 /* CuriosityViewController.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericWrapper.swift; sourceTree = "<group>"; };
+		462BFA191B01E5B200028FB6 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		46FAC9B31AEEF4F600BAFE99 /* Bio Reading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bio Reading.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FAC9BB1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bio_Reading.xcdatamodel; sourceTree = "<group>"; };
 		46FAC9DB1AEEF57A00BAFE99 /* Bio Reading-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bio Reading-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				462BF9DC1B01E00100028FB6 /* Bios */,
 				46FAC9BA1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodeld */,
+				462BFA191B01E5B200028FB6 /* Record.swift */,
 				46FACA151AEEF62600BAFE99 /* Images.xcassets */,
 			);
 			name = Resources;
@@ -392,6 +395,7 @@
 				46FACA021AEEF60300BAFE99 /* RecordKeeperHelper.swift in Sources */,
 				46FAC9E51AEEF5AE00BAFE99 /* PromptPickerViewController.swift in Sources */,
 				46FAC9F01AEEF5C300BAFE99 /* InstructionViewController.swift in Sources */,
+				462BFA1A1B01E5B200028FB6 /* Record.swift in Sources */,
 				46FACA011AEEF60300BAFE99 /* NSUserDefaultHelper.swift in Sources */,
 				46FAC9E31AEEF5AE00BAFE99 /* CuriosityViewController.swift in Sources */,
 				46FACA001AEEF60300BAFE99 /* IOHelper.swift in Sources */,

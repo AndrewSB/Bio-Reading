@@ -29,6 +29,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UserStore.fontSize = 32
         
+        let newRecord = NSEntityDescription.insertNewObjectForEntityForName("Record", inManagedObjectContext: self.managedObjectContext!) as! Record
+        newRecord.subjectNumber = 1
+        newRecord.dateTime = NSDate()
+        newRecord.bioPerson = "lolPerson"
+        newRecord.condition = 1
+        newRecord.cue = 101
+        newRecord.order = 2
+        newRecord.curiosity = 7
+        newRecord.readingTime = 7.323
+        newRecord.audioFile = NSData()
+        
         return true
     }
 
