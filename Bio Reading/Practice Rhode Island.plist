@@ -2,7 +2,47 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>New item</key>
-	<string>Samuel Morey invented the internal combustion engine in 1792, which helped the invention of the automobile.</string>
+	<key>Rock</key>
+	<dict>
+		<key>Sentance</key>
+		<string>On Block Island, visitors can see Settlers’ Rock, which is inscribed with the names of the first inhabitants.</string>
+		<key>CPIDR</key>
+		<integer>7</integer>
+	</dict>
+	<key>Horse</key>
+	<dict>
+		<key>Sentance</key>
+		<string>The Narragansett Pacer is the first American-bred horse that contributed to local prosperity in the Colonial era.</string>
+		<key>CPIDR</key>
+		<integer>6</integer>
+	</dict>
+	<key>Hutchinson</key>
+	<dict>
+		<key>Sentance</key>
+		<string>When Anne Hutchinson was kicked out of the colony for her beliefs about women’s rights, she settled on Aquineck Island.</string>
+		<key>CPIDR</key>
+		<integer>10</integer>
+	</dict>
+	<key>Economy</key>
+	<dict>
+		<key>Sentance</key>
+		<string>Rhode Island&apos;s economy is built upon three industries: health services, tourism and manufacturing.</string>
+		<key>CPIDR</key>
+		<integer>6</integer>
+	</dict>
+	<key>Marble</key>
+	<dict>
+		<key>Sentance</key>
+		<string>Lime Rock Preserve features dolomitic marble which produce a special soil that nurtures rare plant species.</string>
+		<key>CPIDR</key>
+		<integer>7</integer>
+	</dict>
+	<key>Tennis</key>
+	<dict>
+		<key>Sentance</key>
+		<string>The Newport Casino, which is actually a country club, hosts the only grass-court tennis tournament in the U.S.</string>
+		<key>CPIDR</key>
+		<integer>7</integer>
+	</dict>
 </dict>
 </plist>

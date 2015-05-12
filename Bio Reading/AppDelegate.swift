@@ -23,23 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics()])
         
         UserStore.bios = UserStore.generateRandomBios()
-        UserStore.bios.insert(("Example", false), atIndex: 0)
-        UserStore.bios.insert(("Example", true), atIndex: 0)
+        UserStore.bios.insert(("Practice Connecticut", false), atIndex: 0)
+        UserStore.bios.insert(("Practice Rhode Island", true), atIndex: 0)
         
         UserStore.subjectNumber = nil
         
         UserStore.fontSize = 32
-        
-        let newRecord = NSEntityDescription.insertNewObjectForEntityForName("Record", inManagedObjectContext: self.managedObjectContext!) as! Record
-        newRecord.subjectNumber = 1
-        newRecord.dateTime = NSDate()
-        newRecord.bioPerson = "lolPerson"
-        newRecord.condition = 1
-        newRecord.cue = 101
-        newRecord.order = 2
-        newRecord.curiosity = 7
-        newRecord.readingTime = 7.323
-        newRecord.audioFile = NSData()
         
         return true
     }
