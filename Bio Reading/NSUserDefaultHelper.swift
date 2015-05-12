@@ -17,7 +17,6 @@ class UserStore {
         case currentBio = "currentBio"
         case currentTitle = "currentTitle"
         case currentTime = "currentTime"
-        case currentRecord = "currentRecord"
         
         case bios = "bios"
         case subjectNumber = "subjectNumber"
@@ -70,21 +69,6 @@ class UserStore {
             set(newValue, forKey: storeKeys.currentTime.rawValue)
         }
     }
-    
-    class var currentRecord: Record? {
-        get {
-            if let record = get(storeKeys.currentRecord.rawValue) as? Record {
-                return record
-            }
-            else {
-                return NSEntityDescription.getNewRecordInManagedContext()
-            }
-        }
-        set {
-            set(newValue, forKey: storeKeys.currentRecord.rawValue)
-        }
-    }
-    
     
     class var bios: [(String, Bool)] {
         get {

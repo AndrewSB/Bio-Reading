@@ -114,8 +114,8 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             
             selectedIndex = indexPath.row
             
-            UserStore.currentRecord!.cue = indexPath.row
-            UserStore.currentRecord!.order = selected.filter({!$0}).count
+            appDel.currentRecord!.cue = indexPath.row
+            appDel.currentRecord!.order = selected.filter({!$0}).count
             
             let prompt = IO.getPrompt(curPerson!.0, index: indexPath.row)
             self.performSegueWithIdentifier("segueToPromptVC", sender: prompt)
@@ -178,15 +178,11 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     func recordStoreLogic() {
         //store the old record if it exists
-        if UserStore.currentRecord != nil {
-            UserStore.currentRecord = NSEntityDescription.getNewRecordInManagedContext()
-        }
-        
-        //invalidate the old record and create a new one, that will be filled out when the subject goes through the other views
-        UserStore.currentRecord!.bioPerson = self.navigationItem.title!
-        UserStore.currentRecord!.condition = curPerson!.1 ? 0 : 1
-            
+        appDel.currentRecord = NSEntityDescription.getNewRecordInManagedContext()
 
+        //invalidate the old record and create a new one, that will be filled out when the subject goes through the other views
+        appDel.currentRecord!.bioPerson = self.navigationItem.title!
+        appDel.currentRecord!.condition = curPerson!.1 ? 0 : 1
     }
     
     

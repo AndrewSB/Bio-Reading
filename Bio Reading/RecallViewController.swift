@@ -11,6 +11,8 @@ import AVFoundation
 
 class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophoneDelegate {
 
+    let soundFileURL = NSURL(fileURLWithPath: (NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String).stringByAppendingPathComponent("\(UserStore.subjectNumber!):\(NSUUID().UUIDString)sound.wav"))!
+    
     var isRecording: Bool = false {
         didSet {
             if isRecording {
@@ -34,14 +36,7 @@ class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophon
         waveView.shouldFill = true
         waveView.shouldMirror = true
         
-        let soundFilePath =
-        (NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
-            .UserDomainMask, true)[0] as! String).stringByAppendingPathComponent("\(UserStore.subjectNumber!):\(NSUUID().UUIDString)sound.wav")
-        let soundFileURL = NSURL(fileURLWithPath: soundFilePath)!
-        
-        UserStore.currentRecord!.audioFile = NSData(contentsOfURL: soundFileURL)!
         isRecording = true
-        
         
         recorder = EZRecorder(destinationURL: soundFileURL, sourceFormat: mic.audioStreamBasicDescription(), destinationFileType: .WAV)
     }
@@ -63,6 +58,7 @@ class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophon
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        appDel.currentRecord!.audioFile = NSData(contentsOfURL: soundFileURL)!
         isRecording = false
         
         if let des = segue.destinationViewController as? FamiliarityViewController {
