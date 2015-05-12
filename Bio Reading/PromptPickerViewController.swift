@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -113,8 +114,8 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             
             selectedIndex = indexPath.row
             
-            RecordStore.defaultStore().curRecord!.cue = indexPath.row
-            RecordStore.defaultStore().curRecord!.order = selected.filter({!$0}).count
+            UserStore.currentRecord!.cue = indexPath.row
+            UserStore.currentRecord!.order = selected.filter({!$0}).count
             
             let prompt = IO.getPrompt(curPerson!.0, index: indexPath.row)
             self.performSegueWithIdentifier("segueToPromptVC", sender: prompt)
@@ -164,7 +165,6 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         }
         
         if !stay {
-            RecordStore.defaultStore().writeToDisk()
             let changingPersonAlert = UIAlertController(title: "Changing Bios!", message: "You're about to switch to a new bio!", preferredStyle: .Alert)
             changingPersonAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: { Void in
                 self.curPersonIndex++
@@ -177,17 +177,14 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func recordStoreLogic() {
-        let rS = RecordStore.defaultStore()
-        
         //store the old record if it exists
-        if rS.curRecord != nil {
-            rS.records.append(rS.curRecord!)
+        if UserStore.currentRecord != nil {
+            UserStore.currentRecord = NSEntityDescription.getNewRecordInManagedContext()
         }
         
         //invalidate the old record and create a new one, that will be filled out when the subject goes through the other views
-        rS.curRecord = RecordEntry()
-        rS.curRecord!.bioPerson = BioPersons.fromRaw(self.navigationItem.title!)
-        rS.curRecord!.condition = curPerson!.1 ? .Foraging : .Control
+        UserStore.currentRecord!.bioPerson = self.navigationItem.title!
+        UserStore.currentRecord!.condition = curPerson!.1 ? 0 : 1
             
 
     }

@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Andrew Breckenridge. All rights reserved.
 //
 
+import CoreData
+
 let set = NSUserDefaults.standardUserDefaults().setObject
 let get = NSUserDefaults.standardUserDefaults().objectForKey
 
@@ -15,11 +17,10 @@ class UserStore {
         case currentBio = "currentBio"
         case currentTitle = "currentTitle"
         case currentTime = "currentTime"
-        
+        case currentRecord = "currentRecord"
         
         case bios = "bios"
         case subjectNumber = "subjectNumber"
-        case recordString = "recordString"
         case fontSize = "fontSize"
         
         case isTimed = "timed"
@@ -61,15 +62,29 @@ class UserStore {
         }
     }
     
-    
     class var currentTime: Double? {
         get {
-        return get(storeKeys.currentTime.rawValue) as? Double
+            return get(storeKeys.currentTime.rawValue) as? Double
         }
         set {
             set(newValue, forKey: storeKeys.currentTime.rawValue)
         }
     }
+    
+    class var currentRecord: Record? {
+        get {
+            if let record = get(storeKeys.currentRecord.rawValue) as? Record {
+                return record
+            }
+            else {
+                return NSEntityDescription.getNewRecordInManagedContext()
+            }
+        }
+        set {
+            set(newValue, forKey: storeKeys.currentRecord.rawValue)
+        }
+    }
+    
     
     class var bios: [(String, Bool)] {
         get {
@@ -114,15 +129,6 @@ class UserStore {
         }
         
         return randBios
-    }
-    
-    class var recordString: String? {
-        get {
-        return get(storeKeys.recordString.rawValue) as? String
-        }
-        set {
-            set(newValue, forKey: storeKeys.recordString.rawValue)
-        }
     }
     
     class var fontSize: CGFloat? {

@@ -37,9 +37,9 @@ class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophon
         let soundFilePath =
         (NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
             .UserDomainMask, true)[0] as! String).stringByAppendingPathComponent("\(UserStore.subjectNumber!):\(NSUUID().UUIDString)sound.wav")
-        let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
-        RecordStore.defaultStore().curRecord!.audioFile = soundFileURL
+        let soundFileURL = NSURL(fileURLWithPath: soundFilePath)!
         
+        UserStore.currentRecord!.audioFile = NSData(contentsOfURL: soundFileURL)!
         isRecording = true
         
         

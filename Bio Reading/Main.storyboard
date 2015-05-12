@@ -291,7 +291,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FRj-cs-p4Z">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="FRj-cs-p4Z">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FRj-cs-p4Z" id="F0D-C6-vUK">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -398,9 +398,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular" misplaced="YES">
-                                                        <rect key="frame" x="19" y="51" width="142" height="42"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
