@@ -30,6 +30,9 @@ class InitialViewController: UIViewController {
         
         swiped = false
         pinched = false
+        
+        let mOC = appDel.managedObjectContext
+        println(mOC)
     }
     
     

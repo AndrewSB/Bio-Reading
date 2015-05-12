@@ -71,7 +71,6 @@ class UserStore {
         }
     }
     
-    
     class var bios: [(String, Bool)] {
         get {
             let w = NSKeyedUnarchiver.unarchiveObjectWithData(get(storeKeys.bios.rawValue) as! NSData) as! [GenericBio]
@@ -91,6 +90,7 @@ class UserStore {
             set(wData, forKey: storeKeys.bios.rawValue)
             
         }
+
     }
     
     class func generateRandomBios() -> [(String, Bool)] {

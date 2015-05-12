@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		462BFA121B01E3FB00028FB6 /* GenericWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */; };
 		46FAC9BC1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9BA1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodeld */; };
 		46FAC9DD1AEEF57A00BAFE99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9DC1AEEF57A00BAFE99 /* AppDelegate.swift */; };
 		46FAC9E31AEEF5AE00BAFE99 /* CuriosityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9DE1AEEF5AE00BAFE99 /* CuriosityViewController.swift */; };
@@ -21,7 +22,6 @@
 		46FAC9F31AEEF5D600BAFE99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46FAC9F21AEEF5D600BAFE99 /* Main.storyboard */; };
 		46FAC9F51AEEF5EE00BAFE99 /* PromptCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9F41AEEF5EE00BAFE99 /* PromptCollectionViewCell.swift */; };
 		46FAC9FE1AEEF60300BAFE99 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9F81AEEF60300BAFE99 /* ArrayExtension.swift */; };
-		46FAC9FF1AEEF60300BAFE99 /* GenericWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9F91AEEF60300BAFE99 /* GenericWrapper.swift */; };
 		46FACA001AEEF60300BAFE99 /* IOHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9FA1AEEF60300BAFE99 /* IOHelper.swift */; };
 		46FACA011AEEF60300BAFE99 /* NSUserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9FB1AEEF60300BAFE99 /* NSUserDefaultHelper.swift */; };
 		46FACA021AEEF60300BAFE99 /* RecordKeeperHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9FC1AEEF60300BAFE99 /* RecordKeeperHelper.swift */; };
@@ -35,7 +35,6 @@
 		46FACA121AEEF61500BAFE99 /* Practice Connecticut.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46FACA0A1AEEF61500BAFE99 /* Practice Connecticut.plist */; };
 		46FACA131AEEF61500BAFE99 /* William Shakespeare.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46FACA0B1AEEF61500BAFE99 /* William Shakespeare.plist */; };
 		46FACA161AEEF62600BAFE99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46FACA151AEEF62600BAFE99 /* Images.xcassets */; };
-		46FACA181AEEF63800BAFE99 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46FACA171AEEF63800BAFE99 /* Info.plist */; };
 		46FACA1A1AEEF63F00BAFE99 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46FACA191AEEF63F00BAFE99 /* LaunchScreen.xib */; };
 		46FACA1F1AEEF74D00BAFE99 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FACA1D1AEEF74D00BAFE99 /* Crashlytics.framework */; };
 		46FACA201AEEF74D00BAFE99 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FACA1E1AEEF74D00BAFE99 /* Fabric.framework */; };
@@ -43,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericWrapper.swift; sourceTree = "<group>"; };
 		46FAC9B31AEEF4F600BAFE99 /* Bio Reading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bio Reading.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FAC9BB1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bio_Reading.xcdatamodel; sourceTree = "<group>"; };
 		46FAC9DB1AEEF57A00BAFE99 /* Bio Reading-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bio Reading-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -59,7 +59,6 @@
 		46FAC9F21AEEF5D600BAFE99 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		46FAC9F41AEEF5EE00BAFE99 /* PromptCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptCollectionViewCell.swift; sourceTree = "<group>"; };
 		46FAC9F81AEEF60300BAFE99 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
-		46FAC9F91AEEF60300BAFE99 /* GenericWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericWrapper.swift; sourceTree = "<group>"; };
 		46FAC9FA1AEEF60300BAFE99 /* IOHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOHelper.swift; sourceTree = "<group>"; };
 		46FAC9FB1AEEF60300BAFE99 /* NSUserDefaultHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultHelper.swift; sourceTree = "<group>"; };
 		46FAC9FC1AEEF60300BAFE99 /* RecordKeeperHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordKeeperHelper.swift; sourceTree = "<group>"; };
@@ -96,13 +95,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		462BF9DC1B01E00100028FB6 /* Bios */ = {
+			isa = PBXGroup;
+			children = (
+				46FACA041AEEF61500BAFE99 /* Emily Dickinson.plist */,
+				46FACA051AEEF61500BAFE99 /* Example.plist */,
+				46FACA061AEEF61500BAFE99 /* Issac Newton.plist */,
+				46FACA071AEEF61500BAFE99 /* Mahatma Gandhi.plist */,
+				46FACA081AEEF61500BAFE99 /* Marie Curie.plist */,
+				46FACA091AEEF61500BAFE99 /* Mother Teresa.plist */,
+				46FACA0A1AEEF61500BAFE99 /* Practice Connecticut.plist */,
+				46FACA0B1AEEF61500BAFE99 /* William Shakespeare.plist */,
+			);
+			name = Bios;
+			sourceTree = "<group>";
+		};
+		462BFA0E1B01E10E00028FB6 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */,
+				46FAC9F71AEEF5F500BAFE99 /* UI */,
+				462BFA101B01E1EB00028FB6 /* Extension */,
+				46FAC9F61AEEF5F000BAFE99 /* Helpers */,
+			);
+			name = Internal;
+			sourceTree = "<group>";
+		};
+		462BFA0F1B01E11600028FB6 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				957F37ED680FBB631CC89C7E /* Pods */,
+				46FACA1D1AEEF74D00BAFE99 /* Crashlytics.framework */,
+				46FACA1E1AEEF74D00BAFE99 /* Fabric.framework */,
+				BE0AE68B0187CDF53E0F4B42 /* libPods.a */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		462BFA101B01E1EB00028FB6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				46FAC9F81AEEF60300BAFE99 /* ArrayExtension.swift */,
+				46FAC9FD1AEEF60300BAFE99 /* UIColorExtension.swift */,
+			);
+			name = Extension;
+			path = "Bio Reading";
+			sourceTree = "<group>";
+		};
 		46FAC9AA1AEEF4F600BAFE99 = {
 			isa = PBXGroup;
 			children = (
 				46FAC9B51AEEF4F600BAFE99 /* Bio Reading */,
 				46FAC9B41AEEF4F600BAFE99 /* Products */,
-				957F37ED680FBB631CC89C7E /* Pods */,
-				70B0BC6E9707F2D0F190EBDD /* Frameworks */,
+				70B0BC6E9707F2D0F190EBDD /* Library */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,7 +164,6 @@
 			children = (
 				46FAC9DC1AEEF57A00BAFE99 /* AppDelegate.swift */,
 				46FAC9E81AEEF5B300BAFE99 /* View Controllers */,
-				46FAC9F61AEEF5F000BAFE99 /* Helpers */,
 				46FACA141AEEF61A00BAFE99 /* Resources */,
 				46FACA1B1AEEF64500BAFE99 /* Supporting Files */,
 			);
@@ -154,15 +198,12 @@
 		46FAC9F61AEEF5F000BAFE99 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				46FAC9F81AEEF60300BAFE99 /* ArrayExtension.swift */,
-				46FAC9F91AEEF60300BAFE99 /* GenericWrapper.swift */,
 				46FAC9FA1AEEF60300BAFE99 /* IOHelper.swift */,
 				46FAC9FB1AEEF60300BAFE99 /* NSUserDefaultHelper.swift */,
 				46FAC9FC1AEEF60300BAFE99 /* RecordKeeperHelper.swift */,
-				46FAC9FD1AEEF60300BAFE99 /* UIColorExtension.swift */,
-				46FAC9F71AEEF5F500BAFE99 /* UI */,
 			);
 			name = Helpers;
+			path = "Bio Reading";
 			sourceTree = "<group>";
 		};
 		46FAC9F71AEEF5F500BAFE99 /* UI */ = {
@@ -171,21 +212,15 @@
 				46FAC9F41AEEF5EE00BAFE99 /* PromptCollectionViewCell.swift */,
 			);
 			name = UI;
+			path = "Bio Reading";
 			sourceTree = "<group>";
 		};
 		46FACA141AEEF61A00BAFE99 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				46FACA151AEEF62600BAFE99 /* Images.xcassets */,
+				462BF9DC1B01E00100028FB6 /* Bios */,
 				46FAC9BA1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodeld */,
-				46FACA041AEEF61500BAFE99 /* Emily Dickinson.plist */,
-				46FACA051AEEF61500BAFE99 /* Example.plist */,
-				46FACA061AEEF61500BAFE99 /* Issac Newton.plist */,
-				46FACA071AEEF61500BAFE99 /* Mahatma Gandhi.plist */,
-				46FACA081AEEF61500BAFE99 /* Marie Curie.plist */,
-				46FACA091AEEF61500BAFE99 /* Mother Teresa.plist */,
-				46FACA0A1AEEF61500BAFE99 /* Practice Connecticut.plist */,
-				46FACA0B1AEEF61500BAFE99 /* William Shakespeare.plist */,
+				46FACA151AEEF62600BAFE99 /* Images.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -200,14 +235,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		70B0BC6E9707F2D0F190EBDD /* Frameworks */ = {
+		70B0BC6E9707F2D0F190EBDD /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				46FACA1D1AEEF74D00BAFE99 /* Crashlytics.framework */,
-				46FACA1E1AEEF74D00BAFE99 /* Fabric.framework */,
-				BE0AE68B0187CDF53E0F4B42 /* libPods.a */,
+				462BFA0E1B01E10E00028FB6 /* Internal */,
+				462BFA0F1B01E11600028FB6 /* External */,
 			);
-			name = Frameworks;
+			name = Library;
 			sourceTree = "<group>";
 		};
 		957F37ED680FBB631CC89C7E /* Pods */ = {
@@ -288,7 +322,6 @@
 				46FACA0E1AEEF61500BAFE99 /* Issac Newton.plist in Resources */,
 				46FACA0D1AEEF61500BAFE99 /* Example.plist in Resources */,
 				46FACA121AEEF61500BAFE99 /* Practice Connecticut.plist in Resources */,
-				46FACA181AEEF63800BAFE99 /* Info.plist in Resources */,
 				46FACA131AEEF61500BAFE99 /* William Shakespeare.plist in Resources */,
 				46FACA111AEEF61500BAFE99 /* Mother Teresa.plist in Resources */,
 			);
@@ -353,8 +386,8 @@
 				46FAC9ED1AEEF5C300BAFE99 /* AdminPanelViewController.swift in Sources */,
 				46FAC9E41AEEF5AE00BAFE99 /* FamiliarityViewController.swift in Sources */,
 				46FAC9DD1AEEF57A00BAFE99 /* AppDelegate.swift in Sources */,
+				462BFA121B01E3FB00028FB6 /* GenericWrapper.swift in Sources */,
 				46FACA031AEEF60300BAFE99 /* UIColorExtension.swift in Sources */,
-				46FAC9FF1AEEF60300BAFE99 /* GenericWrapper.swift in Sources */,
 				46FAC9EF1AEEF5C300BAFE99 /* InitialViewController.swift in Sources */,
 				46FACA021AEEF60300BAFE99 /* RecordKeeperHelper.swift in Sources */,
 				46FAC9E51AEEF5AE00BAFE99 /* PromptPickerViewController.swift in Sources */,
