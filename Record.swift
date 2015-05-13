@@ -21,5 +21,6 @@ class Record: NSManagedObject {
     @NSManaged var readingTime: NSNumber
     @NSManaged var subjectNumber: NSNumber
     @NSManaged var familiarity: NSNumber
+    @NSManaged var rTCond: NSNumber
 
 }
