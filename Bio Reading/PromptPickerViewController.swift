@@ -37,7 +37,16 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }
     
-    var curPersonControlTimes = [0.5,1,2,1,1,1,1,1,1,1,1,1]
+    var curPersonControlTimes: [Double] {
+        get {
+            var r = [Double]()
+            for i in 0..<12 {
+                r.append(IO.getCPIDR(curPerson!.0, index: i)!)
+            }
+            
+            return r
+        }
+    }//= [0.5,1,2,1,1,1,1,1,1,1,1,1]
     
     
     override func viewDidLoad() {

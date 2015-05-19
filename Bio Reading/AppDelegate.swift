@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserStore.subjectNumber = nil
         
         
-        
         UserStore.fontSize = 32
         
         return true

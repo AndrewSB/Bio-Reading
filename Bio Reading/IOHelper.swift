@@ -39,6 +39,12 @@ enum BioPersons: String, Printable {
     static let allValues = [Curie, Shakespeare, Newton, Teresa, Dickinson, Gandhi]
 }
 
+enum RTCond: Int {
+    case Increasing = 0
+    case Decreasing = 1
+}
+
+
 
 class IO {
     class var people: [String] {
@@ -69,9 +75,22 @@ class IO {
         if let plist = NSBundle.mainBundle().pathForResource("\(file)", ofType: "plist") {
             let rootDict = NSDictionary(contentsOfFile: plist)!
             
-            return rootDict[rootDict.allKeys[index] as! String]!["CPIDR"] as? Int
+            let CPIDR = rootDict[rootDict.allKeys[index] as! String]!["CPIDR"] as? Int
         }
         return nil
+    }
+    
+    class func calculateTime(CPIDR: Int, n: Int, rt: RTCond) -> Double {
+        let decreasing = [5350, 5200, 5050]
+        let increasing = [100, 250, 400]
+        
+        let offset = rt == .Increasing ? increasing : decreasing
+        
+        let innerBracket = rt == .Increasing ? (450 * n) : (-450 * n)
+        let offseted = offset.getRandomElement() + innerBracket
+        
+        let millisecond = (Double(500) + Double((CPIDR * offseted)))
+        return millisecond/1000
     }
     
     class func getNumSentances(file: String) -> Int? {
