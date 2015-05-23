@@ -2,89 +2,89 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Danger</key>
-	<dict>
-		<key>Sentance</key>
-		<string>Her work-related papers are highly radioactive, and those who wish to consult them must wear protective clothing.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Education</key>
-	<dict>
-		<key>Sentance</key>
-		<string>Prohibited from higher education in her native country because she was a woman, she moved to Paris where she got a PhD.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Poverty</key>
-	<dict>
-		<key>Sentance</key>
-		<string>To afford university tuition and living expense, she studied during the day and worked as a tutor in the evening.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Spouse</key>
-	<dict>
-		<key>Sentance</key>
-		<string>Her husband Pierre researched magnetism, but a contemporary quipped that his greatest discovery was Marie. </string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Parents</key>
-	<dict>
-		<key>Sentance</key>
-		<string>Her passion for science was inspired by her father, a physics teacher who showed his children his lab equipment.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Death</key>
-	<dict>
-		<key>Sentance</key>
-		<string>She died of aplastic anemia due to prolonged exposure to radiation, but she never acknowledged the health risks of it.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Wedding</key>
-	<dict>
-		<key>Sentance</key>
-		<string>Instead of wearing a bridal grown, she worn a dark blue dress, which served her for many years as a laboratory outfit.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Early finding</key>
-	<dict>
-		<key>Sentance</key>
-		<string>In her early research with uranium, she showed that atoms were divisible, which led to the creation of atomic physics.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Award</key>
-	<dict>
-		<key>Sentance</key>
-		<string>She was the only person to win Nobel Prizes in different fields, one in Physics and another one in Chemistry.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Discovery</key>
-	<dict>
-		<key>Sentance</key>
-		<string>Along with her husband, she discovered two different elements, Polonium and Radium in the same year.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Religion</key>
-	<dict>
-		<key>Sentance</key>
-		<string>Raised by a Catholic mother and an atheist father, she became agnostic after her mother&apos;s death.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
 	<key>Birth</key>
 	<dict>
 		<key>Sentance</key>
-		<string>She was born Maria Sklodowska in 1867 in Warsaw, Poland, as the youngest of five children in her family.</string>
+		<string>In 1642, the same year that Galileo died, he was born in a small sheep-rearing village in the east of England.</string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>12</integer>
+	</dict>
+	<key>Choice</key>
+	<dict>
+		<key>Sentance</key>
+		<string>His mother wanted him to become a farmer like his father, but he hated it and she was persuaded to send him to school.</string>
+		<key>CPIDR</key>
+		<integer>11</integer>
+	</dict>
+	<key>Prediction</key>
+	<dict>
+		<key>Sentance</key>
+		<string>Based on his studies of the Bible, he estimated that the world would end no sooner than 2060.</string>
+		<key>CPIDR</key>
+		<integer>10</integer>
+	</dict>
+	<key>Ambition</key>
+	<dict>
+		<key>Sentance</key>
+		<string>He was obsessed with alchemy and spent half his lifetime in a vain search for the philosopher&apos;s stone.</string>
+		<key>CPIDR</key>
+		<integer>9</integer>
+	</dict>
+	<key>Politician</key>
+	<dict>
+		<key>Sentance</key>
+		<string>While serving as a member of Parliament, he spoke only once, and that was to request that a window be closed.</string>
+		<key>CPIDR</key>
+		<integer>12</integer>
+	</dict>
+	<key>Romance</key>
+	<dict>
+		<key>Sentance</key>
+		<string>He never married or had any romantic relationships, resulting in a widespread belief that he died a virgin.</string>
+		<key>CPIDR</key>
+		<integer>13</integer>
+	</dict>
+	<key>Tooth</key>
+	<dict>
+		<key>Sentance</key>
+		<string>In 1816, one of his teeth was sold for an exorbitant amount and made into a ring, but no one knows where it is now.</string>
+		<key>CPIDR</key>
+		<integer>12</integer>
+	</dict>
+	<key>Skills</key>
+	<dict>
+		<key>Sentance</key>
+		<string>He was good with his hands and built his own research tools, including the first practical telescope.</string>
+		<key>CPIDR</key>
+		<integer>10</integer>
+	</dict>
+	<key>Infancy</key>
+	<dict>
+		<key>Sentance</key>
+		<string>Born prematurely, he was a small baby, and his mother stated that he could have fit inside a quart mug.</string>
+		<key>CPIDR</key>
+		<integer>10</integer>
+	</dict>
+	<key>Homework</key>
+	<dict>
+		<key>Sentance</key>
+		<string>He developed theories on calculus at home when his university closed as a precaution against the Great Plague. </string>
+		<key>CPIDR</key>
+		<integer>8</integer>
+	</dict>
+	<key>Secrets</key>
+	<dict>
+		<key>Sentance</key>
+		<string>He was secretive in his scientific and mathematical discoveries, which led to many quarrels over credit.</string>
+		<key>CPIDR</key>
+		<integer>10</integer>
+	</dict>
+	<key>Confession</key>
+	<dict>
+		<key>Sentance</key>
+		<string>As a teenager, he considered himself as a sinner and wrote a list of 48 sins he committed, like punching his sister.</string>
+		<key>CPIDR</key>
+		<integer>11</integer>
 	</dict>
 </dict>
 </plist>

@@ -7,7 +7,7 @@
 		<key>Sentance</key>
 		<string>Though no birth records exist, church records indicate that he was baptized in Stratford-upon-Avon on April 26, 1564.</string>
 		<key>CPIDR</key>
-		<integer>8</integer>
+		<integer>9</integer>
 	</dict>
 	<key>Parents</key>
 	<dict>
@@ -16,17 +16,17 @@
 		<key>CPIDR</key>
 		<integer>8</integer>
 	</dict>
-	<key>Early Life</key>
+	<key>Literacy</key>
 	<dict>
-		<key>CPIDR</key>
-		<integer>9</integer>
 		<key>Sentance</key>
 		<string>His parents are believed to have been illiterate, but he learned to read English and Latin at the local school.</string>
+		<key>CPIDR</key>
+		<integer>9</integer>
 	</dict>
-	<key>Marriage</key>
+	<key>Marraige</key>
 	<dict>
 		<key>Sentance</key>
-		<string>At the age of 18, he married Anne Hathaway, who was 8 years his senior and the daugter of a local farmer.</string>
+		<string>At the age of 18, he married Anne Hathaway, who was 8 years his senior and the daughter of a local farmer.</string>
 		<key>CPIDR</key>
 		<integer>12</integer>
 	</dict>
@@ -35,56 +35,56 @@
 		<key>Sentance</key>
 		<string>His only son Hamnet died at the age of 11, and in King John, he depicted a mother frantic over the loss of her son.</string>
 		<key>CPIDR</key>
-		<integer>9</integer>
+		<integer>13</integer>
 	</dict>
 	<key>Reputation</key>
 	<dict>
 		<key>Sentance</key>
-		<string>As a new actor in London, he had such a flair on the stage that he was described as an &quot;upstart crow.&quot;</string>
+		<string>As a new actor, he ruffled a few feathers with his arrogance and was  described by Robert Greene as an &quot;upstart crow.&quot;</string>
 		<key>CPIDR</key>
-		<integer>8</integer>
+		<integer>10</integer>
 	</dict>
-	<key>King&apos;s Men</key>
+	<key>Entrepeneur</key>
 	<dict>
 		<key>Sentance</key>
 		<string>He started a play company called King&apos;s Men with his partners and they performed many of his plays in London. </string>
 		<key>CPIDR</key>
-		<integer>7</integer>
+		<integer>11</integer>
 	</dict>
 	<key>Investment</key>
 	<dict>
 		<key>Sentance</key>
-		<string>He built the Globe Theatre, and  owned other real estate, which supported him so he had uninterrupted time for writing.</string>
+		<string>He built the Globe Theatre, and owned other real estate that supported him so he had uninterrupted time for writing.</string>
 		<key>CPIDR</key>
-		<integer>8</integer>
+		<integer>11</integer>
 	</dict>
 	<key>Home</key>
 	<dict>
 		<key>Sentance</key>
 		<string>He worked in London most of the year, returning home to visit his family once a year during Lent. </string>
 		<key>CPIDR</key>
-		<integer>8</integer>
+		<integer>9</integer>
 	</dict>
 	<key>Death</key>
 	<dict>
 		<key>Sentance</key>
 		<string>At the age of 52, he died after signing his will, which he began by describing himself as being in &quot;perfect health.&quot; </string>
 		<key>CPIDR</key>
-		<integer>9</integer>
+		<integer>13</integer>
 	</dict>
 	<key>Bed</key>
 	<dict>
 		<key>Sentance</key>
 		<string>He bequeathed his &quot;second-best bed&quot; to his wife, perhaps because the best bed was by custom reserved for guests.</string>
 		<key>CPIDR</key>
-		<integer>7</integer>
+		<integer>11</integer>
 	</dict>
-	<key>Lost Years</key>
+	<key>Missing</key>
 	<dict>
 		<key>Sentance</key>
 		<string>There is no record of his activities between 1585 and 1592, but some think he was fleeing prosecution for deer poaching. </string>
 		<key>CPIDR</key>
-		<integer>10</integer>
+		<integer>12</integer>
 	</dict>
 </dict>
 </plist>

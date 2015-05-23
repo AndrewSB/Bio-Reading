@@ -2,89 +2,89 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Danger</key>
+	<key>Family</key>
 	<dict>
 		<key>Sentance</key>
-		<string>Her work-related papers are highly radioactive, and those who wish to consult them must wear protective clothing.</string>
+		<string>She was born in a Catholic and wealthy family and had one older brother and one older sister.</string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>11</integer>
 	</dict>
-	<key>Education</key>
+	<key>Kindness</key>
 	<dict>
 		<key>Sentance</key>
-		<string>Prohibited from higher education in her native country because she was a woman, she moved to Paris where she got a PhD.</string>
+		<string>During her travels, she used to collect leftover food from people on the plane and give it to hungry people. </string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>11</integer>
 	</dict>
-	<key>Poverty</key>
+	<key>Vocation</key>
 	<dict>
 		<key>Sentance</key>
-		<string>To afford university tuition and living expense, she studied during the day and worked as a tutor in the evening.</string>
+		<string>She was fascinated with missionaries, and by the age of 12, knew that she would commit herself to a religious vocation.</string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>10</integer>
 	</dict>
-	<key>Spouse</key>
+	<key>Decision</key>
 	<dict>
 		<key>Sentance</key>
-		<string>Her husband Pierre researched magnetism, but a contemporary quipped that his greatest discovery was Marie. </string>
+		<string>She left home to join the Sisters of Loreto, based in Ireland, when she was 18, and never saw her mother again.</string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>12</integer>
 	</dict>
-	<key>Parents</key>
+	<key>Priority</key>
 	<dict>
 		<key>Sentance</key>
-		<string>Her passion for science was inspired by her father, a physics teacher who showed his children his lab equipment.</string>
+		<string>She was once scheduled to meet the Pope but postponed the meeting because she was too busy working with the poor.</string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>10</integer>
 	</dict>
-	<key>Death</key>
+	<key>Naming</key>
 	<dict>
 		<key>Sentance</key>
-		<string>She died of aplastic anemia due to prolonged exposure to radiation, but she never acknowledged the health risks of it.</string>
+		<string>Teresa was actually the second name she chose, she changed her original name because other nun already convent it.</string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>10</integer>
 	</dict>
-	<key>Wedding</key>
+	<key>Mission</key>
 	<dict>
 		<key>Sentance</key>
-		<string>Instead of wearing a bridal grown, she worn a dark blue dress, which served her for many years as a laboratory outfit.</string>
+		<string>She taught history and geography in a girls&apos; high school for 15 years, but was distressed by the poverty around her.</string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>11</integer>
 	</dict>
-	<key>Early finding</key>
+	<key>Communication</key>
 	<dict>
 		<key>Sentance</key>
-		<string>In her early research with uranium, she showed that atoms were divisible, which led to the creation of atomic physics.</string>
+		<string>She was able to speak fluently in five different languages, including English, which she studied in Ireland for a year.</string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>11</integer>
 	</dict>
-	<key>Award</key>
+	<key>Tragedy</key>
 	<dict>
 		<key>Sentance</key>
-		<string>She was the only person to win Nobel Prizes in different fields, one in Physics and another one in Chemistry.</string>
+		<string>Some speculated that her father may have been poisoned to death because of his dedication to Albanian Independence.</string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>10</integer>
 	</dict>
-	<key>Discovery</key>
+	<key>Teaching</key>
 	<dict>
 		<key>Sentance</key>
-		<string>Along with her husband, she discovered two different elements, Polonium and Radium in the same year.</string>
+		<string>With no income or supplies, she taught the children in the slums to read and write by writing in the dirt with sticks.</string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>12</integer>
 	</dict>
-	<key>Religion</key>
+	<key>Gift</key>
 	<dict>
 		<key>Sentance</key>
-		<string>Raised by a Catholic mother and an atheist father, she became agnostic after her mother&apos;s death.</string>
+		<string>When awarded the Nobel in 1979, she refused the traditional banquet and asked that the funds be sent to India.</string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>10</integer>
 	</dict>
-	<key>Birth</key>
+	<key>Controversy</key>
 	<dict>
 		<key>Sentance</key>
-		<string>She was born Maria Sklodowska in 1867 in Warsaw, Poland, as the youngest of five children in her family.</string>
+		<string>She was criticised for using her celebrity status to promote the Church&apos;s moral teachings on abortion and birth control.</string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>8</integer>
 	</dict>
 </dict>
 </plist>

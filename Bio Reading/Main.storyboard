@@ -324,13 +324,13 @@
                                     <segue destination="80P-xb-Rdw" kind="showDetail" id="Goa-4T-SdC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCb-i8-EGa">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCb-i8-EGa">
                                 <rect key="frame" x="255" y="336" width="90" height="21"/>
                                 <gestureRecognizers/>
-                                <mutableString key="text">Thanks for coming in today! In this experiment, we are studying how people learn new information on electronic tablets.
+                                <string key="text">Thanks for coming in today! In this experiment, we are studying how people learn new information on electronic tablets.
 
 Your task will be to learn the biographies of a number of different famous people in preparation to write down what you think are some of the highlights of that person’s life. For each person, you will read a series of short passages.  Each passage is one sentence long. After reading each one, you will recall as much as you remember from that passage. 
-There are two conditions. In one condition you will select the passages you want to read based on hints about the content of the passage, and you can read at your own pace.  In the other condition, the iPad will select the passages for you and control the timing.  If this sounds a little confusing right now, don’t worry; there are some passages for practice.</mutableString>
+There are two conditions. In one condition you will select the passages you want to read based on hints about the content of the passage, and you can read at your own pace.  In the other condition, the iPad will select the passages for you and control the timing.  If this sounds a little confusing right now, don’t worry; there are some passages for practice.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1224,14 +1224,14 @@ There are two conditions. In one condition you will select the passages you want
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="vuk-GN-YJJ"/>
                                         <exclude reference="5E9-wg-1UH"/>
+                                        <exclude reference="vuk-GN-YJJ"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
                                     <mask key="constraints">
-                                        <include reference="vuk-GN-YJJ"/>
                                         <include reference="5E9-wg-1UH"/>
+                                        <include reference="vuk-GN-YJJ"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1296,14 +1296,14 @@ There are two conditions. In one condition you will select the passages you want
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="kbb-iI-wPv"/>
                                         <exclude reference="HZ6-WN-IJX"/>
+                                        <exclude reference="kbb-iI-wPv"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
                                     <mask key="constraints">
-                                        <include reference="kbb-iI-wPv"/>
                                         <include reference="HZ6-WN-IJX"/>
+                                        <include reference="kbb-iI-wPv"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1320,14 +1320,14 @@ There are two conditions. In one condition you will select the passages you want
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="TXj-mj-uI3"/>
                                         <exclude reference="SjV-en-GqS"/>
+                                        <exclude reference="TXj-mj-uI3"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
                                     <mask key="constraints">
-                                        <include reference="TXj-mj-uI3"/>
                                         <include reference="SjV-en-GqS"/>
+                                        <include reference="TXj-mj-uI3"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1518,29 +1518,29 @@ There are two conditions. In one condition you will select the passages you want
                             <mask key="constraints">
                                 <exclude reference="RjZ-HT-4pD"/>
                                 <exclude reference="nYz-KM-UOX"/>
+                                <exclude reference="EXZ-X2-nNp"/>
                                 <exclude reference="PY6-eD-Eay"/>
-                                <exclude reference="sOb-Uk-IjS"/>
                                 <exclude reference="QCk-9H-0vR"/>
                                 <exclude reference="c1I-Fk-rC6"/>
                                 <exclude reference="d40-E5-O8q"/>
-                                <exclude reference="EXZ-X2-nNp"/>
+                                <exclude reference="sOb-Uk-IjS"/>
+                                <exclude reference="I8L-Me-j72"/>
+                                <exclude reference="ZXr-lX-RU8"/>
+                                <exclude reference="bw1-uR-Ogw"/>
+                                <exclude reference="nqg-95-df3"/>
+                                <exclude reference="nIW-AG-RWn"/>
+                                <exclude reference="yAB-zi-wGi"/>
                                 <exclude reference="6cb-9q-h4O"/>
                                 <exclude reference="QL8-qj-VGd"/>
-                                <exclude reference="V5G-OA-kNs"/>
                                 <exclude reference="oBh-9c-PD0"/>
-                                <exclude reference="yAB-zi-wGi"/>
-                                <exclude reference="nIW-AG-RWn"/>
-                                <exclude reference="nSB-S1-fq7"/>
                                 <exclude reference="l4b-z5-Hlp"/>
-                                <exclude reference="r3v-jB-Fna"/>
-                                <exclude reference="I8L-Me-j72"/>
-                                <exclude reference="bw1-uR-Ogw"/>
-                                <exclude reference="ZXr-lX-RU8"/>
-                                <exclude reference="nqg-95-df3"/>
-                                <exclude reference="8qS-Hl-K7C"/>
-                                <exclude reference="QE7-vg-rmg"/>
-                                <exclude reference="MXO-bx-Fju"/>
+                                <exclude reference="nSB-S1-fq7"/>
+                                <exclude reference="V5G-OA-kNs"/>
                                 <exclude reference="gmk-II-rn4"/>
+                                <exclude reference="r3v-jB-Fna"/>
+                                <exclude reference="8qS-Hl-K7C"/>
+                                <exclude reference="MXO-bx-Fju"/>
+                                <exclude reference="QE7-vg-rmg"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -1558,29 +1558,29 @@ There are two conditions. In one condition you will select the passages you want
                             <mask key="constraints">
                                 <include reference="RjZ-HT-4pD"/>
                                 <include reference="nYz-KM-UOX"/>
+                                <include reference="EXZ-X2-nNp"/>
                                 <include reference="PY6-eD-Eay"/>
-                                <include reference="sOb-Uk-IjS"/>
                                 <include reference="QCk-9H-0vR"/>
                                 <include reference="c1I-Fk-rC6"/>
                                 <include reference="d40-E5-O8q"/>
-                                <include reference="EXZ-X2-nNp"/>
+                                <include reference="sOb-Uk-IjS"/>
+                                <include reference="I8L-Me-j72"/>
+                                <include reference="ZXr-lX-RU8"/>
+                                <include reference="bw1-uR-Ogw"/>
+                                <include reference="nqg-95-df3"/>
+                                <include reference="nIW-AG-RWn"/>
+                                <include reference="yAB-zi-wGi"/>
                                 <include reference="6cb-9q-h4O"/>
                                 <include reference="QL8-qj-VGd"/>
-                                <include reference="V5G-OA-kNs"/>
                                 <include reference="oBh-9c-PD0"/>
-                                <include reference="yAB-zi-wGi"/>
-                                <include reference="nIW-AG-RWn"/>
-                                <include reference="nSB-S1-fq7"/>
                                 <include reference="l4b-z5-Hlp"/>
-                                <include reference="r3v-jB-Fna"/>
-                                <include reference="I8L-Me-j72"/>
-                                <include reference="bw1-uR-Ogw"/>
-                                <include reference="ZXr-lX-RU8"/>
-                                <include reference="nqg-95-df3"/>
-                                <include reference="8qS-Hl-K7C"/>
-                                <include reference="QE7-vg-rmg"/>
-                                <include reference="MXO-bx-Fju"/>
+                                <include reference="nSB-S1-fq7"/>
+                                <include reference="V5G-OA-kNs"/>
                                 <include reference="gmk-II-rn4"/>
+                                <include reference="r3v-jB-Fna"/>
+                                <include reference="8qS-Hl-K7C"/>
+                                <include reference="MXO-bx-Fju"/>
+                                <include reference="QE7-vg-rmg"/>
                             </mask>
                         </variation>
                     </view>
