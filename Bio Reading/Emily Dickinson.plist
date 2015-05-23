@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Shy</key>
+	<dict>
+		<key>Sentance</key>
+		<string>Very few of her nearly 1,800 poems were published during her lifetime, mostly anonymously and without her knowledge.</string>
+		<key>CPIDR</key>
+		<integer>13</integer>
+	</dict>
+	<key>Sister</key>
+	<dict>
+		<key>Sentance</key>
+		<string>After she passed away, her younger sister found hundreds of her poems and helped publish them beginning in 1890.</string>
+		<key>CPIDR</key>
+		<integer>13</integer>
+	</dict>
+	<key>Storage</key>
+	<dict>
+		<key>Sentance</key>
+		<string>Although her acquaintances were aware of her writing, she was protective of it by hiding it in a locked chest.</string>
+		<key>CPIDR</key>
+		<integer>11</integer>
+	</dict>
+	<key>Hobby</key>
+	<dict>
+		<key>Sentance</key>
+		<string>She had a greenhouse built in her homestead so that she could indulge her passion for gardening all year round.</string>
+		<key>CPIDR</key>
+		<integer>11</integer>
+	</dict>
+	<key>Lobby</key>
+	<dict>
+		<key>Sentance</key>
+		<string>She was engaged to a student at Amherst College, but her father broke it off because he was just a poor student.</string>
+		<key>CPIDR</key>
+		<integer>10</integer>
+	</dict>
+	<key>Health</key>
+	<dict>
+		<key>Sentance</key>
+		<string>She called the treatment for her painful eye condition &quot;eight months of Siberia&quot; because she was forbidden to read.</string>
+		<key>CPIDR</key>
+		<integer>9</integer>
+	</dict>
+	<key>Format</key>
+	<dict>
+		<key>Sentance</key>
+		<string>She wrote on envelopes and other scrap paper, suggesting that she wrote down ideas for poems wherever she was inspired.</string>
+		<key>CPIDR</key>
+		<integer>11</integer>
+	</dict>
+	<key>Writing</key>
+	<dict>
+		<key>Sentance</key>
+		<string>Her writing features dense syntax and unusual vocabulary, which makes her poetry intriguing but hard to understand. </string>
+		<key>CPIDR</key>
+		<integer>9</integer>
+	</dict>
+	<key>Father</key>
+	<dict>
+		<key>Sentance</key>
+		<string>Her father led a disciplined and civic-minded life, serving both in the state legislature and in Congress.</string>
+		<key>CPIDR</key>
+		<integer>8</integer>
+	</dict>
+	<key>Youth</key>
+	<dict>
+		<key>Sentance</key>
+		<string>With her bedroom window facing a local cemetery, she saw frequent burials as a young girl.</string>
+		<key>CPIDR</key>
+		<integer>8</integer>
+	</dict>
+	<key>Sorrow</key>
+	<dict>
+		<key>Sentance</key>
+		<string>In her last years, she endured the loss of several close friends and family members, including her mother and nephew.</string>
+		<key>CPIDR</key>
+		<integer>10</integer>
+	</dict>
+	<key>Seclusion</key>
+	<dict>
+		<key>Sentance</key>
+		<string>She largely withdrew from social life by her late twenties, and this period proved to be her most productive period.</string>
+		<key>CPIDR</key>
+		<integer>14</integer>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Personality</key>
+	<dict>
+		<key>Sentance</key>
+		<string>He was shy as a child, avoided looking people in the eye, and even ran  home from school to avoid talking to anyone.</string>
+		<key>CPIDR</key>
+		<integer>12</integer>
+	</dict>
+	<key>Teen</key>
+	<dict>
+		<key>Sentance</key>
+		<string>At the age of 13, he was married to a girl of the same age through the arrangement of their parents.</string>
+		<key>CPIDR</key>
+		<integer>9</integer>
+	</dict>
+	<key>Lawyer</key>
+	<dict>
+		<key>Sentance</key>
+		<string>He was a successful attorney in South Africa because he settled the claims for his clients out of the court peacefully.</string>
+		<key>CPIDR</key>
+		<integer>10</integer>
+	</dict>
+	<key>Attire</key>
+	<dict>
+		<key>Sentance</key>
+		<string>As a student in Europe, he wore a silk hat and carried a cane long before the loin cloth for which he was later known. </string>
+		<key>CPIDR</key>
+		<integer>11</integer>
+	</dict>
+	<key>Love</key>
+	<dict>
+		<key>Sentance</key>
+		<string>His famous quotes include &quot;an eye for an eye makes the whole world blind&quot; and &quot;hate the sin, love the sinner.&quot; </string>
+		<key>CPIDR</key>
+		<integer>7</integer>
+	</dict>
+	<key>Media</key>
+	<dict>
+		<key>Sentance</key>
+		<string>He hated cinema, thinking it was not a medium to propagate his ideals, but he started to use radio in his later years.</string>
+		<key>CPIDR</key>
+		<integer>11</integer>
+	</dict>
+	<key>Assasination</key>
+	<dict>
+		<key>Sentance</key>
+		<string>He survived six attempts on his life, but was killed at the age of 80 when he was shot on the way to a prayer meeting.</string>
+		<key>CPIDR</key>
+		<integer>13</integer>
+	</dict>
+	<key>Friend</key>
+	<dict>
+		<key>Sentance</key>
+		<string>From the beginning of his career as a peace leader, he corresponded regularly with Tolstoy to discuss human love.</string>
+		<key>CPIDR</key>
+		<integer>10</integer>
+	</dict>
+	<key>Joy</key>
+	<dict>
+		<key>Sentance</key>
+		<string>He was shy as a child, avoided looking people in the eye, and even ran  home from school to avoid talking to anyone.</string>
+		<key>CPIDR</key>
+		<integer>10</integer>
+	</dict>
+	<key>Impact</key>
+	<dict>
+		<key>Sentance</key>
+		<string>His notion of nonviolent resistence influnced Martin Luther King&apos;s philosophy of nonviolent civil disobedience.</string>
+		<key>CPIDR</key>
+		<integer>9</integer>
+	</dict>
+	<key>Regret</key>
+	<dict>
+		<key>Sentance</key>
+		<string>After he was nominated for the Novel Prize five times, he was chosen but killed before the award was conferred.</string>
+		<key>CPIDR</key>
+		<integer>9</integer>
+	</dict>
+	<key>Generosity</key>
+	<dict>
+		<key>Sentance</key>
+		<string>Once when he was boarding a train, one of his shoes fell outside, so he threw the other to make a pair for the finder. </string>
+		<key>CPIDR</key>
+		<integer>13</integer>
+	</dict>
+</dict>
+</plist>
