@@ -30,7 +30,6 @@
 		46FACA021AEEF60300BAFE99 /* RecordKeeperHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9FC1AEEF60300BAFE99 /* RecordKeeperHelper.swift */; };
 		46FACA031AEEF60300BAFE99 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9FD1AEEF60300BAFE99 /* UIColorExtension.swift */; };
 		46FACA0C1AEEF61500BAFE99 /* Emily Dickinson.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46FACA041AEEF61500BAFE99 /* Emily Dickinson.plist */; };
-		46FACA0D1AEEF61500BAFE99 /* Example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46FACA051AEEF61500BAFE99 /* Example.plist */; };
 		46FACA0E1AEEF61500BAFE99 /* Issac Newton.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46FACA061AEEF61500BAFE99 /* Issac Newton.plist */; };
 		46FACA0F1AEEF61500BAFE99 /* Mahatma Gandhi.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46FACA071AEEF61500BAFE99 /* Mahatma Gandhi.plist */; };
 		46FACA101AEEF61500BAFE99 /* Marie Curie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46FACA081AEEF61500BAFE99 /* Marie Curie.plist */; };
@@ -70,7 +69,6 @@
 		46FAC9FC1AEEF60300BAFE99 /* RecordKeeperHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordKeeperHelper.swift; sourceTree = "<group>"; };
 		46FAC9FD1AEEF60300BAFE99 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		46FACA041AEEF61500BAFE99 /* Emily Dickinson.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Emily Dickinson.plist"; sourceTree = "<group>"; };
-		46FACA051AEEF61500BAFE99 /* Example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Example.plist; sourceTree = "<group>"; };
 		46FACA061AEEF61500BAFE99 /* Issac Newton.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Issac Newton.plist"; sourceTree = "<group>"; };
 		46FACA071AEEF61500BAFE99 /* Mahatma Gandhi.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Mahatma Gandhi.plist"; sourceTree = "<group>"; };
 		46FACA081AEEF61500BAFE99 /* Marie Curie.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Marie Curie.plist"; sourceTree = "<group>"; };
@@ -104,16 +102,8 @@
 		462BF9DC1B01E00100028FB6 /* Bios */ = {
 			isa = PBXGroup;
 			children = (
-				46FACA041AEEF61500BAFE99 /* Emily Dickinson.plist */,
-				46FACA051AEEF61500BAFE99 /* Example.plist */,
-				46FACA061AEEF61500BAFE99 /* Issac Newton.plist */,
-				46FACA071AEEF61500BAFE99 /* Mahatma Gandhi.plist */,
-				46FACA081AEEF61500BAFE99 /* Marie Curie.plist */,
-				46FACA091AEEF61500BAFE99 /* Mother Teresa.plist */,
-				46FACA0A1AEEF61500BAFE99 /* Practice Connecticut.plist */,
-				46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */,
-				46FACA0B1AEEF61500BAFE99 /* William Shakespeare.plist */,
-				46F8AA6F1B02953300946033 /* Record.swift */,
+				46D2B7B81B10230A00A9DECF /* Production */,
+				46D2B7B91B10231A00A9DECF /* Practice */,
 			);
 			name = Bios;
 			sourceTree = "<group>";
@@ -148,6 +138,28 @@
 			);
 			name = Extension;
 			path = "Bio Reading";
+			sourceTree = "<group>";
+		};
+		46D2B7B81B10230A00A9DECF /* Production */ = {
+			isa = PBXGroup;
+			children = (
+				46FACA081AEEF61500BAFE99 /* Marie Curie.plist */,
+				46FACA0B1AEEF61500BAFE99 /* William Shakespeare.plist */,
+				46FACA061AEEF61500BAFE99 /* Issac Newton.plist */,
+				46FACA091AEEF61500BAFE99 /* Mother Teresa.plist */,
+				46FACA041AEEF61500BAFE99 /* Emily Dickinson.plist */,
+				46FACA071AEEF61500BAFE99 /* Mahatma Gandhi.plist */,
+			);
+			name = Production;
+			sourceTree = "<group>";
+		};
+		46D2B7B91B10231A00A9DECF /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				46FACA0A1AEEF61500BAFE99 /* Practice Connecticut.plist */,
+				46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */,
+			);
+			name = Practice;
 			sourceTree = "<group>";
 		};
 		46FAC9AA1AEEF4F600BAFE99 = {
@@ -229,6 +241,7 @@
 			children = (
 				462BF9DC1B01E00100028FB6 /* Bios */,
 				46FAC9BA1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodeld */,
+				46F8AA6F1B02953300946033 /* Record.swift */,
 				46FACA151AEEF62600BAFE99 /* Images.xcassets */,
 			);
 			name = Resources;
@@ -330,7 +343,6 @@
 				46FACA1A1AEEF63F00BAFE99 /* LaunchScreen.xib in Resources */,
 				46FACA101AEEF61500BAFE99 /* Marie Curie.plist in Resources */,
 				46FACA0E1AEEF61500BAFE99 /* Issac Newton.plist in Resources */,
-				46FACA0D1AEEF61500BAFE99 /* Example.plist in Resources */,
 				46FACA121AEEF61500BAFE99 /* Practice Connecticut.plist in Resources */,
 				46FACA131AEEF61500BAFE99 /* William Shakespeare.plist in Resources */,
 				46FACA111AEEF61500BAFE99 /* Mother Teresa.plist in Resources */,

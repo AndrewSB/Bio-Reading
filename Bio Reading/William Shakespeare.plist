@@ -2,89 +2,89 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Danger</key>
+	<key>Birth</key>
 	<dict>
 		<key>Sentance</key>
-		<string>Her work-related papers are highly radioactive, and those who wish to consult them must wear protective clothing.</string>
+		<string>Though no birth records exist, church records indicate that he was baptized in Stratford-upon-Avon on April 26, 1564.</string>
 		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Education</key>
-	<dict>
-		<key>Sentance</key>
-		<string>Prohibited from higher education in her native country because she was a woman, she moved to Paris where she got a PhD.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Poverty</key>
-	<dict>
-		<key>Sentance</key>
-		<string>To afford university tuition and living expense, she studied during the day and worked as a tutor in the evening.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Spouse</key>
-	<dict>
-		<key>Sentance</key>
-		<string>Her husband Pierre researched magnetism, but a contemporary quipped that his greatest discovery was Marie. </string>
-		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>8</integer>
 	</dict>
 	<key>Parents</key>
 	<dict>
 		<key>Sentance</key>
-		<string>Her passion for science was inspired by her father, a physics teacher who showed his children his lab equipment.</string>
+		<string>His father was a glove maker and wool merchant, and his mother was the daughter of a well-known landowner.</string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>8</integer>
+	</dict>
+	<key>Early Life</key>
+	<dict>
+		<key>CPIDR</key>
+		<integer>9</integer>
+		<key>Sentance</key>
+		<string>His parents are believed to have been illiterate, but he learned to read English and Latin at the local school.</string>
+	</dict>
+	<key>Marriage</key>
+	<dict>
+		<key>Sentance</key>
+		<string>At the age of 18, he married Anne Hathaway, who was 8 years his senior and the daugter of a local farmer.</string>
+		<key>CPIDR</key>
+		<integer>12</integer>
+	</dict>
+	<key>Son</key>
+	<dict>
+		<key>Sentance</key>
+		<string>His only son Hamnet died at the age of 11, and in King John, he depicted a mother frantic over the loss of her son.</string>
+		<key>CPIDR</key>
+		<integer>9</integer>
+	</dict>
+	<key>Reputation</key>
+	<dict>
+		<key>Sentance</key>
+		<string>As a new actor in London, he had such a flair on the stage that he was described as an &quot;upstart crow.&quot;</string>
+		<key>CPIDR</key>
+		<integer>8</integer>
+	</dict>
+	<key>King&apos;s Men</key>
+	<dict>
+		<key>Sentance</key>
+		<string>He started a play company called King&apos;s Men with his partners and they performed many of his plays in London. </string>
+		<key>CPIDR</key>
+		<integer>7</integer>
+	</dict>
+	<key>Investment</key>
+	<dict>
+		<key>Sentance</key>
+		<string>He built the Globe Theatre, and  owned other real estate, which supported him so he had uninterrupted time for writing.</string>
+		<key>CPIDR</key>
+		<integer>8</integer>
+	</dict>
+	<key>Home</key>
+	<dict>
+		<key>Sentance</key>
+		<string>He worked in London most of the year, returning home to visit his family once a year during Lent. </string>
+		<key>CPIDR</key>
+		<integer>8</integer>
 	</dict>
 	<key>Death</key>
 	<dict>
 		<key>Sentance</key>
-		<string>She died of aplastic anemia due to prolonged exposure to radiation, but she never acknowledged the health risks of it.</string>
+		<string>At the age of 52, he died after signing his will, which he began by describing himself as being in &quot;perfect health.&quot; </string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>9</integer>
 	</dict>
-	<key>Wedding</key>
+	<key>Bed</key>
 	<dict>
 		<key>Sentance</key>
-		<string>Instead of wearing a bridal grown, she worn a dark blue dress, which served her for many years as a laboratory outfit.</string>
+		<string>He bequeathed his &quot;second-best bed&quot; to his wife, perhaps because the best bed was by custom reserved for guests.</string>
 		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>7</integer>
 	</dict>
-	<key>Early finding</key>
+	<key>Lost Years</key>
 	<dict>
 		<key>Sentance</key>
-		<string>In her early research with uranium, she showed that atoms were divisible, which led to the creation of atomic physics.</string>
+		<string>There is no record of his activities between 1585 and 1592, but some think he was fleeing prosecution for deer poaching. </string>
 		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Award</key>
-	<dict>
-		<key>Sentance</key>
-		<string>She was the only person to win Nobel Prizes in different fields, one in Physics and another one in Chemistry.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Discovery</key>
-	<dict>
-		<key>Sentance</key>
-		<string>Along with her husband, she discovered two different elements, Polonium and Radium in the same year.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Religion</key>
-	<dict>
-		<key>Sentance</key>
-		<string>Raised by a Catholic mother and an atheist father, she became agnostic after her mother&apos;s death.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
-	</dict>
-	<key>Birth</key>
-	<dict>
-		<key>Sentance</key>
-		<string>She was born Maria Sklodowska in 1867 in Warsaw, Poland, as the youngest of five children in her family.</string>
-		<key>CPIDR</key>
-		<integer>0</integer>
+		<integer>10</integer>
 	</dict>
 </dict>
 </plist>
