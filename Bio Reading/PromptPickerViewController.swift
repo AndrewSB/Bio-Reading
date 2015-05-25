@@ -63,7 +63,6 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         }
         
         let fsdfds = self.curPersonControlTimes
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -79,13 +78,22 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
             self.foragingLogic()
-        })
-        
-        if isFirstView {
-            isFirstView = false
             
-        }
+            if self.isFirstView {
+                self.isFirstView = false
+                
+                let alertC = FamiliarityAlertViewController(title: "Switching Bios!", message: "How familiar are you with \(self.curPerson!.0)?\n\n\n", preferredStyle: .Alert)
+                
+                alertC.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (alertController) in
+                    println("shizz \(alertC.slider.value)")
+                    UserStore.currentFamiliarity = Double(alertC.slider.value)
+                }))
+                
+                self.presentViewController(alertC, animated: true, completion: nil)
+            }
+        })
     }
+
 
     
     // ======================================
@@ -180,12 +188,14 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         }
         
         if !stay {
-            let changingPersonAlert = UIAlertController(title: "Changing Bios!", message: "You're about to switch to a new bio!", preferredStyle: .Alert)
-            changingPersonAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: { Void in
-                self.curPersonIndex++
+            let alertC = FamiliarityAlertViewController(title: "Switching Bios", message: "How familiar are you with \(curPerson!.0)?\n\n\n", preferredStyle: .Alert)
+            
+            alertC.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (alertController) in
+                println("shizz \(alertC.slider.value)")
+                UserStore.currentFamiliarity = Double(alertC.slider.value)
             }))
             
-            self.presentViewController(changingPersonAlert, animated: true, completion: {println("presented")})
+            self.presentViewController(alertC, animated: true, completion: nil)
             return true
         }
         return false
@@ -211,6 +221,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         UserStore.currentTitle = sender as? String
         UserStore.currentPerson = self.navigationItem.title!
         UserStore.currentTime = curPersonControlTimes[curPersonIndex]
+
         
         if let s = segue.destinationViewController as? CuriosityViewController {
             s.person = self.navigationItem.title!

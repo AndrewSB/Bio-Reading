@@ -17,6 +17,7 @@ class UserStore {
         case currentBio = "currentBio"
         case currentTitle = "currentTitle"
         case currentTime = "currentTime"
+        case currentFamiliarity = "currentFamiliarity"
         
         case bios = "bios"
         case subjectNumber = "subjectNumber"
@@ -62,6 +63,15 @@ class UserStore {
     }
     
     class var currentTime: Double? {
+        get {
+            return get(storeKeys.currentTime.rawValue) as? Double
+        }
+        set {
+            set(newValue, forKey: storeKeys.currentTime.rawValue)
+        }
+    }
+    
+    class var currentFamiliarity: Double? {
         get {
             return get(storeKeys.currentTime.rawValue) as? Double
         }

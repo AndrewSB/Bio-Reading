@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		462BFA121B01E3FB00028FB6 /* GenericWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */; };
+		469D5A811B12BBD600BDA7BD /* FamiliarityAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D5A801B12BBD600BDA7BD /* FamiliarityAlertViewController.swift */; };
 		46AD0CB21B01ED2F00010E9C /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AD0CB11B01ED2F00010E9C /* CoreDataHelper.swift */; };
 		46F8AA6C1B02882500946033 /* Practice Rhode Island.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */; };
 		46F8AA701B02953300946033 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8AA6F1B02953300946033 /* Record.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericWrapper.swift; sourceTree = "<group>"; };
+		469D5A801B12BBD600BDA7BD /* FamiliarityAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamiliarityAlertViewController.swift; sourceTree = "<group>"; };
 		46AD0CB11B01ED2F00010E9C /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Practice Rhode Island.plist"; sourceTree = "<group>"; };
 		46F8AA6F1B02953300946033 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Record.swift; path = ../Record.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		46FAC9F71AEEF5F500BAFE99 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				469D5A801B12BBD600BDA7BD /* FamiliarityAlertViewController.swift */,
 				46FAC9F41AEEF5EE00BAFE99 /* PromptCollectionViewCell.swift */,
 			);
 			name = UI;
@@ -410,6 +413,7 @@
 				46FAC9E41AEEF5AE00BAFE99 /* FamiliarityViewController.swift in Sources */,
 				46FAC9DD1AEEF57A00BAFE99 /* AppDelegate.swift in Sources */,
 				462BFA121B01E3FB00028FB6 /* GenericWrapper.swift in Sources */,
+				469D5A811B12BBD600BDA7BD /* FamiliarityAlertViewController.swift in Sources */,
 				46FACA031AEEF60300BAFE99 /* UIColorExtension.swift in Sources */,
 				46FAC9EF1AEEF5C300BAFE99 /* InitialViewController.swift in Sources */,
 				46FACA021AEEF60300BAFE99 /* RecordKeeperHelper.swift in Sources */,
