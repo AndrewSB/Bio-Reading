@@ -66,8 +66,6 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        println("willappear")
-        
         self.navigationItem.title = curPerson!.0
         nameLabel.text = self.navigationItem.title!
         
@@ -79,10 +77,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
             self.foragingLogic()
-//        })
     }
 
 
@@ -104,11 +99,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(colorCollectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
-        
-        let width: CGFloat = (collectionView.frame.size.width - 44)/3
-        let height: CGFloat = (collectionView.frame.size.height - 66)/4
-        
-        return CGSize(width: width, height: height)
+        return CGSize(width: (collectionView.frame.size.width - 44)/3, height: (collectionView.frame.size.height - 66)/4)
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -116,12 +107,6 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func selectCell(indexPath: NSIndexPath) {
-        for cell in collectionView.visibleCells() {
-            if (cell as! UICollectionViewCell).backgroundColor == UIColor.redColor() {
-                (cell as! UICollectionViewCell).backgroundColor = UIColor.grayColor()
-            }
-        }
-        
         if !selected[indexPath.row] {
             collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.grayColor()
             selected[indexPath.row] = true
@@ -134,6 +119,8 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             let prompt = IO.getPrompt(curPerson!.0, index: indexPath.row)
             self.performSegueWithIdentifier("segueToPromptVC", sender: prompt)
         }
+        
+        println(selected)
     }
     
     // MARK: - Helper
@@ -143,20 +130,16 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             if curPerson!.1 { //foraging
                 view.userInteractionEnabled = true
             } else { //control
-                var cellIndexSelectionPool = [PromptCollectionViewCell]()
+                var cellIndexSelectionPool = [Int]()
                 
-                for (index, element) in enumerate(collectionView.visibleCells()) {
-                    
-                    if !selected[index] {
-                        cellIndexSelectionPool.append(element as! PromptCollectionViewCell)
+                for i in 0..<selected.count {
+                    if !selected[i] {
+                        cellIndexSelectionPool.append(i)
                     }
                 }
                 
-                for cell in cellIndexSelectionPool {
-                    println(cell.promptLabel.text)
-                }
-                
-                let toSegueTo = cellIndexSelectionPool.getRandomElement()
+                let chosenIndex = NSIndexPath(forItem: cellIndexSelectionPool.getRandomElement(), inSection: 0)
+                let toSegueTo = collectionView.cellForItemAtIndexPath(chosenIndex)!
                 view.userInteractionEnabled = false
                 
                 toSegueTo.layer.borderColor = UIColor.yellowColor().CGColor
@@ -164,7 +147,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
                 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
                     self.view.userInteractionEnabled = true
-                    self.selectCell(self.collectionView.indexPathForCell(toSegueTo as PromptCollectionViewCell)!)
+                    self.selectCell(chosenIndex)
                     
                     toSegueTo.layer.borderWidth = 0
                 })
