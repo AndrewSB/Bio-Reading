@@ -24,7 +24,12 @@ class Record: NSManagedObject {
     @NSManaged var rTCond: NSNumber
 
     func toString() -> String {
+        var str = String()
         
-        return "\(subjectNumber), \(curiosity), \(familiarity), \(bioPerson), \(cue), \(order), \(rTCond), \(dateTime), \(readingTime)"
+        for iVar in [bioPerson, condition, cue, curiosity, dateTime, order, readingTime, subjectNumber, familiarity, rTCond] {
+            str += "\(iVar)"
+        }
+        
+        return str
     }
 }
