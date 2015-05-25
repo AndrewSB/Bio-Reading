@@ -23,4 +23,8 @@ class Record: NSManagedObject {
     @NSManaged var familiarity: NSNumber
     @NSManaged var rTCond: NSNumber
 
+    func toString() -> String {
+        
+        return "\(subjectNumber), \(curiosity), \(familiarity), \(bioPerson), \(cue), \(order), \(rTCond), \(dateTime), \(readingTime)"
+    }
 }

@@ -21,6 +21,7 @@ class EmailLogsTableViewController: UITableViewController {
         
         for r in subjectRecords {
             ifExistsAppend(r)
+            println(r.subjectNumber)
         }
         
         tableView.reloadData()
@@ -43,9 +44,17 @@ class EmailLogsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let composeEmailVC = MailComposeViewController()
         
-        composeEmailVC.setSubject("Subject \(subjectRecords![indexPath.row]), Adult Learning Lab")
+        composeEmailVC.setSubject("Subject \(subjectRecords![indexPath.row].subjectNumber), Adult Learning Lab")
         composeEmailVC.setToRecipients(["xliu85@illinois.edu"])
-        composeEmailVC.addAttachmentData(("asdasdasdas,das,das,da,sd,as,da" as NSString).dataUsingEncoding(NSUTF8StringEncoding), mimeType: "text/csv", fileName: "subject.csv")
+        
+        var CSVData = "Subject Number, Curiosity, Familiarity, Bio Person, Cue, Order, RT Condition, DateTime, Reading Time, Audio File\n"
+        
+        for record in sortedRecords[indexPath.row] {
+            CSVData += record.toString() + "\n"
+            composeEmailVC.addAttachmentData(record.audioFile, mimeType: "audio/wav", fileName: "\(record.bioPerson) - \(record.cue)")
+        }
+        
+        composeEmailVC.addAttachmentData((CSVData as NSString).dataUsingEncoding(NSUTF8StringEncoding), mimeType: "text/csv", fileName: "subject.csv")
         
         presentViewController(composeEmailVC, animated: true, completion: nil)
     }

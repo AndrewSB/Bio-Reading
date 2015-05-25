@@ -17,7 +17,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     var selectedIndex = Int()
     
     let people = UserStore.bios
-    var curPerson: (String, Bool) = UserStore.bios[0] {
+    var curPerson: (String, Bool)! {
         didSet {
             selected.removeAll(keepCapacity: false)
             
@@ -26,7 +26,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             }
             
             collectionView.reloadData()
-//            self.viewWillAppear(false)
+            self.viewWillAppear(false)
         }
     }
     var curPersonIndex: Int = 0 {
@@ -55,6 +55,8 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        curPerson = people[curPersonIndex]
+        
         if UserStore.subjectNumber == nil {
             UserStore.subjectNumber = 123456789
         }
@@ -74,7 +76,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-            self.foragingLogic()
+        self.foragingLogic()
     }
 
 
@@ -105,6 +107,10 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     
     func selectCell(indexPath: NSIndexPath) {
         if !selected[indexPath.row] {
+            appDel.currentRecord!.cue = indexPath.item
+            appDel.currentRecord!.dateTime = NSDate()
+            appDel.currentRecord!.order = selected.filter({ !$0 }).count
+            
             collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.grayColor()
             selected[indexPath.row] = true
             
@@ -160,30 +166,27 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         
         for f in selected {
             if f == false {
-                stay = true
+                return false
             }
         }
         
-        if !stay {
-            var alertC: UIAlertController
-            if curPersonIndex +  1 <= people.count {
-                alertC = FamiliarityAlertViewController(title: "Switching Bios", message: "How familiar are you with \(people[curPersonIndex + 1].0)?\n\n\n", preferredStyle: .Alert)
+        var alertC: UIAlertController
+        if curPersonIndex +  1 <= people.count {
+            alertC = FamiliarityAlertViewController(title: "Switching Bios", message: "How familiar are you with \(people[curPersonIndex + 1].0)?\n\n\n", preferredStyle: .Alert)
                 
-                alertC.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (alertController) in
-                    UserStore.currentFamiliarity = Double((alertC as! FamiliarityAlertViewController).slider.value)
-                    self.curPersonIndex++
-                }))
-            } else {
-                alertC = UIAlertController(title: "Done with experiment", message: "You can now give the iPad back to the experimenter and quit the app", preferredStyle: .Alert)
-                alertC.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: nil))
+            alertC.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (alertController) in
+                UserStore.currentFamiliarity = Double((alertC as! FamiliarityAlertViewController).slider.value)
+                self.curPersonIndex++
+            }))
+        } else {
+            alertC = UIAlertController(title: "Done with experiment", message: "You can now give the iPad back to the experimenter and quit the app", preferredStyle: .Alert)
+            alertC.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: nil))
                 
-                self.view.userInteractionEnabled = false
-            }
-            
-            self.presentViewController(alertC, animated: true, completion: nil)
-            return true
+            self.view.userInteractionEnabled = false
         }
-        return false
+            
+        self.presentViewController(alertC, animated: true, completion: nil)
+        return true
     }
     
     func recordStoreLogic() {
@@ -195,6 +198,8 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         
         //get a new record and fill it out for the
         appDel.currentRecord = NSEntityDescription.getNewRecordInManagedContext()
+        
+        appDel.currentRecord!.subjectNumber = UserStore.subjectNumber!
         appDel.currentRecord!.bioPerson = self.navigationItem.title!
         appDel.currentRecord!.condition = curPerson.1 ? 0 : 1
         appDel.currentRecord!.familiarity = UserStore.currentFamiliarity!
