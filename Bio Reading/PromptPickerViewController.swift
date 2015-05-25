@@ -26,7 +26,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             }
             
             collectionView.reloadData()
-            self.viewWillAppear(false)
+//            self.viewWillAppear(false)
         }
     }
     var curPersonIndex: Int = 0 {
@@ -64,7 +64,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     override func viewWillAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
         
         println("willappear")
         
@@ -75,10 +75,14 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         doneLogic()
         
         UserStore.isTimed = !curPerson!.1
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
             self.foragingLogic()
-        })
+//        })
     }
 
 
@@ -139,16 +143,18 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             if curPerson!.1 { //foraging
                 view.userInteractionEnabled = true
             } else { //control
-                var cellIndexSelectionPool = [UICollectionViewCell]()
+                var cellIndexSelectionPool = [PromptCollectionViewCell]()
                 
                 for (index, element) in enumerate(collectionView.visibleCells()) {
                     
                     if !selected[index] {
-                        cellIndexSelectionPool.append(element as! UICollectionViewCell)
+                        cellIndexSelectionPool.append(element as! PromptCollectionViewCell)
                     }
                 }
                 
-                println(cellIndexSelectionPool)
+                for cell in cellIndexSelectionPool {
+                    println(cell.promptLabel.text)
+                }
                 
                 let toSegueTo = cellIndexSelectionPool.getRandomElement()
                 view.userInteractionEnabled = false
@@ -158,7 +164,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
                 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
                     self.view.userInteractionEnabled = true
-                    self.selectCell(self.collectionView.indexPathForCell(toSegueTo as UICollectionViewCell)!)
+                    self.selectCell(self.collectionView.indexPathForCell(toSegueTo as PromptCollectionViewCell)!)
                     
                     toSegueTo.layer.borderWidth = 0
                 })
@@ -182,7 +188,6 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             let alertC = FamiliarityAlertViewController(title: "Switching Bios", message: "How familiar are you with \(curPerson!.0)?\n\n\n", preferredStyle: .Alert)
             
             alertC.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (alertController) in
-                println("shizz \(alertC.slider.value)")
                 UserStore.currentFamiliarity = Double(alertC.slider.value)
             }))
             
@@ -193,17 +198,21 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func recordStoreLogic() {
+        let app = appDel.currentRecord
+        println(app)
+        
         //store the old record if it exists
+        appDel.managedObjectContext!.save(nil)
+        
+        //get a new record and fill it out for the
         appDel.currentRecord = NSEntityDescription.getNewRecordInManagedContext()
-
-        //invalidate the old record and create a new one, that will be filled out when the subject goes through the other views
         appDel.currentRecord!.bioPerson = self.navigationItem.title!
         appDel.currentRecord!.condition = curPerson!.1 ? 0 : 1
+        appDel.currentRecord!.familiarity = UserStore.currentFamiliarity!
     }
     
     
     // MARK: - Navigation
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         
@@ -221,5 +230,4 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     @IBAction func unwindToPromptPickerViewController(segue: UIStoryboardSegue) {}
-
 }

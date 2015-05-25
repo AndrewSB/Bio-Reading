@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		462BFA121B01E3FB00028FB6 /* GenericWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */; };
 		469D5A811B12BBD600BDA7BD /* FamiliarityAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D5A801B12BBD600BDA7BD /* FamiliarityAlertViewController.swift */; };
+		469D5A841B12C82200BDA7BD /* MailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */; };
 		46AD0CB21B01ED2F00010E9C /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AD0CB11B01ED2F00010E9C /* CoreDataHelper.swift */; };
 		46F8AA6C1B02882500946033 /* Practice Rhode Island.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */; };
 		46F8AA701B02953300946033 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8AA6F1B02953300946033 /* Record.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericWrapper.swift; sourceTree = "<group>"; };
 		469D5A801B12BBD600BDA7BD /* FamiliarityAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamiliarityAlertViewController.swift; sourceTree = "<group>"; };
+		469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposeViewController.swift; sourceTree = "<group>"; };
 		46AD0CB11B01ED2F00010E9C /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Practice Rhode Island.plist"; sourceTree = "<group>"; };
 		46F8AA6F1B02953300946033 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Record.swift; path = ../Record.swift; sourceTree = "<group>"; };
@@ -142,6 +144,16 @@
 			path = "Bio Reading";
 			sourceTree = "<group>";
 		};
+		469D5A821B12C80E00BDA7BD /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				46FAC9E91AEEF5C300BAFE99 /* AdminPanelViewController.swift */,
+				46FAC9EA1AEEF5C300BAFE99 /* EmailLogsTableViewController.swift */,
+				469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */,
+			);
+			name = Admin;
+			sourceTree = "<group>";
+		};
 		46D2B7B81B10230A00A9DECF /* Production */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,8 +221,7 @@
 		46FAC9F11AEEF5C700BAFE99 /* Pre */ = {
 			isa = PBXGroup;
 			children = (
-				46FAC9E91AEEF5C300BAFE99 /* AdminPanelViewController.swift */,
-				46FAC9EA1AEEF5C300BAFE99 /* EmailLogsTableViewController.swift */,
+				469D5A821B12C80E00BDA7BD /* Admin */,
 				46FAC9EB1AEEF5C300BAFE99 /* InitialViewController.swift */,
 				46FAC9EC1AEEF5C300BAFE99 /* InstructionViewController.swift */,
 			);
@@ -420,6 +431,7 @@
 				46FAC9E51AEEF5AE00BAFE99 /* PromptPickerViewController.swift in Sources */,
 				46AD0CB21B01ED2F00010E9C /* CoreDataHelper.swift in Sources */,
 				46FAC9F01AEEF5C300BAFE99 /* InstructionViewController.swift in Sources */,
+				469D5A841B12C82200BDA7BD /* MailComposeViewController.swift in Sources */,
 				46FACA011AEEF60300BAFE99 /* NSUserDefaultHelper.swift in Sources */,
 				46FAC9E31AEEF5AE00BAFE99 /* CuriosityViewController.swift in Sources */,
 				46FACA001AEEF60300BAFE99 /* IOHelper.swift in Sources */,
