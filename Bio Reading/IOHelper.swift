@@ -75,7 +75,11 @@ class IO {
         if let plist = NSBundle.mainBundle().pathForResource("\(file)", ofType: "plist") {
             let rootDict = NSDictionary(contentsOfFile: plist)!
             
-            let CPIDR = rootDict[rootDict.allKeys[index] as! String]!["CPIDR"] as? Int
+            let relevantDict = rootDict[rootDict.allKeys[index] as! String]! as! NSDictionary
+            
+            let CPIDR = relevantDict["CPIDR"] as! Int
+            println("\(CPIDR)")
+            return CPIDR
         }
         return nil
     }

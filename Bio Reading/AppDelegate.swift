@@ -23,14 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics()])
         
         UserStore.bios = UserStore.generateRandomBios()
-        UserStore.bios.insert(("Practice Connecticut", false), atIndex: 0)
+        UserStore.bios.insert(("Practice Connecticut", false), atIndex: 2)
         UserStore.bios.insert(("Practice Rhode Island", true), atIndex: 0)
         
         UserStore.subjectNumber = nil
         
         
         UserStore.fontSize = 32
-        
         return true
     }
 

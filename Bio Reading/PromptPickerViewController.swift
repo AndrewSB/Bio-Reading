@@ -37,19 +37,20 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }
     
-    var curPersonControlTimes: [Double] = [0.5,1,2,1,1,1,1,1,1,1,1,1]
-    
-//    var curPersonControlTimes: [Double] {
-//        get {
-//            var r = [Double]()
-//            for i in 0..<12 {
-//                r.append(IO.getCPIDR(curPerson!.0, index: i)!)
-//            }
-//            
-//            return r
-//        }
-//    }//= [0.5,1,2,1,1,1,1,1,1,1,1,1]
-    
+    var curPersonControlTimes: [Double] {
+        get {
+            var r = [Double]()
+            for i in 0..<(IO.getNumSentances(curPerson!.0)! - 1) {
+                let spider = IO.getCPIDR(curPerson!.0, index: i)
+                
+                let enn = selected.filter({ $0 }).count
+                
+                r.append(IO.calculateTime(spider!, n: enn, rt: RTCond.Increasing))
+            }
+            
+            return r
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +61,9 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         if UserStore.subjectNumber == nil {
             UserStore.subjectNumber = 123456789
         }
+        
+        let fsdfds = self.curPersonControlTimes
+        
     }
     
     override func viewWillAppear(animated: Bool) {
