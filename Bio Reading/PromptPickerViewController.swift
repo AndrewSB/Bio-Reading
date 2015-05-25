@@ -16,8 +16,6 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     var selected = [Bool]()
     var selectedIndex = Int()
     
-    var isFirstView = true
-    
     let people = UserStore.bios
     var curPerson: (String, Bool)? {
         didSet {
@@ -68,6 +66,8 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     override func viewWillAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        println("willappear")
+        
         self.navigationItem.title = curPerson!.0
         nameLabel.text = self.navigationItem.title!
         
@@ -78,19 +78,6 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
             self.foragingLogic()
-            
-            if self.isFirstView {
-                self.isFirstView = false
-                
-                let alertC = FamiliarityAlertViewController(title: "Switching Bios!", message: "How familiar are you with \(self.curPerson!.0)?\n\n\n", preferredStyle: .Alert)
-                
-                alertC.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (alertController) in
-                    println("shizz \(alertC.slider.value)")
-                    UserStore.currentFamiliarity = Double(alertC.slider.value)
-                }))
-                
-                self.presentViewController(alertC, animated: true, completion: nil)
-            }
         })
     }
 
@@ -161,15 +148,19 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
                     }
                 }
                 
+                println(cellIndexSelectionPool)
+                
                 let toSegueTo = cellIndexSelectionPool.getRandomElement()
                 view.userInteractionEnabled = false
                 
-                toSegueTo.backgroundColor = UIColor.redColor()
+                toSegueTo.layer.borderColor = UIColor.yellowColor().CGColor
+                toSegueTo.layer.borderWidth = 2
                 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
                     self.view.userInteractionEnabled = true
-                    self.selectCell(self.collectionView.indexPathForCell(toSegueTo as UICollectionViewCell)!
-                    )
+                    self.selectCell(self.collectionView.indexPathForCell(toSegueTo as UICollectionViewCell)!)
+                    
+                    toSegueTo.layer.borderWidth = 0
                 })
             }
             

@@ -321,7 +321,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="80P-xb-Rdw" kind="showDetail" id="Goa-4T-SdC"/>
+                                    <action selector="startButtonTapped" destination="WLy-o6-GCI" eventType="touchUpInside" id="vx5-lE-3OV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCb-i8-EGa">
@@ -370,6 +370,7 @@ There are two conditions. In one condition you will select the passages you want
                     <connections>
                         <outlet property="continueButton" destination="cd4-Jc-wf9" id="I84-G9-e6h"/>
                         <outlet property="instructionLabel" destination="gCb-i8-EGa" id="75p-bE-JqE"/>
+                        <segue destination="80P-xb-Rdw" kind="show" identifier="segueToPicker" id="9tY-Wg-ic5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GES-uy-v0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
