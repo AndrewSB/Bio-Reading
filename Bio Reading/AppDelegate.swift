@@ -26,10 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserStore.bios.insert(("Practice Connecticut", false), atIndex: 1)
         UserStore.bios.insert(("Practice Rhode Island", true), atIndex: 0)
         
-        UserStore.subjectNumber = nil
         
+        UserStore.subjectNumber = nil
         UserStore.fontSize = 32
+        UserStore.rTCond = arc4random_uniform(2) > 1 ? .Increasing : .Decreasing
+        
         return true
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {

@@ -182,14 +182,41 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qfk-DE-B6o">
+                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="165" id="YUF-PB-Fdx"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Increasing"/>
+                                    <segment title="Decreasing"/>
+                                </segments>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="YUF-PB-Fdx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="YUF-PB-Fdx"/>
+                                    </mask>
+                                </variation>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Mav-Kn-G7E" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yrF-a0-n7n" secondAttribute="bottom" constant="20" id="1ec-oA-9Wo"/>
+                            <constraint firstItem="cmL-ei-LkC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Qfk-DE-B6o" secondAttribute="bottom" constant="2" id="4l6-na-5p0"/>
                             <constraint firstItem="Cvj-ff-UzM" firstAttribute="leading" secondItem="sq2-SA-skE" secondAttribute="centerXWithinMargins" constant="22" id="A8G-Wb-a4O"/>
                             <constraint firstAttribute="centerX" secondItem="yrF-a0-n7n" secondAttribute="centerX" id="Glg-ey-Kd3"/>
+                            <constraint firstAttribute="centerX" secondItem="Qfk-DE-B6o" secondAttribute="centerX" constant="-0.5" id="Hfr-rd-BEz">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="Mav-Kn-G7E" firstAttribute="trailing" secondItem="zgn-cJ-8GH" secondAttribute="trailing" id="OR6-fb-Cb3"/>
                             <constraint firstItem="SRl-ge-ica" firstAttribute="top" secondItem="Mav-Kn-G7E" secondAttribute="bottom" constant="66" id="P4j-nY-Yks"/>
+                            <constraint firstItem="Qfk-DE-B6o" firstAttribute="top" secondItem="xm4-nu-eUJ" secondAttribute="bottom" constant="50" id="ars-Oh-koi">
+                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                            </constraint>
                             <constraint firstItem="Mav-Kn-G7E" firstAttribute="top" secondItem="zgn-cJ-8GH" secondAttribute="bottom" constant="11" id="byd-g1-JGk"/>
                             <constraint firstItem="Cvj-ff-UzM" firstAttribute="centerY" secondItem="xm4-nu-eUJ" secondAttribute="centerY" constant="-28.5" id="d1k-OB-Vhc">
                                 <variation key="heightClass=regular" constant="0.0"/>
@@ -206,7 +233,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Mav-Kn-G7E" secondAttribute="trailing" constant="80" id="x4q-Qd-09S">
                                 <variation key="heightClass=regular" constant="72"/>
                             </constraint>
-                            <constraint firstItem="cmL-ei-LkC" firstAttribute="top" secondItem="xm4-nu-eUJ" secondAttribute="bottom" constant="83" id="zBx-B7-DsL"/>
+                            <constraint firstItem="cmL-ei-LkC" firstAttribute="top" secondItem="xm4-nu-eUJ" secondAttribute="bottom" constant="72" id="zBc-wC-Rfg"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -217,9 +244,12 @@
                                 <exclude reference="cmL-ei-LkC"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="jw3-4H-f4u"/>
+                                <exclude reference="sIZ-Vk-ccq"/>
+                                <exclude reference="A8G-Wb-a4O"/>
+                                <exclude reference="d1k-OB-Vhc"/>
                                 <exclude reference="oFt-BZ-jHl"/>
-                                <exclude reference="zBx-B7-DsL"/>
-                                <exclude reference="wEb-WF-MMz"/>
+                                <exclude reference="zBc-wC-Rfg"/>
                                 <exclude reference="Glg-ey-Kd3"/>
                                 <exclude reference="qWH-mF-Iwc"/>
                                 <exclude reference="1ec-oA-9Wo"/>
@@ -227,10 +257,7 @@
                                 <exclude reference="byd-g1-JGk"/>
                                 <exclude reference="gMK-lV-fZ7"/>
                                 <exclude reference="x4q-Qd-09S"/>
-                                <exclude reference="jw3-4H-f4u"/>
-                                <exclude reference="sIZ-Vk-ccq"/>
-                                <exclude reference="A8G-Wb-a4O"/>
-                                <exclude reference="d1k-OB-Vhc"/>
+                                <exclude reference="wEb-WF-MMz"/>
                                 <exclude reference="P4j-nY-Yks"/>
                                 <exclude reference="kRP-oR-7W9"/>
                             </mask>
@@ -244,9 +271,11 @@
                                 <include reference="cmL-ei-LkC"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="jw3-4H-f4u"/>
+                                <include reference="sIZ-Vk-ccq"/>
+                                <include reference="A8G-Wb-a4O"/>
+                                <include reference="d1k-OB-Vhc"/>
                                 <include reference="oFt-BZ-jHl"/>
-                                <include reference="zBx-B7-DsL"/>
-                                <include reference="wEb-WF-MMz"/>
                                 <include reference="Glg-ey-Kd3"/>
                                 <include reference="qWH-mF-Iwc"/>
                                 <include reference="1ec-oA-9Wo"/>
@@ -254,12 +283,20 @@
                                 <include reference="byd-g1-JGk"/>
                                 <include reference="gMK-lV-fZ7"/>
                                 <include reference="x4q-Qd-09S"/>
-                                <include reference="jw3-4H-f4u"/>
-                                <include reference="sIZ-Vk-ccq"/>
-                                <include reference="A8G-Wb-a4O"/>
-                                <include reference="d1k-OB-Vhc"/>
+                                <include reference="wEb-WF-MMz"/>
                                 <include reference="P4j-nY-Yks"/>
                                 <include reference="kRP-oR-7W9"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Qfk-DE-B6o"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Hfr-rd-BEz"/>
+                                <include reference="ars-Oh-koi"/>
+                                <include reference="4l6-na-5p0"/>
+                                <include reference="zBc-wC-Rfg"/>
                             </mask>
                         </variation>
                     </view>
@@ -267,6 +304,7 @@
                     <connections>
                         <outlet property="fontLabel" destination="cmL-ei-LkC" id="F2t-cj-m6W"/>
                         <outlet property="fontStepper" destination="yrF-a0-n7n" id="HpF-uL-96E"/>
+                        <outlet property="increasingDecreasingSegmentedControl" destination="Qfk-DE-B6o" id="4aV-mW-94U"/>
                         <outlet property="personTableView" destination="Mav-Kn-G7E" id="ZqD-Lt-F2J"/>
                         <outlet property="subjectNumberTextField" destination="Cvj-ff-UzM" id="HOz-xa-ske"/>
                     </connections>
@@ -1052,7 +1090,7 @@ There are two conditions. In one condition you will select the passages you want
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0V-so-1ZK">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0V-so-1ZK">
                                 <rect key="frame" x="266" y="470" width="70" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Done">

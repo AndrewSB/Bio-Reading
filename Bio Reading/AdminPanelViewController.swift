@@ -11,6 +11,9 @@ import UIKit
 class AdminPanelViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var subjectNumberTextField: UITextField!
+    
+    @IBOutlet weak var increasingDecreasingSegmentedControl: UISegmentedControl!
+    
     @IBOutlet weak var personTableView: UITableView!
     
     @IBOutlet weak var fontLabel: UILabel!
@@ -29,6 +32,8 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
         if let num = NSUserDefaults.standardUserDefaults().objectForKey("subjectNumber") as? Int {
             subjectNumberTextField.text = "\(num)"
         }
+        
+        increasingDecreasingSegmentedControl.selectedSegmentIndex = UserStore.rTCond!.hashValue
         
         fontLabel.font = UIFont(name: "HelveticaNeue", size: get("fontSize") as! CGFloat)
         
@@ -94,5 +99,6 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
         UserStore.fontSize = CGFloat(fontStepper.value)
         UserStore.bios = randBios
         UserStore.subjectNumber = subjectNumberTextField.text.toInt()
+        UserStore.rTCond = increasingDecreasingSegmentedControl.selectedSegmentIndex == 0 ? .Increasing : .Decreasing
     }
 }

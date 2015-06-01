@@ -19,6 +19,8 @@ class UserStore {
         case currentTime = "currentTime"
         case currentFamiliarity = "currentFamiliarity"
         
+        case rTCond = "rTCond"
+        
         case bios = "bios"
         case subjectNumber = "subjectNumber"
         case fontSize = "fontSize"
@@ -77,6 +79,19 @@ class UserStore {
         }
         set {
             set(newValue, forKey: storeKeys.currentTime.rawValue)
+        }
+    }
+    
+    class var rTCond: RTCond? {
+        get {
+            let input = get(storeKeys.rTCond.rawValue) as? Int
+            if let input = input {
+                return RTCond(rawValue: input)
+            }
+            return nil
+        }
+        set {
+            set(newValue!.hashValue, forKey: storeKeys.rTCond.rawValue)
         }
     }
     
