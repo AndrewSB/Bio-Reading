@@ -17,6 +17,7 @@ class FamiliarityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        howCuriousLabel.text = "How familiar are you with \(person)"
     }
     
     @IBAction func nextButtonWasHit() {

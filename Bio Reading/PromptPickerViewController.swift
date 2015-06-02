@@ -16,6 +16,8 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     var selected = [Bool]()
     var selectedIndex = Int()
     
+    var override = false
+    
     let people = UserStore.bios
     var curPerson: (String, Bool)! {
         didSet {
@@ -47,6 +49,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     }
     var curPersonIndex: Int = 0 {
         didSet {
+            override = false
             curPerson = people[curPersonIndex]
         }
     }
@@ -78,6 +81,12 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     override func viewDidAppear(animated: Bool) {
+        if curPerson.0.rangeOfString("Practice") != nil {
+            if !override {
+                self.performSegueWithIdentifier("segueToInstructions", sender: curPerson.1 ? foragingInstructions : controlInstructions)
+            }
+            override = true
+        }
         super.viewDidAppear(animated)
         self.foragingLogic()
     }
@@ -176,7 +185,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             }
         }
         
-        let doneAlert = UIAlertController(title: "Done with experiment", message: "You can now give the iPad back to the experimenter and quit the app", preferredStyle: .Alert)
+        let doneAlert = UIAlertController(title: "Done with set", message: "", preferredStyle: .Alert)
         doneAlert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (alertController) in
             if self.curPersonIndex +  1 <= self.people.count {
                 self.performSegueWithIdentifier("segueToFam", sender: self.people[self.curPersonIndex + 1].0)
@@ -221,6 +230,10 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         
         if let des = segue.destinationViewController as? FamiliarityAlertViewController {
             des.person = (sender as! (String, Bool)).0
+        }
+        
+        if let des = segue.destinationViewController as? FirstTimeInstructionViewController {
+            des.instructionText = sender as! String
         }
     }
     

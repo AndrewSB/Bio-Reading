@@ -30,16 +30,7 @@ class InstructionViewController: UIViewController {
         }
     }
     @IBAction func startButtonTapped() {
-        let alertC = FamiliarityAlertViewController(title: "Switching Bios!", message: "How familiar are you with \(UserStore.bios[0].0)?\n\n\n", preferredStyle: .Alert)
-        
-        alertC.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (alertController) in
-            println("shizz \(alertC.slider.value)")
-            UserStore.currentFamiliarity = Double(alertC.slider.value)
-            
-            self.performSegueWithIdentifier("segueToPicker", sender: self)
-        }))
-        
-        self.presentViewController(alertC, animated: true, completion: nil)
+        self.performSegueWithIdentifier("segueToPicker", sender: self)
     }
     
     @IBAction func tapGestureTapped(sender: AnyObject) {

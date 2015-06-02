@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		462BFA121B01E3FB00028FB6 /* GenericWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */; };
 		4636E1371B1CFED3004DC76C /* AdminPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9E91AEEF5C300BAFE99 /* AdminPanelViewController.swift */; };
+		468123951B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468123941B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift */; };
 		469D5A811B12BBD600BDA7BD /* FamiliarityAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D5A801B12BBD600BDA7BD /* FamiliarityAlertViewController.swift */; };
 		469D5A841B12C82200BDA7BD /* MailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */; };
 		46AD0CB21B01ED2F00010E9C /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AD0CB11B01ED2F00010E9C /* CoreDataHelper.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericWrapper.swift; sourceTree = "<group>"; };
+		468123941B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeInstructionViewController.swift; sourceTree = "<group>"; };
 		469D5A801B12BBD600BDA7BD /* FamiliarityAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamiliarityAlertViewController.swift; sourceTree = "<group>"; };
 		469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposeViewController.swift; sourceTree = "<group>"; };
 		46AD0CB11B01ED2F00010E9C /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				469D5A821B12C80E00BDA7BD /* Admin */,
 				46FAC9EB1AEEF5C300BAFE99 /* InitialViewController.swift */,
 				46FAC9EC1AEEF5C300BAFE99 /* InstructionViewController.swift */,
+				468123941B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift */,
 			);
 			name = Pre;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				46FAC9EE1AEEF5C300BAFE99 /* EmailLogsTableViewController.swift in Sources */,
 				46F8AA701B02953300946033 /* Record.swift in Sources */,
 				46FAC9E41AEEF5AE00BAFE99 /* FamiliarityViewController.swift in Sources */,
+				468123951B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift in Sources */,
 				46FAC9DD1AEEF57A00BAFE99 /* AppDelegate.swift in Sources */,
 				462BFA121B01E3FB00028FB6 /* GenericWrapper.swift in Sources */,
 				469D5A811B12BBD600BDA7BD /* FamiliarityAlertViewController.swift in Sources */,
