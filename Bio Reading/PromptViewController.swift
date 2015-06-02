@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import Darwin
 
 class PromptViewController: UIViewController {
     var index = Int()
     var person = String()
     var isTimed = NSUserDefaults.standardUserDefaults().objectForKey("timed") as! Bool
     
-    let startTime = NSDate()
+    var startTime: NSDate!
     var timer: NSTimer?
+    
+    var curTime = UserStore.currentTime!
     
     @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
@@ -30,41 +33,32 @@ class PromptViewController: UIViewController {
         navigationItem.title = title
         
         if isTimed {
-            setupTimer(continueButton)
             continueButton.hidden = true
+            self.view.userInteractionEnabled = false
         } else {
             continueButton.hidden = false
+            self.view.userInteractionEnabled = true
         }
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        startTime = NSDate()
+        
+        if isTimed {
+            usleep(UInt32(curTime * 1000000))
+            contineButtonWasHit(self)
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        println(NSDate().timeIntervalSinceDate(startTime))
+        appDel.currentRecord!.readingTime = NSDate().timeIntervalSinceDate(startTime)
+    }
+    
     @IBAction func contineButtonWasHit(sender: AnyObject) {
         performSegueWithIdentifier("segueToRecall", sender: self)
-    }
-    
-    func setupTimer(button: UIButton) {
-        timer = NSTimer(timeInterval: NSTimeInterval(1), target: self, selector: "secondPassed:", userInfo: nil, repeats: true)
-        NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
-        println("continue button is a timer")
-        
-        continueButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        continueButton.userInteractionEnabled = false
-        continueButton.setTitle("4", forState: .Normal)
-    }
-    
-    func secondPassed(id: AnyObject!) {
-        if let t = continueButton.titleLabel?.text?.toInt() {
-            continueButton.setTitle("\(t - 1)", forState: .Normal)
-            
-            if t <= 0 {
-                timer?.invalidate()
-                self.performSegueWithIdentifier("segueToRecall", sender: self)
-            }
-        }
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        super.prepareForSegue(segue, sender: sender)
-
-        appDel.currentRecord!.readingTime = NSDate().timeIntervalSinceDate(startTime)
     }
     
     @IBAction func unwindToPromptViewController(segue: UIStoryboardSegue) {}

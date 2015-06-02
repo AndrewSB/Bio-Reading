@@ -19,6 +19,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     let people = UserStore.bios
     var curPerson: (String, Bool)! {
         didSet {
+            //prompt logic
             selected.removeAll(keepCapacity: false)
             
             for i in 0...(IO.getNumSentances(curPerson.0)! - 1) {
@@ -26,6 +27,21 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             }
             
             collectionView.reloadData()
+            
+            
+            //control time logic
+            curPersonControlTimes = [Double]()
+            
+            for i in 0..<(IO.getNumSentances(curPerson.0)!) {
+                let spider = IO.getCPIDR(curPerson.0, index: i)
+                
+                let enn = selected.filter({ $0 }).count
+                
+                curPersonControlTimes.append(IO.calculateTime(spider!, n: enn, rt: RTCond.Increasing))
+            }
+            println(curPersonControlTimes)
+            
+            
             self.viewWillAppear(false)
         }
     }
@@ -35,20 +51,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }
     
-    var curPersonControlTimes: [Double] {
-        get {
-            var r = [Double]()
-            for i in 0..<(IO.getNumSentances(curPerson.0)! - 1) {
-                let spider = IO.getCPIDR(curPerson.0, index: i)
-                
-                let enn = selected.filter({ $0 }).count
-                
-                r.append(IO.calculateTime(spider!, n: enn, rt: RTCond.Increasing))
-            }
-            
-            return r
-        }
-    }
+    var curPersonControlTimes = [Double]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,7 +120,10 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             selectedIndex = indexPath.row
             
             appDel.currentRecord!.cue = indexPath.row
-            appDel.currentRecord!.order = selected.filter({!$0}).count
+            appDel.currentRecord!.order = selected.filter({$0}).count
+            
+            println(curPersonControlTimes[indexPath.row])
+            UserStore.currentTime = curPersonControlTimes[indexPath.row]
             
             let prompt = IO.getPrompt(curPerson.0, index: indexPath.row)
             self.performSegueWithIdentifier("segueToPromptVC", sender: prompt)
@@ -146,7 +152,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
                 view.userInteractionEnabled = false
                 
                 toSegueTo.layer.borderColor = UIColor.yellowColor().CGColor
-                toSegueTo.layer.borderWidth = 2
+                toSegueTo.layer.borderWidth = 5
                 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
                     self.view.userInteractionEnabled = true
@@ -170,22 +176,15 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             }
         }
         
-        var alertC: UIAlertController
-        if curPersonIndex +  1 <= people.count {
-            alertC = FamiliarityAlertViewController(title: "Switching Bios", message: "How familiar are you with \(people[curPersonIndex + 1].0)?\n\n\n", preferredStyle: .Alert)
-                
-            alertC.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (alertController) in
-                UserStore.currentFamiliarity = Double((alertC as! FamiliarityAlertViewController).slider.value)
-                self.curPersonIndex++
-            }))
-        } else {
-            alertC = UIAlertController(title: "Done with experiment", message: "You can now give the iPad back to the experimenter and quit the app", preferredStyle: .Alert)
-            alertC.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: nil))
-                
-            self.view.userInteractionEnabled = false
-        }
-            
-        self.presentViewController(alertC, animated: true, completion: nil)
+        let doneAlert = UIAlertController(title: "Done with experiment", message: "You can now give the iPad back to the experimenter and quit the app", preferredStyle: .Alert)
+        doneAlert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (alertController) in
+            if self.curPersonIndex +  1 <= self.people.count {
+                self.performSegueWithIdentifier("segueToFam", sender: self.people[self.curPersonIndex + 1].0)
+            }
+        }))
+        
+        self.presentViewController(doneAlert, animated: true, completion: nil)
+        
         return true
     }
     
@@ -214,12 +213,14 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         
         UserStore.currentTitle = sender as? String
         UserStore.currentPerson = self.navigationItem.title!
-        UserStore.currentTime = curPersonControlTimes[curPersonIndex]
-
         
         if let s = segue.destinationViewController as? CuriosityViewController {
             s.person = self.navigationItem.title!
             s.index = selectedIndex
+        }
+        
+        if let des = segue.destinationViewController as? FamiliarityAlertViewController {
+            des.person = (sender as! (String, Bool)).0
         }
     }
     

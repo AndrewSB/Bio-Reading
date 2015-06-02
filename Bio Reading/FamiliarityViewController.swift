@@ -10,25 +10,22 @@ import UIKit
 
 class FamiliarityViewController: UIViewController {
     @IBOutlet weak var howCuriousLabel: UILabel!
+    @IBOutlet weak var slider: UISlider!
     
     var person = String()
     var index = Int()
     
     override func viewDidLoad() {
-        let cT = "currentTitle"
         super.viewDidLoad()
-        
-        println(" lol \(navigationItem.title)")
-        
     }
     
-    @IBAction func sliderValueChanged(sender: AnyObject) {
+    @IBAction func nextButtonWasHit() {
+
+        self.performSegueWithIdentifier("unwindToPrompt", sender: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        RecordStore.defaultStore().curRecord!.familiarity = curiosityLabel.text?.toInt()
-        (segue.destinationViewController as? PromptViewController)?.title = navigationItem.title
-        (segue.destinationViewController as? PromptViewController)?.index = index
-        (segue.destinationViewController as? PromptViewController)?.person = person
+        UserStore.currentFamiliarity = Double(slider.value)
+        (segue.destinationViewController as! PromptPickerViewController).curPersonIndex++
     }
 }
