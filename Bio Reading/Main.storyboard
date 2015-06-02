@@ -1271,14 +1271,14 @@ There are two conditions. In one condition you will select the passages you want
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="sce-CY-Nmd"/>
                                         <exclude reference="VDR-4I-CkV"/>
+                                        <exclude reference="sce-CY-Nmd"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
                                     <mask key="constraints">
-                                        <include reference="sce-CY-Nmd"/>
                                         <include reference="VDR-4I-CkV"/>
+                                        <include reference="sce-CY-Nmd"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1295,14 +1295,14 @@ There are two conditions. In one condition you will select the passages you want
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="yrW-Xc-bdw"/>
                                         <exclude reference="Zc7-kZ-xYw"/>
+                                        <exclude reference="yrW-Xc-bdw"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
                                     <mask key="constraints">
-                                        <include reference="yrW-Xc-bdw"/>
                                         <include reference="Zc7-kZ-xYw"/>
+                                        <include reference="yrW-Xc-bdw"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1343,14 +1343,14 @@ There are two conditions. In one condition you will select the passages you want
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="ah0-yW-sGJ"/>
                                         <exclude reference="3dh-Ue-I7P"/>
+                                        <exclude reference="ah0-yW-sGJ"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
                                     <mask key="constraints">
-                                        <include reference="ah0-yW-sGJ"/>
                                         <include reference="3dh-Ue-I7P"/>
+                                        <include reference="ah0-yW-sGJ"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1563,31 +1563,31 @@ There are two conditions. In one condition you will select the passages you want
                                 <exclude reference="Mne-yx-Vvh"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="NUc-mN-RQC"/>
                                 <exclude reference="E9o-Kt-FDb"/>
-                                <exclude reference="zzG-75-g7d"/>
+                                <exclude reference="NUc-mN-RQC"/>
                                 <exclude reference="6i0-Vk-X5K"/>
+                                <exclude reference="ATZ-uO-L4n"/>
                                 <exclude reference="JwT-Em-cKh"/>
                                 <exclude reference="LHC-N0-nOi"/>
-                                <exclude reference="ATZ-uO-L4n"/>
                                 <exclude reference="fW4-9m-Qna"/>
-                                <exclude reference="u6a-ut-PVF"/>
+                                <exclude reference="zzG-75-g7d"/>
                                 <exclude reference="Bbl-Wu-NEa"/>
+                                <exclude reference="u6a-ut-PVF"/>
+                                <exclude reference="J2B-lm-qi3"/>
+                                <exclude reference="gK9-v0-8jQ"/>
+                                <exclude reference="jG4-WN-BXb"/>
+                                <exclude reference="2rg-Vr-l7l"/>
+                                <exclude reference="9Yc-43-SZs"/>
+                                <exclude reference="PQ1-9r-OH4"/>
+                                <exclude reference="ja3-BG-3QU"/>
                                 <exclude reference="IVI-6o-qAN"/>
+                                <exclude reference="1nH-Ik-cXv"/>
+                                <exclude reference="LMx-Uf-tkW"/>
+                                <exclude reference="MnQ-4P-CVn"/>
+                                <exclude reference="85t-SI-cQG"/>
                                 <exclude reference="SZA-Ra-bAo"/>
                                 <exclude reference="cFu-9F-mbN"/>
                                 <exclude reference="tQk-Ec-glN"/>
-                                <exclude reference="jG4-WN-BXb"/>
-                                <exclude reference="gK9-v0-8jQ"/>
-                                <exclude reference="J2B-lm-qi3"/>
-                                <exclude reference="PQ1-9r-OH4"/>
-                                <exclude reference="2rg-Vr-l7l"/>
-                                <exclude reference="ja3-BG-3QU"/>
-                                <exclude reference="9Yc-43-SZs"/>
-                                <exclude reference="1nH-Ik-cXv"/>
-                                <exclude reference="MnQ-4P-CVn"/>
-                                <exclude reference="LMx-Uf-tkW"/>
-                                <exclude reference="85t-SI-cQG"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -1603,31 +1603,31 @@ There are two conditions. In one condition you will select the passages you want
                                 <include reference="Mne-yx-Vvh"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="NUc-mN-RQC"/>
                                 <include reference="E9o-Kt-FDb"/>
-                                <include reference="zzG-75-g7d"/>
+                                <include reference="NUc-mN-RQC"/>
                                 <include reference="6i0-Vk-X5K"/>
+                                <include reference="ATZ-uO-L4n"/>
                                 <include reference="JwT-Em-cKh"/>
                                 <include reference="LHC-N0-nOi"/>
-                                <include reference="ATZ-uO-L4n"/>
                                 <include reference="fW4-9m-Qna"/>
-                                <include reference="u6a-ut-PVF"/>
+                                <include reference="zzG-75-g7d"/>
                                 <include reference="Bbl-Wu-NEa"/>
+                                <include reference="u6a-ut-PVF"/>
+                                <include reference="J2B-lm-qi3"/>
+                                <include reference="gK9-v0-8jQ"/>
+                                <include reference="jG4-WN-BXb"/>
+                                <include reference="2rg-Vr-l7l"/>
+                                <include reference="9Yc-43-SZs"/>
+                                <include reference="PQ1-9r-OH4"/>
+                                <include reference="ja3-BG-3QU"/>
                                 <include reference="IVI-6o-qAN"/>
+                                <include reference="1nH-Ik-cXv"/>
+                                <include reference="LMx-Uf-tkW"/>
+                                <include reference="MnQ-4P-CVn"/>
+                                <include reference="85t-SI-cQG"/>
                                 <include reference="SZA-Ra-bAo"/>
                                 <include reference="cFu-9F-mbN"/>
                                 <include reference="tQk-Ec-glN"/>
-                                <include reference="jG4-WN-BXb"/>
-                                <include reference="gK9-v0-8jQ"/>
-                                <include reference="J2B-lm-qi3"/>
-                                <include reference="PQ1-9r-OH4"/>
-                                <include reference="2rg-Vr-l7l"/>
-                                <include reference="ja3-BG-3QU"/>
-                                <include reference="9Yc-43-SZs"/>
-                                <include reference="1nH-Ik-cXv"/>
-                                <include reference="MnQ-4P-CVn"/>
-                                <include reference="LMx-Uf-tkW"/>
-                                <include reference="85t-SI-cQG"/>
                             </mask>
                         </variation>
                     </view>
@@ -1690,15 +1690,15 @@ There are two conditions. In one condition you will select the passages you want
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="l1W-1J-4LH"/>
                                 <exclude reference="GVZ-vV-qOC"/>
+                                <exclude reference="l1W-1J-4LH"/>
                                 <exclude reference="4g6-8H-1MD"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="constraints">
-                                <include reference="l1W-1J-4LH"/>
                                 <include reference="GVZ-vV-qOC"/>
+                                <include reference="l1W-1J-4LH"/>
                                 <include reference="4g6-8H-1MD"/>
                             </mask>
                         </variation>
