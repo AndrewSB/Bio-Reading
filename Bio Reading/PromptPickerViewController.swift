@@ -39,9 +39,8 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
                 
                 let enn = selected.filter({ $0 }).count
                 
-                curPersonControlTimes.append(IO.calculateTime(spider!, n: enn, rt: RTCond.Increasing))
+                curPersonControlTimes.append(IO.calculateTime(spider!, n: enn, rt: UserStore.rTCond!))
             }
-            println(curPersonControlTimes)
             
             
             self.viewWillAppear(false)
@@ -210,7 +209,9 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         appDel.currentRecord!.subjectNumber = UserStore.subjectNumber!
         appDel.currentRecord!.bioPerson = self.navigationItem.title!
         appDel.currentRecord!.condition = curPerson.1 ? 0 : 1
-        appDel.currentRecord!.familiarity = UserStore.currentFamiliarity!
+        if let fam = UserStore.currentFamiliarity {
+            appDel.currentRecord!.familiarity = fam
+        }
     }
     
     

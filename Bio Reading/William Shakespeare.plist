@@ -2,10 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Birth</key>
+	<key>Born</key>
 	<dict>
 		<key>Sentance</key>
-		<string>Though no birth records exist, church records indicate that he was baptized in Stratford-upon-Avon on April 26, 1564.</string>
+		<string>No birth records exist, but church records indicate that he was baptized in a town called Stratford-upon-Avon in 1564.</string>
 		<key>CPIDR</key>
 		<integer>9</integer>
 	</dict>
@@ -40,7 +40,7 @@
 	<key>Reputation</key>
 	<dict>
 		<key>Sentance</key>
-		<string>As a new actor, he ruffled a few feathers with his arrogance and was  described by Robert Greene as an &quot;upstart crow.&quot;</string>
+		<string>As a new actor, he ruffled a few feathers with his arrogance and was described by Robert Greene as an &quot;upstart crow.&quot;</string>
 		<key>CPIDR</key>
 		<integer>10</integer>
 	</dict>
