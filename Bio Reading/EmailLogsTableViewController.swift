@@ -50,6 +50,7 @@ class EmailLogsTableViewController: UITableViewController {
         var CSVData = "Subject Number, Curiosity, Familiarity, Bio Person, Cue, Order, RT Condition, DateTime, Reading Time, Audio File\n"
         
         for record in sortedRecords[indexPath.row] {
+            println(record.toString())
             CSVData += record.toString() + "\n"
             composeEmailVC.addAttachmentData(record.audioFile, mimeType: "audio/wav", fileName: "\(record.bioPerson) - \(record.cue)")
         }

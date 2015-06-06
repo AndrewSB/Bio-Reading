@@ -22,4 +22,12 @@ class FirstTimeInstructionViewController: UIViewController {
         instructions.text = instructionText
         instructions.font = UIFont(name: "HelveticaNeue", size: get("fontSize") as! CGFloat)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        
+        if let des = segue.destinationViewController as? PromptPickerViewController {
+            
+        }
+    }
 }

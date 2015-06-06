@@ -26,8 +26,8 @@ class Record: NSManagedObject {
     func toString() -> String {
         var str = String()
         
-        for iVar in [bioPerson, condition, cue, curiosity, dateTime, order, readingTime, subjectNumber, familiarity, rTCond] {
-            str += "\(iVar)"
+        for iVar in [subjectNumber, curiosity, familiarity, bioPerson, cue, order, rTCond, dateTime, readingTime] {
+            str += "\(iVar), "
         }
         
         return str

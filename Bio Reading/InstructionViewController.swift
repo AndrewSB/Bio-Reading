@@ -26,7 +26,7 @@ class InstructionViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: nil))
             
             self.presentViewController(alert, animated: true, completion: nil)
-            UserStore.subjectNumber = 9999999
+            UserStore.subjectNumber = 99999
         }
     }
     @IBAction func startButtonTapped() {

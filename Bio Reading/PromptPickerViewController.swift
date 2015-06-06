@@ -37,9 +37,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             for i in 0..<(IO.getNumSentances(curPerson.0)!) {
                 let spider = IO.getCPIDR(curPerson.0, index: i)
                 
-                let enn = selected.filter({ $0 }).count
-                
-                curPersonControlTimes.append(IO.calculateTime(spider!, n: enn, rt: UserStore.rTCond!))
+                curPersonControlTimes.append(IO.calculateTime(spider!, n: i, rt: UserStore.rTCond!))
             }
             
             
@@ -80,14 +78,17 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     override func viewDidAppear(animated: Bool) {
-        if curPerson.0.rangeOfString("Practice") != nil {
-            if !override {
+        if !override {
+            if curPerson.0.rangeOfString("Practice") != nil  {
                 self.performSegueWithIdentifier("segueToInstructions", sender: curPerson.1 ? foragingInstructions : controlInstructions)
             }
             override = true
         }
         super.viewDidAppear(animated)
-        self.foragingLogic()
+        
+        if !override {
+            self.foragingLogic()
+        }
     }
 
 
