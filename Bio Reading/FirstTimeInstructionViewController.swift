@@ -27,7 +27,7 @@ class FirstTimeInstructionViewController: UIViewController {
         super.prepareForSegue(segue, sender: sender)
         
         if let des = segue.destinationViewController as? PromptPickerViewController {
-            
+            des.override = true
         }
     }
 }

@@ -82,11 +82,13 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             if curPerson.0.rangeOfString("Practice") != nil  {
                 self.performSegueWithIdentifier("segueToInstructions", sender: curPerson.1 ? foragingInstructions : controlInstructions)
             }
+        } else {
             override = true
         }
+        
         super.viewDidAppear(animated)
         
-        if !override {
+        if override {
             self.foragingLogic()
         }
     }
@@ -148,6 +150,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             if curPerson.1 { //foraging
                 view.userInteractionEnabled = true
             } else { //control
+                
                 var cellIndexSelectionPool = [Int]()
                 
                 for i in 0..<selected.count {
