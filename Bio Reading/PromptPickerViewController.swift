@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Andrew Breckenridge. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import CoreData
 
@@ -13,10 +14,23 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nameLabel: UILabel!
     
+    let timerLabel = MZTimerLabel()
+    var timer: NSTimer!
+    
     var selected = [Bool]()
     var selectedIndex = Int()
     
-    var override = false
+    var override = false {
+        didSet {
+            if oldValue {
+                timerLabel.timerType = MZTimerLabelTypeTimer
+                timerLabel.setCountDownTime(300)
+                timerLabel.startWithEndingBlock({ (timer) in
+                    self.selected = [Bool](count: self.selected.count, repeatedValue: false)
+                })
+            }
+        }
+    }
     
     let people = UserStore.bios
     var curPerson: (String, Bool)! {
@@ -58,6 +72,10 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        timerLabel.frame = CGRect(x: view.frame.width - 80, y: 10, width: 100, height: 44)
+        view.addSubview(timerLabel)
+
+        
         curPerson = people[curPersonIndex]
         
         if UserStore.subjectNumber == nil {
@@ -90,6 +108,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         
         if override {
             self.foragingLogic()
+            
         }
     }
 
@@ -144,6 +163,23 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     // MARK: - Helper
+    func secondPassed() {
+        var secs: Double = 0
+        
+        let timeComponents = split(timerLabel.text!, isSeparator: { $0 == ":" })
+        for (index, element) in enumerate(timeComponents) {
+            let power = timeComponents.count - index
+            
+            secs += pow(Double(element.toInt()!), Double(power))
+            println(secs)
+        }
+        
+        let secString = Int(secs--)
+        
+        timerLabel.text = secString.secondsToString()
+    }
+    
+    
     func foragingLogic() {
         println(curPerson.1)
         if !doneLogic() {
@@ -191,6 +227,8 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         let doneAlert = UIAlertController(title: "Done with set", message: "", preferredStyle: .Alert)
         doneAlert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (alertController) in
             if self.curPersonIndex +  1 <= self.people.count {
+                println("yo yo")
+                println("person is \(self.people[self.curPersonIndex + 1].0)")
                 self.performSegueWithIdentifier("segueToFam", sender: self.people[self.curPersonIndex + 1].0)
             }
         }))
@@ -233,7 +271,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
             s.index = selectedIndex
         }
         
-        if let des = segue.destinationViewController as? FamiliarityAlertViewController {
+        if let des = segue.destinationViewController as? FamiliarityViewController {
             des.person = sender as! String
         }
         

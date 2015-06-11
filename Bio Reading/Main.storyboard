@@ -498,9 +498,9 @@ There are two conditions. In one condition you will select the passages you want
                                 <exclude reference="lmp-Fe-szN"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Tk7-xE-jzG"/>
                                 <exclude reference="UdW-hn-fhV"/>
                                 <exclude reference="Xor-Zk-7zf"/>
-                                <exclude reference="Tk7-xE-jzG"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -508,9 +508,9 @@ There are two conditions. In one condition you will select the passages you want
                                 <include reference="lmp-Fe-szN"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Tk7-xE-jzG"/>
                                 <include reference="UdW-hn-fhV"/>
                                 <include reference="Xor-Zk-7zf"/>
-                                <include reference="Tk7-xE-jzG"/>
                             </mask>
                         </variation>
                     </view>
@@ -1655,9 +1655,9 @@ There are two conditions. In one condition you will select the passages you want
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdd-1r-e0r">
-                                <rect key="frame" x="274" y="479" width="63" height="88"/>
+                                <rect key="frame" x="274" y="523" width="63" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="PcA-i7-CaJ"/>
+                                    <constraint firstAttribute="height" constant="44" id="PcA-i7-CaJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Start">
@@ -1668,7 +1668,7 @@ There are two conditions. In one condition you will select the passages you want
                                 </connections>
                             </button>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bp-o2-Xry">
-                                <rect key="frame" x="38" y="42" width="524" height="415"/>
+                                <rect key="frame" x="38" y="42" width="524" height="459"/>
                                 <gestureRecognizers/>
                                 <string key="text">Thanks for coming in today! In this experiment, we are studying how people learn new information on electronic tablets.
 

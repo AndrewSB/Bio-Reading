@@ -1,10 +1,13 @@
 PODS:
   - EZAudio (0.0.6)
+  - MZTimerLabel (0.5.2)
 
 DEPENDENCIES:
   - EZAudio
+  - MZTimerLabel
 
 SPEC CHECKSUMS:
   EZAudio: feb8e1c3ec17d8933bc2efc66b59ead1f2e79e54
+  MZTimerLabel: 1bce6b93ec9f017fffad7ea7ee2bc721b53b64ee
 
 COCOAPODS: 0.37.2
