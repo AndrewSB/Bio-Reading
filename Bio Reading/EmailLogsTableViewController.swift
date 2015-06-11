@@ -42,7 +42,7 @@ class EmailLogsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let composeEmailVC = MailComposeViewController()
+        let composeEmailVC = MFMailComposeViewController()
         
         composeEmailVC.setSubject("Subject \(subjectRecords![indexPath.row].subjectNumber), Adult Learning Lab")
         composeEmailVC.setToRecipients(["xliu85@illinois.edu"])
