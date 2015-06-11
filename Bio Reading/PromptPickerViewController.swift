@@ -234,7 +234,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         }
         
         if let des = segue.destinationViewController as? FamiliarityAlertViewController {
-            des.person = (sender as! (String, Bool)).0
+            des.person = sender as! String
         }
         
         if let des = segue.destinationViewController as? FirstTimeInstructionViewController {

@@ -21,6 +21,7 @@ class FirstTimeInstructionViewController: UIViewController {
         
         instructions.text = instructionText
         instructions.font = UIFont(name: "HelveticaNeue", size: get("fontSize") as! CGFloat)
+        instructions.adjustsFontSizeToFitWidth = true
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

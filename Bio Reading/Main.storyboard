@@ -449,9 +449,9 @@ There are two conditions. In one condition you will select the passages you want
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="144"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3w-0G-eYF">
-                                                    <rect key="frame" x="19" y="57" width="142" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3w-0G-eYF">
+                                                    <rect key="frame" x="19" y="56.5" width="142" height="31.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1654,8 +1654,11 @@ There are two conditions. In one condition you will select the passages you want
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdd-1r-e0r">
-                                <rect key="frame" x="277" y="493" width="57" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdd-1r-e0r">
+                                <rect key="frame" x="274" y="479" width="63" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="PcA-i7-CaJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Start">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1664,8 +1667,8 @@ There are two conditions. In one condition you will select the passages you want
                                     <segue destination="zPc-C1-Zpx" kind="unwind" unwindAction="unwindToPromptPickerViewController:" id="fzv-OD-CIO"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bp-o2-Xry">
-                                <rect key="frame" x="255" y="336" width="90" height="21"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bp-o2-Xry">
+                                <rect key="frame" x="38" y="42" width="524" height="415"/>
                                 <gestureRecognizers/>
                                 <string key="text">Thanks for coming in today! In this experiment, we are studying how people learn new information on electronic tablets.
 
@@ -1679,11 +1682,15 @@ There are two conditions. In one condition you will select the passages you want
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Vdd-1r-e0r" firstAttribute="top" secondItem="2bp-o2-Xry" secondAttribute="bottom" constant="34" id="4g6-8H-1MD"/>
+                            <constraint firstItem="2bp-o2-Xry" firstAttribute="top" secondItem="CNX-5R-cAQ" secondAttribute="bottom" constant="22" id="AGU-NA-DmK"/>
                             <constraint firstItem="2bp-o2-Xry" firstAttribute="leading" secondItem="iix-g2-1ww" secondAttribute="leadingMargin" constant="-50" id="GVZ-vV-qOC">
                                 <variation key="heightClass=regular" constant="44"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="Vdd-1r-e0r" secondAttribute="centerX" constant="-5.5" id="OM9-jg-Unh"/>
                             <constraint firstItem="jRm-ZF-8XX" firstAttribute="top" secondItem="Vdd-1r-e0r" secondAttribute="bottom" constant="33" id="QkH-zM-BTn"/>
+                            <constraint firstItem="2bp-o2-Xry" firstAttribute="leading" secondItem="iix-g2-1ww" secondAttribute="leadingMargin" constant="22" id="TFp-VN-w6Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2bp-o2-Xry" secondAttribute="trailing" constant="22" id="W8D-Mk-I8U"/>
+                            <constraint firstItem="Vdd-1r-e0r" firstAttribute="top" secondItem="2bp-o2-Xry" secondAttribute="bottom" constant="22" id="jgg-7H-ofu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2bp-o2-Xry" secondAttribute="trailing" constant="-50" id="l1W-1J-4LH">
                                 <variation key="heightClass=regular" constant="44"/>
                             </constraint>
@@ -1711,7 +1718,7 @@ There are two conditions. In one condition you will select the passages you want
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSp-cd-Ry4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="zPc-C1-Zpx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3301.5" y="909.75"/>
+            <point key="canvasLocation" x="3301" y="909"/>
         </scene>
     </scenes>
     <resources>
