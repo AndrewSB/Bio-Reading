@@ -20,21 +20,21 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
     var selected = [Bool]()
     var selectedIndex = Int()
     
-    var override = false {
-        didSet {
-            if oldValue {
-                timerLabel.timerType = MZTimerLabelTypeTimer
-                timerLabel.setCountDownTime(300)
-                timerLabel.startWithEndingBlock({ (timer) in
-                    self.selected = [Bool](count: self.selected.count, repeatedValue: false)
-                })
-            }
-        }
-    }
+    var override = false
     
     let people = UserStore.bios
     var curPerson: (String, Bool)! {
         didSet {
+            
+            timerLabel.reset()
+            //timer login
+            if curPerson.1 { //foraging
+                timerLabel.hidden = false
+            } else { //control
+                timerLabel.hidden = true
+            }
+            
+            
             //prompt logic
             selected.removeAll(keepCapacity: false)
             
@@ -53,7 +53,6 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
                 
                 curPersonControlTimes.append(IO.calculateTime(spider!, n: i, rt: UserStore.rTCond!))
             }
-            
             
             self.viewWillAppear(false)
         }
@@ -79,7 +78,7 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         curPerson = people[curPersonIndex]
         
         if UserStore.subjectNumber == nil {
-            UserStore.subjectNumber = 123456789
+            UserStore.subjectNumber = 123456
         }
     }
     
@@ -99,12 +98,16 @@ class PromptPickerViewController: UIViewController, UICollectionViewDelegate, UI
         if !override {
             if curPerson.0.rangeOfString("Practice") != nil  {
                 self.performSegueWithIdentifier("segueToInstructions", sender: curPerson.1 ? foragingInstructions : controlInstructions)
+            } else {
+                override = true
             }
         } else {
             override = true
         }
         
-        super.viewDidAppear(animated)
+        println("appeared \(override)")
+        
+//        super.viewDidAppear(animated)
         
         if override {
             self.foragingLogic()

@@ -29,6 +29,15 @@ class FirstTimeInstructionViewController: UIViewController {
         
         if let des = segue.destinationViewController as? PromptPickerViewController {
             des.override = true
+            
+            des.timerLabel.reset()
+            des.timerLabel.timerType = MZTimerLabelTypeTimer
+            des.timerLabel.setCountDownTime(10)
+            if des.curPerson.1 {
+                des.timerLabel.startWithEndingBlock({ (timer) in
+                    des.selected = [Bool](count: des.selected.count, repeatedValue: false)
+                })
+            }
         }
     }
 }
