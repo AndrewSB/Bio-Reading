@@ -498,9 +498,9 @@ There are two conditions. In one condition you will select the passages you want
                                 <exclude reference="lmp-Fe-szN"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Tk7-xE-jzG"/>
                                 <exclude reference="UdW-hn-fhV"/>
                                 <exclude reference="Xor-Zk-7zf"/>
+                                <exclude reference="Tk7-xE-jzG"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -508,9 +508,9 @@ There are two conditions. In one condition you will select the passages you want
                                 <include reference="lmp-Fe-szN"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Tk7-xE-jzG"/>
                                 <include reference="UdW-hn-fhV"/>
                                 <include reference="Xor-Zk-7zf"/>
+                                <include reference="Tk7-xE-jzG"/>
                             </mask>
                         </variation>
                     </view>
@@ -1667,46 +1667,71 @@ There are two conditions. In one condition you will select the passages you want
                                     <segue destination="zPc-C1-Zpx" kind="unwind" unwindAction="unwindToPromptPickerViewController:" id="fzv-OD-CIO"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bp-o2-Xry">
-                                <rect key="frame" x="38" y="42" width="524" height="459"/>
-                                <gestureRecognizers/>
-                                <string key="text">Thanks for coming in today! In this experiment, we are studying how people learn new information on electronic tablets.
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDI-kl-qkE">
+                                <rect key="frame" x="18" y="22" width="342" height="699"/>
+                                <subviews>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bp-o2-Xry">
+                                        <rect key="frame" x="20" y="20" width="302" height="659"/>
+                                        <gestureRecognizers/>
+                                        <string key="text">Thanks for coming in today! In this experiment, we are studying how people learn new information on electronic tablets.
 
 Your task will be to learn the biographies of a number of different famous people in preparation to write down what you think are some of the highlights of that person’s life. For each person, you will read a series of short passages.  Each passage is one sentence long. After reading each one, you will recall as much as you remember from that passage. 
 There are two conditions. In one condition you will select the passages you want to read based on hints about the content of the passage, and you can read at your own pace.  In the other condition, the iPad will select the passages for you and control the timing.  If this sounds a little confusing right now, don’t worry; there are some passages for practice.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="8" y="8" width="33" height="76.5"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2bp-o2-Xry" firstAttribute="leading" secondItem="FDI-kl-qkE" secondAttribute="leadingMargin" id="0NT-yF-M2Y"/>
+                                    <constraint firstItem="2bp-o2-Xry" firstAttribute="top" secondItem="FDI-kl-qkE" secondAttribute="topMargin" id="HKm-vJ-pv0"/>
+                                    <constraint firstAttribute="trailing" secondItem="2bp-o2-Xry" secondAttribute="trailing" constant="315" id="TuT-y5-igU"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="2bp-o2-Xry" secondAttribute="bottom" id="fgc-A8-gH5"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0NT-yF-M2Y"/>
+                                        <exclude reference="HKm-vJ-pv0"/>
+                                        <exclude reference="TuT-y5-igU"/>
+                                        <exclude reference="fgc-A8-gH5"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="0NT-yF-M2Y"/>
+                                        <include reference="HKm-vJ-pv0"/>
+                                        <include reference="TuT-y5-igU"/>
+                                        <include reference="fgc-A8-gH5"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Vdd-1r-e0r" firstAttribute="top" secondItem="2bp-o2-Xry" secondAttribute="bottom" constant="34" id="4g6-8H-1MD"/>
-                            <constraint firstItem="2bp-o2-Xry" firstAttribute="top" secondItem="CNX-5R-cAQ" secondAttribute="bottom" constant="22" id="AGU-NA-DmK"/>
-                            <constraint firstItem="2bp-o2-Xry" firstAttribute="leading" secondItem="iix-g2-1ww" secondAttribute="leadingMargin" constant="-50" id="GVZ-vV-qOC">
-                                <variation key="heightClass=regular" constant="44"/>
-                            </constraint>
+                            <constraint firstItem="Vdd-1r-e0r" firstAttribute="top" secondItem="FDI-kl-qkE" secondAttribute="bottom" constant="22" id="6Uq-x0-a3f"/>
+                            <constraint firstItem="FDI-kl-qkE" firstAttribute="top" secondItem="CNX-5R-cAQ" secondAttribute="bottom" constant="22" id="9UG-4X-NP3"/>
+                            <constraint firstAttribute="trailing" secondItem="FDI-kl-qkE" secondAttribute="trailing" constant="22" id="NEd-99-Kpp"/>
                             <constraint firstAttribute="centerX" secondItem="Vdd-1r-e0r" secondAttribute="centerX" constant="-5.5" id="OM9-jg-Unh"/>
                             <constraint firstItem="jRm-ZF-8XX" firstAttribute="top" secondItem="Vdd-1r-e0r" secondAttribute="bottom" constant="33" id="QkH-zM-BTn"/>
-                            <constraint firstItem="2bp-o2-Xry" firstAttribute="leading" secondItem="iix-g2-1ww" secondAttribute="leadingMargin" constant="22" id="TFp-VN-w6Z"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2bp-o2-Xry" secondAttribute="trailing" constant="22" id="W8D-Mk-I8U"/>
-                            <constraint firstItem="Vdd-1r-e0r" firstAttribute="top" secondItem="2bp-o2-Xry" secondAttribute="bottom" constant="22" id="jgg-7H-ofu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2bp-o2-Xry" secondAttribute="trailing" constant="-50" id="l1W-1J-4LH">
-                                <variation key="heightClass=regular" constant="44"/>
-                            </constraint>
+                            <constraint firstItem="FDI-kl-qkE" firstAttribute="leading" secondItem="iix-g2-1ww" secondAttribute="leading" constant="22" id="vl1-pe-dyy"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="GVZ-vV-qOC"/>
-                                <exclude reference="l1W-1J-4LH"/>
-                                <exclude reference="4g6-8H-1MD"/>
+                                <exclude reference="9UG-4X-NP3"/>
+                                <exclude reference="NEd-99-Kpp"/>
+                                <exclude reference="vl1-pe-dyy"/>
+                                <exclude reference="6Uq-x0-a3f"/>
                             </mask>
                         </variation>
-                        <variation key="heightClass=regular">
+                        <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="GVZ-vV-qOC"/>
-                                <include reference="l1W-1J-4LH"/>
-                                <include reference="4g6-8H-1MD"/>
+                                <include reference="9UG-4X-NP3"/>
+                                <include reference="NEd-99-Kpp"/>
+                                <include reference="vl1-pe-dyy"/>
+                                <include reference="6Uq-x0-a3f"/>
                             </mask>
                         </variation>
                     </view>

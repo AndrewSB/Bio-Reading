@@ -97,6 +97,10 @@ class IO {
         return millisecond/1000
     }
     
+    class func calculateTime(person: String, prompt: Int, n: Int) -> Double {
+        return calculateTime(getCPIDR(person, index: prompt)!, n: n, rt: UserStore.rTCond!)
+    }
+    
     class func getNumSentances(file: String) -> Int? {
         if let plist = NSBundle.mainBundle().pathForResource("\(file)", ofType: "plist") {
             let rootDict = NSDictionary(contentsOfFile: plist)!

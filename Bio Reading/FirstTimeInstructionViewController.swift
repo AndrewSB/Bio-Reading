@@ -19,25 +19,10 @@ class FirstTimeInstructionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        instructions.frame.size.width = view.frame.width - 44
+        
         instructions.text = instructionText
         instructions.font = UIFont(name: "HelveticaNeue", size: get("fontSize") as! CGFloat)
-        instructions.adjustsFontSizeToFitWidth = true
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        super.prepareForSegue(segue, sender: sender)
-        
-        if let des = segue.destinationViewController as? PromptPickerViewController {
-            des.override = true
-            
-            des.timerLabel.reset()
-            des.timerLabel.timerType = MZTimerLabelTypeTimer
-            des.timerLabel.setCountDownTime(10)
-            if des.curPerson.1 {
-                des.timerLabel.startWithEndingBlock({ (timer) in
-                    des.selected = [Bool](count: des.selected.count, repeatedValue: false)
-                })
-            }
-        }
+        instructions.adjustsFontSizeToFitWidth = false
     }
 }
