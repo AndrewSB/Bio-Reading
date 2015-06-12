@@ -11,7 +11,7 @@ import CoreData
 
 class Record: NSManagedObject {
 
-    @NSManaged var audioFile: NSData
+    @NSManaged var audioFile: NSData!
     @NSManaged var bioPerson: String
     @NSManaged var condition: NSNumber
     @NSManaged var cue: NSNumber

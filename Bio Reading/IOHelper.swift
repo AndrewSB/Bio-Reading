@@ -78,7 +78,7 @@ class IO {
             let relevantDict = rootDict[rootDict.allKeys[index] as! String]! as! NSDictionary
             
             let CPIDR = relevantDict["CPIDR"] as! Int
-            println("\(CPIDR)")
+            println("CPIDR: \(CPIDR)")
             return CPIDR
         }
         return nil
@@ -98,7 +98,9 @@ class IO {
     }
     
     class func calculateTime(person: String, prompt: Int, n: Int) -> Double {
-        return calculateTime(getCPIDR(person, index: prompt)!, n: n, rt: UserStore.rTCond!)
+        let time = calculateTime(getCPIDR(person, index: prompt)!, n: n, rt: UserStore.rTCond!)
+        println("Time: \(time)")
+        return time
     }
     
     class func getNumSentances(file: String) -> Int? {

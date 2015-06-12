@@ -1664,89 +1664,60 @@ There are two conditions. In one condition you will select the passages you want
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="zPc-C1-Zpx" kind="unwind" unwindAction="unwindToPromptPickerViewController:" id="fzv-OD-CIO"/>
+                                    <segue destination="C3n-sj-Eya" kind="presentation" id="dLZ-DY-aUQ"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDI-kl-qkE">
-                                <rect key="frame" x="18" y="22" width="342" height="699"/>
-                                <subviews>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bp-o2-Xry">
-                                        <rect key="frame" x="20" y="20" width="302" height="659"/>
-                                        <gestureRecognizers/>
-                                        <string key="text">Thanks for coming in today! In this experiment, we are studying how people learn new information on electronic tablets.
-
-Your task will be to learn the biographies of a number of different famous people in preparation to write down what you think are some of the highlights of that person’s life. For each person, you will read a series of short passages.  Each passage is one sentence long. After reading each one, you will recall as much as you remember from that passage. 
-There are two conditions. In one condition you will select the passages you want to read based on hints about the content of the passage, and you can read at your own pace.  In the other condition, the iPad will select the passages for you and control the timing.  If this sounds a little confusing right now, don’t worry; there are some passages for practice.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="8" y="8" width="33" height="76.5"/>
-                                        </variation>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="2bp-o2-Xry" firstAttribute="leading" secondItem="FDI-kl-qkE" secondAttribute="leadingMargin" id="0NT-yF-M2Y"/>
-                                    <constraint firstItem="2bp-o2-Xry" firstAttribute="top" secondItem="FDI-kl-qkE" secondAttribute="topMargin" id="HKm-vJ-pv0"/>
-                                    <constraint firstAttribute="trailing" secondItem="2bp-o2-Xry" secondAttribute="trailing" constant="315" id="TuT-y5-igU"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="2bp-o2-Xry" secondAttribute="bottom" id="fgc-A8-gH5"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="0NT-yF-M2Y"/>
-                                        <exclude reference="HKm-vJ-pv0"/>
-                                        <exclude reference="TuT-y5-igU"/>
-                                        <exclude reference="fgc-A8-gH5"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="0NT-yF-M2Y"/>
-                                        <include reference="HKm-vJ-pv0"/>
-                                        <include reference="TuT-y5-igU"/>
-                                        <include reference="fgc-A8-gH5"/>
-                                    </mask>
-                                </variation>
-                            </scrollView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWA-BV-CXe">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Vdd-1r-e0r" firstAttribute="top" secondItem="FDI-kl-qkE" secondAttribute="bottom" constant="22" id="6Uq-x0-a3f"/>
-                            <constraint firstItem="FDI-kl-qkE" firstAttribute="top" secondItem="CNX-5R-cAQ" secondAttribute="bottom" constant="22" id="9UG-4X-NP3"/>
-                            <constraint firstAttribute="trailing" secondItem="FDI-kl-qkE" secondAttribute="trailing" constant="22" id="NEd-99-Kpp"/>
+                            <constraint firstItem="eWA-BV-CXe" firstAttribute="leading" secondItem="iix-g2-1ww" secondAttribute="leadingMargin" constant="22" id="A5K-v0-HbS">
+                                <variation key="heightClass=regular-widthClass=compact" constant="22"/>
+                            </constraint>
+                            <constraint firstItem="Vdd-1r-e0r" firstAttribute="top" secondItem="eWA-BV-CXe" secondAttribute="bottom" constant="22" id="Hlm-xK-nkg">
+                                <variation key="heightClass=regular-widthClass=compact" constant="22"/>
+                            </constraint>
+                            <constraint firstItem="eWA-BV-CXe" firstAttribute="top" secondItem="CNX-5R-cAQ" secondAttribute="bottom" constant="22" id="O1j-J8-JcE">
+                                <variation key="heightClass=regular-widthClass=compact" constant="22"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="Vdd-1r-e0r" secondAttribute="centerX" constant="-5.5" id="OM9-jg-Unh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eWA-BV-CXe" secondAttribute="trailing" constant="22" id="QLf-y5-Zkc">
+                                <variation key="heightClass=regular-widthClass=compact" constant="22"/>
+                            </constraint>
                             <constraint firstItem="jRm-ZF-8XX" firstAttribute="top" secondItem="Vdd-1r-e0r" secondAttribute="bottom" constant="33" id="QkH-zM-BTn"/>
-                            <constraint firstItem="FDI-kl-qkE" firstAttribute="leading" secondItem="iix-g2-1ww" secondAttribute="leading" constant="22" id="vl1-pe-dyy"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="9UG-4X-NP3"/>
-                                <exclude reference="NEd-99-Kpp"/>
-                                <exclude reference="vl1-pe-dyy"/>
-                                <exclude reference="6Uq-x0-a3f"/>
-                            </mask>
-                        </variation>
                         <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="eWA-BV-CXe"/>
+                            </mask>
                             <mask key="constraints">
-                                <include reference="9UG-4X-NP3"/>
-                                <include reference="NEd-99-Kpp"/>
-                                <include reference="vl1-pe-dyy"/>
-                                <include reference="6Uq-x0-a3f"/>
+                                <include reference="A5K-v0-HbS"/>
+                                <include reference="O1j-J8-JcE"/>
+                                <include reference="QLf-y5-Zkc"/>
+                                <include reference="Hlm-xK-nkg"/>
                             </mask>
                         </variation>
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="instructions" destination="2bp-o2-Xry" id="n42-v2-TzJ"/>
+                        <outlet property="instructionTextView" destination="eWA-BV-CXe" id="hIg-4x-B0w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSp-cd-Ry4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="zPc-C1-Zpx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3301" y="909"/>
+            <point key="canvasLocation" x="3300" y="909"/>
         </scene>
     </scenes>
     <resources>
         <image name="mic" width="345" height="480"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dLZ-DY-aUQ"/>
+    </inferredMetricsTieBreakers>
 </document>

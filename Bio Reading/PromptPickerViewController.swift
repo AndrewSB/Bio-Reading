@@ -36,6 +36,10 @@ class PromptPickerViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        timerLabel.frame = CGRect(x: view.frame.width - 100, y: 10, width: 100, height: 44)
+        timerLabel.timeFormat = "mm:ss"
+        view.addSubview(timerLabel)
+        
         curBioIndex = 0
         
         if UserStore.subjectNumber == nil {
@@ -53,11 +57,13 @@ class PromptPickerViewController: UIViewController {
         if firstTimeInstructions {
             self.foragingLogic()
         } else {
+            firstTimeInstructions = true
             if curPerson.0.rangeOfString("Practice") != nil {
                 self.performSegueWithIdentifier("segueToInstructions", sender: curPerson.1 ? foragingInstructions : controlInstructions)
+            } else {
+                self.performSegueWithIdentifier("segueToFam", sender: curPerson.0)
             }
         }
-        firstTimeInstructions = true
     }
 
     // MARK: - Navigation
@@ -135,15 +141,18 @@ extension PromptPickerViewController {
         if curPerson.1 { //foraging
             view.userInteractionEnabled = true
         } else { //control
+            let possibilities: [Int?] = map(enumerate(selected)) { (index, element) in
+                !element ? index : nil
+            }
             
-        var i = -1
-        var cellIndexSelectionPool = selected.map({ lol -> Int? in
-            i++
-            return self.selected[i] ? i : nil
-        }).filter({ $0 != nil })
-                
-
-        let chosenIndex = NSIndexPath(forItem: (cellIndexSelectionPool as! [Int]).getRandomElement(), inSection: 0)
+            var cellIndexSelectionPool = [Int]()
+            for i in possibilities {
+                if i != nil {
+                    cellIndexSelectionPool.append(i!)
+                }
+            }
+        
+            let chosenIndex = NSIndexPath(forItem: cellIndexSelectionPool.getRandomElement(), inSection: 0)
             let toSegueTo = collectionView.cellForItemAtIndexPath(chosenIndex)!
             view.userInteractionEnabled = false
                 
@@ -177,16 +186,18 @@ extension PromptPickerViewController {
         }))
         
         self.presentViewController(doneAlert, animated: true, completion: nil)
+        curBioIndex = curBioIndex + 1
         
         return true
     }
     
     func recordStoreLogic() {
-        let app = appDel.currentRecord
-        println(app)
         
-        //store the old record if it exists
-        appDel.managedObjectContext!.save(nil)
+        //store the old record if it exists and is valid
+        if appDel.currentRecord?.audioFile != nil {
+            appDel.managedObjectContext!.save(nil)
+            println("saved \(appDel.currentRecord!)")
+        }
         
         //get a new record and fill it out for the
         appDel.currentRecord = NSEntityDescription.getNewRecordInManagedContext()
@@ -211,9 +222,12 @@ extension PromptPickerViewController {
         timerLabel.reset()
         timerLabel.setStopWatchTime(300)
         if curPerson.1 { //foraging
+            timerLabel.hidden = false
             timerLabel.startWithEndingBlock({ time in
                 self.curBioIndex = self.curBioIndex + 1
             })
+        } else {
+            timerLabel.hidden = true
         }
     }
 }
