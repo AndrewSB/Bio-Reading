@@ -91,7 +91,7 @@ class IO {
         let offset = rt == .Increasing ? increasing : decreasing
         
         let innerBracket = rt == .Increasing ? (450 * n) : (-450 * n)
-        let offseted = offset.getRandomElement() + innerBracket
+        let offseted = rt == .Increasing ? offset.getRandomElement() + innerBracket : offset.getRandomElement() - innerBracket
         
         let millisecond = (Double(500) + Double((CPIDR * offseted)))
         return millisecond/1000

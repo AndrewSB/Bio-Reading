@@ -15,11 +15,20 @@ let controlInstructions = "For this part of the experiment, you will read passag
 class FirstTimeInstructionViewController: UIViewController {
     @IBOutlet weak var instructionTextView: UITextView!
     var instructionText: String!
+    var person: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         instructionTextView.text = instructionText
         instructionTextView.font = UIFont(name: "HelveticaNeue", size: get("fontSize") as! CGFloat)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        
+        if let des = segue.destinationViewController as? FamiliarityViewController {
+            des.person = person
+        }
     }
 }
