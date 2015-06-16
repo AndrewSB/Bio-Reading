@@ -7,7 +7,10 @@
 //
 
 import UIKit
-import CoreData
+
+import Parse
+import Bolts
+
 import Fabric
 import Crashlytics
 
@@ -17,10 +20,13 @@ let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var currentRecord: Record?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics()])
+        
+        Parse.setApplicationId("fwjDaMY0iDqG90cgJRaWSjuizBEE9QgUeEvZluFh", clientKey: "DXlE0tdlqsoIiqbwVQnsQdZzU8SQIASaiqLbThwV")
+        
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         UserStore.bios = UserStore.generateRandomBios()
         UserStore.bios.insert(("Practice Connecticut", false), atIndex: 1)
