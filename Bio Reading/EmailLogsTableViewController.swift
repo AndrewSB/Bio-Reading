@@ -17,7 +17,8 @@ class EmailLogsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        subjectRecords = appDel.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Record"), error: nil) as? [Record]
+        //CData
+//        subjectRecords = appDel.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Record"), error: nil) as? [Record]
         
         for r in subjectRecords {
             ifExistsAppend(r)

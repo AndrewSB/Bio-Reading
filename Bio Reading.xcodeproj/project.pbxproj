@@ -12,11 +12,8 @@
 		468123951B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468123941B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift */; };
 		469D5A811B12BBD600BDA7BD /* FamiliarityAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D5A801B12BBD600BDA7BD /* FamiliarityAlertViewController.swift */; };
 		469D5A841B12C82200BDA7BD /* MailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */; };
-		46AD0CB21B01ED2F00010E9C /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AD0CB11B01ED2F00010E9C /* CoreDataHelper.swift */; };
 		46B5BBF11B29850F006604BA /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5BBF01B29850F006604BA /* IntExtension.swift */; };
 		46F8AA6C1B02882500946033 /* Practice Rhode Island.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */; };
-		46F8AA701B02953300946033 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8AA6F1B02953300946033 /* Record.swift */; };
-		46FAC9BC1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9BA1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodeld */; };
 		46FAC9DD1AEEF57A00BAFE99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9DC1AEEF57A00BAFE99 /* AppDelegate.swift */; };
 		46FAC9E31AEEF5AE00BAFE99 /* CuriosityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9DE1AEEF5AE00BAFE99 /* CuriosityViewController.swift */; };
 		46FAC9E41AEEF5AE00BAFE99 /* FamiliarityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9DF1AEEF5AE00BAFE99 /* FamiliarityViewController.swift */; };
@@ -52,12 +49,9 @@
 		468123941B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeInstructionViewController.swift; sourceTree = "<group>"; };
 		469D5A801B12BBD600BDA7BD /* FamiliarityAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamiliarityAlertViewController.swift; sourceTree = "<group>"; };
 		469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposeViewController.swift; sourceTree = "<group>"; };
-		46AD0CB11B01ED2F00010E9C /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		46B5BBF01B29850F006604BA /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Practice Rhode Island.plist"; sourceTree = "<group>"; };
-		46F8AA6F1B02953300946033 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Record.swift; path = ../Record.swift; sourceTree = "<group>"; };
 		46FAC9B31AEEF4F600BAFE99 /* Bio Reading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bio Reading.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		46FAC9BB1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bio_Reading.xcdatamodel; sourceTree = "<group>"; };
 		46FAC9DB1AEEF57A00BAFE99 /* Bio Reading-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bio Reading-Bridging-Header.h"; sourceTree = "<group>"; };
 		46FAC9DC1AEEF57A00BAFE99 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46FAC9DE1AEEF5AE00BAFE99 /* CuriosityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuriosityViewController.swift; sourceTree = "<group>"; };
@@ -239,7 +233,6 @@
 			children = (
 				46FAC9FA1AEEF60300BAFE99 /* IOHelper.swift */,
 				46FAC9FB1AEEF60300BAFE99 /* NSUserDefaultHelper.swift */,
-				46AD0CB11B01ED2F00010E9C /* CoreDataHelper.swift */,
 				46FAC9FC1AEEF60300BAFE99 /* RecordKeeperHelper.swift */,
 			);
 			name = Helpers;
@@ -260,8 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				462BF9DC1B01E00100028FB6 /* Bios */,
-				46FAC9BA1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodeld */,
-				46F8AA6F1B02953300946033 /* Record.swift */,
 				46FACA151AEEF62600BAFE99 /* Images.xcassets */,
 			);
 			name = Resources;
@@ -427,7 +418,6 @@
 				46B5BBF11B29850F006604BA /* IntExtension.swift in Sources */,
 				46FAC9E61AEEF5AE00BAFE99 /* PromptViewController.swift in Sources */,
 				46FAC9EE1AEEF5C300BAFE99 /* EmailLogsTableViewController.swift in Sources */,
-				46F8AA701B02953300946033 /* Record.swift in Sources */,
 				46FAC9E41AEEF5AE00BAFE99 /* FamiliarityViewController.swift in Sources */,
 				468123951B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift in Sources */,
 				46FAC9DD1AEEF57A00BAFE99 /* AppDelegate.swift in Sources */,
@@ -437,7 +427,6 @@
 				46FAC9EF1AEEF5C300BAFE99 /* InitialViewController.swift in Sources */,
 				46FACA021AEEF60300BAFE99 /* RecordKeeperHelper.swift in Sources */,
 				46FAC9E51AEEF5AE00BAFE99 /* PromptPickerViewController.swift in Sources */,
-				46AD0CB21B01ED2F00010E9C /* CoreDataHelper.swift in Sources */,
 				46FAC9F01AEEF5C300BAFE99 /* InstructionViewController.swift in Sources */,
 				469D5A841B12C82200BDA7BD /* MailComposeViewController.swift in Sources */,
 				46FACA011AEEF60300BAFE99 /* NSUserDefaultHelper.swift in Sources */,
@@ -446,7 +435,6 @@
 				46FACA001AEEF60300BAFE99 /* IOHelper.swift in Sources */,
 				46FAC9E71AEEF5AE00BAFE99 /* RecallViewController.swift in Sources */,
 				46FAC9F51AEEF5EE00BAFE99 /* PromptCollectionViewCell.swift in Sources */,
-				46FAC9BC1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodeld in Sources */,
 				46FAC9FE1AEEF60300BAFE99 /* ArrayExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,19 +584,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		46FAC9BA1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				46FAC9BB1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodel */,
-			);
-			currentVersion = 46FAC9BB1AEEF4F600BAFE99 /* Bio_Reading.xcdatamodel */;
-			path = Bio_Reading.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 46FAC9AB1AEEF4F600BAFE99 /* Project object */;
 }
