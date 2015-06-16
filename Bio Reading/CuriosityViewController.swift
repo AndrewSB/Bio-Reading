@@ -8,11 +8,17 @@
 
 import UIKit
 
+import Parse
+import Bolts
+
 class CuriosityViewController: UIViewController {
     @IBOutlet weak var howCuriousLabel: UILabel!
+    @IBOutlet weak var howCuriousSlider: UISlider!
     
     var person = String()
     var index = Int()
+    
+    var parseRecord: PFObject!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +30,12 @@ class CuriosityViewController: UIViewController {
 
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        RecordStore.defaultStore().curRecord!.curiosity = curiosityLabel.text?.toInt()
-        (segue.destinationViewController as? PromptViewController)?.title = navigationItem.title
-        (segue.destinationViewController as? PromptViewController)?.index = index
-        (segue.destinationViewController as? PromptViewController)?.person = person
+        parseRecord["curiosity"] = howCuriousSlider.value
+        if let des = segue.destinationViewController as? PromptViewController {
+            des.parseRecord = self.parseRecord
+            des.title = navigationItem.title
+            des.index = index
+            des.person = person
+        }
     }
 }

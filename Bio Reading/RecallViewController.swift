@@ -9,6 +9,9 @@
 import UIKit
 import AVFoundation
 
+import Parse
+import Bolts
+
 class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophoneDelegate {
 
     let soundFileURL = NSURL(fileURLWithPath: (NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String).stringByAppendingPathComponent("\(UserStore.subjectNumber!):\(NSUUID().UUIDString)sound.wav"))!
@@ -26,6 +29,8 @@ class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophon
     
     var mic = EZMicrophone()
     var recorder = EZRecorder()
+    
+    var parseRecord: PFObject!
     
     @IBOutlet weak var waveView: EZAudioPlotGL!
     
@@ -58,8 +63,9 @@ class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophon
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        appDel.currentRecord!.audioFile = NSData(contentsOfURL: soundFileURL)!
+        parseRecord["audioFile"] = PFFile(data: NSData(contentsOfURL: soundFileURL)!, contentType: "wav")
         isRecording = false
+        parseRecord!.save()
         
         if let des = segue.destinationViewController as? FamiliarityViewController {
             des.person = NSUserDefaults.standardUserDefaults().objectForKey("currentPerson") as! String

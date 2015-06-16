@@ -9,6 +9,9 @@
 import UIKit
 import Darwin
 
+import Parse
+import Bolts
+
 class PromptViewController: UIViewController {
     var index = Int()
     var person = String()
@@ -16,6 +19,8 @@ class PromptViewController: UIViewController {
     
     var startTime: NSDate!
     var timer: NSTimer?
+    
+    var parseRecord: PFObject!
     
     var curTime = UserStore.currentTime!
     
@@ -54,11 +59,21 @@ class PromptViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         println(NSDate().timeIntervalSinceDate(startTime))
-        appDel.currentRecord!.readingTime = NSDate().timeIntervalSinceDate(startTime)
     }
     
     @IBAction func contineButtonWasHit(sender: AnyObject) {
         performSegueWithIdentifier("segueToRecall", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        let time = NSDate().timeIntervalSinceDate(startTime) as Double
+        
+        parseRecord!["readingTime"] = time
+        
+        if let des = segue.destinationViewController as? RecallViewController {
+            des.parseRecord = self.parseRecord
+        }
     }
     
     @IBAction func unwindToPromptViewController(segue: UIStoryboardSegue) {}

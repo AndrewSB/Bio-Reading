@@ -10,9 +10,14 @@ import Foundation
 import UIKit
 import CoreData
 
+import Parse
+import Bolts
+
 class PromptPickerViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nameLabel: UILabel!
+    
+    var parseRecord: PFObject?
     
     let timerLabel = MZTimerLabel()
     
@@ -36,7 +41,7 @@ class PromptPickerViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        timerLabel.timerType = MZTimerLabelTypeTimer
+        timerLabel.timerType = MZTimerLabelTypeStopWatch
         timerLabel.frame = CGRect(x: view.frame.width - 100, y: 10, width: 100, height: 44)
         timerLabel.timeFormat = "mm:ss"
         view.addSubview(timerLabel)
@@ -76,13 +81,22 @@ class PromptPickerViewController: UIViewController {
         UserStore.currentTitle = sender as? String
         UserStore.currentPerson = self.navigationItem.title!
         
+        if let des = segue.destinationViewController as? PromptViewController {
+            des.parseRecord = self.parseRecord!
+            println("st")
+        }
+        
         if let s = segue.destinationViewController as? CuriosityViewController {
+            println("op")
             s.person = self.navigationItem.title!
             s.index = selectedIndex
+            
+            s.parseRecord = self.parseRecord
         }
         
         if let des = segue.destinationViewController as? FamiliarityViewController {
             des.person = sender as! String
+            des.parseRecord = self.parseRecord!
         }
         
         if let des = segue.destinationViewController as? FirstTimeInstructionViewController {
@@ -118,17 +132,14 @@ extension PromptPickerViewController: UICollectionViewDelegate, UICollectionView
     
     func selectCell(indexPath: NSIndexPath) {
         if !selected[indexPath.row] {
-            appDel.currentRecord!.cue = indexPath.item
-            appDel.currentRecord!.dateTime = NSDate()
-            appDel.currentRecord!.order = selected.filter({ !$0 }).count
+            parseRecord!["cue"] = indexPath.item
+            parseRecord!["dateTime"] = NSDate()
+            parseRecord!["order"] = selected.filter({ !$0 }).count
             
             collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.grayColor()
             selected[indexPath.row] = true
             
             selectedIndex = indexPath.row
-            
-            appDel.currentRecord!.cue = indexPath.row
-            appDel.currentRecord!.order = selected.filter({$0}).count
             
             UserStore.currentTime = IO.calculateTime(curPerson.0, prompt: selectedIndex, n: curPersonIndex)
             
@@ -194,25 +205,16 @@ extension PromptPickerViewController {
     }
     
     func recordStoreLogic() {
+        parseRecord = PFObject(className: "Subject \(UserStore.subjectNumber)")
         
-        //store the old record if it exists and is valid
-        if appDel.currentRecord?.audioFile != nil {
-            appDel.managedObjectContext!.save(nil)
-            println("saved \(appDel.currentRecord!)")
-        }
-        
-        //get a new record and fill it out for the
-        appDel.currentRecord = NSEntityDescription.getNewRecordInManagedContext()
-        
-        appDel.currentRecord!.subjectNumber = UserStore.subjectNumber!
-        appDel.currentRecord!.bioPerson = self.navigationItem.title!
-        appDel.currentRecord!.condition = curPerson.1 ? 0 : 1
-        if let fam = UserStore.currentFamiliarity {
-            appDel.currentRecord!.familiarity = fam
-        }
+        parseRecord!["subjectNumber"] = UserStore.subjectNumber!
+        parseRecord!["bioPerson"] = self.navigationItem.title!
+        parseRecord!["rtCond"] = curPerson.1 ? "Foraging" : "Control"
+        parseRecord!["familiarity"] = UserStore.currentFamiliarity!
     }
     
     func newPerson() {
+        
         self.navigationItem.title = curPerson.0
         nameLabel.text = curPerson.0
         
@@ -221,14 +223,15 @@ extension PromptPickerViewController {
         selected = [Bool](count: IO.getNumSentances(curPerson.0)!, repeatedValue: false)
         collectionView.reloadData()
         
-        timerLabel.reset()
-        timerLabel.setStopWatchTime(10)
+//        timerLabel.reset()
+        timerLabel.setStopWatchTime((60*5))
         if curPerson.1 { //foraging
             timerLabel.hidden = false
             timerLabel.startWithEndingBlock({ time in
+                println("TIME!")
                 self.curBioIndex = self.curBioIndex + 1
             })
-        } else {
+        } else { //control
             timerLabel.hidden = true
         }
     }

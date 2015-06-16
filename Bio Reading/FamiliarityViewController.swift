@@ -8,9 +8,14 @@
 
 import UIKit
 
+import Parse
+import Bolts
+
 class FamiliarityViewController: UIViewController {
     @IBOutlet weak var howCuriousLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
+    
+    var parseRecord: PFObject?
     
     var person = String()
     var index = Int()
@@ -28,5 +33,12 @@ class FamiliarityViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         UserStore.currentFamiliarity = Double(slider.value)
         (segue.destinationViewController as! PromptPickerViewController).curPersonIndex++
+        
+        if let des = segue.destinationViewController as? PromptPickerViewController {
+            des.curPersonIndex++
+        }
+        if let des = segue.destinationViewController as? PromptViewController {
+            des.parseRecord = self.parseRecord
+        }
     }
 }
