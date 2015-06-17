@@ -41,7 +41,7 @@ class PromptPickerViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        timerLabel.timerType = MZTimerLabelTypeStopWatch
+        timerLabel.timerType = MZTimerLabelTypeTimer
         timerLabel.frame = CGRect(x: view.frame.width - 100, y: 10, width: 100, height: 44)
         timerLabel.timeFormat = "mm:ss"
         view.addSubview(timerLabel)
@@ -205,7 +205,7 @@ extension PromptPickerViewController {
     }
     
     func recordStoreLogic() {
-        parseRecord = PFObject(className: "Subject \(UserStore.subjectNumber)")
+        parseRecord = PFObject(className: "Subject\(UserStore.subjectNumber!)")
         
         parseRecord!["subjectNumber"] = UserStore.subjectNumber!
         parseRecord!["bioPerson"] = self.navigationItem.title!
@@ -224,7 +224,7 @@ extension PromptPickerViewController {
         collectionView.reloadData()
         
 //        timerLabel.reset()
-        timerLabel.setStopWatchTime((60*5))
+        timerLabel.setCountDownTime((60*5))
         if curPerson.1 { //foraging
             timerLabel.hidden = false
             timerLabel.startWithEndingBlock({ time in
