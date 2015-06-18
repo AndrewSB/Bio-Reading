@@ -407,7 +407,7 @@ Your task will be to learn the biographies of a number of different famous peopl
                     <connections>
                         <outlet property="continueButton" destination="cd4-Jc-wf9" id="I84-G9-e6h"/>
                         <outlet property="instructionLabel" destination="gCb-i8-EGa" id="75p-bE-JqE"/>
-                        <segue destination="80P-xb-Rdw" kind="show" identifier="segueToPicker" id="9tY-Wg-ic5"/>
+                        <segue destination="80P-xb-Rdw" kind="custom" identifier="segueToPicker" customClass="PushNoAnimationSegue" id="9tY-Wg-ic5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GES-uy-v0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -517,13 +517,13 @@ Your task will be to learn the biographies of a number of different famous peopl
                         <outlet property="collectionView" destination="uG6-0m-Sd0" id="GxC-Lo-r5Y"/>
                         <outlet property="nameLabel" destination="lmp-Fe-szN" id="WKg-Cg-Dg4"/>
                         <segue destination="Am2-M7-Uw2" kind="show" identifier="segueToPromptVC" id="QK0-Kv-dXY"/>
-                        <segue destination="C3n-sj-Eya" kind="presentation" identifier="segueToFam" id="xHu-YV-sIA"/>
-                        <segue destination="ced-jO-z44" kind="presentation" identifier="segueToInstructions" id="Gek-9v-HQe"/>
+                        <segue destination="C3n-sj-Eya" kind="custom" identifier="segueToFam" customClass="PushNoAnimationSegue" id="xHu-YV-sIA"/>
+                        <segue destination="ced-jO-z44" kind="custom" identifier="segueToInstructions" customClass="PushNoAnimationSegue" id="Gek-9v-HQe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSk-Sh-Adu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2530" y="240.75"/>
+            <point key="canvasLocation" x="2415" y="240.75"/>
         </scene>
         <!--Prompt View Controller-->
         <scene sceneID="iNy-E2-KJr">
@@ -1718,6 +1718,6 @@ Your task will be to learn the biographies of a number of different famous peopl
         <image name="mic" width="345" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dLZ-DY-aUQ"/>
+        <segue reference="xHu-YV-sIA"/>
     </inferredMetricsTieBreakers>
 </document>

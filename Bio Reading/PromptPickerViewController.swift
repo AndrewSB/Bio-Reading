@@ -61,9 +61,11 @@ class PromptPickerViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         if firstTimeInstructions {
+            timerLabel.start()
             self.foragingLogic()
         } else {
             firstTimeInstructions = true
+            timerLabel.pause()
             if curPerson.0.rangeOfString("Practice") != nil {
                 self.performSegueWithIdentifier("segueToInstructions", sender: curPerson.1 ? foragingInstructions : controlInstructions)
             } else {
