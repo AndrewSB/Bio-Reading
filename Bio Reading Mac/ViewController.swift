@@ -13,6 +13,4 @@ class ViewController: NSWindow, NSTableViewDelegate, NSTableViewDataSource {
         super.awakeFromNib()
         
     }
-    
-    tableview
 }
