@@ -20,6 +20,7 @@ class UserStore {
         case currentFamiliarity = "currentFamiliarity"
         
         case rTCond = "rTCond"
+        case timeOffset = "timeOffset"
         
         case bios = "bios"
         case subjectNumber = "subjectNumber"
@@ -92,6 +93,15 @@ class UserStore {
         }
         set {
             set(newValue!.hashValue, forKey: storeKeys.rTCond.rawValue)
+        }
+    }
+    
+    class var timeOffset: Int? {
+        get {
+            return get(storeKeys.timeOffset.rawValue) as? Int
+        }
+        set {
+            set(newValue, forKey: storeKeys.timeOffset.rawValue)
         }
     }
     

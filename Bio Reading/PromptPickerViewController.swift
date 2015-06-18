@@ -132,9 +132,9 @@ extension PromptPickerViewController: UICollectionViewDelegate, UICollectionView
     
     func selectCell(indexPath: NSIndexPath) {
         if !selected[indexPath.row] {
-            parseRecord!["cue"] = indexPath.item
+            parseRecord!["order"] = indexPath.item
             parseRecord!["dateTime"] = NSDate()
-            parseRecord!["order"] = selected.filter({ !$0 }).count
+            parseRecord!["cue"] = selected.filter({ !$0 }).count
             
             collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.grayColor()
             selected[indexPath.row] = true
@@ -210,11 +210,12 @@ extension PromptPickerViewController {
         parseRecord!["subjectNumber"] = UserStore.subjectNumber!
         parseRecord!["bioPerson"] = self.navigationItem.title!
         parseRecord!["rtCond"] = curPerson.1 ? "Foraging" : "Control"
-        parseRecord!["familiarity"] = UserStore.currentFamiliarity!
+        if let fam = UserStore.currentFamiliarity {
+            parseRecord!["familiarity"] = fam
+        }
     }
     
     func newPerson() {
-        
         self.navigationItem.title = curPerson.0
         nameLabel.text = curPerson.0
         
@@ -222,6 +223,8 @@ extension PromptPickerViewController {
         
         selected = [Bool](count: IO.getNumSentances(curPerson.0)!, repeatedValue: false)
         collectionView.reloadData()
+        
+        UserStore.timeOffset = IO.createNewOffset(UserStore.rTCond!)
         
 //        timerLabel.reset()
         timerLabel.setCountDownTime((60*5))

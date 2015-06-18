@@ -84,14 +84,18 @@ class IO {
         return nil
     }
     
+    class func createNewOffset(rtCond: RTCond) -> Int {
+        return rtCond == .Increasing ? [100, 250, 400].getRandomElement() : [5350, 5200, 5050].getRandomElement()
+    }
+    
     class func calculateTime(CPIDR: Int, n: Int, rt: RTCond) -> Double {
         let decreasing = [5350, 5200, 5050]
         let increasing = [100, 250, 400]
         
-        let offset = rt == .Increasing ? increasing : decreasing
+        let offset = UserStore.timeOffset!
         
         let innerBracket = rt == .Increasing ? (450 * n) : (-450 * n)
-        let offseted = rt == .Increasing ? offset.getRandomElement() + innerBracket : offset.getRandomElement() - innerBracket
+        let offseted = rt == .Increasing ? offset + innerBracket : offset - innerBracket
         
         let millisecond = (Double(500) + Double((CPIDR * offseted)))
         return millisecond/1000
