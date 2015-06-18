@@ -54,11 +54,13 @@ class PromptViewController: UIViewController {
             usleep(UInt32(curTime * 1000000))
             contineButtonWasHit(self)
         }
+        globalTimerLabel.start()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         println(NSDate().timeIntervalSinceDate(startTime))
+        globalTimerLabel.pause()
     }
     
     @IBAction func contineButtonWasHit(sender: AnyObject) {

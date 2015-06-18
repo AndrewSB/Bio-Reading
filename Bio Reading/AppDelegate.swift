@@ -14,7 +14,7 @@ import Bolts
 import Fabric
 import Crashlytics
 
-let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
+//let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

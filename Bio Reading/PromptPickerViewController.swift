@@ -13,6 +13,8 @@ import CoreData
 import Parse
 import Bolts
 
+var globalTimerLabel: MZTimerLabel!
+
 class PromptPickerViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -45,6 +47,7 @@ class PromptPickerViewController: UIViewController {
         timerLabel.frame = CGRect(x: view.frame.width - 100, y: 10, width: 100, height: 44)
         timerLabel.timeFormat = "mm:ss"
         view.addSubview(timerLabel)
+        globalTimerLabel = timerLabel
         
         curBioIndex = 0
         
@@ -61,11 +64,9 @@ class PromptPickerViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         if firstTimeInstructions {
-            timerLabel.start()
             self.foragingLogic()
         } else {
             firstTimeInstructions = true
-            timerLabel.pause()
             if curPerson.0.rangeOfString("Practice") != nil {
                 self.performSegueWithIdentifier("segueToInstructions", sender: curPerson.1 ? foragingInstructions : controlInstructions)
             } else {
@@ -232,10 +233,10 @@ extension PromptPickerViewController {
         timerLabel.setCountDownTime((60*5))
         if curPerson.1 { //foraging
             timerLabel.hidden = false
-            timerLabel.startWithEndingBlock({ time in
+            timerLabel.endedBlock = { time in
                 println("TIME!")
                 self.curBioIndex = self.curBioIndex + 1
-            })
+            }
         } else { //control
             timerLabel.hidden = true
         }
