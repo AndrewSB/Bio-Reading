@@ -70,6 +70,7 @@ class PromptPickerViewController: UIViewController {
             if curPerson.0.rangeOfString("Practice") != nil {
                 self.performSegueWithIdentifier("segueToInstructions", sender: curPerson.1 ? foragingInstructions : controlInstructions)
             } else {
+                println("familiarity with \(curPerson.0)")
                 self.performSegueWithIdentifier("segueToFam", sender: curPerson.0)
             }
         }
@@ -197,12 +198,13 @@ extension PromptPickerViewController {
         let doneAlert = UIAlertController(title: "Done with set", message: "", preferredStyle: .Alert)
         doneAlert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (alertController) in
             if self.curPersonIndex +  1 <= UserStore.bios.count {
-                self.performSegueWithIdentifier("segueToFam", sender: UserStore.bios[self.curPersonIndex + 1].0)
+                self.curBioIndex = self.curBioIndex + 1
+                self.performSegueWithIdentifier("segueToFam", sender: self.curPerson.0)
             }
         }))
         
         self.presentViewController(doneAlert, animated: true, completion: nil)
-        curBioIndex = curBioIndex + 1
+
         
         return true
     }
