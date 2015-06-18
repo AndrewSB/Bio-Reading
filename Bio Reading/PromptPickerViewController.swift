@@ -13,6 +13,9 @@ import CoreData
 import Parse
 import Bolts
 
+import Fabric
+import Crashlytics
+
 var globalTimerLabel: MZTimerLabel!
 
 class PromptPickerViewController: UIViewController {
@@ -168,6 +171,8 @@ extension PromptPickerViewController {
                     cellIndexSelectionPool.append(i!)
                 }
             }
+            
+            Crashlytics().setObjectValue(cellIndexSelectionPool, forKey: "cell index row")
         
             let chosenIndex = NSIndexPath(forItem: cellIndexSelectionPool.getRandomElement(), inSection: 0)
             let toSegueTo = collectionView.cellForItemAtIndexPath(chosenIndex)!
