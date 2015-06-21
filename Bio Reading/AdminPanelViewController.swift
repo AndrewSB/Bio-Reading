@@ -11,6 +11,7 @@ import UIKit
 class AdminPanelViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var subjectNumberTextField: UITextField!
+    @IBOutlet weak var timeLimitTextField: UITextField!
     
     @IBOutlet weak var increasingDecreasingSegmentedControl: UISegmentedControl!
     
@@ -36,6 +37,7 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
         increasingDecreasingSegmentedControl.selectedSegmentIndex = UserStore.rTCond!.hashValue
         
         fontLabel.font = UIFont(name: "HelveticaNeue", size: get("fontSize") as! CGFloat)
+        timeLimitTextField.text = "\(UserStore.timeLimit!)"
         
         fontStepper.value = Double(fontLabel.font.pointSize)
         
@@ -100,5 +102,6 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
         UserStore.bios = randBios
         UserStore.subjectNumber = subjectNumberTextField.text.toInt()
         UserStore.rTCond = increasingDecreasingSegmentedControl.selectedSegmentIndex == 0 ? .Increasing : .Decreasing
+        UserStore.timeLimit = timeLimitTextField.text.toInt()
     }
 }

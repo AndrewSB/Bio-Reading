@@ -13,6 +13,9 @@ let get = NSUserDefaults.standardUserDefaults().objectForKey
 
 class UserStore {
     enum storeKeys: String {
+        case subjectNumber = "subjectNumber"
+        case timeLimit = "timeLimit"
+        
         case currentPerson = "currentPerson"
         case currentBio = "currentBio"
         case currentTitle = "currentTitle"
@@ -23,7 +26,6 @@ class UserStore {
         case timeOffset = "timeOffset"
         
         case bios = "bios"
-        case subjectNumber = "subjectNumber"
         case fontSize = "fontSize"
         
         case isTimed = "timed"
@@ -35,6 +37,15 @@ class UserStore {
         }
         set {
             set(newValue, forKey: storeKeys.subjectNumber.rawValue)
+        }
+    }
+    
+    class var timeLimit: Int? {
+        get {
+        return get(storeKeys.timeLimit.rawValue) as? Int
+        }
+        set {
+            set(newValue, forKey: storeKeys.timeLimit.rawValue)
         }
     }
     
