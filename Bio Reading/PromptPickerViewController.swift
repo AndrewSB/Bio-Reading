@@ -61,6 +61,7 @@ class PromptPickerViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        globalTimerLabel = self.timerLabel
         recordStoreLogic()
         doneLogic()
     }
@@ -79,6 +80,11 @@ class PromptPickerViewController: UIViewController {
                 self.performSegueWithIdentifier("segueToFam", sender: curPerson.0)
             }
         }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        globalTimerLabel = self.timerLabel
     }
 
     // MARK: - Navigation
@@ -141,7 +147,7 @@ extension PromptPickerViewController: UICollectionViewDelegate, UICollectionView
     
     func selectCell(indexPath: NSIndexPath) {
         if !selected[indexPath.row] {
-            parseRecord!["order"] = selected.filter({ $0 }).count
+            parseRecord!["order"] = selected.filter({ $0 }).count + 1
             parseRecord!["dateTime"] = NSDate()
             parseRecord!["cue"] = indexPath.item + 1
             
@@ -183,6 +189,7 @@ extension PromptPickerViewController {
             toSegueTo.layer.borderColor = UIColor.yellowColor().CGColor
             toSegueTo.layer.borderWidth = 5
             
+            println("Control: queued cell \(chosenIndex.row)")
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
                 self.view.userInteractionEnabled = true
                 self.selectCell(chosenIndex)
@@ -206,7 +213,7 @@ extension PromptPickerViewController {
         doneAlert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (alertController) in
             if self.curPersonIndex +  1 <= UserStore.bios.count {
                 self.curBioIndex = self.curBioIndex + 1
-                self.performSegueWithIdentifier("segueToFam", sender: self.curPerson.0)
+//                self.performSegueWithIdentifier("segueToFam", sender: self.curPerson.0)
             }
         }))
         
@@ -231,6 +238,8 @@ extension PromptPickerViewController {
         self.navigationItem.title = curPerson.0
         nameLabel.text = curPerson.0
         
+        firstTimeInstructions = false
+        
         UserStore.isTimed = !curPerson.1
         
         selected = [Bool](count: IO.getNumSentances(curPerson.0)!, repeatedValue: false)
@@ -238,7 +247,6 @@ extension PromptPickerViewController {
         
         UserStore.timeOffset = IO.createNewOffset(UserStore.rTCond!)
         
-//        timerLabel.reset()
         timerLabel.setCountDownTime((60*5))
         if curPerson.1 { //foraging
             timerLabel.hidden = false
@@ -249,6 +257,11 @@ extension PromptPickerViewController {
         } else { //control
             timerLabel.hidden = true
         }
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.05 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+            self.recordStoreLogic()
+            self.viewDidAppear(false)
+        })
     }
 }
 
