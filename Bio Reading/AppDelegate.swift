@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UserStore.subjectNumber = nil
         UserStore.fontSize = 32
-        UserStore.rTCond = arc4random_uniform(2) > 1 ? .Increasing : .Decreasing
+        UserStore.rTCond = arc4random_uniform(2) == 1 ? RTCond.Increasing : RTCond.Decreasing
         
         return true
         

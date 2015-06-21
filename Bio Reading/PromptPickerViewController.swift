@@ -67,7 +67,9 @@ class PromptPickerViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         if firstTimeInstructions {
-            self.foragingLogic()
+            if !doneLogic() {
+                self.foragingLogic()
+            }
         } else {
             firstTimeInstructions = true
             if curPerson.0.rangeOfString("Practice") != nil {
@@ -139,16 +141,16 @@ extension PromptPickerViewController: UICollectionViewDelegate, UICollectionView
     
     func selectCell(indexPath: NSIndexPath) {
         if !selected[indexPath.row] {
-            parseRecord!["order"] = indexPath.item
+            parseRecord!["order"] = selected.filter({ !$0 }).count
             parseRecord!["dateTime"] = NSDate()
-            parseRecord!["cue"] = selected.filter({ !$0 }).count
+            parseRecord!["cue"] = indexPath.item + 1
             
             collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.grayColor()
             selected[indexPath.row] = true
             
             selectedIndex = indexPath.row
             
-            UserStore.currentTime = IO.calculateTime(curPerson.0, prompt: selectedIndex, n: curPersonIndex)
+            UserStore.currentTime = IO.calculateTime(curPerson.0, prompt: selectedIndex, n: selected.filter({ $0 }).count)
             
             let prompt = IO.getPrompt(curPerson.0, index: indexPath.row)
             self.performSegueWithIdentifier("segueToPromptVC", sender: prompt)
@@ -219,7 +221,7 @@ extension PromptPickerViewController {
         
         parseRecord!["subjectNumber"] = UserStore.subjectNumber!
         parseRecord!["bioPerson"] = self.navigationItem.title!
-        parseRecord!["rtCond"] = curPerson.1 ? "Foraging" : UserStore.rTCond!.rawValue
+        parseRecord!["rtCond"] = curPerson.1 ? "Foraging" : (UserStore.rTCond! == .Increasing ? "Increasing" : "Decreasing")
         if let fam = UserStore.currentFamiliarity {
             parseRecord!["familiarity"] = fam
         }
