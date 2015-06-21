@@ -76,10 +76,10 @@ class UserStore {
     
     class var currentFamiliarity: Double? {
         get {
-            return get(storeKeys.currentTime.rawValue) as? Double
+            return get(storeKeys.currentFamiliarity.rawValue) as? Double
         }
         set {
-            set(newValue, forKey: storeKeys.currentTime.rawValue)
+            set(newValue, forKey: storeKeys.currentFamiliarity.rawValue)
         }
     }
     
