@@ -219,7 +219,7 @@ extension PromptPickerViewController {
         
         parseRecord!["subjectNumber"] = UserStore.subjectNumber!
         parseRecord!["bioPerson"] = self.navigationItem.title!
-        parseRecord!["rtCond"] = curPerson.1 ? "Foraging" : "Control"
+        parseRecord!["rtCond"] = curPerson.1 ? "Foraging" : UserStore.rTCond!.rawValue
         if let fam = UserStore.currentFamiliarity {
             parseRecord!["familiarity"] = fam
         }
