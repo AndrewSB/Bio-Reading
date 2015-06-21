@@ -248,7 +248,7 @@ extension PromptPickerViewController {
         UserStore.timeOffset = IO.createNewOffset(UserStore.rTCond!)
         
         timerLabel.reset()
-        timerLabel.setCountDownTime((60*5))
+        timerLabel.setCountDownTime(Double(UserStore.timeLimit!))
         globalTimerLabel = timerLabel
         if curPerson.1 { //foraging
             timerLabel.hidden = false

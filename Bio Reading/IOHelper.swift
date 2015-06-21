@@ -94,8 +94,8 @@ class IO {
         
         let offset = UserStore.timeOffset!
         
-        let innerBracket = rt == .Increasing ? (450 * n) : (-450 * n)
-        let offseted = rt == .Increasing ? offset + innerBracket : offset - innerBracket
+        let innerBracket = rt == .Increasing ? (450 * (n - 1)) : (-450 * (n - 1))
+        let offseted = offset + innerBracket
         
         let millisecond = (Double(500) + Double((CPIDR * offseted)))
         return millisecond/1000

@@ -17,7 +17,6 @@
 		4656DF4C1B2FDBD800182C50 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF431B2FDBD700182C50 /* MobileCoreServices.framework */; };
 		4656DF4D1B2FDBD800182C50 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF441B2FDBD700182C50 /* QuartzCore.framework */; };
 		4656DF4E1B2FDBD800182C50 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF451B2FDBD700182C50 /* Security.framework */; };
-		4656DF4F1B2FDBD800182C50 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF461B2FDBD700182C50 /* StoreKit.framework */; };
 		4656DF501B2FDBD800182C50 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF471B2FDBD800182C50 /* SystemConfiguration.framework */; };
 		4656DF521B2FDBE100182C50 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF511B2FDBE100182C50 /* libz.dylib */; };
 		4656DF541B2FDBE900182C50 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF531B2FDBE900182C50 /* libsqlite3.dylib */; };
@@ -49,7 +48,6 @@
 		46FAC9E51AEEF5AE00BAFE99 /* PromptPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9E01AEEF5AE00BAFE99 /* PromptPickerViewController.swift */; };
 		46FAC9E61AEEF5AE00BAFE99 /* PromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9E11AEEF5AE00BAFE99 /* PromptViewController.swift */; };
 		46FAC9E71AEEF5AE00BAFE99 /* RecallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9E21AEEF5AE00BAFE99 /* RecallViewController.swift */; };
-		46FAC9EE1AEEF5C300BAFE99 /* EmailLogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9EA1AEEF5C300BAFE99 /* EmailLogsTableViewController.swift */; };
 		46FAC9EF1AEEF5C300BAFE99 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9EB1AEEF5C300BAFE99 /* InitialViewController.swift */; };
 		46FAC9F01AEEF5C300BAFE99 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9EC1AEEF5C300BAFE99 /* InstructionViewController.swift */; };
 		46FAC9F31AEEF5D600BAFE99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46FAC9F21AEEF5D600BAFE99 /* Main.storyboard */; };
@@ -97,7 +95,6 @@
 		4656DF431B2FDBD700182C50 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		4656DF441B2FDBD700182C50 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4656DF451B2FDBD700182C50 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		4656DF461B2FDBD700182C50 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4656DF471B2FDBD800182C50 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4656DF511B2FDBE100182C50 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		4656DF531B2FDBE900182C50 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -131,7 +128,6 @@
 		46FAC9E11AEEF5AE00BAFE99 /* PromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptViewController.swift; sourceTree = "<group>"; };
 		46FAC9E21AEEF5AE00BAFE99 /* RecallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecallViewController.swift; sourceTree = "<group>"; };
 		46FAC9E91AEEF5C300BAFE99 /* AdminPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPanelViewController.swift; sourceTree = "<group>"; };
-		46FAC9EA1AEEF5C300BAFE99 /* EmailLogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLogsTableViewController.swift; sourceTree = "<group>"; };
 		46FAC9EB1AEEF5C300BAFE99 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		46FAC9EC1AEEF5C300BAFE99 /* InstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		46FAC9F21AEEF5D600BAFE99 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -188,7 +184,6 @@
 				4656DF4C1B2FDBD800182C50 /* MobileCoreServices.framework in Frameworks */,
 				4656DF4D1B2FDBD800182C50 /* QuartzCore.framework in Frameworks */,
 				4656DF4E1B2FDBD800182C50 /* Security.framework in Frameworks */,
-				4656DF4F1B2FDBD800182C50 /* StoreKit.framework in Frameworks */,
 				4656DF501B2FDBD800182C50 /* SystemConfiguration.framework in Frameworks */,
 				46FACA1F1AEEF74D00BAFE99 /* Crashlytics.framework in Frameworks */,
 				87E3EF8F44229B24A2159656 /* libPods.a in Frameworks */,
@@ -256,7 +251,6 @@
 				4656DF431B2FDBD700182C50 /* MobileCoreServices.framework */,
 				4656DF441B2FDBD700182C50 /* QuartzCore.framework */,
 				4656DF451B2FDBD700182C50 /* Security.framework */,
-				4656DF461B2FDBD700182C50 /* StoreKit.framework */,
 				4656DF471B2FDBD800182C50 /* SystemConfiguration.framework */,
 			);
 			name = Dependencies;
@@ -288,7 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				46FAC9E91AEEF5C300BAFE99 /* AdminPanelViewController.swift */,
-				46FAC9EA1AEEF5C300BAFE99 /* EmailLogsTableViewController.swift */,
 				469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */,
 			);
 			name = Admin;
@@ -524,6 +517,11 @@
 					46FAC9B21AEEF4F600BAFE99 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 2Z475Y2H59;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -640,7 +638,6 @@
 			files = (
 				46B5BBF11B29850F006604BA /* IntExtension.swift in Sources */,
 				46FAC9E61AEEF5AE00BAFE99 /* PromptViewController.swift in Sources */,
-				46FAC9EE1AEEF5C300BAFE99 /* EmailLogsTableViewController.swift in Sources */,
 				463D82011B3257C80053A83F /* PushNoAnimationSegue.swift in Sources */,
 				46FAC9E41AEEF5AE00BAFE99 /* FamiliarityViewController.swift in Sources */,
 				468123951B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift in Sources */,
@@ -861,6 +858,7 @@
 				46F950EA1B32C12900F6E32B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46FAC9AE1AEEF4F600BAFE99 /* Build configuration list for PBXProject "Bio Reading" */ = {
 			isa = XCConfigurationList;
