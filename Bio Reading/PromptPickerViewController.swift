@@ -29,6 +29,8 @@ class PromptPickerViewController: UIViewController {
     var selected = [Bool]()
     var selectedIndex = Int()
     
+    var curSentance: Int?
+    
     var curBioIndex: Int! {
         didSet { curPerson = UserStore.bios[curBioIndex] }
     }
@@ -147,9 +149,13 @@ extension PromptPickerViewController: UICollectionViewDelegate, UICollectionView
     
     func selectCell(indexPath: NSIndexPath) {
         if !selected[indexPath.row] {
+            curSentance = indexPath.row
+            
             parseRecord!["order"] = selected.filter({ $0 }).count + 1
             parseRecord!["dateTime"] = NSDate()
-            parseRecord!["cue"] = indexPath.item + 1
+//            parseRecord!["cue"] = indexPath.item + 1
+            parseRecord!["CPIDR"] = IO.getCPIDR(curPerson.0, index: indexPath.item)
+            parseRecord!["Sentance"] = IO.getSentance(curPerson.0, index: indexPath.item)
             
             collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.grayColor()
             selected[indexPath.row] = true
