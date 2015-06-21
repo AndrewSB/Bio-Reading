@@ -141,7 +141,7 @@ extension PromptPickerViewController: UICollectionViewDelegate, UICollectionView
     
     func selectCell(indexPath: NSIndexPath) {
         if !selected[indexPath.row] {
-            parseRecord!["order"] = selected.filter({ !$0 }).count
+            parseRecord!["order"] = selected.filter({ $0 }).count
             parseRecord!["dateTime"] = NSDate()
             parseRecord!["cue"] = indexPath.item + 1
             
