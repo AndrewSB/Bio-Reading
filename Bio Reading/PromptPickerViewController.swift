@@ -32,7 +32,10 @@ class PromptPickerViewController: UIViewController {
     var curSentance: Int?
     
     var curBioIndex: Int! {
-        didSet { curPerson = UserStore.bios[curBioIndex] }
+        didSet {
+            curPerson = UserStore.bios[curBioIndex]
+            UserStore.currentBio = curBioIndex
+        }
     }
     
     var curPerson: (String, Bool)! {
@@ -230,7 +233,7 @@ extension PromptPickerViewController {
     }
     
     func recordStoreLogic() {
-        parseRecord = PFObject(className: "Subject\(UserStore.subjectNumber!)")
+        parseRecord = PFObject(className: "Subject\(UserStore.subjectNumber!)".stringByReplacingOccurrencesOfString("-", withString: "_"))
         
         parseRecord!["subjectNumber"] = UserStore.subjectNumber!
         parseRecord!["bioPerson"] = self.navigationItem.title!
@@ -266,10 +269,12 @@ extension PromptPickerViewController {
             timerLabel.hidden = true
         }
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.05 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            self.recordStoreLogic()
-            self.viewDidAppear(false)
-        })
+        if curPerson.0.rangeOfString("Practice") != nil {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.05 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                self.recordStoreLogic()
+                self.viewDidAppear(false)
+            })
+        }
     }
 }
 

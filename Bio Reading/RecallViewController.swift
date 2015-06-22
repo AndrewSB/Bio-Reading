@@ -63,9 +63,9 @@ class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophon
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let cueNumber = (segue.destinationViewController as? PromptPickerViewController)!.curSentance
+        let cueNumber = (segue.destinationViewController as? PromptPickerViewController)!.curSentance!
         
-        parseRecord["audioFile"] = PFFile(name: " \(UserStore.subjectNumber!) - \(UserStore.bios[UserStore.currentBio!].0) - \(cueNumber)", data: NSData(contentsOfURL: soundFileURL)!)
+        parseRecord["audioFile"] = PFFile(name: "Audio\(UserStore.subjectNumber!)-\(UserStore.bios[UserStore.currentBio!].0)-\(cueNumber)".stringByReplacingOccurrencesOfString(" ", withString: "_").stringByReplacingOccurrencesOfString("-", withString: "_"), data: NSData(contentsOfURL: soundFileURL)!)
         isRecording = false
 
         self.parseRecord!.saveInBackground()
