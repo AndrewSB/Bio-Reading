@@ -68,7 +68,13 @@ class RecallViewController: UIViewController, AVAudioPlayerDelegate, EZMicrophon
         parseRecord["audioFile"] = PFFile(name: "Audio\(UserStore.subjectNumber!)-\(UserStore.bios[UserStore.currentBio!].0)-\(cueNumber)".stringByReplacingOccurrencesOfString(" ", withString: "_").stringByReplacingOccurrencesOfString("-", withString: "_"), data: NSData(contentsOfURL: soundFileURL)!)
         isRecording = false
 
-        self.parseRecord!.saveInBackground()
+        self.parseRecord!.saveInBackgroundWithBlock({ PFBooleanResultBlock in
+            if PFBooleanResultBlock.0 {
+                println("saved \(self.parseRecord)")
+            } else {
+                println("error saving")
+            }
+        })
         
         if let des = segue.destinationViewController as? FamiliarityViewController {
             des.person = NSUserDefaults.standardUserDefaults().objectForKey("currentPerson") as! String
