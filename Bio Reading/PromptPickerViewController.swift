@@ -269,12 +269,10 @@ extension PromptPickerViewController {
             timerLabel.hidden = true
         }
         
-        if curPerson.0.rangeOfString("Practice") != nil {
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.05 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-                self.recordStoreLogic()
-                self.viewDidAppear(false)
-            })
-        }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.05 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+            self.recordStoreLogic()
+            self.viewDidAppear(false)
+        })
     }
 }
 
