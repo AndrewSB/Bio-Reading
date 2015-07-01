@@ -196,8 +196,7 @@
                                         <exclude reference="YUF-PB-Fdx"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="118" y="142" width="165" height="21"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="YUF-PB-Fdx"/>
                                     </mask>
@@ -211,8 +210,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="156" y="170" width="88" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="gIa-4W-Q9o"/>
                                     </mask>
@@ -223,9 +221,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="11" y="179" width="157" height="21"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHW-qp-KYe">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -286,18 +281,15 @@
                                 <exclude reference="zgn-cJ-8GH"/>
                                 <exclude reference="yrF-a0-n7n"/>
                                 <exclude reference="cmL-ei-LkC"/>
-                                <exclude reference="RHW-qp-KYe"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="oFt-BZ-jHl"/>
                                 <exclude reference="zBc-wC-Rfg"/>
-                                <exclude reference="6mm-Jb-beE"/>
                                 <exclude reference="wEb-WF-MMz"/>
                                 <exclude reference="Glg-ey-Kd3"/>
                                 <exclude reference="qWH-mF-Iwc"/>
                                 <exclude reference="1ec-oA-9Wo"/>
                                 <exclude reference="OR6-fb-Cb3"/>
-                                <exclude reference="PBe-Ms-4Yp"/>
                                 <exclude reference="byd-g1-JGk"/>
                                 <exclude reference="gMK-lV-fZ7"/>
                                 <exclude reference="x4q-Qd-09S"/>

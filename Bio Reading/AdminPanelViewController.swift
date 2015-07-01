@@ -122,6 +122,7 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
         }
         
         syncRecordsButton.setTitle("Done syncing records", forState: .Normal)
+        view.userInteractionEnabled = true
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
