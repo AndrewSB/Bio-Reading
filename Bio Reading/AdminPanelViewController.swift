@@ -116,6 +116,7 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
             let foundObjects = query.findObjects() as! [PFObject]
             for object in foundObjects {
                 object.save()
+                object.unpin()a
                 savedObjects++
             }
         }
