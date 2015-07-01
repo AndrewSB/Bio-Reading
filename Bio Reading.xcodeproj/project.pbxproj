@@ -89,8 +89,6 @@
 		469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposeViewController.swift; sourceTree = "<group>"; };
 		46B5BBF01B29850F006604BA /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Practice Rhode Island.plist"; sourceTree = "<group>"; };
-		46F950F11B32C1DC00F6E32B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		46F950F21B32C1DC00F6E32B /* ParseOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseOSX.framework; sourceTree = "<group>"; };
 		46FAC9B31AEEF4F600BAFE99 /* Bio Reading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bio Reading.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FAC9DB1AEEF57A00BAFE99 /* Bio Reading-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bio Reading-Bridging-Header.h"; sourceTree = "<group>"; };
 		46FAC9DC1AEEF57A00BAFE99 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -283,15 +281,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		46F950F01B32C1DC00F6E32B /* parse-osx-library-1.7.4 */ = {
-			isa = PBXGroup;
-			children = (
-				46F950F11B32C1DC00F6E32B /* Bolts.framework */,
-				46F950F21B32C1DC00F6E32B /* ParseOSX.framework */,
-			);
-			path = "parse-osx-library-1.7.4";
-			sourceTree = "<group>";
-		};
 		46FAC9AA1AEEF4F600BAFE99 = {
 			isa = PBXGroup;
 			children = (
@@ -388,7 +377,6 @@
 		70B0BC6E9707F2D0F190EBDD /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				46F950F01B32C1DC00F6E32B /* parse-osx-library-1.7.4 */,
 				46F950EF1B32C1D000F6E32B /* iOS */,
 			);
 			name = Library;
