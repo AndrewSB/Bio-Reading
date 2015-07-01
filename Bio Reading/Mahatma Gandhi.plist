@@ -68,14 +68,14 @@
 	<key>Impact</key>
 	<dict>
 		<key>Sentance</key>
-		<string>His notion of nonviolent resistence influnced Martin Luther King&apos;s philosophy of nonviolent civil disobedience.</string>
+		<string>His notion of nonviolent resistence influenced Martin Luther King&apos;s philosophy of nonviolent civil disobedience.</string>
 		<key>CPIDR</key>
 		<integer>9</integer>
 	</dict>
 	<key>Regret</key>
 	<dict>
 		<key>Sentance</key>
-		<string>After he was nominated for the Novel Prize five times, he was chosen but killed before the award was conferred.</string>
+		<string>After he was nominated for the Nobel Prize five times, he was chosen but killed before the award was conferred.</string>
 		<key>CPIDR</key>
 		<integer>9</integer>
 	</dict>

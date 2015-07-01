@@ -23,7 +23,7 @@
 		<key>CPIDR</key>
 		<integer>9</integer>
 	</dict>
-	<key>Marraige</key>
+	<key>Marriage</key>
 	<dict>
 		<key>Sentance</key>
 		<string>At the age of 18, he married Anne Hathaway, who was 8 years his senior and the daughter of a local farmer.</string>
@@ -44,7 +44,7 @@
 		<key>CPIDR</key>
 		<integer>10</integer>
 	</dict>
-	<key>Entrepeneur</key>
+	<key>Entrepreneur</key>
 	<dict>
 		<key>Sentance</key>
 		<string>He started a play company called King&apos;s Men with his partners and they performed many of his plays in London. </string>
