@@ -29,6 +29,8 @@ class UserStore {
         case fontSize = "fontSize"
         
         case isTimed = "timed"
+        
+        case parseClassNames = "parseClassNames"
     }
     
     class var subjectNumber: Int? {
@@ -176,6 +178,19 @@ class UserStore {
         }
         set {
             set(newValue, forKey: storeKeys.isTimed.rawValue)
+        }
+    }
+    
+    class var parseClassName: [String] {
+        get {
+            if let arr = get(storeKeys.parseClassNames.rawValue) as? [String] {
+                return arr
+            } else {
+                return [String]()
+            }
+        }
+        set {
+            set(newValue, forKey: storeKeys.parseClassNames.rawValue)
         }
     }
 }

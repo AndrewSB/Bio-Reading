@@ -1,13 +1,16 @@
 PODS:
-  - EZAudio (0.0.6)
+  - EZAudio (0.5.0):
+    - TPCircularBuffer (~> 0.0)
   - MZTimerLabel (0.5.2)
+  - TPCircularBuffer (0.0.1)
 
 DEPENDENCIES:
   - EZAudio
   - MZTimerLabel
 
 SPEC CHECKSUMS:
-  EZAudio: feb8e1c3ec17d8933bc2efc66b59ead1f2e79e54
+  EZAudio: c891c006ef0746b60fdce5f8042d6e3462d8b3b4
   MZTimerLabel: 1bce6b93ec9f017fffad7ea7ee2bc721b53b64ee
+  TPCircularBuffer: 949e9632b9fb99b7274d7b2296ee22bff5841e35
 
 COCOAPODS: 0.37.2

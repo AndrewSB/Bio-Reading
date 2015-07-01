@@ -8,6 +8,9 @@
 
 import UIKit
 
+import Parse
+import Bolts
+
 class AdminPanelViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var subjectNumberTextField: UITextField!
@@ -17,6 +20,7 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBOutlet weak var personTableView: UITableView!
     
+    @IBOutlet weak var syncRecordsButton: UIButton!
     @IBOutlet weak var fontLabel: UILabel!
     @IBOutlet weak var fontStepper: UIStepper!
     
@@ -94,6 +98,31 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
         fontLabel.text = "\(fontStepper.value)"
     }
     
+    @IBAction func syncRecordsButtonWasHit() {
+        view.userInteractionEnabled = false
+        var savedObjects = 0 {
+            didSet {
+                syncRecordsButton.setTitle("Uploaded \(savedObjects) items", forState: .Normal)
+            }
+        }
+        
+        let queries = UserStore.parseClassName.map({ (className) -> PFQuery in
+            let q = PFQuery(className: className)
+            q.fromLocalDatastore()
+            return q
+        })
+        
+        for query in queries {
+            let foundObjects = query.findObjects() as! [PFObject]
+            for object in foundObjects {
+                object.save()
+                savedObjects++
+            }
+        }
+        
+        syncRecordsButton.setTitle("Done syncing records", forState: .Normal)
+    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         println("set font size as \(CGFloat(fontStepper.value))")

@@ -227,11 +227,21 @@
                                     <rect key="frame" x="11" y="179" width="157" height="21"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHW-qp-KYe">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Sync Records">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="syncRecordsButtonWasHit" destination="mxA-uY-pwh" eventType="touchUpInside" id="GIH-pQ-kaP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Mav-Kn-G7E" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yrF-a0-n7n" secondAttribute="bottom" constant="20" id="1ec-oA-9Wo"/>
                             <constraint firstItem="cmL-ei-LkC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Qfk-DE-B6o" secondAttribute="bottom" constant="2" id="4l6-na-5p0"/>
+                            <constraint firstItem="RHW-qp-KYe" firstAttribute="trailing" secondItem="Mav-Kn-G7E" secondAttribute="trailing" id="6mm-Jb-beE"/>
                             <constraint firstAttribute="centerX" secondItem="eud-PY-gJe" secondAttribute="centerX" constant="-22" id="9yZ-KT-r2p">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-44"/>
                             </constraint>
@@ -245,6 +255,7 @@
                             </constraint>
                             <constraint firstItem="Mav-Kn-G7E" firstAttribute="trailing" secondItem="zgn-cJ-8GH" secondAttribute="trailing" id="OR6-fb-Cb3"/>
                             <constraint firstItem="SRl-ge-ica" firstAttribute="top" secondItem="Mav-Kn-G7E" secondAttribute="bottom" constant="66" id="P4j-nY-Yks"/>
+                            <constraint firstItem="Mav-Kn-G7E" firstAttribute="top" secondItem="RHW-qp-KYe" secondAttribute="bottom" constant="8" id="PBe-Ms-4Yp"/>
                             <constraint firstItem="Qfk-DE-B6o" firstAttribute="top" secondItem="xm4-nu-eUJ" secondAttribute="bottom" constant="50" id="ars-Oh-koi">
                                 <variation key="heightClass=regular-widthClass=compact" constant="50"/>
                             </constraint>
@@ -275,6 +286,7 @@
                                 <exclude reference="zgn-cJ-8GH"/>
                                 <exclude reference="yrF-a0-n7n"/>
                                 <exclude reference="cmL-ei-LkC"/>
+                                <exclude reference="RHW-qp-KYe"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="jw3-4H-f4u"/>
@@ -287,9 +299,11 @@
                                 <exclude reference="qWH-mF-Iwc"/>
                                 <exclude reference="1ec-oA-9Wo"/>
                                 <exclude reference="OR6-fb-Cb3"/>
+                                <exclude reference="PBe-Ms-4Yp"/>
                                 <exclude reference="byd-g1-JGk"/>
                                 <exclude reference="gMK-lV-fZ7"/>
                                 <exclude reference="x4q-Qd-09S"/>
+                                <exclude reference="6mm-Jb-beE"/>
                                 <exclude reference="wEb-WF-MMz"/>
                                 <exclude reference="P4j-nY-Yks"/>
                                 <exclude reference="kRP-oR-7W9"/>
@@ -326,6 +340,7 @@
                                 <include reference="Qfk-DE-B6o"/>
                                 <include reference="eud-PY-gJe"/>
                                 <include reference="JBK-A4-C0e"/>
+                                <include reference="RHW-qp-KYe"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="FcR-YE-ekI"/>
@@ -336,6 +351,8 @@
                                 <include reference="zmQ-D8-XJ8"/>
                                 <include reference="4l6-na-5p0"/>
                                 <include reference="zBc-wC-Rfg"/>
+                                <include reference="PBe-Ms-4Yp"/>
+                                <include reference="6mm-Jb-beE"/>
                             </mask>
                         </variation>
                     </view>
@@ -346,6 +363,7 @@
                         <outlet property="increasingDecreasingSegmentedControl" destination="Qfk-DE-B6o" id="4aV-mW-94U"/>
                         <outlet property="personTableView" destination="Mav-Kn-G7E" id="ZqD-Lt-F2J"/>
                         <outlet property="subjectNumberTextField" destination="Cvj-ff-UzM" id="HOz-xa-ske"/>
+                        <outlet property="syncRecordsButton" destination="RHW-qp-KYe" id="TOW-Jb-34q"/>
                         <outlet property="timeLimitTextField" destination="eud-PY-gJe" id="pGL-hN-kvr"/>
                     </connections>
                 </viewController>

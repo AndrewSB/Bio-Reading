@@ -233,7 +233,11 @@ extension PromptPickerViewController {
     }
     
     func recordStoreLogic() {
-        parseRecord = PFObject(className: "Subject\(UserStore.subjectNumber!)".stringByReplacingOccurrencesOfString("-", withString: "_"))
+        let className = "Subject\(UserStore.subjectNumber!)".stringByReplacingOccurrencesOfString("-", withString: "_")
+        
+        parseRecord = PFObject(className: className)
+        UserStore.parseClassName.append(className)
+        
         
         parseRecord!["subjectNumber"] = UserStore.subjectNumber!
         parseRecord!["bioPerson"] = self.navigationItem.title!
