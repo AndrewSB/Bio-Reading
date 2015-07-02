@@ -222,7 +222,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHW-qp-KYe">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHW-qp-KYe">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Sync Records">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -337,8 +337,8 @@
                             <mask key="constraints">
                                 <include reference="4l6-na-5p0"/>
                                 <include reference="zBc-wC-Rfg"/>
-                                <include reference="6mm-Jb-beE"/>
                                 <include reference="PBe-Ms-4Yp"/>
+                                <include reference="6mm-Jb-beE"/>
                                 <include reference="Hfr-rd-BEz"/>
                                 <include reference="ars-Oh-koi"/>
                                 <include reference="FcR-YE-ekI"/>
