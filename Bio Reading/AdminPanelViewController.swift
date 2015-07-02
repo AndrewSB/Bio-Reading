@@ -120,20 +120,26 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
                     if let objects = objects {
                         println("found objects: \(objects)")
                         for object in objects {
-                            if 
-                            object.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
-                                println(success)
-                                if let error = error {
-                                    
-                                    let alert = UIAlertController(title: "Error saving some data", message: "\(error)", preferredStyle: .Alert)
-                                    alert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: nil))
-                                    self.presentViewController(alert, animated: true, completion: nil)
-                                }
-                                if success {
-                                    println("saved an obj")
-                                    object.unpinInBackground()
-                                }
-                            })
+                            if !Reachability.isConnectedToNetwork() {
+                                println("not connected to network")
+                                let alert = UIAlertController(title: "Not connected to internet", message: "connect and try again", preferredStyle: .Alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: nil))
+                                self.presentViewController(alert, animated: true, completion: nil)
+                            } else {
+                                object.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                                    println(success)
+                                    if let error = error {
+                                        
+                                        let alert = UIAlertController(title: "Error saving some data", message: "\(error)", preferredStyle: .Alert)
+                                        alert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: nil))
+                                        self.presentViewController(alert, animated: true, completion: nil)
+                                    }
+                                    if success {
+                                        println("saved an obj")
+                                        object.unpinInBackground()
+                                    }
+                                })
+                            }
                         }
                     }
                 }

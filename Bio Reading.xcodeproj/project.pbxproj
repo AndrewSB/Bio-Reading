@@ -28,6 +28,7 @@
 		4656DF621B2FDC0C00182C50 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF5C1B2FDC0C00182C50 /* ParseUI.framework */; };
 		4656DF691B2FF74800182C50 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF671B2FF72400182C50 /* Social.framework */; };
 		4656DF6C1B2FF79E00182C50 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF6A1B2FF79300182C50 /* Accounts.framework */; };
+		465F7FB71B451BC800709E8B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465F7FB61B451BC800709E8B /* Reachability.swift */; };
 		468123951B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468123941B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift */; };
 		469D5A811B12BBD600BDA7BD /* FamiliarityAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D5A801B12BBD600BDA7BD /* FamiliarityAlertViewController.swift */; };
 		469D5A841B12C82200BDA7BD /* MailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */; };
@@ -82,6 +83,7 @@
 		4656DF5C1B2FDC0C00182C50 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		4656DF671B2FF72400182C50 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4656DF6A1B2FF79300182C50 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		465F7FB61B451BC800709E8B /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		468123941B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeInstructionViewController.swift; sourceTree = "<group>"; };
 		469D5A801B12BBD600BDA7BD /* FamiliarityAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamiliarityAlertViewController.swift; sourceTree = "<group>"; };
 		469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposeViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				46FAC9F81AEEF60300BAFE99 /* ArrayExtension.swift */,
 				46FAC9FD1AEEF60300BAFE99 /* UIColorExtension.swift */,
 				46B5BBF01B29850F006604BA /* IntExtension.swift */,
+				465F7FB61B451BC800709E8B /* Reachability.swift */,
 			);
 			name = Extension;
 			path = "Bio Reading";
@@ -535,6 +538,7 @@
 				46FAC9F01AEEF5C300BAFE99 /* InstructionViewController.swift in Sources */,
 				469D5A841B12C82200BDA7BD /* MailComposeViewController.swift in Sources */,
 				46FACA011AEEF60300BAFE99 /* NSUserDefaultHelper.swift in Sources */,
+				465F7FB71B451BC800709E8B /* Reachability.swift in Sources */,
 				4636E1371B1CFED3004DC76C /* AdminPanelViewController.swift in Sources */,
 				46FAC9E31AEEF5AE00BAFE99 /* CuriosityViewController.swift in Sources */,
 				46FACA001AEEF60300BAFE99 /* IOHelper.swift in Sources */,
