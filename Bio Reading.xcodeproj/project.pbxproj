@@ -33,15 +33,6 @@
 		469D5A841B12C82200BDA7BD /* MailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */; };
 		46B5BBF11B29850F006604BA /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5BBF01B29850F006604BA /* IntExtension.swift */; };
 		46F8AA6C1B02882500946033 /* Practice Rhode Island.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */; };
-		46F950F51B32C1E700F6E32B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F950F11B32C1DC00F6E32B /* Bolts.framework */; };
-		46F950F61B32C1E700F6E32B /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46F950F11B32C1DC00F6E32B /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		46F950F71B32C1E700F6E32B /* ParseOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F950F21B32C1DC00F6E32B /* ParseOSX.framework */; };
-		46F950F81B32C1E700F6E32B /* ParseOSX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46F950F21B32C1DC00F6E32B /* ParseOSX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		46F950FD1B32C23A00F6E32B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F950FA1B32C23A00F6E32B /* AppDelegate.swift */; };
-		46F950FE1B32C23A00F6E32B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F950FB1B32C23A00F6E32B /* Images.xcassets */; };
-		46F950FF1B32C23A00F6E32B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F950FC1B32C23A00F6E32B /* ViewController.swift */; };
-		46F951031B32C25300F6E32B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F951021B32C25300F6E32B /* Info.plist */; };
-		46F951051B32C31D00F6E32B /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46F951041B32C31D00F6E32B /* Main.xib */; };
 		46FAC9DD1AEEF57A00BAFE99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9DC1AEEF57A00BAFE99 /* AppDelegate.swift */; };
 		46FAC9E31AEEF5AE00BAFE99 /* CuriosityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9DE1AEEF5AE00BAFE99 /* CuriosityViewController.swift */; };
 		46FAC9E41AEEF5AE00BAFE99 /* FamiliarityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9DF1AEEF5AE00BAFE99 /* FamiliarityViewController.swift */; };
@@ -70,21 +61,6 @@
 		87E3EF8F44229B24A2159656 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0AE68B0187CDF53E0F4B42 /* libPods.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		46F950F91B32C1E700F6E32B /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				46F950F61B32C1E700F6E32B /* Bolts.framework in Embed Frameworks */,
-				46F950F81B32C1E700F6E32B /* ParseOSX.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericWrapper.swift; sourceTree = "<group>"; };
 		463D82001B3257C80053A83F /* PushNoAnimationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNoAnimationSegue.swift; sourceTree = "<group>"; };
@@ -111,14 +87,6 @@
 		469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposeViewController.swift; sourceTree = "<group>"; };
 		46B5BBF01B29850F006604BA /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Practice Rhode Island.plist"; sourceTree = "<group>"; };
-		46F950D01B32C12800F6E32B /* Bio Reading Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bio Reading Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		46F950F11B32C1DC00F6E32B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		46F950F21B32C1DC00F6E32B /* ParseOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseOSX.framework; sourceTree = "<group>"; };
-		46F950FA1B32C23A00F6E32B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		46F950FB1B32C23A00F6E32B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		46F950FC1B32C23A00F6E32B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		46F951021B32C25300F6E32B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46F951041B32C31D00F6E32B /* Main.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Main.xib; sourceTree = "<group>"; };
 		46FAC9B31AEEF4F600BAFE99 /* Bio Reading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bio Reading.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FAC9DB1AEEF57A00BAFE99 /* Bio Reading-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bio Reading-Bridging-Header.h"; sourceTree = "<group>"; };
 		46FAC9DC1AEEF57A00BAFE99 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,15 +122,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		46F950CD1B32C12800F6E32B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				46F950F51B32C1E700F6E32B /* Bolts.framework in Frameworks */,
-				46F950F71B32C1E700F6E32B /* ParseOSX.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		46FAC9B01AEEF4F600BAFE99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -309,26 +268,6 @@
 			name = Practice;
 			sourceTree = "<group>";
 		};
-		46F950D11B32C12800F6E32B /* Bio Reading Mac */ = {
-			isa = PBXGroup;
-			children = (
-				46F950FA1B32C23A00F6E32B /* AppDelegate.swift */,
-				46F950FB1B32C23A00F6E32B /* Images.xcassets */,
-				46F950FC1B32C23A00F6E32B /* ViewController.swift */,
-				46F951041B32C31D00F6E32B /* Main.xib */,
-				46F950D21B32C12800F6E32B /* Supporting Files */,
-			);
-			path = "Bio Reading Mac";
-			sourceTree = "<group>";
-		};
-		46F950D21B32C12800F6E32B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				46F951021B32C25300F6E32B /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		46F950EF1B32C1D000F6E32B /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,21 +277,11 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		46F950F01B32C1DC00F6E32B /* parse-osx-library-1.7.4 */ = {
-			isa = PBXGroup;
-			children = (
-				46F950F11B32C1DC00F6E32B /* Bolts.framework */,
-				46F950F21B32C1DC00F6E32B /* ParseOSX.framework */,
-			);
-			path = "parse-osx-library-1.7.4";
-			sourceTree = "<group>";
-		};
 		46FAC9AA1AEEF4F600BAFE99 = {
 			isa = PBXGroup;
 			children = (
 				46FAC9B51AEEF4F600BAFE99 /* Bio Reading */,
 				70B0BC6E9707F2D0F190EBDD /* Library */,
-				46F950D11B32C12800F6E32B /* Bio Reading Mac */,
 				46FAC9B41AEEF4F600BAFE99 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -361,7 +290,6 @@
 			isa = PBXGroup;
 			children = (
 				46FAC9B31AEEF4F600BAFE99 /* Bio Reading.app */,
-				46F950D01B32C12800F6E32B /* Bio Reading Mac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -445,7 +373,6 @@
 		70B0BC6E9707F2D0F190EBDD /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				46F950F01B32C1DC00F6E32B /* parse-osx-library-1.7.4 */,
 				46F950EF1B32C1D000F6E32B /* iOS */,
 			);
 			name = Library;
@@ -463,24 +390,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		46F950CF1B32C12800F6E32B /* Bio Reading Mac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 46F950ED1B32C12900F6E32B /* Build configuration list for PBXNativeTarget "Bio Reading Mac" */;
-			buildPhases = (
-				46F950CC1B32C12800F6E32B /* Sources */,
-				46F950CD1B32C12800F6E32B /* Frameworks */,
-				46F950CE1B32C12800F6E32B /* Resources */,
-				46F950F91B32C1E700F6E32B /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Bio Reading Mac";
-			productName = "Bio Reading Mac";
-			productReference = 46F950D01B32C12800F6E32B /* Bio Reading Mac.app */;
-			productType = "com.apple.product-type.application";
-		};
 		46FAC9B21AEEF4F600BAFE99 /* Bio Reading */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46FAC9D51AEEF4F600BAFE99 /* Build configuration list for PBXNativeTarget "Bio Reading" */;
@@ -510,10 +419,6 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Andrew Breckenridge";
 				TargetAttributes = {
-					46F950CF1B32C12800F6E32B = {
-						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = 2Z475Y2H59;
-					};
 					46FAC9B21AEEF4F600BAFE99 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 2Z475Y2H59;
@@ -539,22 +444,11 @@
 			projectRoot = "";
 			targets = (
 				46FAC9B21AEEF4F600BAFE99 /* Bio Reading */,
-				46F950CF1B32C12800F6E32B /* Bio Reading Mac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		46F950CE1B32C12800F6E32B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				46F951031B32C25300F6E32B /* Info.plist in Resources */,
-				46F951051B32C31D00F6E32B /* Main.xib in Resources */,
-				46F950FE1B32C23A00F6E32B /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		46FAC9B11AEEF4F600BAFE99 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -623,15 +517,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		46F950CC1B32C12800F6E32B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				46F950FF1B32C23A00F6E32B /* ViewController.swift in Sources */,
-				46F950FD1B32C23A00F6E32B /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		46FAC9AF1AEEF4F600BAFE99 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -662,50 +547,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		46F950E91B32C12900F6E32B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/parse-osx-library-1.7.4",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Bio Reading Mac/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		46F950EA1B32C12900F6E32B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/parse-osx-library-1.7.4",
-				);
-				INFOPLIST_FILE = "Bio Reading Mac/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
 		46FAC9D31AEEF4F600BAFE99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -851,15 +692,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		46F950ED1B32C12900F6E32B /* Build configuration list for PBXNativeTarget "Bio Reading Mac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				46F950E91B32C12900F6E32B /* Debug */,
-				46F950EA1B32C12900F6E32B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		46FAC9AE1AEEF4F600BAFE99 /* Build configuration list for PBXProject "Bio Reading" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
