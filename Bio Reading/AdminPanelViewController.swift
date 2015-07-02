@@ -113,10 +113,29 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
             q.fromLocalDatastore()
             q.findObjectsInBackgroundWithBlock({ (objects: [AnyObject]?, error: NSError?) -> Void in
                 if let error = error {
-                    println("error \(error)")
+                    let alert = UIAlertController(title: "Error finding some data", message: "\(error)", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
                 } else {
-                    println("found \(objects?.count) objects")
-                    println("they are \(objects)")
+                    if let objects = objects {
+                        println("found objects: \(objects)")
+                        for object in objects {
+                            if 
+                            object.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                                println(success)
+                                if let error = error {
+                                    
+                                    let alert = UIAlertController(title: "Error saving some data", message: "\(error)", preferredStyle: .Alert)
+                                    alert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: nil))
+                                    self.presentViewController(alert, animated: true, completion: nil)
+                                }
+                                if success {
+                                    println("saved an obj")
+                                    object.unpinInBackground()
+                                }
+                            })
+                        }
+                    }
                 }
             })
         }
