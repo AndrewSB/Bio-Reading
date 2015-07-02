@@ -236,7 +236,9 @@ extension PromptPickerViewController {
         let className = "Subject\(UserStore.subjectNumber!)".stringByReplacingOccurrencesOfString("-", withString: "_")
         
         parseRecord = PFObject(className: className)
-        UserStore.parseClassName.append(className)
+        if !UserStore.parseClassName.contains(className) {
+            UserStore.parseClassName.insert(className)
+        }
         
         
         parseRecord!["subjectNumber"] = UserStore.subjectNumber!

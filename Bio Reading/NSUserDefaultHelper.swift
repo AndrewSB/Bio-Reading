@@ -181,16 +181,16 @@ class UserStore {
         }
     }
     
-    class var parseClassName: [String] {
+    class var parseClassName: Set<String> {
         get {
             if let arr = get(storeKeys.parseClassNames.rawValue) as? [String] {
-                return arr
+                return Set(arr)
             } else {
-                return [String]()
+                return Set<String>()
             }
         }
         set {
-            set(newValue, forKey: storeKeys.parseClassNames.rawValue)
+            set(Array(newValue), forKey: storeKeys.parseClassNames.rawValue)
         }
     }
 }

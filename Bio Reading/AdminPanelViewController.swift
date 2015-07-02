@@ -106,19 +106,19 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
             }
         }
         
-        let queries = UserStore.parseClassName.map({ (className) -> PFQuery in
-            let q = PFQuery(className: className)
-            q.fromLocalDatastore()
-            return q
-        })
+        let classes = UserStore.parseClassName
         
-        for query in queries {
-            let foundObjects = query.findObjects() as! [PFObject]
-            for object in foundObjects {
-                object.save()
-                object.unpin()
-                savedObjects++
-            }
+        for clas in classes {
+            let q = PFQuery(className: clas)
+            q.fromLocalDatastore()
+            q.findObjectsInBackgroundWithBlock({ (objects: [AnyObject]?, error: NSError?) -> Void in
+                if let error = error {
+                    println("error \(error)")
+                } else {
+                    println("found \(objects?.count) objects")
+                    println("they are \(objects)")
+                }
+            })
         }
         
         syncRecordsButton.setTitle("Done syncing records", forState: .Normal)
