@@ -9,13 +9,14 @@
 import UIKit
 
 class InstructionViewController: UIViewController {
+    
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var instructionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        instructionLabel.font = UIFont(name: "HelveticaNeue", size: get("fontSize") as! CGFloat)
+        instructionLabel.font = UIFont.HelveticaNeue()
     }
     
     override func viewDidAppear(animated: Bool) {

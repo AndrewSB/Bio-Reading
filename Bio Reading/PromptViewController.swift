@@ -10,11 +10,14 @@ import UIKit
 import Darwin
 
 import Parse
-import Bolts
 
 class PromptViewController: UIViewController {
-    var index = Int()
-    var person = String()
+    
+    @IBOutlet weak var promptLabel: UILabel!
+    @IBOutlet weak var continueButton: UIButton!
+    
+    var index: Int!
+    var person: String!
     var isTimed = NSUserDefaults.standardUserDefaults().objectForKey("timed") as! Bool
     
     var startTime: NSDate!
@@ -24,15 +27,10 @@ class PromptViewController: UIViewController {
     
     var curTime = UserStore.currentTime!
     
-    @IBOutlet weak var promptLabel: UILabel!
-    @IBOutlet weak var continueButton: UIButton!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        promptLabel.font = UIFont(name: "HelveticaNeue", size: get("fontSize") as! CGFloat)
-        
+        promptLabel.font = UIFont.HelveticaNeue()
         promptLabel.text = IO.getSentance(person, index: index)
         
         navigationItem.title = title

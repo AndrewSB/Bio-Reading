@@ -1,5 +1,5 @@
 //
-//  FamiliarityAlertViewController.swift
+//  FamiliarityAlertController.swift
 //  Bio Reading
 //
 //  Created by Andrew Breckenridge on 5/24/15.
@@ -8,7 +8,8 @@
 
 import UIKit
 
-class FamiliarityAlertViewController: UIAlertController {
+class FamiliarityAlertController: UIAlertController {
+    
     var person: String?
     var slider: UISlider!
     

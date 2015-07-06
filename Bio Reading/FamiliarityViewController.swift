@@ -7,18 +7,17 @@
 //
 
 import UIKit
-
 import Parse
-import Bolts
 
 class FamiliarityViewController: UIViewController {
+    
     @IBOutlet weak var howCuriousLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
     
     var parseRecord: PFObject?
     
-    var person = String()
-    var index = Int()
+    var person: String!
+    var index: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +25,6 @@ class FamiliarityViewController: UIViewController {
     }
     
     @IBAction func nextButtonWasHit() {
-
         self.performSegueWithIdentifier("unwindToPrompt", sender: nil)
     }
     

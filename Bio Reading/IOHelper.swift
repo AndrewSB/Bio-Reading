@@ -7,10 +7,14 @@
 //
 
 import Foundation
-import UIKit
 
-
+// Types (are the bomb)
 typealias stringIntTuple = (String, Int)
+
+enum RTCond: Int {
+    case Increasing = 0
+    case Decreasing = 1
+}
 
 enum BioPersons: String, Printable {
     case Curie = "Marie Curie"
@@ -39,14 +43,10 @@ enum BioPersons: String, Printable {
     static let allValues = [Curie, Shakespeare, Newton, Teresa, Dickinson, Gandhi]
 }
 
-enum RTCond: Int {
-    case Increasing = 0
-    case Decreasing = 1
-}
 
-
-
+// IO
 class IO {
+    
     class var people: [String] {
         get {
             return BioPersons.allValues.map({$0.rawValue})
@@ -113,4 +113,5 @@ class IO {
         return nil
 
     }
+
 }

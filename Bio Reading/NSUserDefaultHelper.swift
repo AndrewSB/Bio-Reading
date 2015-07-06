@@ -6,12 +6,11 @@
 //  Copyright (c) 2015 Andrew Breckenridge. All rights reserved.
 //
 
-import CoreData
-
-let set = NSUserDefaults.standardUserDefaults().setObject
-let get = NSUserDefaults.standardUserDefaults().objectForKey
-
 class UserStore {
+
+    static let set = NSUserDefaults.standardUserDefaults().setObject
+    static let get = NSUserDefaults.standardUserDefaults().objectForKey
+    
     enum storeKeys: String {
         case subjectNumber = "subjectNumber"
         case timeLimit = "timeLimit"
@@ -193,4 +192,5 @@ class UserStore {
             set(Array(newValue), forKey: storeKeys.parseClassNames.rawValue)
         }
     }
+    
 }

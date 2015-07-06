@@ -30,9 +30,10 @@
 		4656DF6C1B2FF79E00182C50 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF6A1B2FF79300182C50 /* Accounts.framework */; };
 		465F7FB71B451BC800709E8B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465F7FB61B451BC800709E8B /* Reachability.swift */; };
 		468123951B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468123941B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift */; };
-		469D5A811B12BBD600BDA7BD /* FamiliarityAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D5A801B12BBD600BDA7BD /* FamiliarityAlertViewController.swift */; };
+		469D5A811B12BBD600BDA7BD /* FamiliarityAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D5A801B12BBD600BDA7BD /* FamiliarityAlertController.swift */; };
 		469D5A841B12C82200BDA7BD /* MailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */; };
 		46B5BBF11B29850F006604BA /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5BBF01B29850F006604BA /* IntExtension.swift */; };
+		46F452981B4B1FBB00022853 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F452971B4B1FBB00022853 /* UIFontExtension.swift */; };
 		46F8AA6C1B02882500946033 /* Practice Rhode Island.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */; };
 		46FAC9DD1AEEF57A00BAFE99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9DC1AEEF57A00BAFE99 /* AppDelegate.swift */; };
 		46FAC9E31AEEF5AE00BAFE99 /* CuriosityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9DE1AEEF5AE00BAFE99 /* CuriosityViewController.swift */; };
@@ -85,9 +86,10 @@
 		4656DF6A1B2FF79300182C50 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		465F7FB61B451BC800709E8B /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		468123941B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeInstructionViewController.swift; sourceTree = "<group>"; };
-		469D5A801B12BBD600BDA7BD /* FamiliarityAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamiliarityAlertViewController.swift; sourceTree = "<group>"; };
+		469D5A801B12BBD600BDA7BD /* FamiliarityAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamiliarityAlertController.swift; sourceTree = "<group>"; };
 		469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposeViewController.swift; sourceTree = "<group>"; };
 		46B5BBF01B29850F006604BA /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		46F452971B4B1FBB00022853 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		46F8AA6B1B02882500946033 /* Practice Rhode Island.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Practice Rhode Island.plist"; sourceTree = "<group>"; };
 		46FAC9B31AEEF4F600BAFE99 /* Bio Reading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bio Reading.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FAC9DB1AEEF57A00BAFE99 /* Bio Reading-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bio Reading-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				46FAC9FD1AEEF60300BAFE99 /* UIColorExtension.swift */,
 				46B5BBF01B29850F006604BA /* IntExtension.swift */,
 				465F7FB61B451BC800709E8B /* Reachability.swift */,
+				46F452971B4B1FBB00022853 /* UIFontExtension.swift */,
 			);
 			name = Extension;
 			path = "Bio Reading";
@@ -271,15 +274,6 @@
 			name = Practice;
 			sourceTree = "<group>";
 		};
-		46F950EF1B32C1D000F6E32B /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				462BFA0E1B01E10E00028FB6 /* Internal */,
-				462BFA0F1B01E11600028FB6 /* External */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 		46FAC9AA1AEEF4F600BAFE99 = {
 			isa = PBXGroup;
 			children = (
@@ -346,7 +340,7 @@
 		46FAC9F71AEEF5F500BAFE99 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				469D5A801B12BBD600BDA7BD /* FamiliarityAlertViewController.swift */,
+				469D5A801B12BBD600BDA7BD /* FamiliarityAlertController.swift */,
 				463D82001B3257C80053A83F /* PushNoAnimationSegue.swift */,
 				46FAC9F41AEEF5EE00BAFE99 /* PromptCollectionViewCell.swift */,
 			);
@@ -376,7 +370,8 @@
 		70B0BC6E9707F2D0F190EBDD /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				46F950EF1B32C1D000F6E32B /* iOS */,
+				462BFA0E1B01E10E00028FB6 /* Internal */,
+				462BFA0F1B01E11600028FB6 /* External */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -531,9 +526,10 @@
 				468123951B1D7EEA00D5F497 /* FirstTimeInstructionViewController.swift in Sources */,
 				46FAC9DD1AEEF57A00BAFE99 /* AppDelegate.swift in Sources */,
 				462BFA121B01E3FB00028FB6 /* GenericWrapper.swift in Sources */,
-				469D5A811B12BBD600BDA7BD /* FamiliarityAlertViewController.swift in Sources */,
+				469D5A811B12BBD600BDA7BD /* FamiliarityAlertController.swift in Sources */,
 				46FACA031AEEF60300BAFE99 /* UIColorExtension.swift in Sources */,
 				46FAC9EF1AEEF5C300BAFE99 /* InitialViewController.swift in Sources */,
+				46F452981B4B1FBB00022853 /* UIFontExtension.swift in Sources */,
 				46FAC9E51AEEF5AE00BAFE99 /* PromptPickerViewController.swift in Sources */,
 				46FAC9F01AEEF5C300BAFE99 /* InstructionViewController.swift in Sources */,
 				469D5A841B12C82200BDA7BD /* MailComposeViewController.swift in Sources */,

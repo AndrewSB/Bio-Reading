@@ -11,14 +11,13 @@ import UIKit
 import CoreData
 
 import Parse
-import Bolts
-
 import Fabric
 import Crashlytics
 
 var globalTimerLabel: MZTimerLabel!
 
 class PromptPickerViewController: UIViewController {
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -37,7 +36,6 @@ class PromptPickerViewController: UIViewController {
             UserStore.currentBio = curBioIndex
         }
     }
-    
     var curPerson: (String, Bool)! {
         didSet { newPerson() }
     }
@@ -103,11 +101,9 @@ class PromptPickerViewController: UIViewController {
         
         if let des = segue.destinationViewController as? PromptViewController {
             des.parseRecord = self.parseRecord!
-            println("st")
         }
         
         if let s = segue.destinationViewController as? CuriosityViewController {
-            println("op")
             s.person = self.navigationItem.title!
             s.index = selectedIndex
             
@@ -128,7 +124,9 @@ class PromptPickerViewController: UIViewController {
     @IBAction func unwindToPromptPickerViewController(segue: UIStoryboardSegue) {}
 }
 
+
 extension PromptPickerViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
     func collectionView(colorCollectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return selected.count
     }
@@ -156,7 +154,6 @@ extension PromptPickerViewController: UICollectionViewDelegate, UICollectionView
             
             parseRecord!["order"] = selected.filter({ $0 }).count + 1
             parseRecord!["dateTime"] = NSDate()
-//            parseRecord!["cue"] = indexPath.item + 1
             parseRecord!["CPIDR"] = IO.getCPIDR(curPerson.0, index: indexPath.item)
             parseRecord!["Sentance"] = IO.getSentance(curPerson.0, index: indexPath.item)
             
@@ -174,6 +171,7 @@ extension PromptPickerViewController: UICollectionViewDelegate, UICollectionView
 }
 
 extension PromptPickerViewController {
+    
     func foragingLogic() {
         if curPerson.1 { //foraging
             view.userInteractionEnabled = true
@@ -222,7 +220,6 @@ extension PromptPickerViewController {
         doneAlert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: { (alertController) in
             if self.curPersonIndex +  1 <= UserStore.bios.count {
                 self.curBioIndex = self.curBioIndex + 1
-//                self.performSegueWithIdentifier("segueToFam", sender: self.curPerson.0)
             }
         }))
         

@@ -9,6 +9,7 @@
 import UIKit
 
 class InitialViewController: UIViewController {
+    
     var swiped = false {
         didSet {
             if swiped {
@@ -23,7 +24,6 @@ class InitialViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
         swiped = false
     }
     

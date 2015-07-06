@@ -10,5 +10,4 @@ import UIKit
 
 class PromptCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var promptLabel: UILabel!
-    
 }

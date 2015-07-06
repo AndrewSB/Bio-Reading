@@ -11,7 +11,7 @@ import UIKit
 
 extension UIColor {
 
-    class func niceGreenColor() -> UIColor {
+    class func niceGreenColor() -> UIColor { // *nice*
         return UIColor().colorWithHexString("#40B0B1")
     }
     
@@ -36,4 +36,5 @@ extension UIColor {
             alpha: CGFloat(1.0)
         )
     }
+    
 }

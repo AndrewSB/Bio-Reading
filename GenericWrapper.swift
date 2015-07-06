@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Andrew Breckenridge. All rights reserved.
 //
 
+// This data structure is used to store Bios in NSUserDefaults
+
 import Foundation
 
 class GenericWrapper<T> {

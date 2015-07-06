@@ -11,7 +11,7 @@ import UIKit
 import Parse
 import Bolts
 
-class AdminPanelViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AdminPanelViewController: UIViewController {
 
     @IBOutlet weak var subjectNumberTextField: UITextField!
     @IBOutlet weak var timeLimitTextField: UITextField!
@@ -34,63 +34,12 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let num = NSUserDefaults.standardUserDefaults().objectForKey("subjectNumber") as? Int {
-            subjectNumberTextField.text = "\(num)"
-        }
         
-        increasingDecreasingSegmentedControl.selectedSegmentIndex = UserStore.rTCond!.hashValue
-        
-        fontLabel.font = UIFont(name: "HelveticaNeue", size: get("fontSize") as! CGFloat)
-        timeLimitTextField.text = "\(UserStore.timeLimit!)"
-        
-        fontStepper.value = Double(fontLabel.font.pointSize)
+        restoreStateFromDefaults()
         
         personTableView.delegate = self
         personTableView.dataSource = self
-        
         personTableView.setEditing(true, animated: true)
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return randBios.count
-    }
-
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! UITableViewCell
-        
-        cell.textLabel?.text = randBios[indexPath.row].0
-        cell.detailTextLabel?.text = randBios[indexPath.row].1 ? "Foraging" : "Control"
-        
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        randBios[indexPath.row].1 = !randBios[indexPath.row].1
-        
-        tableView.reloadData()
-    }
-    
-    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        return UITableViewCellEditingStyle.None
-    }
-    
-    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-
-        let temp = randBios[sourceIndexPath.row]
-        randBios.removeAtIndex(sourceIndexPath.row)
-        randBios.insert(temp, atIndex: destinationIndexPath.row)
-        
-        tableView.reloadData()
-    }
-    
-    @IBAction func emailLogsButtonWasHit(sender: AnyObject) {
-        
     }
     
     @IBAction func stepperValue(sender: AnyObject) {
@@ -152,8 +101,68 @@ class AdminPanelViewController: UIViewController, UITableViewDataSource, UITable
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
-        println("set font size as \(CGFloat(fontStepper.value))")
         
+        saveStoreToDefaults()
+    }
+}
+
+// Table View
+extension AdminPanelViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return randBios.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! UITableViewCell
+        
+        cell.textLabel?.text = randBios[indexPath.row].0
+        cell.detailTextLabel?.text = randBios[indexPath.row].1 ? "Foraging" : "Control"
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        randBios[indexPath.row].1 = !randBios[indexPath.row].1
+        
+        tableView.reloadData()
+    }
+    
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.None
+    }
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        
+        let temp = randBios[sourceIndexPath.row]
+        randBios.removeAtIndex(sourceIndexPath.row)
+        randBios.insert(temp, atIndex: destinationIndexPath.row)
+        
+        tableView.reloadData()
+    }
+}
+
+// State
+extension AdminPanelViewController {
+    private func restoreStateFromDefaults() {
+        if let num = NSUserDefaults.standardUserDefaults().objectForKey("subjectNumber") as? Int {
+            subjectNumberTextField.text = "\(num)"
+        }
+        
+        increasingDecreasingSegmentedControl.selectedSegmentIndex = UserStore.rTCond!.hashValue
+        
+        timeLimitTextField.text = "\(UserStore.timeLimit!)"
+
+        fontLabel.font = UIFont.HelveticaNeue()
+        fontStepper.value = Double(fontLabel.font.pointSize)
+    }
+    
+    private func saveStoreToDefaults() {
         UserStore.fontSize = CGFloat(fontStepper.value)
         UserStore.bios = randBios
         UserStore.subjectNumber = subjectNumberTextField.text.toInt()

@@ -7,30 +7,23 @@
 //
 
 import UIKit
-
 import Parse
-import Bolts
 
 class CuriosityViewController: UIViewController {
+    
     @IBOutlet weak var howCuriousLabel: UILabel!
     @IBOutlet weak var howCuriousSlider: UISlider!
     
-    var person = String()
-    var index = Int()
+    var person: String!
+    var index: Int!
     
     var parseRecord: PFObject!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        println(" lol \(navigationItem.title)")
-
-    }
-    
-
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        
         parseRecord["curiosity"] = howCuriousSlider.value
+        
         if let des = segue.destinationViewController as? PromptViewController {
             des.parseRecord = self.parseRecord
             des.title = navigationItem.title
