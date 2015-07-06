@@ -14,7 +14,6 @@ import Parse
 class RecallViewController: UIViewController {
     
     @IBOutlet weak var waveView: EZAudioPlotGL!
-    @IBOutlet weak var recordButton: UIButton!
 
     let soundFileURL = NSURL(fileURLWithPath: (NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String).stringByAppendingPathComponent("\(UserStore.subjectNumber!):\(NSUUID().UUIDString)sound.wav"))!
     
@@ -62,6 +61,7 @@ class RecallViewController: UIViewController {
 
 // EZMicrophone
 extension RecallViewController: AVAudioPlayerDelegate, EZMicrophoneDelegate {
+    
     func microphone(microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
         dispatch_async(dispatch_get_main_queue(), {
             self.waveView.updateBuffer(buffer[0], withBufferSize: bufferSize)
@@ -82,4 +82,5 @@ extension RecallViewController: AVAudioPlayerDelegate, EZMicrophoneDelegate {
             println("pinned")
         })
     }
+    
 }
