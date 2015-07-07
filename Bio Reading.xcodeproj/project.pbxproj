@@ -10,6 +10,8 @@
 		462BFA121B01E3FB00028FB6 /* GenericWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */; };
 		4636E1371B1CFED3004DC76C /* AdminPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9E91AEEF5C300BAFE99 /* AdminPanelViewController.swift */; };
 		463D82011B3257C80053A83F /* PushNoAnimationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463D82001B3257C80053A83F /* PushNoAnimationSegue.swift */; };
+		464D50CA1B4B33A300F0A1D5 /* Bio_Reading.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 464D50C91B4B33A300F0A1D5 /* Bio_Reading.xcdatamodel */; };
+		464D50CE1B4B33F300F0A1D5 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D50CD1B4B33F300F0A1D5 /* Record.swift */; };
 		4656DF481B2FDBD800182C50 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF3F1B2FDBD700182C50 /* AudioToolbox.framework */; };
 		4656DF491B2FDBD800182C50 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF401B2FDBD700182C50 /* CFNetwork.framework */; };
 		4656DF4A1B2FDBD800182C50 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF411B2FDBD700182C50 /* CoreGraphics.framework */; };
@@ -66,6 +68,8 @@
 /* Begin PBXFileReference section */
 		462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericWrapper.swift; sourceTree = "<group>"; };
 		463D82001B3257C80053A83F /* PushNoAnimationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNoAnimationSegue.swift; sourceTree = "<group>"; };
+		464D50C91B4B33A300F0A1D5 /* Bio_Reading.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bio_Reading.xcdatamodel; sourceTree = "<group>"; };
+		464D50CD1B4B33F300F0A1D5 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		4656DF3F1B2FDBD700182C50 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4656DF401B2FDBD700182C50 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		4656DF411B2FDBD700182C50 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -351,6 +355,8 @@
 		46FACA141AEEF61A00BAFE99 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				464D50C91B4B33A300F0A1D5 /* Bio_Reading.xcdatamodel */,
+				464D50CD1B4B33F300F0A1D5 /* Record.swift */,
 				462BF9DC1B01E00100028FB6 /* Bios */,
 				46FACA151AEEF62600BAFE99 /* Images.xcassets */,
 			);
@@ -520,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46B5BBF11B29850F006604BA /* IntExtension.swift in Sources */,
+				464D50CA1B4B33A300F0A1D5 /* Bio_Reading.xcdatamodel in Sources */,
 				46FAC9E61AEEF5AE00BAFE99 /* PromptViewController.swift in Sources */,
 				463D82011B3257C80053A83F /* PushNoAnimationSegue.swift in Sources */,
 				46FAC9E41AEEF5AE00BAFE99 /* FamiliarityViewController.swift in Sources */,
@@ -533,6 +540,7 @@
 				46FAC9E51AEEF5AE00BAFE99 /* PromptPickerViewController.swift in Sources */,
 				46FAC9F01AEEF5C300BAFE99 /* InstructionViewController.swift in Sources */,
 				469D5A841B12C82200BDA7BD /* MailComposeViewController.swift in Sources */,
+				464D50CE1B4B33F300F0A1D5 /* Record.swift in Sources */,
 				46FACA011AEEF60300BAFE99 /* NSUserDefaultHelper.swift in Sources */,
 				465F7FB71B451BC800709E8B /* Reachability.swift in Sources */,
 				4636E1371B1CFED3004DC76C /* AdminPanelViewController.swift in Sources */,
