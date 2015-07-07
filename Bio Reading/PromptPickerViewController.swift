@@ -76,7 +76,6 @@ class PromptPickerViewController: UIViewController {
                 managedObjectContext.save(nil)
             }
             curRecord = NSEntityDescription.insertNewObjectForEntityForName("Record", inManagedObjectContext: managedObjectContext) as! Record
-
         }
         
         recordStoreLogic()
@@ -166,10 +165,15 @@ extension PromptPickerViewController: UICollectionViewDelegate, UICollectionView
         if !selected[indexPath.row] {
             curSentance = indexPath.row
             
+            onePassFlag = false
+            
+            let sen = IO.getSentance(curPerson.0, index: indexPath.item)!
+          
+          
             curRecord.order = selected.filter({ $0 }).count + 1
             curRecord.dateTime = NSDate()
-            curRecord.cpidr = IO.getCPIDR(curPerson.0, index: indexPath.item)
-            curRecord.sentance = IO.getSentance(curPerson.0, index: indexPath.item)
+            curRecord.cpidr = IO.getCPIDR(curPerson.0, index: indexPath.item)!
+            curRecord.sentance = IO.getSentance(curPerson.0, index: indexPath.item)!
             
             collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.grayColor()
             selected[indexPath.row] = true
@@ -200,8 +204,6 @@ extension PromptPickerViewController {
                     cellIndexSelectionPool.append(i!)
                 }
             }
-            
-            onePassFlag = false
             
             Crashlytics().setObjectValue(cellIndexSelectionPool, forKey: "cell index row")
         
@@ -246,6 +248,7 @@ extension PromptPickerViewController {
     }
     
     func recordStoreLogic() {
+        println(UserStore.subjectNumber)
         curRecord.subjectNumber = UserStore.subjectNumber!
         curRecord.bioPerson = self.navigationItem.title!
         curRecord.rTCond = curPerson.1 ? "Foraging" : (UserStore.rTCond! == .Increasing ? "Increasing" : "Decreasing")

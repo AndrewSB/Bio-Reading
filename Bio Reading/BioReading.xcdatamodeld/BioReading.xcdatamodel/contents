@@ -3,9 +3,7 @@
     <entity name="Record" representedClassName="Bio_Reading.Record" syncable="YES">
         <attribute name="audioFile" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="bioPerson" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="condition" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="cpidr" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="cue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="curiosity" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
         <attribute name="dateTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="familiarity" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
@@ -16,6 +14,6 @@
         <attribute name="subjectNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Record" positionX="-54" positionY="-9" width="128" height="240"/>
+        <element name="Record" positionX="-54" positionY="-9" width="128" height="210"/>
     </elements>
 </model>

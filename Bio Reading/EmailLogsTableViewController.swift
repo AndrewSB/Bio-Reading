@@ -33,7 +33,9 @@ class EmailLogsTableViewController: UITableViewController {
                     self.sortedRecords[n] = [Record]()
                 }
                 
-                self.sortedRecords[n]!.append(record)
+                if record.dateTime != nil {
+                    self.sortedRecords[n]!.append(record)
+                }
             }
             
             dispatch_async(dispatch_get_main_queue(), {

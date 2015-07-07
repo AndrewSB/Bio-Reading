@@ -2,7 +2,7 @@
 //  Record.swift
 //  
 //
-//  Created by Andrew Breckenridge on 7/6/15.
+//  Created by Andrew Breckenridge on 7/7/15.
 //
 //
 
@@ -14,26 +14,29 @@ class Record: NSManagedObject {
 
     @NSManaged var audioFile: NSData!
     @NSManaged var bioPerson: String!
-    @NSManaged var condition: NSNumber!
-    @NSManaged var cue: NSNumber!
+    @NSManaged var cpidr: NSNumber!
     @NSManaged var curiosity: NSDecimalNumber!
     @NSManaged var dateTime: NSDate!
     @NSManaged var familiarity: NSDecimalNumber!
     @NSManaged var order: NSNumber!
     @NSManaged var readingTime: NSNumber!
     @NSManaged var rTCond: String!
-    @NSManaged var subjectNumber: NSNumber!
-    @NSManaged var cpidr: NSNumber!
     @NSManaged var sentance: String!
-    
-    var stringified: String {
-        get {
-            return join(",", [subjectNumber, curiosity, familiarity, bioPerson, cue, order, rTCond, dateTime, readingTime].map({"\($0)"}))
+    @NSManaged var subjectNumber: NSNumber!
+  
+  var stringified: String? {
+    get {
+        if dateTime != nil {
+            return Optional<String>(join(",", [subjectNumber, curiosity, familiarity, bioPerson, order, rTCond, dateTime, readingTime].map({"\($0)"})))
+        } else {
+            return nil
         }
     }
-    
-    var parsified: PFObject {
-        get {
+  }
+  
+  var parsified: PFObject? {
+    get {
+        if dateTime != nil {
             let subjectNumberString = "\(subjectNumber)".stringByReplacingOccurrencesOfString("-", withString: "_")
             
             let object = PFObject(className: "Subject\(subjectNumberString)")
@@ -41,7 +44,7 @@ class Record: NSManagedObject {
             object["CPIDR"] = cpidr
             object["sentance"] = sentance
             
-            let fileName = "Audio\(subjectNumberString)_\(bioPerson)_\(cue)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())
+            let fileName = "Audio\(subjectNumberString)_\(bioPerson)_\(order)".stringByReplacingOccurrencesOfString("-", withString: "_")
             object["audioFile"] = PFFile(name: fileName, data: audioFile, contentType: "audio/wav")
             
             object["bioPerson"] = bioPerson
@@ -53,7 +56,10 @@ class Record: NSManagedObject {
             object["subjectNumber"] = subjectNumber
             
             return object
+        } else {
+            return nil
         }
     }
+  }
 
 }
