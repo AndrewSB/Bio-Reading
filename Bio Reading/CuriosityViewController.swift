@@ -17,15 +17,15 @@ class CuriosityViewController: UIViewController {
     var person: String!
     var index: Int!
     
-    var parseRecord: PFObject!
+    var curRecord: Record!
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         
-        parseRecord["curiosity"] = howCuriousSlider.value
+        curRecord.curiosity = NSDecimalNumber(float: howCuriousSlider.value)
         
         if let des = segue.destinationViewController as? PromptViewController {
-            des.parseRecord = self.parseRecord
+            des.curRecord = self.curRecord
             des.title = navigationItem.title
             des.index = index
             des.person = person

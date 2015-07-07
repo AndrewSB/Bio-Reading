@@ -23,7 +23,7 @@ class PromptViewController: UIViewController {
     var startTime: NSDate!
     var timer: NSTimer?
     
-    var parseRecord: PFObject!
+    var curRecord: Record!
     
     var curTime = UserStore.currentTime!
     
@@ -69,10 +69,10 @@ class PromptViewController: UIViewController {
         super.prepareForSegue(segue, sender: sender)
         let time = NSDate().timeIntervalSinceDate(startTime) as Double
         
-        parseRecord!["readingTime"] = time
+        curRecord.readingTime = time
         
         if let des = segue.destinationViewController as? RecallViewController {
-            des.parseRecord = self.parseRecord
+            des.curRecord = self.curRecord
         }
     }
     

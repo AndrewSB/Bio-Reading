@@ -14,7 +14,7 @@ class FamiliarityViewController: UIViewController {
     @IBOutlet weak var howCuriousLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
     
-    var parseRecord: PFObject?
+    var curRecord: Record?
     
     var person: String!
     var index: Int!
@@ -36,7 +36,7 @@ class FamiliarityViewController: UIViewController {
             des.curPersonIndex++
         }
         if let des = segue.destinationViewController as? PromptViewController {
-            des.parseRecord = self.parseRecord
+            des.curRecord = self.curRecord
         }
     }
 }

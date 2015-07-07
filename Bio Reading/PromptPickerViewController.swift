@@ -18,10 +18,12 @@ var globalTimerLabel: MZTimerLabel!
 
 class PromptPickerViewController: UIViewController {
     
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nameLabel: UILabel!
     
-    var parseRecord: PFObject?
+    var curRecord: Record!
     
     let timerLabel = MZTimerLabel()
     
@@ -42,6 +44,7 @@ class PromptPickerViewController: UIViewController {
     var curPersonIndex = 0
     
     var firstTimeInstructions = false
+    var onePassFlag = false
     
     
     override func viewDidLoad() {
@@ -65,6 +68,17 @@ class PromptPickerViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         globalTimerLabel = self.timerLabel
+        
+        if !onePassFlag {
+            onePassFlag = true
+            
+            if curRecord != nil {
+                managedObjectContext.save(nil)
+            }
+            curRecord = NSEntityDescription.insertNewObjectForEntityForName("Record", inManagedObjectContext: managedObjectContext) as! Record
+
+        }
+        
         recordStoreLogic()
         doneLogic()
     }
@@ -100,19 +114,19 @@ class PromptPickerViewController: UIViewController {
         UserStore.currentPerson = self.navigationItem.title!
         
         if let des = segue.destinationViewController as? PromptViewController {
-            des.parseRecord = self.parseRecord!
+            des.curRecord = self.curRecord
         }
         
         if let s = segue.destinationViewController as? CuriosityViewController {
             s.person = self.navigationItem.title!
             s.index = selectedIndex
             
-            s.parseRecord = self.parseRecord
+            s.curRecord = self.curRecord
         }
         
         if let des = segue.destinationViewController as? FamiliarityViewController {
             des.person = sender as! String
-            des.parseRecord = self.parseRecord!
+            des.curRecord = self.curRecord!
         }
         
         if let des = segue.destinationViewController as? FirstTimeInstructionViewController {
@@ -152,10 +166,10 @@ extension PromptPickerViewController: UICollectionViewDelegate, UICollectionView
         if !selected[indexPath.row] {
             curSentance = indexPath.row
             
-            parseRecord!["order"] = selected.filter({ $0 }).count + 1
-            parseRecord!["dateTime"] = NSDate()
-            parseRecord!["CPIDR"] = IO.getCPIDR(curPerson.0, index: indexPath.item)
-            parseRecord!["Sentance"] = IO.getSentance(curPerson.0, index: indexPath.item)
+            curRecord.order = selected.filter({ $0 }).count + 1
+            curRecord.dateTime = NSDate()
+            curRecord.cpidr = IO.getCPIDR(curPerson.0, index: indexPath.item)
+            curRecord.sentance = IO.getSentance(curPerson.0, index: indexPath.item)
             
             collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.grayColor()
             selected[indexPath.row] = true
@@ -186,6 +200,8 @@ extension PromptPickerViewController {
                     cellIndexSelectionPool.append(i!)
                 }
             }
+            
+            onePassFlag = false
             
             Crashlytics().setObjectValue(cellIndexSelectionPool, forKey: "cell index row")
         
@@ -230,19 +246,11 @@ extension PromptPickerViewController {
     }
     
     func recordStoreLogic() {
-        let className = "Subject\(UserStore.subjectNumber!)".stringByReplacingOccurrencesOfString("-", withString: "_")
-        
-        parseRecord = PFObject(className: className)
-        if !UserStore.parseClassName.contains(className) {
-            UserStore.parseClassName.insert(className)
-        }
-        
-        
-        parseRecord!["subjectNumber"] = UserStore.subjectNumber!
-        parseRecord!["bioPerson"] = self.navigationItem.title!
-        parseRecord!["rtCond"] = curPerson.1 ? "Foraging" : (UserStore.rTCond! == .Increasing ? "Increasing" : "Decreasing")
+        curRecord.subjectNumber = UserStore.subjectNumber!
+        curRecord.bioPerson = self.navigationItem.title!
+        curRecord.rTCond = curPerson.1 ? "Foraging" : (UserStore.rTCond! == .Increasing ? "Increasing" : "Decreasing")
         if let fam = UserStore.currentFamiliarity {
-            parseRecord!["familiarity"] = fam
+            curRecord.familiarity = NSDecimalNumber(double: fam)
         }
     }
     
@@ -250,6 +258,7 @@ extension PromptPickerViewController {
         self.navigationItem.title = curPerson.0
         nameLabel.text = curPerson.0
         
+        onePassFlag = false
         firstTimeInstructions = false
         
         UserStore.isTimed = !curPerson.1

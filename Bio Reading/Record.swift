@@ -34,12 +34,14 @@ class Record: NSManagedObject {
     
     var parsified: PFObject {
         get {
-            let object = PFObject(className: "Subject\(subjectNumber)")
+            let subjectNumberString = "\(subjectNumber)".stringByReplacingOccurrencesOfString("-", withString: "_")
+            
+            let object = PFObject(className: "Subject\(subjectNumberString)")
             
             object["CPIDR"] = cpidr
             object["sentance"] = sentance
             
-            let fileName = "Audio\(subjectNumber)_\(bioPerson)_\(cue)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())
+            let fileName = "Audio\(subjectNumberString)_\(bioPerson)_\(cue)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())
             object["audioFile"] = PFFile(name: fileName, data: audioFile, contentType: "audio/wav")
             
             object["bioPerson"] = bioPerson

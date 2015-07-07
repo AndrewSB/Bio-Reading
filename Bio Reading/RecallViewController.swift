@@ -30,7 +30,7 @@ class RecallViewController: UIViewController {
     var mic = EZMicrophone()
     var recorder = EZRecorder()
     
-    var parseRecord: PFObject!
+    var curRecord: Record!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +49,8 @@ class RecallViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         
-        let cueNumber = (segue.destinationViewController as? PromptPickerViewController)!.curSentance!
-        saveRecord(cueNumber)
+        curRecord.audioFile = NSData(contentsOfURL: soundFileURL)!
+        isRecording = false
         
         if let des = segue.destinationViewController as? FamiliarityViewController {
             des.person = NSUserDefaults.standardUserDefaults().objectForKey("currentPerson") as! String
@@ -72,15 +72,6 @@ extension RecallViewController: AVAudioPlayerDelegate, EZMicrophoneDelegate {
         if self.isRecording {
             self.recorder.appendDataFromBufferList(bufferList, withBufferSize: bufferSize)
         }
-    }
-    
-    private func saveRecord(cueNumber: Int) {
-        parseRecord["audioFile"] = PFFile(name: "Audio\(UserStore.subjectNumber!)-\(UserStore.bios[UserStore.currentBio!].0)-\(cueNumber)".stringByReplacingOccurrencesOfString(" ", withString: "_").stringByReplacingOccurrencesOfString("-", withString: "_"), data: NSData(contentsOfURL: soundFileURL)!)
-        isRecording = false
-        
-        self.parseRecord.pinInBackgroundWithBlock({(success: Bool, error: NSError?) -> Void in
-            println("pinned")
-        })
     }
     
 }

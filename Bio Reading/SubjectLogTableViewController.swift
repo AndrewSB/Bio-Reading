@@ -16,12 +16,7 @@ class SubjectLogTableViewController: UITableViewController {
     
     var records: [Record]!
     var audioPlayer: AVAudioPlayer! = AVAudioPlayer()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
     
-    }
-
 }
 
 
@@ -41,9 +36,8 @@ extension SubjectLogTableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        audioPlayer.stop()
-        audioPlayer = nil
         audioPlayer = AVAudioPlayer(data: records[indexPath.row].audioFile, fileTypeHint: "wav", error: nil)
+        audioPlayer.play()
     }
     
 }
