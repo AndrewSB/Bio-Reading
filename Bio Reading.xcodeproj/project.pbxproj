@@ -11,6 +11,9 @@
 		4636E1371B1CFED3004DC76C /* AdminPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FAC9E91AEEF5C300BAFE99 /* AdminPanelViewController.swift */; };
 		463D82011B3257C80053A83F /* PushNoAnimationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463D82001B3257C80053A83F /* PushNoAnimationSegue.swift */; };
 		464950F21B4BA89F00D87012 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464950F11B4BA89F00D87012 /* Record.swift */; };
+		464950F41B4BAE8700D87012 /* EmailLogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464950F31B4BAE8700D87012 /* EmailLogsTableViewController.swift */; };
+		464950F61B4BB20700D87012 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464950F51B4BB20700D87012 /* Spinner.swift */; };
+		464950F81B4BB68500D87012 /* SubjectLogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464950F71B4BB68500D87012 /* SubjectLogTableViewController.swift */; };
 		464D50CA1B4B33A300F0A1D5 /* Bio_Reading.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 464D50C91B4B33A300F0A1D5 /* Bio_Reading.xcdatamodel */; };
 		4656DF481B2FDBD800182C50 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF3F1B2FDBD700182C50 /* AudioToolbox.framework */; };
 		4656DF491B2FDBD800182C50 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF401B2FDBD700182C50 /* CFNetwork.framework */; };
@@ -69,6 +72,9 @@
 		462BFA111B01E3FB00028FB6 /* GenericWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericWrapper.swift; sourceTree = "<group>"; };
 		463D82001B3257C80053A83F /* PushNoAnimationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNoAnimationSegue.swift; sourceTree = "<group>"; };
 		464950F11B4BA89F00D87012 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		464950F31B4BAE8700D87012 /* EmailLogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLogsTableViewController.swift; sourceTree = "<group>"; };
+		464950F51B4BB20700D87012 /* Spinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		464950F71B4BB68500D87012 /* SubjectLogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectLogTableViewController.swift; sourceTree = "<group>"; };
 		464D50C91B4B33A300F0A1D5 /* Bio_Reading.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bio_Reading.xcdatamodel; sourceTree = "<group>"; };
 		4656DF3F1B2FDBD700182C50 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4656DF401B2FDBD700182C50 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -252,6 +258,8 @@
 			children = (
 				46FAC9E91AEEF5C300BAFE99 /* AdminPanelViewController.swift */,
 				469D5A831B12C82200BDA7BD /* MailComposeViewController.swift */,
+				464950F31B4BAE8700D87012 /* EmailLogsTableViewController.swift */,
+				464950F71B4BB68500D87012 /* SubjectLogTableViewController.swift */,
 			);
 			name = Admin;
 			sourceTree = "<group>";
@@ -347,6 +355,7 @@
 				469D5A801B12BBD600BDA7BD /* FamiliarityAlertController.swift */,
 				463D82001B3257C80053A83F /* PushNoAnimationSegue.swift */,
 				46FAC9F41AEEF5EE00BAFE99 /* PromptCollectionViewCell.swift */,
+				464950F51B4BB20700D87012 /* Spinner.swift */,
 			);
 			name = UI;
 			path = "Bio Reading";
@@ -534,13 +543,16 @@
 				46FAC9DD1AEEF57A00BAFE99 /* AppDelegate.swift in Sources */,
 				462BFA121B01E3FB00028FB6 /* GenericWrapper.swift in Sources */,
 				469D5A811B12BBD600BDA7BD /* FamiliarityAlertController.swift in Sources */,
+				464950F81B4BB68500D87012 /* SubjectLogTableViewController.swift in Sources */,
 				46FACA031AEEF60300BAFE99 /* UIColorExtension.swift in Sources */,
+				464950F41B4BAE8700D87012 /* EmailLogsTableViewController.swift in Sources */,
 				46FAC9EF1AEEF5C300BAFE99 /* InitialViewController.swift in Sources */,
 				46F452981B4B1FBB00022853 /* UIFontExtension.swift in Sources */,
 				46FAC9E51AEEF5AE00BAFE99 /* PromptPickerViewController.swift in Sources */,
 				46FAC9F01AEEF5C300BAFE99 /* InstructionViewController.swift in Sources */,
 				464950F21B4BA89F00D87012 /* Record.swift in Sources */,
 				469D5A841B12C82200BDA7BD /* MailComposeViewController.swift in Sources */,
+				464950F61B4BB20700D87012 /* Spinner.swift in Sources */,
 				46FACA011AEEF60300BAFE99 /* NSUserDefaultHelper.swift in Sources */,
 				465F7FB71B451BC800709E8B /* Reachability.swift in Sources */,
 				4636E1371B1CFED3004DC76C /* AdminPanelViewController.swift in Sources */,

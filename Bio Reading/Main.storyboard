@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="duy-H3-9Tf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="duy-H3-9Tf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -224,7 +224,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgn-cJ-8GH">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Email logs">
+                                <state key="normal" title="Subject records">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -279,8 +279,8 @@
                                 <exclude reference="n95-d6-jZu"/>
                                 <exclude reference="yrF-a0-n7n"/>
                                 <exclude reference="cmL-ei-LkC"/>
+                                <exclude reference="RHW-qp-KYe"/>
                                 <exclude reference="Mav-Kn-G7E"/>
-                                <exclude reference="zgn-cJ-8GH"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="oFt-BZ-jHl"/>
@@ -307,7 +307,7 @@
                                 <include reference="yrF-a0-n7n"/>
                                 <include reference="cmL-ei-LkC"/>
                                 <include reference="Mav-Kn-G7E"/>
-                                <exclude reference="zgn-cJ-8GH"/>
+                                <include reference="zgn-cJ-8GH"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="oFt-BZ-jHl"/>
@@ -332,7 +332,7 @@
                                 <include reference="Qfk-DE-B6o"/>
                                 <include reference="eud-PY-gJe"/>
                                 <include reference="JBK-A4-C0e"/>
-                                <include reference="RHW-qp-KYe"/>
+                                <exclude reference="RHW-qp-KYe"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="4l6-na-5p0"/>
@@ -362,7 +362,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kY2-zM-r8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="fZF-xn-Tqt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1606" y="960.75"/>
+            <point key="canvasLocation" x="1605" y="2178.75"/>
         </scene>
         <!--Email Logs Table View Controller-->
         <scene sceneID="blT-cn-o4f">
@@ -385,10 +385,54 @@
                             <outlet property="delegate" destination="Flk-IB-xaE" id="k6d-AZ-0vA"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="VkV-k3-TAM" kind="show" identifier="segueToDetail" id="9lS-CS-T0r"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZS2-v5-QMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2323" y="955.5"/>
+            <point key="canvasLocation" x="2322" y="2173.5"/>
+        </scene>
+        <!--Subject Log Table View Controller-->
+        <scene sceneID="DAU-Js-7Ak">
+            <objects>
+                <tableViewController id="VkV-k3-TAM" customClass="SubjectLogTableViewController" customModule="Bio_Reading" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2YB-gs-egX">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="bXZ-dD-ATQ">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="Email" id="Dzm-Fd-0ro">
+                                    <connections>
+                                        <action selector="email:" destination="VkV-k3-TAM" id="Iyt-kW-mBi"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem title="Parse" id="HqU-NZ-cin">
+                                    <connections>
+                                        <action selector="parse:" destination="VkV-k3-TAM" id="oXd-mB-xrd"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ikd-8T-f3L">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ikd-8T-f3L" id="ug2-0Y-LBp">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VkV-k3-TAM" id="NR0-3w-EH9"/>
+                            <outlet property="delegate" destination="VkV-k3-TAM" id="UFN-M6-55d"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A26-a5-QP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3066" y="2173.5"/>
         </scene>
         <!--Instruction View Controller-->
         <scene sceneID="0Rm-DQ-gGy">
@@ -1266,7 +1310,7 @@ Your task will be to learn the biographies of a number of different famous peopl
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAv-go-Arn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794" y="960.75"/>
+            <point key="canvasLocation" x="793.5" y="2178.75"/>
         </scene>
         <!--Familiarity View Controller-->
         <scene sceneID="ziC-hb-IXP">
