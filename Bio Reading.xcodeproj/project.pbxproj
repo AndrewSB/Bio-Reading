@@ -14,7 +14,7 @@
 		464950F41B4BAE8700D87012 /* EmailLogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464950F31B4BAE8700D87012 /* EmailLogsTableViewController.swift */; };
 		464950F61B4BB20700D87012 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464950F51B4BB20700D87012 /* Spinner.swift */; };
 		464950F81B4BB68500D87012 /* SubjectLogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464950F71B4BB68500D87012 /* SubjectLogTableViewController.swift */; };
-		464D50CA1B4B33A300F0A1D5 /* Bio_Reading.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 464D50C91B4B33A300F0A1D5 /* Bio_Reading.xcdatamodel */; };
+		464950FB1B4BBF4500D87012 /* BioReading.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 464950F91B4BBF4500D87012 /* BioReading.xcdatamodeld */; };
 		4656DF481B2FDBD800182C50 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF3F1B2FDBD700182C50 /* AudioToolbox.framework */; };
 		4656DF491B2FDBD800182C50 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF401B2FDBD700182C50 /* CFNetwork.framework */; };
 		4656DF4A1B2FDBD800182C50 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4656DF411B2FDBD700182C50 /* CoreGraphics.framework */; };
@@ -75,7 +75,7 @@
 		464950F31B4BAE8700D87012 /* EmailLogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLogsTableViewController.swift; sourceTree = "<group>"; };
 		464950F51B4BB20700D87012 /* Spinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		464950F71B4BB68500D87012 /* SubjectLogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectLogTableViewController.swift; sourceTree = "<group>"; };
-		464D50C91B4B33A300F0A1D5 /* Bio_Reading.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bio_Reading.xcdatamodel; sourceTree = "<group>"; };
+		464950FA1B4BBF4500D87012 /* BioReading.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BioReading.xcdatamodel; sourceTree = "<group>"; };
 		4656DF3F1B2FDBD700182C50 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4656DF401B2FDBD700182C50 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		4656DF411B2FDBD700182C50 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -364,7 +364,7 @@
 		46FACA141AEEF61A00BAFE99 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				464D50C91B4B33A300F0A1D5 /* Bio_Reading.xcdatamodel */,
+				464950F91B4BBF4500D87012 /* BioReading.xcdatamodeld */,
 				464950F11B4BA89F00D87012 /* Record.swift */,
 				462BF9DC1B01E00100028FB6 /* Bios */,
 				46FACA151AEEF62600BAFE99 /* Images.xcassets */,
@@ -535,7 +535,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				46B5BBF11B29850F006604BA /* IntExtension.swift in Sources */,
-				464D50CA1B4B33A300F0A1D5 /* Bio_Reading.xcdatamodel in Sources */,
 				46FAC9E61AEEF5AE00BAFE99 /* PromptViewController.swift in Sources */,
 				463D82011B3257C80053A83F /* PushNoAnimationSegue.swift in Sources */,
 				46FAC9E41AEEF5AE00BAFE99 /* FamiliarityViewController.swift in Sources */,
@@ -549,6 +548,7 @@
 				46FAC9EF1AEEF5C300BAFE99 /* InitialViewController.swift in Sources */,
 				46F452981B4B1FBB00022853 /* UIFontExtension.swift in Sources */,
 				46FAC9E51AEEF5AE00BAFE99 /* PromptPickerViewController.swift in Sources */,
+				464950FB1B4BBF4500D87012 /* BioReading.xcdatamodeld in Sources */,
 				46FAC9F01AEEF5C300BAFE99 /* InstructionViewController.swift in Sources */,
 				464950F21B4BA89F00D87012 /* Record.swift in Sources */,
 				469D5A841B12C82200BDA7BD /* MailComposeViewController.swift in Sources */,
@@ -731,6 +731,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		464950F91B4BBF4500D87012 /* BioReading.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				464950FA1B4BBF4500D87012 /* BioReading.xcdatamodel */,
+			);
+			currentVersion = 464950FA1B4BBF4500D87012 /* BioReading.xcdatamodel */;
+			path = BioReading.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 46FAC9AB1AEEF4F600BAFE99 /* Project object */;
 }
